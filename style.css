@@ -7,6 +7,7 @@ body {
   font-family: Arial, sans-serif;
   background: #f2f2f2;
   color: #222;
+
   user-select: none;
   -webkit-user-select: none;
 }
@@ -33,66 +34,55 @@ h2 {
   font-size: 18px;
 }
 
-#album-list {
+#selected-artist,
+#version-artist {
+  color: #666;
+}
+
+#game-version {
+  color: #888;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+
+/* SELECTION SCREENS */
+
+#artist-list,
+#album-list,
+#version-list {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-top: 30px;
+  margin: 30px 0;
 }
 
-.album-button {
+.selection-button {
   width: 100%;
-  padding: 12px;
+  padding: 20px;
+
   background: white;
+
   border: 2px solid #ddd;
-  border-radius: 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  text-align: left;
+  border-radius: 10px;
+
   font-size: 18px;
-  transition: transform 0.1s, border-color 0.1s;
+
+  cursor: pointer;
+
+  text-align: left;
 }
 
-.album-button:hover {
+.selection-button:hover {
   border-color: #222;
 }
 
-.album-button:active {
-  transform: scale(0.98);
+.selection-button:active {
+  transform: scale(0.99);
 }
 
-.album-artwork {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 6px;
-  flex-shrink: 0;
-}
 
-.album-information {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.album-information strong {
-  display: block;
-}
-
-.album-information span {
-  color: #666;
-  font-size: 15px;
-}
-
-.game-artwork {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
+/* TRACK LIST */
 
 #track-list {
   margin: 30px 0;
@@ -101,57 +91,81 @@ h2 {
 .track {
   display: flex;
   align-items: center;
+
   background: white;
+
   border: 1px solid #ddd;
   border-radius: 10px;
+
   padding: 0;
+
   margin: 10px 0;
+
   font-size: 18px;
+
   overflow: hidden;
 }
 
 .track-number {
   padding: 18px 0 18px 18px;
-  font-weight: bold;
-  color: #888;
-  font-size: 16px;
+
   min-width: 45px;
+
   text-align: right;
+
+  font-weight: bold;
+
+  color: #888;
+
+  font-size: 16px;
 }
 
 .track-name {
   padding: 18px;
+
   flex: 1;
+
   text-align: left;
+
   font-weight: 500;
 }
 
 .drag-handle {
   order: 2;
-  padding: 18px 20px;
-  background: #eee;
-  color: #555;
-  cursor: grab;
-  font-size: 22px;
-  touch-action: none;
-  -webkit-user-select: none;
-}
 
-.track:active {
-  transform: scale(0.99);
+  padding: 18px 20px;
+
+  background: #eee;
+
+  color: #555;
+
+  cursor: grab;
+
+  font-size: 22px;
+
+  touch-action: none;
+
+  -webkit-user-select: none;
 }
 
 .dragging {
   opacity: 0.5;
 }
 
+
+/* BUTTONS */
+
 #submit-button {
   background: #222;
   color: white;
+
   border: none;
   border-radius: 10px;
+
   padding: 15px 35px;
+
   font-size: 18px;
+
   cursor: pointer;
 }
 
@@ -159,30 +173,51 @@ h2 {
   background: #444;
 }
 
+#submit-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 #score {
   margin-top: 25px;
 }
 
 #play-again-button,
-#album-select-button {
+#choose-album-button,
+#back-to-artists-button,
+#back-to-albums-button {
   background: white;
+
   color: #222;
+
   border: 2px solid #222;
+
   border-radius: 10px;
+
   padding: 13px 30px;
+
   font-size: 18px;
+
   cursor: pointer;
+
   margin-top: 10px;
 }
 
 #play-again-button:hover,
-#album-select-button:hover {
+#choose-album-button:hover,
+#back-to-artists-button:hover,
+#back-to-albums-button:hover {
   background: #f2f2f2;
 }
 
+
+/* RESULTS */
+
 .result {
   padding: 18px 20px;
+
   font-size: 22px;
+
   font-weight: bold;
 }
 
@@ -196,31 +231,29 @@ h2 {
 
 .track-correct {
   border-color: #9ccc9c;
+
   background: #f1faf1;
 }
 
 .track-incorrect {
   border-color: #e0a0a0;
+
   background: #fff5f5;
 }
 
-#game-screen {
-  display: none;
-}
+
+/* MOBILE */
 
 @media (max-width: 500px) {
+
   .game {
     width: 94%;
+
     margin: 30px auto;
   }
 
   h1 {
     font-size: 34px;
-  }
-
-  .game-artwork {
-    width: 150px;
-    height: 150px;
   }
 
   .track {
@@ -233,6 +266,7 @@ h2 {
 
   .track-number {
     padding-left: 10px;
+
     min-width: 35px;
   }
 
@@ -240,8 +274,7 @@ h2 {
     padding: 16px;
   }
 
-  .album-artwork {
-    width: 65px;
-    height: 65px;
+  .selection-button {
+    padding: 18px;
   }
 }
