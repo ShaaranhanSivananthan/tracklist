@@ -24,38 +24,56 @@ function displayTracks() {
 
     trackElement.classList.add("track");
     trackElement.textContent = track;
-    trackElement.draggable = true;
 
-    trackElement.addEventListener("dragstart", function() {
-      trackElement.classList.add("dragging");
-    });
-
-    trackElement.addEventListener("dragend", function() {
-      trackElement.classList.remove("dragging");
-    });
+    trackElement.addEventListener("pointerdown", startDragging);
 
     trackList.appendChild(trackElement);
   });
 }
 
-shuffle(tracks);
-displayTracks();
+let draggedTrack = null;
 
-trackList.addEventListener("dragover", function(event) {
-  event.preventDefault();
+function startDragging(event) {
+  draggedTrack = event.currentTarget;
 
-  const draggingTrack = document.querySelector(".dragging");
+  draggedTrack.classList.add("dragging");
 
-  const tracks = [...trackList.querySelectorAll(".track:not(.dragging)")];
+  draggedTrack.setPointerCapture(event.pointerId);
 
-  const nextTrack = tracks.find(function(track) {
+  draggedTrack.addEventListener("pointermove", moveTrack);
+  draggedTrack.addEventListener("pointerup", stopDragging);
+}
+
+function moveTrack(event) {
+  if (!draggedTrack) return;
+
+  const otherTracks = [
+    ...trackList.querySelectorAll(".track:not(.dragging)")
+  ];
+
+  const nextTrack = otherTracks.find(function(track) {
     const box = track.getBoundingClientRect();
+
     return event.clientY < box.top + box.height / 2;
   });
 
   if (nextTrack) {
-    trackList.insertBefore(draggingTrack, nextTrack);
+    trackList.insertBefore(draggedTrack, nextTrack);
   } else {
-    trackList.appendChild(draggingTrack);
+    trackList.appendChild(draggedTrack);
   }
-});
+}
+
+function stopDragging(event) {
+  draggedTrack.classList.remove("dragging");
+
+  draggedTrack.releasePointerCapture(event.pointerId);
+
+  draggedTrack.removeEventListener("pointermove", moveTrack);
+  draggedTrack.removeEventListener("pointerup", stopDragging);
+
+  draggedTrack = null;
+}
+
+shuffle(tracks);
+displayTracks();
