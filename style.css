@@ -7,6 +7,8 @@ body {
   font-family: Arial, sans-serif;
   background: #f2f2f2;
   color: #222;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .game {
@@ -36,19 +38,34 @@ h2 {
 }
 
 .track {
+  display: flex;
+  align-items: center;
   background: white;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 18px;
+  padding: 0;
   margin: 10px 0;
   font-size: 18px;
-  cursor: grab;
-  touch-action: none;
-  user-select: none;
+  overflow: hidden;
 }
 
-.track:hover {
-  background: #fafafa;
+.drag-handle {
+  padding: 18px 20px;
+  background: #eee;
+  cursor: grab;
+  font-size: 22px;
+  touch-action: none;
+  -webkit-user-select: none;
+}
+
+.track-name {
+  padding: 18px;
+  flex: 1;
+  text-align: left;
+}
+
+.dragging {
+  opacity: 0.5;
 }
 
 #submit-button {
@@ -59,12 +76,4 @@ h2 {
   padding: 15px 35px;
   font-size: 18px;
   cursor: pointer;
-}
-
-#submit-button:hover {
-  background: #444;
-}
-
-#score {
-  margin-top: 25px;
 }
