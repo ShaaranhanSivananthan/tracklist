@@ -2,6 +2,7 @@ const albums = [
   {
     name: "Graduation",
     artist: "Kanye West",
+    artwork: "https://upload.wikimedia.org/wikipedia/en/7/7d/Kanye_West_-_Graduation.jpg",
     tracks: [
       "Good Morning",
       "Champion",
@@ -22,6 +23,7 @@ const albums = [
   {
     name: "My Beautiful Dark Twisted Fantasy",
     artist: "Kanye West",
+    artwork: "https://upload.wikimedia.org/wikipedia/en/f/f2/My_Beautiful_Dark_Twisted_Fantasy.jpg",
     tracks: [
       "Dark Fantasy",
       "Gorgeous",
@@ -50,6 +52,7 @@ const albumList = document.getElementById("album-list");
 const gameScreen = document.getElementById("game-screen");
 const albumNameElement = document.getElementById("album-name");
 const artistNameElement = document.getElementById("artist-name");
+const albumArtworkElement = document.getElementById("album-artwork");
 const trackList = document.getElementById("track-list");
 const submitButton = document.getElementById("submit-button");
 const score = document.getElementById("score");
@@ -72,10 +75,21 @@ function displayAlbums() {
 
     button.classList.add("album-button");
 
-    button.innerHTML = `
+    const artwork = document.createElement("img");
+    artwork.src = album.artwork;
+    artwork.alt = album.name + " album artwork";
+    artwork.classList.add("album-artwork");
+
+    const information = document.createElement("div");
+    information.classList.add("album-information");
+
+    information.innerHTML = `
       <strong>${album.name}</strong>
       <span>${album.artist}</span>
     `;
+
+    button.appendChild(artwork);
+    button.appendChild(information);
 
     button.addEventListener("click", function() {
       startGame(index);
@@ -95,6 +109,8 @@ function startGame(albumIndex) {
 
   albumNameElement.textContent = currentAlbum.name;
   artistNameElement.textContent = currentAlbum.artist;
+  albumArtworkElement.src = currentAlbum.artwork;
+  albumArtworkElement.alt = currentAlbum.name + " album artwork";
 
   score.textContent = "";
 
