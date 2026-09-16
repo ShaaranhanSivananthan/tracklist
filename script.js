@@ -96,19 +96,35 @@ function stopDragging() {
 }
 
 function checkAnswer() {
-  const currentTracks = [
-    ...trackList.querySelectorAll(".track-name")
-  ].map(function(track) {
-    return track.textContent;
-  });
+  const trackElements = [
+    ...trackList.querySelectorAll(".track")
+  ];
 
   let points = 0;
 
-  for (let i = 0; i < correctOrder.length; i++) {
-    if (currentTracks[i] === correctOrder[i]) {
-      points++;
+  trackElements.forEach(function(trackElement, index) {
+    const trackName = trackElement.querySelector(".track-name").textContent;
+
+    const oldResult = trackElement.querySelector(".result");
+    
+    if (oldResult) {
+      oldResult.remove();
     }
-  }
+
+    const result = document.createElement("div");
+    result.classList.add("result");
+
+    if (trackName === correctOrder[index]) {
+      points++;
+      result.textContent = "✓";
+      result.classList.add("correct");
+    } else {
+      result.textContent = "✗";
+      result.classList.add("incorrect");
+    }
+
+    trackElement.appendChild(result);
+  });
 
   score.textContent = "Score: " + points + " / " + correctOrder.length;
 }
