@@ -128,3 +128,13 @@ h2 {
 .track:active {
   transform: scale(0.99);
 }
+
+.track-correct {
+  border-color: #9ccc9c;
+  background: #f1faf1;
+}
+
+.track-incorrect {
+  border-color: #e0a0a0;
+  background: #fff5f5;
+}
