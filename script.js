@@ -157,6 +157,7 @@ function checkAnswer() {
       points++;
       result.textContent = "✓";
       result.classList.add("correct");
+      trackElement.classList.add("track-correct");
     } else {
       const correctPosition = correctOrder.indexOf(trackName) + 1;
     
