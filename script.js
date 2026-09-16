@@ -1,22 +1,46 @@
-const album = {
-  name: "Graduation",
-  artist: "Kanye West",
-  tracks: [
-    "Good Morning",
-    "Champion",
-    "Stronger",
-    "I Wonder",
-    "Good Life",
-    "Can't Tell Me Nothing",
-    "Barry Bonds",
-    "Drunk and Hot Girls",
-    "Flashing Lights",
-    "Everything I Am",
-    "The Glory",
-    "Homecoming",
-    "Big Brother"
-  ]
-};
+const albums = [
+  {
+    name: "Graduation",
+    artist: "Kanye West",
+    tracks: [
+      "Good Morning",
+      "Champion",
+      "Stronger",
+      "I Wonder",
+      "Good Life",
+      "Can't Tell Me Nothing",
+      "Barry Bonds",
+      "Drunk and Hot Girls",
+      "Flashing Lights",
+      "Everything I Am",
+      "The Glory",
+      "Homecoming",
+      "Big Brother"
+    ]
+  },
+
+  {
+    name: "My Beautiful Dark Twisted Fantasy",
+    artist: "Kanye West",
+    tracks: [
+      "Dark Fantasy",
+      "Gorgeous",
+      "POWER",
+      "All of the Lights (Interlude)",
+      "All of the Lights",
+      "Monster",
+      "So Appalled",
+      "Devil in a New Dress",
+      "Runaway",
+      "Hell of a Life",
+      "Blame Game",
+      "Lost in the World",
+      "Who Will Survive in America"
+    ]
+  }
+];
+
+const album = albums[0];
 
 const tracks = [...album.tracks];
 
