@@ -158,7 +158,9 @@ function checkAnswer() {
       result.textContent = "✓";
       result.classList.add("correct");
     } else {
-      result.textContent = "✗";
+      const correctPosition = correctOrder.indexOf(trackName) + 1;
+    
+      result.textContent = "✗ #" + correctPosition;
       result.classList.add("incorrect");
     }
 
