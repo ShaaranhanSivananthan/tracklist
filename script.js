@@ -1,37 +1,26 @@
-const albumName = "Graduation";
-const artistName = "Kanye West";
+const album = {
+  name: "Graduation",
+  artist: "Kanye West",
+  tracks: [
+    "Good Morning",
+    "Champion",
+    "Stronger",
+    "I Wonder",
+    "Good Life",
+    "Can't Tell Me Nothing",
+    "Barry Bonds",
+    "Drunk and Hot Girls",
+    "Flashing Lights",
+    "Everything I Am",
+    "The Glory",
+    "Homecoming",
+    "Big Brother"
+  ]
+};
 
-const tracks = [
-  "Good Morning",
-  "Champion",
-  "Stronger",
-  "I Wonder",
-  "Good Life",
-  "Can't Tell Me Nothing",
-  "Barry Bonds",
-  "Drunk and Hot Girls",
-  "Flashing Lights",
-  "Everything I Am",
-  "The Glory",
-  "Homecoming",
-  "Big Brother"
-];
+const tracks = [...album.tracks];
 
-const correctOrder = [
-  "Good Morning",
-  "Champion",
-  "Stronger",
-  "I Wonder",
-  "Good Life",
-  "Can't Tell Me Nothing",
-  "Barry Bonds",
-  "Drunk and Hot Girls",
-  "Flashing Lights",
-  "Everything I Am",
-  "The Glory",
-  "Homecoming",
-  "Big Brother"
-];
+const correctOrder = [...album.tracks];
 
 const albumNameElement = document.getElementById("album-name");
 const artistNameElement = document.getElementById("artist-name");
@@ -40,8 +29,8 @@ const submitButton = document.getElementById("submit-button");
 const score = document.getElementById("score");
 const playAgainButton = document.getElementById("play-again-button");
 
-albumNameElement.textContent = albumName;
-artistNameElement.textContent = artistName;
+albumNameElement.textContent = album.name;
+artistNameElement.textContent = album.artist;
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
