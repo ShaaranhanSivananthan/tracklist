@@ -1,17 +1,33 @@
 const tracks = [
-  "Track 1",
-  "Track 2",
-  "Track 3",
-  "Track 4",
-  "Track 5"
+  "Good Morning",
+  "Champion",
+  "Stronger",
+  "I Wonder",
+  "Good Life",
+  "Can't Tell Me Nothing",
+  "Barry Bonds",
+  "Drunk and Hot Girls",
+  "Flashing Lights",
+  "Everything I Am",
+  "The Glory",
+  "Homecoming",
+  "Big Brother"
 ];
 
 const correctOrder = [
-  "Track 1",
-  "Track 2",
-  "Track 3",
-  "Track 4",
-  "Track 5"
+  "Good Morning",
+  "Champion",
+  "Stronger",
+  "I Wonder",
+  "Good Life",
+  "Can't Tell Me Nothing",
+  "Barry Bonds",
+  "Drunk and Hot Girls",
+  "Flashing Lights",
+  "Everything I Am",
+  "The Glory",
+  "Homecoming",
+  "Big Brother"
 ];
 
 const trackList = document.getElementById("track-list");
