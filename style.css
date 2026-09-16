@@ -42,11 +42,14 @@ h2 {
 
 .album-button {
   width: 100%;
-  padding: 22px;
+  padding: 12px;
   background: white;
   border: 2px solid #ddd;
   border-radius: 12px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
   text-align: left;
   font-size: 18px;
   transition: transform 0.1s, border-color 0.1s;
@@ -60,14 +63,35 @@ h2 {
   transform: scale(0.98);
 }
 
-.album-button strong {
-  display: block;
-  margin-bottom: 6px;
+.album-artwork {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
 }
 
-.album-button span {
+.album-information {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.album-information strong {
+  display: block;
+}
+
+.album-information span {
   color: #666;
   font-size: 15px;
+}
+
+.game-artwork {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 #track-list {
@@ -194,6 +218,11 @@ h2 {
     font-size: 34px;
   }
 
+  .game-artwork {
+    width: 150px;
+    height: 150px;
+  }
+
   .track {
     font-size: 16px;
   }
@@ -209,5 +238,10 @@ h2 {
 
   .drag-handle {
     padding: 16px;
+  }
+
+  .album-artwork {
+    width: 65px;
+    height: 65px;
   }
 }
