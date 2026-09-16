@@ -13,36 +13,88 @@
 
   <main class="game">
 
-    <section id="album-selection">
+    <!-- ARTIST SELECTION -->
+
+    <section id="artist-screen">
 
       <h1>Tracklist</h1>
+
+      <p>Choose an artist:</p>
+
+      <div id="artist-list"></div>
+
+    </section>
+
+
+    <!-- ALBUM SELECTION -->
+
+    <section id="album-screen">
+
+      <h1>Tracklist</h1>
+
+      <p id="selected-artist"></p>
 
       <p>Choose an album:</p>
 
       <div id="album-list"></div>
 
+      <button id="back-to-artists-button">
+        Choose Another Artist
+      </button>
+
     </section>
 
-    <section id="game-screen">
 
-      <img id="album-artwork" class="game-artwork" src="" alt="">
+    <!-- VERSION SELECTION -->
+
+    <section id="version-screen">
 
       <h1>Tracklist</h1>
 
-      <h2 id="album-name"></h2>
-      <p class="artist" id="artist-name"></p>
+      <h2 id="selected-album"></h2>
+
+      <p id="version-artist"></p>
+
+      <p>Choose a version:</p>
+
+      <div id="version-list"></div>
+
+      <button id="back-to-albums-button">
+        Back to Albums
+      </button>
+
+    </section>
+
+
+    <!-- GAME -->
+
+    <section id="game-screen">
+
+      <h1>Tracklist</h1>
+
+      <h2 id="game-album"></h2>
+
+      <p class="artist" id="game-artist"></p>
+
+      <p id="game-version"></p>
 
       <p>Put the tracks in the correct order:</p>
 
       <div id="track-list"></div>
 
-      <button id="submit-button">Submit</button>
+      <button id="submit-button">
+        Submit
+      </button>
 
       <h2 id="score"></h2>
 
-      <button id="play-again-button">Play Again</button>
+      <button id="play-again-button">
+        Play Again
+      </button>
 
-      <button id="album-select-button">Choose Another Album</button>
+      <button id="choose-album-button">
+        Choose Another Album
+      </button>
 
     </section>
 
