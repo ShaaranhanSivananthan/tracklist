@@ -13,13 +13,30 @@
 
   <main class="game">
 
-    <!-- ARTIST SELECTION -->
+    <!-- ARTIST SEARCH -->
 
     <section id="artist-screen">
 
       <h1>Tracklist</h1>
 
-      <p>Choose an artist:</p>
+      <p>Search for an artist:</p>
+
+      <div class="search-box">
+
+        <input
+          type="text"
+          id="artist-search"
+          placeholder="Artist name"
+          autocomplete="off"
+        >
+
+        <button id="artist-search-button">
+          Search
+        </button>
+
+      </div>
+
+      <p id="artist-status"></p>
 
       <div id="artist-list"></div>
 
@@ -34,7 +51,9 @@
 
       <p id="selected-artist"></p>
 
-      <p>Choose an album:</p>
+      <h2>Choose an album:</h2>
+
+      <p id="album-status"></p>
 
       <div id="album-list"></div>
 
@@ -56,6 +75,8 @@
       <p id="version-artist"></p>
 
       <p>Choose a version:</p>
+
+      <p id="version-status"></p>
 
       <div id="version-list"></div>
 
@@ -80,6 +101,8 @@
 
       <p>Put the tracks in the correct order:</p>
 
+      <div id="game-status"></div>
+
       <div id="track-list"></div>
 
       <button id="submit-button">
@@ -94,6 +117,10 @@
 
       <button id="choose-album-button">
         Choose Another Album
+      </button>
+
+      <button id="choose-artist-button">
+        Choose Another Artist
       </button>
 
     </section>
