@@ -40,21 +40,21 @@ const albums = [
   }
 ];
 
-const album = albums[0];
+let currentAlbum = null;
+let tracks = [];
+let correctOrder = [];
 
-const tracks = [...album.tracks];
+const albumSelection = document.getElementById("album-selection");
+const albumList = document.getElementById("album-list");
 
-const correctOrder = [...album.tracks];
-
+const gameScreen = document.getElementById("game-screen");
 const albumNameElement = document.getElementById("album-name");
 const artistNameElement = document.getElementById("artist-name");
 const trackList = document.getElementById("track-list");
 const submitButton = document.getElementById("submit-button");
 const score = document.getElementById("score");
 const playAgainButton = document.getElementById("play-again-button");
-
-albumNameElement.textContent = album.name;
-artistNameElement.textContent = album.artist;
+const albumSelectButton = document.getElementById("album-select-button");
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -62,6 +62,46 @@ function shuffle(array) {
 
     [array[i], array[j]] = [array[j], array[i]];
   }
+}
+
+function displayAlbums() {
+  albumList.innerHTML = "";
+
+  albums.forEach(function(album, index) {
+    const button = document.createElement("button");
+
+    button.classList.add("album-button");
+
+    button.innerHTML = `
+      <strong>${album.name}</strong>
+      <span>${album.artist}</span>
+    `;
+
+    button.addEventListener("click", function() {
+      startGame(index);
+    });
+
+    albumList.appendChild(button);
+  });
+}
+
+function startGame(albumIndex) {
+  currentAlbum = albums[albumIndex];
+
+  tracks = [...currentAlbum.tracks];
+  correctOrder = [...currentAlbum.tracks];
+
+  shuffle(tracks);
+
+  albumNameElement.textContent = currentAlbum.name;
+  artistNameElement.textContent = currentAlbum.artist;
+
+  score.textContent = "";
+
+  albumSelection.style.display = "none";
+  gameScreen.style.display = "block";
+
+  displayTracks();
 }
 
 function displayTracks() {
@@ -88,6 +128,24 @@ function displayTracks() {
   });
 
   updateTrackNumbers();
+}
+
+function updateTrackNumbers() {
+  const trackElements = [
+    ...trackList.querySelectorAll(".track")
+  ];
+
+  trackElements.forEach(function(trackElement, index) {
+    let number = trackElement.querySelector(".track-number");
+
+    if (!number) {
+      number = document.createElement("div");
+      number.classList.add("track-number");
+      trackElement.insertBefore(number, trackElement.firstChild);
+    }
+
+    number.textContent = (index + 1) + ".";
+  });
 }
 
 let draggedTrack = null;
@@ -122,26 +180,8 @@ function moveTrack(event) {
   } else {
     trackList.appendChild(draggedTrack);
   }
-  
+
   updateTrackNumbers();
-}
-
-function updateTrackNumbers() {
-  const trackElements = [
-    ...trackList.querySelectorAll(".track")
-  ];
-
-  trackElements.forEach(function(trackElement, index) {
-    let number = trackElement.querySelector(".track-number");
-
-    if (!number) {
-      number = document.createElement("div");
-      number.classList.add("track-number");
-      trackElement.insertBefore(number, trackElement.firstChild);
-    }
-
-    number.textContent = (index + 1) + ".";
-  });
 }
 
 function stopDragging() {
@@ -166,10 +206,13 @@ function checkAnswer() {
     const trackName = trackElement.querySelector(".track-name").textContent;
 
     const oldResult = trackElement.querySelector(".result");
-    
+
     if (oldResult) {
       oldResult.remove();
     }
+
+    trackElement.classList.remove("track-correct");
+    trackElement.classList.remove("track-incorrect");
 
     const result = document.createElement("div");
     result.classList.add("result");
@@ -181,9 +224,10 @@ function checkAnswer() {
       trackElement.classList.add("track-correct");
     } else {
       const correctPosition = correctOrder.indexOf(trackName) + 1;
-    
+
       result.textContent = "✗ #" + correctPosition;
       result.classList.add("incorrect");
+      trackElement.classList.add("track-incorrect");
     }
 
     trackElement.appendChild(result);
@@ -192,16 +236,29 @@ function checkAnswer() {
   score.textContent = "Score: " + points + " / " + correctOrder.length;
 }
 
-submitButton.addEventListener("click", checkAnswer);
-
 function playAgain() {
+  tracks = [...currentAlbum.tracks];
+
   shuffle(tracks);
+
+  score.textContent = "";
+
   displayTracks();
+}
+
+function chooseAnotherAlbum() {
+  gameScreen.style.display = "none";
+  albumSelection.style.display = "block";
 
   score.textContent = "";
 }
 
+submitButton.addEventListener("click", checkAnswer);
+
 playAgainButton.addEventListener("click", playAgain);
 
-shuffle(tracks);
-displayTracks();
+albumSelectButton.addEventListener("click", chooseAnotherAlbum);
+
+displayAlbums();
+
+gameScreen.style.display = "none";
