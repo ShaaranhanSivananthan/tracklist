@@ -2,37 +2,25 @@ const API_BASE_URL =
   "https://tracklist-api.shaaranhan-sivananthan.workers.dev";
 
 
-/* =========================================================
-   STATE
-========================================================= */
-
-let selectedArtist = null;
-let selectedAlbum = null;
-let selectedVersion = null;
-
-let correctOrder = [];
-let tracks = [];
-
-let draggedTrack = null;
-let dragging = false;
-let hasSubmitted = false;
-
-
-/* =========================================================
-   DOM
-========================================================= */
+/* ---------------------------------------------------------
+   SCREEN ELEMENTS
+--------------------------------------------------------- */
 
 const artistScreen = document.getElementById("artist-screen");
 const albumScreen = document.getElementById("album-screen");
-const versionScreen = document.getElementById("version-screen");
 const gameScreen = document.getElementById("game-screen");
 
 const artistSearch = document.getElementById("artist-search");
-const artistSearchButton = document.getElementById("artist-search-button");
-const artistStatus = document.getElementById("artist-status");
-const artistList = document.getElementById("artist-list");
+const artistSearchButton =
+  document.getElementById("artist-search-button");
 
-const selectedArtistElement =
+const artistStatus =
+  document.getElementById("artist-status");
+
+const artistList =
+  document.getElementById("artist-list");
+
+const selectedArtist =
   document.getElementById("selected-artist");
 
 const albumStatus =
@@ -41,25 +29,16 @@ const albumStatus =
 const albumList =
   document.getElementById("album-list");
 
-const versionStatus =
-  document.getElementById("version-status");
+const backToArtistsButton =
+  document.getElementById("back-to-artists-button");
 
-const versionList =
-  document.getElementById("version-list");
-
-const selectedAlbumElement =
-  document.getElementById("selected-album");
-
-const versionArtistElement =
-  document.getElementById("version-artist");
-
-const gameAlbumElement =
+const gameAlbum =
   document.getElementById("game-album");
 
-const gameArtistElement =
+const gameArtist =
   document.getElementById("game-artist");
 
-const gameVersionElement =
+const gameVersion =
   document.getElementById("game-version");
 
 const gameStatus =
@@ -83,877 +62,539 @@ const chooseAlbumButton =
 const chooseArtistButton =
   document.getElementById("choose-artist-button");
 
-const backToArtistsButton =
-  document.getElementById("back-to-artists-button");
 
-const backToAlbumsButton =
-  document.getElementById("back-to-albums-button");
+/* ---------------------------------------------------------
+   GAME STATE
+--------------------------------------------------------- */
 
+let currentArtist = null;
+let currentAlbum = null;
 
-/* =========================================================
-   INITIAL SCREEN
-========================================================= */
+let correctOrder = [];
+let tracks = [];
 
-showScreen(artistScreen);
-
-albumScreen.style.display = "none";
-versionScreen.style.display = "none";
-gameScreen.style.display = "none";
-
-scoreElement.textContent = "";
-
-playAgainButton.style.display = "none";
-chooseAlbumButton.style.display = "none";
-chooseArtistButton.style.display = "none";
+let draggedElement = null;
 
 
-/* =========================================================
-   HELPERS
-========================================================= */
+/* ---------------------------------------------------------
+   SCREEN MANAGEMENT
+--------------------------------------------------------- */
 
 function showScreen(screen) {
   artistScreen.style.display = "none";
   albumScreen.style.display = "none";
-  versionScreen.style.display = "none";
   gameScreen.style.display = "none";
 
   screen.style.display = "block";
 }
 
 
-function setStatus(element, message) {
-  element.textContent = message || "";
-}
+/* ---------------------------------------------------------
+   INITIAL STATE
+--------------------------------------------------------- */
+
+showScreen(artistScreen);
+
+gameVersion.textContent = "";
+
+scoreElement.textContent = "";
+
+artistSearch.focus();
 
 
-function clearElement(element) {
-  element.innerHTML = "";
-}
-
-
-function escapeHtml(value) {
-  return String(value || "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-}
-
-
-function formatYear(date) {
-  if (!date) {
-    return "";
-  }
-
-  return String(date).slice(0, 4);
-}
-
-
-function formatDate(date) {
-  if (!date) {
-    return "";
-  }
-
-  const parts = String(date).split("-");
-
-  if (parts.length === 1) {
-    return parts[0];
-  }
-
-  if (parts.length === 2) {
-    return `${parts[1]}/${parts[0]}`;
-  }
-
-  return `${parts[1]}/${parts[2]}/${parts[0]}`;
-}
-
-
-function formatCountry(country) {
-  if (!country) {
-    return "";
-  }
-
-  return country === "XW" ? "Worldwide" : country;
-}
-
-
-function shuffle(array) {
-  const result = [...array];
-
-  for (let i = result.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-
-    [result[i], result[j]] = [result[j], result[i]];
-  }
-
-  return result;
-}
-
-
-async function apiRequest(path) {
-  const response = await fetch(
-    `${API_BASE_URL}${path}`,
-    {
-      method: "GET",
-      headers: {
-        "Accept": "application/json"
-      }
-    }
-  );
-
-  let data = null;
-
-  try {
-    data = await response.json();
-  } catch {
-    throw new Error("The server returned an invalid response.");
-  }
-
-  if (!response.ok) {
-    throw new Error(
-      data && data.error
-        ? data.error
-        : "Something went wrong."
-    );
-  }
-
-  return data;
-}
-
-
-/* =========================================================
+/* ---------------------------------------------------------
    ARTIST SEARCH
-========================================================= */
+--------------------------------------------------------- */
 
 artistSearchButton.addEventListener(
   "click",
-  searchArtists
+  searchForArtist
 );
 
-
-artistSearch.addEventListener(
-  "keydown",
-  event => {
-    if (event.key === "Enter") {
-      searchArtists();
-    }
+artistSearch.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    searchForArtist();
   }
-);
+});
 
 
-async function searchArtists() {
+async function searchForArtist() {
   const query = artistSearch.value.trim();
 
   if (!query) {
-    setStatus(
-      artistStatus,
-      "Enter an artist name."
-    );
+    artistStatus.textContent =
+      "Enter an artist name.";
 
     return;
   }
 
   artistSearchButton.disabled = true;
 
-  clearElement(artistList);
+  artistStatus.textContent =
+    "Searching...";
 
-  setStatus(
-    artistStatus,
-    "Searching..."
-  );
+  artistList.innerHTML = "";
 
   try {
-    const data = await apiRequest(
-      `/search-artists?query=${encodeURIComponent(query)}`
+    const response = await fetch(
+      `${API_BASE_URL}/search-artists?query=${encodeURIComponent(query)}`
     );
 
-    const artists = Array.isArray(data.artists)
-      ? data.artists
-      : [];
+    if (!response.ok) {
+      throw new Error("Artist search failed.");
+    }
 
-    if (!artists.length) {
-      setStatus(
-        artistStatus,
-        "No artists found."
-      );
+    const data = await response.json();
+
+    artistList.innerHTML = "";
+
+    if (!data.artists || data.artists.length === 0) {
+      artistStatus.textContent =
+        "No artists found.";
 
       return;
     }
 
-    setStatus(
-      artistStatus,
-      ""
-    );
+    artistStatus.textContent =
+      "Choose an artist:";
 
-    renderArtists(artists);
+    data.artists.forEach((artist) => {
+      const button =
+        document.createElement("button");
 
+      button.className =
+        "selection-button";
+
+      button.textContent =
+        artist.disambiguation
+          ? `${artist.name} — ${artist.disambiguation}`
+          : artist.name;
+
+      button.addEventListener("click", () => {
+        selectArtist(artist);
+      });
+
+      artistList.appendChild(button);
+    });
   } catch (error) {
     console.error(error);
 
-    setStatus(
-      artistStatus,
-      error.message || "Search failed."
-    );
-
+    artistStatus.textContent =
+      "Something went wrong. Try again.";
   } finally {
     artistSearchButton.disabled = false;
   }
 }
 
 
-function renderArtists(artists) {
-  clearElement(artistList);
-
-  artists.forEach(artist => {
-
-    const button = document.createElement("button");
-
-    button.className = "selection-button";
-
-    const title = document.createElement("span");
-
-    title.className = "selection-title";
-
-    title.textContent = artist.name || "Unknown artist";
-
-
-    const details = [];
-
-    if (artist.disambiguation) {
-      details.push(artist.disambiguation);
-    }
-
-    if (artist.country) {
-      details.push(artist.country);
-    }
-
-    if (details.length) {
-      const subtitle = document.createElement("span");
-
-      subtitle.className = "selection-subtitle";
-
-      subtitle.textContent = details.join(" • ");
-
-      button.appendChild(title);
-
-      button.appendChild(subtitle);
-
-    } else {
-      button.appendChild(title);
-    }
-
-
-    button.addEventListener(
-      "click",
-      () => selectArtist(artist)
-    );
-
-    artistList.appendChild(button);
-  });
-}
-
-
-/* =========================================================
-   ARTIST → ALBUMS
-========================================================= */
+/* ---------------------------------------------------------
+   SELECT ARTIST
+--------------------------------------------------------- */
 
 async function selectArtist(artist) {
-  selectedArtist = artist;
+  currentArtist = artist;
 
-  selectedAlbum = null;
-  selectedVersion = null;
+  selectedArtist.textContent =
+    artist.name;
 
-  selectedArtistElement.textContent =
-    artist.name || "";
+  albumStatus.textContent =
+    "Loading albums...";
 
-  clearElement(albumList);
-
-  setStatus(
-    albumStatus,
-    "Loading albums..."
-  );
+  albumList.innerHTML = "";
 
   showScreen(albumScreen);
 
   try {
-    const data = await apiRequest(
-      `/artist/${encodeURIComponent(artist.id)}/albums`
+    const response = await fetch(
+      `${API_BASE_URL}/artist/${artist.id}/albums`
     );
 
-    const albums = Array.isArray(data.albums)
-      ? data.albums
-      : [];
+    if (!response.ok) {
+      throw new Error("Could not load albums.");
+    }
 
-    if (!albums.length) {
-      setStatus(
-        albumStatus,
-        "No albums found for this artist."
-      );
+    const data = await response.json();
+
+    albumList.innerHTML = "";
+
+    if (!data.albums || data.albums.length === 0) {
+      albumStatus.textContent =
+        "No standard albums found for this artist.";
 
       return;
     }
 
-    setStatus(
-      albumStatus,
-      ""
-    );
+    albumStatus.textContent =
+      "Choose an album:";
 
-    renderAlbums(albums);
+    data.albums.forEach((album) => {
+      const button =
+        document.createElement("button");
 
+      button.className =
+        "selection-button";
+
+      const year =
+        album.year
+          ? ` (${album.year})`
+          : "";
+
+      button.textContent =
+        `${album.title}${year}`;
+
+      button.addEventListener("click", () => {
+        selectAlbum(album);
+      });
+
+      albumList.appendChild(button);
+    });
   } catch (error) {
     console.error(error);
 
-    setStatus(
-      albumStatus,
-      error.message || "Could not load albums."
-    );
+    albumStatus.textContent =
+      "Something went wrong loading the albums.";
   }
 }
 
 
-function renderAlbums(albums) {
-  clearElement(albumList);
-
-  albums.forEach(album => {
-
-    const button = document.createElement("button");
-
-    button.className = "selection-button";
-
-
-    const title = document.createElement("span");
-
-    title.className = "selection-title";
-
-    title.textContent =
-      album.title || "Unknown album";
-
-
-    if (album.firstReleaseDate) {
-
-      const year = document.createElement("span");
-
-      year.className = "selection-year";
-
-      year.textContent =
-        formatYear(album.firstReleaseDate);
-
-      title.appendChild(year);
-    }
-
-
-    const details = [];
-
-    if (album.secondaryTypes &&
-        album.secondaryTypes.length) {
-
-      details.push(
-        album.secondaryTypes.join(", ")
-      );
-    }
-
-    if (album.disambiguation) {
-      details.push(
-        album.disambiguation
-      );
-    }
-
-
-    button.appendChild(title);
-
-
-    if (details.length) {
-
-      const subtitle = document.createElement("span");
-
-      subtitle.className = "selection-subtitle";
-
-      subtitle.textContent =
-        details.join(" • ");
-
-      button.appendChild(subtitle);
-    }
-
-
-    button.addEventListener(
-      "click",
-      () => selectAlbum(album)
-    );
-
-    albumList.appendChild(button);
-  });
-}
-
-
-/* =========================================================
-   ALBUM → VERSIONS
-========================================================= */
+/* ---------------------------------------------------------
+   SELECT ALBUM
+--------------------------------------------------------- */
 
 async function selectAlbum(album) {
-  selectedAlbum = album;
-  selectedVersion = null;
+  currentAlbum = album;
 
-  selectedAlbumElement.textContent =
-    album.title || "";
+  gameAlbum.textContent =
+    album.title;
 
-  versionArtistElement.textContent =
-    selectedArtist
-      ? selectedArtist.name || ""
-      : "";
+  gameArtist.textContent =
+    currentArtist.name;
 
-  clearElement(versionList);
+  /*
+   * There is intentionally no version selection anymore.
+   *
+   * First find the standard release behind the release group.
+   */
+  gameStatus.textContent =
+    "Loading album...";
 
-  setStatus(
-    versionStatus,
-    "Loading versions..."
-  );
-
-  showScreen(versionScreen);
-
-  try {
-    const data = await apiRequest(
-      `/release-group/${encodeURIComponent(album.id)}/releases`
-    );
-
-    const versions = Array.isArray(data.versions)
-      ? data.versions
-      : [];
-
-    if (!versions.length) {
-      setStatus(
-        versionStatus,
-        "No usable version of this album was found."
-      );
-
-      return;
-    }
-
-    setStatus(
-      versionStatus,
-      ""
-    );
-
-    renderVersions(versions);
-
-  } catch (error) {
-    console.error(error);
-
-    setStatus(
-      versionStatus,
-      error.message ||
-      "Could not load album versions."
-    );
-  }
-}
-
-
-function renderVersions(versions) {
-  clearElement(versionList);
-
-  versions.forEach(version => {
-
-    const button = document.createElement("button");
-
-    button.className = "selection-button";
-
-
-    const title = document.createElement("span");
-
-    title.className = "selection-title";
-
-    title.textContent =
-      version.title || selectedAlbum.title;
-
-
-    const details = [];
-
-
-    if (version.date) {
-      details.push(
-        formatDate(version.date)
-      );
-    }
-
-
-    if (version.country) {
-      details.push(
-        formatCountry(version.country)
-      );
-    }
-
-
-    if (version.formats &&
-        version.formats.length) {
-
-      details.push(
-        version.formats.join(", ")
-      );
-    }
-
-
-    if (version.trackCount) {
-      details.push(
-        `${version.trackCount} tracks`
-      );
-    }
-
-
-    if (version.disambiguation) {
-      details.push(
-        version.disambiguation
-      );
-    }
-
-
-    button.appendChild(title);
-
-
-    if (details.length) {
-
-      const subtitle = document.createElement("span");
-
-      subtitle.className = "selection-subtitle";
-
-      subtitle.textContent =
-        details.join(" • ");
-
-      button.appendChild(subtitle);
-    }
-
-
-    button.addEventListener(
-      "click",
-      () => selectVersion(version)
-    );
-
-    versionList.appendChild(button);
-  });
-}
-
-
-/* =========================================================
-   VERSION → GAME
-========================================================= */
-
-async function selectVersion(version) {
-  selectedVersion = version;
-
-  clearElement(trackList);
+  trackList.innerHTML = "";
 
   scoreElement.textContent = "";
 
-  gameStatus.textContent = "";
-
   submitButton.disabled = true;
-
-  playAgainButton.style.display = "none";
-
-  chooseAlbumButton.style.display = "none";
-
-  chooseArtistButton.style.display = "none";
-
-  gameAlbumElement.textContent =
-    selectedAlbum
-      ? selectedAlbum.title || ""
-      : "";
-
-  gameArtistElement.textContent =
-    selectedArtist
-      ? selectedArtist.name || ""
-      : "";
-
-  gameVersionElement.textContent =
-    buildVersionLabel(version);
-
-  setStatus(
-    gameStatus,
-    "Loading tracks..."
-  );
 
   showScreen(gameScreen);
 
   try {
-    const data = await apiRequest(
-      `/release/${encodeURIComponent(version.id)}/tracks`
+    const releaseResponse = await fetch(
+      `${API_BASE_URL}/release-group/${album.id}/standard-release`
     );
 
-    const loadedTracks = Array.isArray(data.tracks)
-      ? data.tracks
-      : [];
-
-    if (loadedTracks.length < 2) {
-      setStatus(
-        gameStatus,
-        "This version does not have enough tracks to play."
+    if (!releaseResponse.ok) {
+      throw new Error(
+        "Could not find the standard album release."
       );
-
-      return;
     }
 
-    correctOrder = loadedTracks.map(
-      track => track.title
+    const releaseData =
+      await releaseResponse.json();
+
+    const releaseId =
+      releaseData.release?.id;
+
+    if (!releaseId) {
+      throw new Error(
+        "No standard release was found."
+      );
+    }
+
+    /*
+     * Now get the actual tracklist.
+     */
+    const tracksResponse = await fetch(
+      `${API_BASE_URL}/release/${releaseId}/tracks`
     );
 
-    tracks = shuffle(loadedTracks);
+    if (!tracksResponse.ok) {
+      throw new Error(
+        "Could not load the tracklist."
+      );
+    }
 
-    renderTracks();
+    const trackData =
+      await tracksResponse.json();
 
-    setStatus(
-      gameStatus,
-      ""
-    );
+    if (
+      !trackData.tracks ||
+      trackData.tracks.length === 0
+    ) {
+      throw new Error(
+        "This album has no usable tracks."
+      );
+    }
 
-    submitButton.disabled = false;
+    correctOrder =
+      trackData.tracks.map((track) => ({
+        title: track.title,
+      }));
 
+    startGame();
   } catch (error) {
     console.error(error);
 
-    setStatus(
-      gameStatus,
-      error.message ||
-      "Could not load the tracklist."
-    );
+    gameStatus.textContent =
+      "Could not load this album. Try another album.";
   }
 }
 
 
-function buildVersionLabel(version) {
-  const parts = [];
+/* ---------------------------------------------------------
+   START GAME
+--------------------------------------------------------- */
 
-  if (version.title &&
-      selectedAlbum &&
-      version.title !== selectedAlbum.title) {
+function startGame() {
+  gameStatus.textContent =
+    "Put the tracks in the correct order:";
 
-    parts.push(version.title);
-  }
+  scoreElement.textContent = "";
 
-  if (version.date) {
-    parts.push(formatDate(version.date));
-  }
+  submitButton.disabled = false;
 
-  if (version.country) {
-    parts.push(formatCountry(version.country));
-  }
+  /*
+   * Make a fresh copy every time.
+   */
+  tracks =
+    correctOrder.map((track) => ({
+      title: track.title,
+    }));
 
-  if (version.formats &&
-      version.formats.length) {
+  shuffle(tracks);
 
-    parts.push(version.formats.join(", "));
-  }
-
-  return parts.join(" • ");
+  renderTracks();
 }
 
 
-/* =========================================================
-   TRACK RENDERING
-========================================================= */
+/* ---------------------------------------------------------
+   SHUFFLE
+--------------------------------------------------------- */
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j =
+      Math.floor(Math.random() * (i + 1));
+
+    [array[i], array[j]] =
+      [array[j], array[i]];
+  }
+}
+
+
+/* ---------------------------------------------------------
+   RENDER TRACKS
+--------------------------------------------------------- */
 
 function renderTracks() {
-  clearElement(trackList);
+  trackList.innerHTML = "";
 
-  tracks.forEach(
-    (track, index) => {
+  tracks.forEach((track, index) => {
+    const trackElement =
+      document.createElement("div");
 
-      const trackElement =
-        document.createElement("div");
+    trackElement.className =
+      "track";
 
-      trackElement.className = "track";
+    trackElement.dataset.index =
+      index;
 
-      trackElement.dataset.index = index;
+    const number =
+      document.createElement("div");
 
+    number.className =
+      "track-number";
 
-      const number =
-        document.createElement("div");
+    number.textContent =
+      index + 1;
 
-      number.className = "track-number";
+    const name =
+      document.createElement("div");
 
-      number.textContent =
-        `${index + 1}.`;
+    name.className =
+      "track-name";
 
+    name.textContent =
+      track.title;
 
-      const name =
-        document.createElement("div");
+    const handle =
+      document.createElement("div");
 
-      name.className = "track-name";
+    handle.className =
+      "drag-handle";
 
-      name.textContent =
-        track.title || "Unknown track";
+    handle.textContent =
+      "☰";
 
+    /*
+     * Pointer events work with both mouse and touch.
+     */
+    handle.addEventListener(
+      "pointerdown",
+      startDragging
+    );
 
-      const handle =
-        document.createElement("div");
+    trackElement.appendChild(number);
+    trackElement.appendChild(name);
+    trackElement.appendChild(handle);
 
-      handle.className = "drag-handle";
-
-      handle.textContent = "☰";
-
-      handle.setAttribute(
-        "aria-label",
-        "Drag track"
-      );
-
-
-      trackElement.appendChild(number);
-
-      trackElement.appendChild(name);
-
-      trackElement.appendChild(handle);
-
-
-      setupDragHandle(
-        trackElement,
-        handle
-      );
-
-
-      trackList.appendChild(trackElement);
-    }
-  );
+    trackList.appendChild(trackElement);
+  });
 }
 
 
-/* =========================================================
-   POINTER DRAGGING
-   Works with mouse + iPhone/iPad touch.
-========================================================= */
+/* ---------------------------------------------------------
+   DRAGGING
+--------------------------------------------------------- */
 
-function setupDragHandle(
-  trackElement,
-  handle
-) {
+function startDragging(event) {
+  event.preventDefault();
 
-  handle.addEventListener(
-    "pointerdown",
-    event => {
+  draggedElement =
+    event.currentTarget.parentElement;
 
-      if (hasSubmitted) {
-        return;
-      }
-
-      event.preventDefault();
-
-      draggedTrack = trackElement;
-
-      dragging = true;
-
-      trackElement.classList.add(
-        "dragging"
-      );
-
-      try {
-        handle.setPointerCapture(
-          event.pointerId
-        );
-      } catch {
-        // Ignore unsupported pointer capture.
-      }
-    }
+  draggedElement.classList.add(
+    "dragging"
   );
 
-
-  handle.addEventListener(
+  document.addEventListener(
     "pointermove",
-    event => {
-
-      if (!dragging ||
-          !draggedTrack) {
-
-        return;
-      }
-
-      event.preventDefault();
-
-      const elements =
-        [...trackList.querySelectorAll(".track:not(.dragging)")];
-
-      let closest = null;
-
-      let closestDistance =
-        Number.POSITIVE_INFINITY;
-
-
-      elements.forEach(element => {
-
-        const rect =
-          element.getBoundingClientRect();
-
-        const center =
-          rect.top + rect.height / 2;
-
-        const distance =
-          Math.abs(event.clientY - center);
-
-        if (distance < closestDistance) {
-          closestDistance = distance;
-
-          closest = element;
-        }
-      });
-
-
-      if (!closest) {
-        return;
-      }
-
-
-      const rect =
-        closest.getBoundingClientRect();
-
-      if (event.clientY < rect.top + rect.height / 2) {
-
-        trackList.insertBefore(
-          draggedTrack,
-          closest
-        );
-
-      } else {
-
-        trackList.insertBefore(
-          draggedTrack,
-          closest.nextSibling
-        );
-      }
-    }
+    moveDragging
   );
 
-
-  handle.addEventListener(
+  document.addEventListener(
     "pointerup",
-    finishDrag
-  );
-
-
-  handle.addEventListener(
-    "pointercancel",
-    finishDrag
+    stopDragging,
+    { once: true }
   );
 }
 
 
-function finishDrag(event) {
-
-  if (!dragging) {
+function moveDragging(event) {
+  if (!draggedElement) {
     return;
   }
 
-  dragging = false;
+  const elements =
+    [...trackList.querySelectorAll(".track:not(.dragging)")];
 
-  if (draggedTrack) {
+  const afterElement =
+    getDragAfterElement(
+      trackList,
+      event.clientY
+    );
 
-    draggedTrack.classList.remove(
-      "dragging"
+  if (afterElement == null) {
+    trackList.appendChild(
+      draggedElement
+    );
+  } else {
+    trackList.insertBefore(
+      draggedElement,
+      afterElement
     );
   }
-
-  draggedTrack = null;
 }
 
 
-/* =========================================================
-   SUBMIT / SCORING
-========================================================= */
+function stopDragging() {
+  if (!draggedElement) {
+    return;
+  }
+
+  draggedElement.classList.remove(
+    "dragging"
+  );
+
+  document.removeEventListener(
+    "pointermove",
+    moveDragging
+  );
+
+  updateTrackArrayFromDOM();
+
+  draggedElement = null;
+}
+
+
+function getDragAfterElement(
+  container,
+  y
+) {
+  const elements =
+    [
+      ...container.querySelectorAll(
+        ".track:not(.dragging)"
+      ),
+    ];
+
+  return elements.reduce(
+    (closest, child) => {
+      const box =
+        child.getBoundingClientRect();
+
+      const offset =
+        y -
+        box.top -
+        box.height / 2;
+
+      if (
+        offset < 0 &&
+        offset > closest.offset
+      ) {
+        return {
+          offset,
+          element: child,
+        };
+      }
+
+      return closest;
+    },
+    {
+      offset: Number.NEGATIVE_INFINITY,
+    }
+  ).element;
+}
+
+
+/* ---------------------------------------------------------
+   UPDATE ARRAY AFTER DRAGGING
+--------------------------------------------------------- */
+
+function updateTrackArrayFromDOM() {
+  const elements =
+    [...trackList.querySelectorAll(".track")];
+
+  tracks =
+    elements.map((element) => ({
+      title:
+        element.querySelector(
+          ".track-name"
+        ).textContent,
+    }));
+
+  /*
+   * Update visible position numbers.
+   */
+  elements.forEach((element, index) => {
+    element
+      .querySelector(".track-number")
+      .textContent = index + 1;
+  });
+}
+
+
+/* ---------------------------------------------------------
+   SUBMIT
+--------------------------------------------------------- */
 
 submitButton.addEventListener(
   "click",
@@ -962,187 +603,119 @@ submitButton.addEventListener(
 
 
 function submitGame() {
-
-  if (hasSubmitted) {
-    return;
-  }
-
-  const elements =
-    [...trackList.querySelectorAll(".track")];
-
-  if (!elements.length) {
-    return;
-  }
-
-  hasSubmitted = true;
-
-  submitButton.disabled = true;
-
+  updateTrackArrayFromDOM();
 
   let score = 0;
 
+  trackList.innerHTML = "";
 
-  elements.forEach(
-    (element, index) => {
+  tracks.forEach((track, index) => {
+    const correctTrack =
+      correctOrder[index];
 
-      const title =
-        element.querySelector(".track-name")
-          .textContent;
+    const trackElement =
+      document.createElement("div");
 
-      const correctTitle =
-        correctOrder[index];
+    trackElement.className =
+      "track";
 
+    const number =
+      document.createElement("div");
 
-      if (title === correctTitle) {
+    number.className =
+      "track-number";
 
-        score++;
+    number.textContent =
+      index + 1;
 
-        element.classList.add(
-          "track-correct"
-        );
+    const name =
+      document.createElement("div");
 
-      } else {
+    name.className =
+      "track-name";
 
-        element.classList.add(
-          "track-incorrect"
-        );
-      }
+    name.textContent =
+      track.title;
+
+    const result =
+      document.createElement("div");
+
+    result.className =
+      "result";
+
+    if (
+      track.title === correctTrack.title
+    ) {
+      score++;
+
+      trackElement.classList.add(
+        "track-correct"
+      );
+
+      result.classList.add(
+        "correct"
+      );
+
+      result.textContent =
+        "✓";
+    } else {
+      trackElement.classList.add(
+        "track-incorrect"
+      );
+
+      result.classList.add(
+        "incorrect"
+      );
+
+      const correctPosition =
+        correctOrder.findIndex(
+          (item) =>
+            item.title === track.title
+        ) + 1;
+
+      result.textContent =
+        `✗ #${correctPosition}`;
     }
-  );
 
+    trackElement.appendChild(number);
+    trackElement.appendChild(name);
+    trackElement.appendChild(result);
+
+    trackList.appendChild(trackElement);
+  });
 
   scoreElement.textContent =
     `Score: ${score} / ${correctOrder.length}`;
 
+  gameStatus.textContent =
+    "Results:";
 
-  gameStatus.innerHTML =
-    `<div class="result ${
-      score === correctOrder.length
-        ? "correct"
-        : "incorrect"
-    }">${
-      score === correctOrder.length
-        ? "Perfect!"
-        : "Check the correct positions below."
-    }</div>`;
-
-
-  elements.forEach(
-    (element, index) => {
-
-      if (
-        element.classList.contains(
-          "track-incorrect"
-        )
-      ) {
-
-        const correctPosition =
-          correctOrder.indexOf(
-            element.querySelector(".track-name")
-              .textContent
-          ) + 1;
-
-
-        const result =
-          document.createElement("div");
-
-        result.className =
-          "result incorrect";
-
-        result.textContent =
-          `Correct position: #${correctPosition}`;
-
-
-        element.appendChild(result);
-      }
-    }
-  );
-
-
-  playAgainButton.style.display =
-    "block";
-
-  chooseAlbumButton.style.display =
-    "block";
-
-  chooseArtistButton.style.display =
-    "block";
+  submitButton.disabled = true;
 }
 
 
-/* =========================================================
+/* ---------------------------------------------------------
    PLAY AGAIN
-========================================================= */
+--------------------------------------------------------- */
 
 playAgainButton.addEventListener(
   "click",
   () => {
-
-    hasSubmitted = false;
-
-    scoreElement.textContent = "";
-
-    gameStatus.textContent = "";
-
-    submitButton.disabled = false;
-
-    playAgainButton.style.display =
-      "none";
-
-    chooseAlbumButton.style.display =
-      "none";
-
-    chooseArtistButton.style.display =
-      "none";
-
-
-    tracks = shuffle(
-      correctOrder.map(
-        title => ({ title })
-      )
-    );
-
-
-    renderTracks();
+    startGame();
   }
 );
 
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* ---------------------------------------------------------
+   BACK TO ARTISTS
+--------------------------------------------------------- */
 
-chooseAlbumButton.addEventListener(
+backToArtistsButton.addEventListener(
   "click",
   () => {
+    artistList.innerHTML = "";
 
-    if (!selectedArtist) {
-      return;
-    }
-
-    selectArtist(selectedArtist);
-  }
-);
-
-
-chooseArtistButton.addEventListener(
-  "click",
-  () => {
-
-    selectedArtist = null;
-
-    selectedAlbum = null;
-
-    selectedVersion = null;
-
-    artistSearch.value = "";
-
-    clearElement(artistList);
-
-    setStatus(
-      artistStatus,
-      ""
-    );
+    artistStatus.textContent = "";
 
     showScreen(artistScreen);
 
@@ -1151,38 +724,92 @@ chooseArtistButton.addEventListener(
 );
 
 
-backToArtistsButton.addEventListener(
+/* ---------------------------------------------------------
+   CHOOSE ANOTHER ALBUM
+--------------------------------------------------------- */
+
+chooseAlbumButton.addEventListener(
   "click",
-  () => {
+  async () => {
+    if (!currentArtist) {
+      showScreen(artistScreen);
+      return;
+    }
 
-    selectedArtist = null;
+    albumStatus.textContent =
+      "Loading albums...";
 
-    selectedAlbum = null;
+    albumList.innerHTML = "";
 
-    selectedVersion = null;
+    showScreen(albumScreen);
 
-    clearElement(albumList);
+    try {
+      const response = await fetch(
+        `${API_BASE_URL}/artist/${currentArtist.id}/albums`
+      );
 
-    setStatus(
-      albumStatus,
-      ""
-    );
+      if (!response.ok) {
+        throw new Error();
+      }
 
-    showScreen(artistScreen);
+      const data =
+        await response.json();
+
+      albumList.innerHTML = "";
+
+      data.albums.forEach((album) => {
+        const button =
+          document.createElement("button");
+
+        button.className =
+          "selection-button";
+
+        const year =
+          album.year
+            ? ` (${album.year})`
+            : "";
+
+        button.textContent =
+          `${album.title}${year}`;
+
+        button.addEventListener(
+          "click",
+          () => selectAlbum(album)
+        );
+
+        albumList.appendChild(button);
+      });
+
+      albumStatus.textContent =
+        "Choose an album:";
+    } catch (error) {
+      console.error(error);
+
+      albumStatus.textContent =
+        "Could not load the albums.";
+    }
   }
 );
 
 
-backToAlbumsButton.addEventListener(
+/* ---------------------------------------------------------
+   CHOOSE ANOTHER ARTIST
+--------------------------------------------------------- */
+
+chooseArtistButton.addEventListener(
   "click",
   () => {
+    currentArtist = null;
+    currentAlbum = null;
 
-    if (!selectedArtist) {
-      showScreen(artistScreen);
+    artistSearch.value = "";
 
-      return;
-    }
+    artistList.innerHTML = "";
 
-    selectArtist(selectedArtist);
+    artistStatus.textContent = "";
+
+    showScreen(artistScreen);
+
+    artistSearch.focus();
   }
 );
