@@ -113,4 +113,18 @@ h2 {
   font-weight: bold;
   min-width: 45px;
   text-align: right;
+  color: #888;
+  font-size: 16px;
+}
+
+.track-name {
+  font-weight: 500;
+}
+
+.drag-handle {
+  color: #555;
+}
+
+.track:active {
+  transform: scale(0.99);
 }
