@@ -1,3 +1,6 @@
+const albumName = "Graduation";
+const artistName = "Kanye West";
+
 const tracks = [
   "Good Morning",
   "Champion",
@@ -30,10 +33,15 @@ const correctOrder = [
   "Big Brother"
 ];
 
+const albumNameElement = document.getElementById("album-name");
+const artistNameElement = document.getElementById("artist-name");
 const trackList = document.getElementById("track-list");
 const submitButton = document.getElementById("submit-button");
 const score = document.getElementById("score");
 const playAgainButton = document.getElementById("play-again-button");
+
+albumNameElement.textContent = albumName;
+artistNameElement.textContent = artistName;
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
