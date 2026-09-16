@@ -16,13 +16,46 @@ function shuffle(array) {
   }
 }
 
+function displayTracks() {
+  trackList.innerHTML = "";
+
+  tracks.forEach(function(track) {
+    const trackElement = document.createElement("div");
+
+    trackElement.classList.add("track");
+    trackElement.textContent = track;
+    trackElement.draggable = true;
+
+    trackElement.addEventListener("dragstart", function() {
+      trackElement.classList.add("dragging");
+    });
+
+    trackElement.addEventListener("dragend", function() {
+      trackElement.classList.remove("dragging");
+    });
+
+    trackList.appendChild(trackElement);
+  });
+}
+
 shuffle(tracks);
+displayTracks();
 
-tracks.forEach(function(track) {
-  const trackElement = document.createElement("div");
+trackList.addEventListener("dragover", function(event) {
+  event.preventDefault();
 
-  trackElement.classList.add("track");
-  trackElement.textContent = track;
+  const draggingTrack = document.querySelector(".dragging");
 
-  trackList.appendChild(trackElement);
+  const tracks = [...trackList.querySelectorAll(".track:not(.dragging)")];
+
+  const nextTrack = tracks.find(function(track) {
+    const box = track.getBoundingClientRect();
+    return event.clientY < box.top + box.height / 2;
+  });
+
+  if (nextTrack) {
+    trackList.insertBefore(draggingTrack, nextTrack);
+  } else {
+    trackList.appendChild(draggingTrack);
+  }
 });
