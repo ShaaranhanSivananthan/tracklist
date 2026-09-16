@@ -18,103 +18,149 @@ let draggedTrack = null;
 
 /*
   CACHE
-
-  These prevent us from repeatedly asking
-  the API for the same information.
 */
 
-const artistCache = new Map();
-const albumCache = new Map();
-const versionCache = new Map();
-const trackCache = new Map();
+const artistCache =
+  new Map();
+
+const albumCache =
+  new Map();
+
+const versionCache =
+  new Map();
+
+const trackCache =
+  new Map();
 
 
 /*
-  SCREEN ELEMENTS
+  SCREENS
 */
 
 const artistScreen =
-  document.getElementById("artist-screen");
+  document.getElementById(
+    "artist-screen"
+  );
 
 const albumScreen =
-  document.getElementById("album-screen");
+  document.getElementById(
+    "album-screen"
+  );
 
 const versionScreen =
-  document.getElementById("version-screen");
+  document.getElementById(
+    "version-screen"
+  );
 
 const gameScreen =
-  document.getElementById("game-screen");
+  document.getElementById(
+    "game-screen"
+  );
 
 
 /*
-  ARTIST ELEMENTS
+  ARTIST
 */
 
 const artistSearch =
-  document.getElementById("artist-search");
+  document.getElementById(
+    "artist-search"
+  );
 
 const artistSearchButton =
-  document.getElementById("artist-search-button");
+  document.getElementById(
+    "artist-search-button"
+  );
 
 const artistStatus =
-  document.getElementById("artist-status");
+  document.getElementById(
+    "artist-status"
+  );
 
 const artistList =
-  document.getElementById("artist-list");
+  document.getElementById(
+    "artist-list"
+  );
 
 
 /*
-  ALBUM ELEMENTS
+  ALBUM
 */
 
 const selectedArtist =
-  document.getElementById("selected-artist");
+  document.getElementById(
+    "selected-artist"
+  );
 
 const albumStatus =
-  document.getElementById("album-status");
+  document.getElementById(
+    "album-status"
+  );
 
 const albumList =
-  document.getElementById("album-list");
+  document.getElementById(
+    "album-list"
+  );
 
 
 /*
-  VERSION ELEMENTS
+  VERSION
 */
 
 const selectedAlbum =
-  document.getElementById("selected-album");
+  document.getElementById(
+    "selected-album"
+  );
 
 const versionArtist =
-  document.getElementById("version-artist");
+  document.getElementById(
+    "version-artist"
+  );
 
 const versionStatus =
-  document.getElementById("version-status");
+  document.getElementById(
+    "version-status"
+  );
 
 const versionList =
-  document.getElementById("version-list");
+  document.getElementById(
+    "version-list"
+  );
 
 
 /*
-  GAME ELEMENTS
+  GAME
 */
 
 const gameAlbum =
-  document.getElementById("game-album");
+  document.getElementById(
+    "game-album"
+  );
 
 const gameArtist =
-  document.getElementById("game-artist");
+  document.getElementById(
+    "game-artist"
+  );
 
 const gameVersion =
-  document.getElementById("game-version");
+  document.getElementById(
+    "game-version"
+  );
 
 const gameStatus =
-  document.getElementById("game-status");
+  document.getElementById(
+    "game-status"
+  );
 
 const trackList =
-  document.getElementById("track-list");
+  document.getElementById(
+    "track-list"
+  );
 
 const score =
-  document.getElementById("score");
+  document.getElementById(
+    "score"
+  );
 
 
 /*
@@ -122,93 +168,99 @@ const score =
 */
 
 const submitButton =
-  document.getElementById("submit-button");
+  document.getElementById(
+    "submit-button"
+  );
 
 const playAgainButton =
-  document.getElementById("play-again-button");
+  document.getElementById(
+    "play-again-button"
+  );
 
 const chooseAlbumButton =
-  document.getElementById("choose-album-button");
+  document.getElementById(
+    "choose-album-button"
+  );
 
 const chooseArtistButton =
-  document.getElementById("choose-artist-button");
+  document.getElementById(
+    "choose-artist-button"
+  );
 
 const backToArtistsButton =
-  document.getElementById("back-to-artists-button");
+  document.getElementById(
+    "back-to-artists-button"
+  );
 
 const backToAlbumsButton =
-  document.getElementById("back-to-albums-button");
+  document.getElementById(
+    "back-to-albums-button"
+  );
 
 
 /*
   SCREEN MANAGEMENT
 */
 
-function showScreen(screen) {
+function showScreen(
+  screen
+) {
 
-  artistScreen.style.display = "none";
+  artistScreen.style.display =
+    "none";
 
-  albumScreen.style.display = "none";
+  albumScreen.style.display =
+    "none";
 
-  versionScreen.style.display = "none";
+  versionScreen.style.display =
+    "none";
 
-  gameScreen.style.display = "none";
+  gameScreen.style.display =
+    "none";
 
-  screen.style.display = "block";
+  screen.style.display =
+    "block";
 }
 
 
 /*
-  API HELPER
+  API
 */
 
-async function apiRequest(path) {
+async function apiRequest(
+  path
+) {
 
   if (
     API_BASE_URL ===
     "PASTE-YOUR-CLOUDFLARE-WORKER-URL-HERE"
   ) {
+
     throw new Error(
-      "Your Cloudflare Worker URL has not been added to script.js."
+      "Add your Cloudflare Worker URL to script.js."
     );
+
   }
+
 
   const response =
     await fetch(
-      API_BASE_URL + path
+      API_BASE_URL +
+      path
     );
+
 
   if (!response.ok) {
 
     throw new Error(
-      "The music service returned an error."
+      "API request failed."
     );
+
   }
 
+
   return await response.json();
-}
 
-
-/*
-  SMALL DELAY
-
-  MusicBrainz requests should not be made
-  too rapidly.
-
-  This also makes the game more polite
-  to the API.
-*/
-
-function wait(milliseconds) {
-
-  return new Promise(function(resolve) {
-
-    setTimeout(
-      resolve,
-      milliseconds
-    );
-
-  });
 }
 
 
@@ -216,18 +268,25 @@ function wait(milliseconds) {
   SHUFFLE
 */
 
-function shuffle(array) {
+function shuffle(
+  array
+) {
 
   for (
-    let i = array.length - 1;
+    let i =
+      array.length - 1;
+
     i > 0;
+
     i--
   ) {
 
     const j =
       Math.floor(
-        Math.random() * (i + 1)
+        Math.random() *
+        (i + 1)
       );
+
 
     [
       array[i],
@@ -236,7 +295,9 @@ function shuffle(array) {
       array[j],
       array[i]
     ];
+
   }
+
 }
 
 
@@ -249,105 +310,170 @@ async function searchArtists() {
   const query =
     artistSearch.value.trim();
 
-  if (query.length < 2) {
+
+  if (
+    query.length < 2
+  ) {
 
     artistStatus.textContent =
       "Enter at least 2 characters.";
 
     return;
+
   }
 
-  artistSearchButton.disabled = true;
+
+  artistSearchButton.disabled =
+    true;
+
 
   artistStatus.textContent =
     "Searching...";
 
-  artistList.innerHTML = "";
+
+  artistList.innerHTML =
+    "";
+
 
   try {
 
     const cacheKey =
       query.toLowerCase();
 
+
     let data =
-      artistCache.get(cacheKey);
+      artistCache.get(
+        cacheKey
+      );
+
 
     if (!data) {
 
       data =
         await apiRequest(
+
           "/search-artists?query=" +
-          encodeURIComponent(query)
+          encodeURIComponent(
+            query
+          )
+
         );
+
 
       artistCache.set(
         cacheKey,
         data
       );
+
     }
+
 
     const artists =
       data.artists || [];
 
-    if (artists.length === 0) {
+
+    if (
+      artists.length === 0
+    ) {
 
       artistStatus.textContent =
-        "No artists found.";
+        "No matching artists found.";
 
       return;
+
     }
+
 
     artistStatus.textContent =
       "Choose an artist:";
 
-    displayArtists(artists);
+
+    displayArtists(
+      artists
+    );
+
 
   } catch (error) {
 
-    console.error(error);
+    console.error(
+      error
+    );
+
 
     artistStatus.textContent =
-      "Something went wrong. Please try again.";
+      "Could not search for artists.";
+
 
   } finally {
 
-    artistSearchButton.disabled = false;
+    artistSearchButton.disabled =
+      false;
+
   }
+
 }
 
 
 /*
-  DISPLAY ARTISTS
+  ARTISTS
 */
 
-function displayArtists(artists) {
+function displayArtists(
+  artists
+) {
 
-  artistList.innerHTML = "";
+  artistList.innerHTML =
+    "";
 
-  artists.forEach(function(artist) {
 
-    const button =
-      document.createElement("button");
+  artists.forEach(
+    function(artist) {
 
-    button.classList.add(
-      "selection-button"
-    );
+      const button =
+        document.createElement(
+          "button"
+        );
 
-    button.textContent =
-      artist.name;
 
-    button.addEventListener(
-      "click",
-      function() {
+      button.classList.add(
+        "selection-button"
+      );
 
-        selectArtist(artist);
+
+      button.textContent =
+        artist.name;
+
+
+      if (
+        artist.disambiguation
+      ) {
+
+        button.textContent +=
+          " — " +
+          artist.disambiguation;
 
       }
-    );
 
-    artistList.appendChild(button);
 
-  });
+      button.addEventListener(
+        "click",
+        function() {
+
+          selectArtist(
+            artist
+          );
+
+        }
+      );
+
+
+      artistList.appendChild(
+        button
+      );
+
+    }
+  );
+
 }
 
 
@@ -355,331 +481,129 @@ function displayArtists(artists) {
   SELECT ARTIST
 */
 
-async function selectArtist(artist) {
+async function selectArtist(
+  artist
+) {
 
-  currentArtist = artist;
+  currentArtist =
+    artist;
 
-  currentAlbum = null;
+  currentAlbum =
+    null;
 
-  currentVersion = null;
+  currentVersion =
+    null;
+
 
   selectedArtist.textContent =
     currentArtist.name;
 
-  albumList.innerHTML = "";
+
+  albumList.innerHTML =
+    "";
+
 
   albumStatus.textContent =
-    "Loading albums...";
+    "Loading official albums...";
 
-  showScreen(albumScreen);
+
+  showScreen(
+    albumScreen
+  );
+
 
   try {
 
     const cacheKey =
       currentArtist.id;
 
+
     let data =
-      albumCache.get(cacheKey);
+      albumCache.get(
+        cacheKey
+      );
+
 
     if (!data) {
 
       data =
         await apiRequest(
+
           "/artist/" +
           encodeURIComponent(
             currentArtist.id
           ) +
           "/albums"
+
         );
+
 
       albumCache.set(
         cacheKey,
         data
       );
 
-      await wait(1100);
     }
 
+
     displayAlbums(
-      data["release-groups"] || []
+      data[
+        "release-groups"
+      ] || []
     );
+
 
   } catch (error) {
 
-    console.error(error);
+    console.error(
+      error
+    );
+
 
     albumStatus.textContent =
       "Could not load this artist's albums.";
 
   }
+
 }
 
 
 /*
-  DISPLAY ALBUMS
+  ALBUMS
 */
 
-function displayAlbums(albums) {
+function displayAlbums(
+  albums
+) {
 
-  albumList.innerHTML = "";
-
-  /*
-    Only show albums that have a title.
-
-    We also remove duplicate album names.
-  */
-
-  const uniqueAlbums = [];
-
-  const seenNames =
-    new Set();
-
-  albums.forEach(function(album) {
-
-    if (!album.title) {
-      return;
-    }
-
-    const key =
-      album.title.toLowerCase();
-
-    if (seenNames.has(key)) {
-      return;
-    }
-
-    seenNames.add(key);
-
-    uniqueAlbums.push(album);
-
-  });
+  albumList.innerHTML =
+    "";
 
 
-  /*
-    Sort alphabetically for now.
-
-    We can change this later to
-    chronological order.
-  */
-
-  uniqueAlbums.sort(
-    function(a, b) {
-
-      return a.title.localeCompare(
-        b.title
-      );
-
-    }
-  );
-
-
-  if (uniqueAlbums.length === 0) {
+  if (
+    albums.length === 0
+  ) {
 
     albumStatus.textContent =
-      "No albums found.";
+      "No official albums found.";
 
     return;
+
   }
+
 
   albumStatus.textContent =
     "Choose an album:";
 
 
-  uniqueAlbums.forEach(function(album) {
-
-    const button =
-      document.createElement("button");
-
-    button.classList.add(
-      "selection-button"
-    );
-
-    button.textContent =
-      album.title;
-
-    button.addEventListener(
-      "click",
-      function() {
-
-        selectAlbum(album);
-
-      }
-    );
-
-    albumList.appendChild(button);
-
-  });
-}
-
-
-/*
-  SELECT ALBUM
-*/
-
-async function selectAlbum(album) {
-
-  currentAlbum = album;
-
-  currentVersion = null;
-
-  selectedAlbum.textContent =
-    currentAlbum.title;
-
-  versionArtist.textContent =
-    currentArtist.name;
-
-  versionList.innerHTML = "";
-
-  versionStatus.textContent =
-    "Loading versions...";
-
-  showScreen(versionScreen);
-
-  try {
-
-    const cacheKey =
-      currentAlbum.id;
-
-    let data =
-      versionCache.get(cacheKey);
-
-    if (!data) {
-
-      data =
-        await apiRequest(
-          "/release-group/" +
-          encodeURIComponent(
-            currentAlbum.id
-          ) +
-          "/releases"
-        );
-
-      versionCache.set(
-        cacheKey,
-        data
-      );
-
-      await wait(1100);
-    }
-
-    displayVersions(
-      data.releases || []
-    );
-
-  } catch (error) {
-
-    console.error(error);
-
-    versionStatus.textContent =
-      "Could not load album versions.";
-
-  }
-}
-
-
-/*
-  DISPLAY VERSIONS
-*/
-
-function displayVersions(releases) {
-
-  versionList.innerHTML = "";
-
-  /*
-    Remove obvious duplicates.
-
-    MusicBrainz can contain many releases
-    for the same album because of different
-    countries, dates and editions.
-  */
-
-  const uniqueReleases = [];
-
-  const seen = new Set();
-
-  releases.forEach(function(release) {
-
-    if (!release.id) {
-      return;
-    }
-
-    const title =
-      release.title || currentAlbum.title;
-
-    const date =
-      release.date || "";
-
-    const country =
-      release.country || "";
-
-    const key =
-      title +
-      "|" +
-      date +
-      "|" +
-      country;
-
-    if (seen.has(key)) {
-      return;
-    }
-
-    seen.add(key);
-
-    uniqueReleases.push(release);
-
-  });
-
-
-  /*
-    Sort by release date.
-  */
-
-  uniqueReleases.sort(
-    function(a, b) {
-
-      const dateA =
-        a.date || "9999";
-
-      const dateB =
-        b.date || "9999";
-
-      return dateA.localeCompare(
-        dateB
-      );
-
-    }
-  );
-
-
-  /*
-    Limit the number of versions
-    displayed.
-
-    This prevents albums with dozens
-    of regional releases from becoming
-    an enormous list.
-  */
-
-  const releasesToShow =
-    uniqueReleases.slice(0, 20);
-
-
-  if (releasesToShow.length === 0) {
-
-    versionStatus.textContent =
-      "No playable versions found.";
-
-    return;
-  }
-
-  versionStatus.textContent =
-    "Choose a version:";
-
-
-  releasesToShow.forEach(
-    function(release) {
+  albums.forEach(
+    function(album) {
 
       const button =
-        document.createElement("button");
+        document.createElement(
+          "button"
+        );
+
 
       button.classList.add(
         "selection-button"
@@ -687,25 +611,20 @@ function displayVersions(releases) {
 
 
       let label =
-        release.title ||
-        currentAlbum.title;
+        album.title;
 
 
-      if (release.date) {
+      if (
+        album[
+          "first-release-date"
+        ]
+      ) {
 
         label +=
           " — " +
-          release.date;
-
-      }
-
-
-      if (release.country) {
-
-        label +=
-          " (" +
-          release.country +
-          ")";
+          album[
+            "first-release-date"
+          ];
 
       }
 
@@ -718,7 +637,188 @@ function displayVersions(releases) {
         "click",
         function() {
 
-          selectVersion(release);
+          selectAlbum(
+            album
+          );
+
+        }
+      );
+
+
+      albumList.appendChild(
+        button
+      );
+
+    }
+  );
+
+}
+
+
+/*
+  SELECT ALBUM
+*/
+
+async function selectAlbum(
+  album
+) {
+
+  currentAlbum =
+    album;
+
+  currentVersion =
+    null;
+
+
+  selectedAlbum.textContent =
+    currentAlbum.title;
+
+
+  versionArtist.textContent =
+    currentArtist.name;
+
+
+  versionList.innerHTML =
+    "";
+
+
+  versionStatus.textContent =
+    "Finding official editions...";
+
+
+  showScreen(
+    versionScreen
+  );
+
+
+  try {
+
+    const cacheKey =
+      currentAlbum.id;
+
+
+    let data =
+      versionCache.get(
+        cacheKey
+      );
+
+
+    if (!data) {
+
+      data =
+        await apiRequest(
+
+          "/release-group/" +
+          encodeURIComponent(
+            currentAlbum.id
+          ) +
+          "/releases"
+
+        );
+
+
+      versionCache.set(
+        cacheKey,
+        data
+      );
+
+    }
+
+
+    displayVersions(
+      data.releases || []
+    );
+
+
+  } catch (error) {
+
+    console.error(
+      error
+    );
+
+
+    versionStatus.textContent =
+      "Could not load editions.";
+
+  }
+
+}
+
+
+/*
+  VERSIONS
+*/
+
+function displayVersions(
+  releases
+) {
+
+  versionList.innerHTML =
+    "";
+
+
+  if (
+    releases.length === 0
+  ) {
+
+    versionStatus.textContent =
+      "No playable official edition was found.";
+
+    return;
+
+  }
+
+
+  versionStatus.textContent =
+    "Choose an edition:";
+
+
+  releases.forEach(
+    function(release) {
+
+      const button =
+        document.createElement(
+          "button"
+        );
+
+
+      button.classList.add(
+        "selection-button"
+      );
+
+
+      let label =
+        release.tracklistType ||
+        "Standard";
+
+
+      const trackCount =
+        release.trackCount;
+
+
+      if (
+        trackCount
+      ) {
+
+        label +=
+          " — " +
+          trackCount +
+          " tracks";
+
+      }
+
+
+      button.textContent =
+        label;
+
+
+      button.addEventListener(
+        "click",
+        function() {
+
+          selectVersion(
+            release
+          );
 
         }
       );
@@ -730,6 +830,7 @@ function displayVersions(releases) {
 
     }
   );
+
 }
 
 
@@ -737,50 +838,67 @@ function displayVersions(releases) {
   SELECT VERSION
 */
 
-async function selectVersion(release) {
+async function selectVersion(
+  release
+) {
 
-  currentVersion = release;
+  currentVersion =
+    release;
+
 
   versionStatus.textContent =
     "Loading tracklist...";
+
 
   try {
 
     const cacheKey =
       currentVersion.id;
 
+
     let data =
-      trackCache.get(cacheKey);
+      trackCache.get(
+        cacheKey
+      );
+
 
     if (!data) {
 
       data =
         await apiRequest(
+
           "/release/" +
           encodeURIComponent(
             currentVersion.id
           ) +
           "/tracks"
+
         );
+
 
       trackCache.set(
         cacheKey,
         data
       );
 
-      await wait(1100);
     }
 
+
     const releaseTracks =
-      extractTracks(data);
+      extractTracks(
+        data
+      );
 
 
-    if (releaseTracks.length < 2) {
+    if (
+      releaseTracks.length < 2
+    ) {
 
       versionStatus.textContent =
-        "This version does not have enough tracks to play.";
+        "This edition does not have enough tracks to play.";
 
       return;
+
     }
 
 
@@ -788,64 +906,110 @@ async function selectVersion(release) {
       releaseTracks
     );
 
+
   } catch (error) {
 
-    console.error(error);
+    console.error(
+      error
+    );
+
 
     versionStatus.textContent =
-      "Could not load this tracklist.";
+      "Could not load the tracklist.";
 
   }
+
 }
 
 
 /*
-  EXTRACT TRACKS FROM MUSICBRAINZ
+  TRACK EXTRACTION
 */
 
-function extractTracks(data) {
+function extractTracks(
+  data
+) {
 
   const result = [];
 
-  /*
-    MusicBrainz puts tracks inside
-    media[].tracks[].
-
-    We flatten multiple discs into
-    one continuous tracklist.
-  */
 
   if (
-    !data.media ||
-    !Array.isArray(data.media)
+    !Array.isArray(
+      data.media
+    )
   ) {
 
     return result;
+
   }
 
 
-  data.media.forEach(
+  const sortedMedia =
+    [...data.media].sort(
+      function(a, b) {
+
+        return (
+          Number(
+            a.position || 0
+          ) -
+          Number(
+            b.position || 0
+          )
+        );
+
+      }
+    );
+
+
+  sortedMedia.forEach(
     function(media) {
 
       if (
-        !media.tracks ||
-        !Array.isArray(media.tracks)
+        !Array.isArray(
+          media.tracks
+        )
       ) {
 
         return;
+
       }
 
 
-      media.tracks.forEach(
+      const sortedTracks =
+        [...media.tracks].sort(
+          function(a, b) {
+
+            return (
+              Number(
+                a.position || 0
+              ) -
+              Number(
+                b.position || 0
+              )
+            );
+
+          }
+        );
+
+
+      sortedTracks.forEach(
         function(track) {
 
-          if (!track.title) {
-            return;
-          }
+          const title =
+            track.title ||
+            (
+              track.recording &&
+              track.recording.title
+            );
 
-          result.push(
-            track.title
-          );
+
+          if (title) {
+
+            result.push(
+              title
+            );
+
+          }
 
         }
       );
@@ -855,6 +1019,7 @@ function extractTracks(data) {
 
 
   return result;
+
 }
 
 
@@ -862,56 +1027,43 @@ function extractTracks(data) {
   START GAME
 */
 
-function startGame(releaseTracks) {
-
-  tracks =
-    [...releaseTracks];
+function startGame(
+  releaseTracks
+) {
 
   correctOrder =
     [...releaseTracks];
 
-  shuffle(tracks);
+
+  tracks =
+    [...releaseTracks];
+
+
+  shuffle(
+    tracks
+  );
 
 
   gameAlbum.textContent =
     currentAlbum.title;
 
+
   gameArtist.textContent =
     currentArtist.name;
 
 
-  let versionText =
-    currentVersion.title ||
+  gameVersion.textContent =
+    currentVersion.tracklistType ||
     "Standard";
 
 
-  if (currentVersion.date) {
+  score.textContent =
+    "";
 
-    versionText +=
-      " — " +
-      currentVersion.date;
-
-  }
-
-
-  if (currentVersion.country) {
-
-    versionText +=
-      " (" +
-      currentVersion.country +
-      ")";
-
-  }
-
-
-  gameVersion.textContent =
-    versionText;
-
-
-  score.textContent = "";
 
   gameStatus.textContent =
     "";
+
 
   submitButton.disabled =
     false;
@@ -921,55 +1073,61 @@ function startGame(releaseTracks) {
     gameScreen
   );
 
+
   displayTracks();
+
 }
 
 
 /*
-  DISPLAY TRACKS
+  TRACK DISPLAY
 */
 
 function displayTracks() {
 
-  trackList.innerHTML = "";
+  trackList.innerHTML =
+    "";
 
 
   tracks.forEach(
     function(track) {
 
       const trackElement =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
+
 
       trackElement.classList.add(
         "track"
       );
 
 
-      /*
-        Drag handle
-      */
-
       const handle =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
+
 
       handle.classList.add(
         "drag-handle"
       );
 
+
       handle.textContent =
         "☷";
 
 
-      /*
-        Track name
-      */
-
       const name =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
+
 
       name.classList.add(
         "track-name"
       );
+
 
       name.textContent =
         track;
@@ -978,6 +1136,7 @@ function displayTracks() {
       trackElement.appendChild(
         handle
       );
+
 
       trackElement.appendChild(
         name
@@ -999,19 +1158,22 @@ function displayTracks() {
 
 
   updateTrackNumbers();
+
 }
 
 
 /*
-  TRACK NUMBERS
+  NUMBERS
 */
 
 function updateTrackNumbers() {
 
   const trackElements = [
+
     ...trackList.querySelectorAll(
       ".track"
     )
+
   ];
 
 
@@ -1034,6 +1196,7 @@ function updateTrackNumbers() {
             "div"
           );
 
+
         number.classList.add(
           "track-number"
         );
@@ -1053,14 +1216,17 @@ function updateTrackNumbers() {
 
     }
   );
+
 }
 
 
 /*
-  DRAGGING
+  DRAG
 */
 
-function startDragging(event) {
+function startDragging(
+  event
+) {
 
   event.preventDefault();
 
@@ -1090,10 +1256,12 @@ function startDragging(event) {
 
 
 /*
-  MOVE TRACK
+  MOVE
 */
 
-function moveTrack(event) {
+function moveTrack(
+  event
+) {
 
   if (!draggedTrack) {
     return;
@@ -1104,9 +1272,11 @@ function moveTrack(event) {
 
 
   const otherTracks = [
+
     ...trackList.querySelectorAll(
       ".track:not(.dragging)"
     )
+
   ];
 
 
@@ -1118,9 +1288,11 @@ function moveTrack(event) {
           track.getBoundingClientRect();
 
 
-        return event.clientY <
+        return (
+          event.clientY <
           box.top +
-          box.height / 2;
+          box.height / 2
+        );
 
       }
     );
@@ -1143,11 +1315,12 @@ function moveTrack(event) {
 
 
   updateTrackNumbers();
+
 }
 
 
 /*
-  STOP DRAGGING
+  STOP
 */
 
 function stopDragging() {
@@ -1175,6 +1348,7 @@ function stopDragging() {
 
 
   draggedTrack = null;
+
 }
 
 
@@ -1185,9 +1359,11 @@ function stopDragging() {
 function checkAnswer() {
 
   const trackElements = [
+
     ...trackList.querySelectorAll(
       ".track"
     )
+
   ];
 
 
@@ -1208,10 +1384,6 @@ function checkAnswer() {
           .textContent;
 
 
-      /*
-        Remove previous result.
-      */
-
       const oldResult =
         trackElement.querySelector(
           ".result"
@@ -1227,6 +1399,7 @@ function checkAnswer() {
         "track-correct"
       );
 
+
       trackElement.classList.remove(
         "track-incorrect"
       );
@@ -1237,14 +1410,11 @@ function checkAnswer() {
           "div"
         );
 
+
       result.classList.add(
         "result"
       );
 
-
-      /*
-        Correct position
-      */
 
       if (
         trackName ===
@@ -1257,6 +1427,7 @@ function checkAnswer() {
         result.textContent =
           "✓";
 
+
         result.classList.add(
           "correct"
         );
@@ -1265,6 +1436,7 @@ function checkAnswer() {
         trackElement.classList.add(
           "track-correct"
         );
+
 
       } else {
 
@@ -1308,6 +1480,7 @@ function checkAnswer() {
 
   submitButton.disabled =
     true;
+
 }
 
 
@@ -1320,25 +1493,31 @@ function playAgain() {
   tracks =
     [...correctOrder];
 
-  shuffle(tracks);
+
+  shuffle(
+    tracks
+  );
 
 
   score.textContent =
     "";
 
+
   gameStatus.textContent =
     "";
+
 
   submitButton.disabled =
     false;
 
 
   displayTracks();
+
 }
 
 
 /*
-  CHOOSE ANOTHER ALBUM
+  CHOOSE ALBUM
 */
 
 function chooseAnotherAlbum() {
@@ -1347,61 +1526,19 @@ function chooseAnotherAlbum() {
     null;
 
 
-  displayAlbumsForCurrentArtist();
-
-}
-
-
-/*
-  DISPLAY CURRENT ARTIST'S ALBUMS
-*/
-
-function displayAlbumsForCurrentArtist() {
-
-  if (!currentArtist) {
-    return;
-  }
-
-
-  albumList.innerHTML = "";
-
-  albumStatus.textContent =
-    "Loading albums...";
-
-
   showScreen(
     albumScreen
   );
 
 
-  const cacheKey =
-    currentArtist.id;
+  albumStatus.textContent =
+    "Choose an album:";
 
-
-  const data =
-    albumCache.get(
-      cacheKey
-    );
-
-
-  if (data) {
-
-    displayAlbums(
-      data["release-groups"] || []
-    );
-
-  } else {
-
-    selectArtist(
-      currentArtist
-    );
-
-  }
 }
 
 
 /*
-  CHOOSE ANOTHER ARTIST
+  CHOOSE ARTIST
 */
 
 function chooseAnotherArtist() {
@@ -1415,14 +1552,18 @@ function chooseAnotherArtist() {
   currentVersion =
     null;
 
+
   artistSearch.value =
     "";
+
 
   artistStatus.textContent =
     "";
 
+
   artistList.innerHTML =
     "";
+
 
   showScreen(
     artistScreen
@@ -1432,7 +1573,7 @@ function chooseAnotherArtist() {
 
 
 /*
-  BACK TO ARTISTS
+  BACK
 */
 
 function goBackToArtists() {
@@ -1442,23 +1583,15 @@ function goBackToArtists() {
 }
 
 
-/*
-  BACK TO ALBUMS
-*/
-
 function goBackToAlbums() {
 
-  currentVersion =
-    null;
-
-
-  displayAlbumsForCurrentArtist();
+  chooseAnotherAlbum();
 
 }
 
 
 /*
-  EVENT LISTENERS
+  EVENTS
 */
 
 artistSearchButton.addEventListener(
