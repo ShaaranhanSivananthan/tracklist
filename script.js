@@ -65,6 +65,8 @@ function displayTracks() {
 
     trackList.appendChild(trackElement);
   });
+
+  updateTrackNumbers();
 }
 
 let draggedTrack = null;
@@ -99,6 +101,26 @@ function moveTrack(event) {
   } else {
     trackList.appendChild(draggedTrack);
   }
+  
+  updateTrackNumbers();
+}
+
+function updateTrackNumbers() {
+  const trackElements = [
+    ...trackList.querySelectorAll(".track")
+  ];
+
+  trackElements.forEach(function(trackElement, index) {
+    let number = trackElement.querySelector(".track-number");
+
+    if (!number) {
+      number = document.createElement("div");
+      number.classList.add("track-number");
+      trackElement.insertBefore(number, trackElement.firstChild);
+    }
+
+    number.textContent = (index + 1) + ".";
+  });
 }
 
 function stopDragging() {
