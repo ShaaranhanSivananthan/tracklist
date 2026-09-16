@@ -6,11 +6,22 @@ const tracks = [
   "Track 5"
 ];
 
+const correctOrder = [
+  "Track 1",
+  "Track 2",
+  "Track 3",
+  "Track 4",
+  "Track 5"
+];
+
 const trackList = document.getElementById("track-list");
+const submitButton = document.getElementById("submit-button");
+const score = document.getElementById("score");
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
+
     [array[i], array[j]] = [array[j], array[i]];
   }
 }
@@ -83,6 +94,26 @@ function stopDragging() {
 
   draggedTrack = null;
 }
+
+function checkAnswer() {
+  const currentTracks = [
+    ...trackList.querySelectorAll(".track-name")
+  ].map(function(track) {
+    return track.textContent;
+  });
+
+  let points = 0;
+
+  for (let i = 0; i < correctOrder.length; i++) {
+    if (currentTracks[i] === correctOrder[i]) {
+      points++;
+    }
+  }
+
+  score.textContent = "Score: " + points + " / " + correctOrder.length;
+}
+
+submitButton.addEventListener("click", checkAnswer);
 
 shuffle(tracks);
 displayTracks();
