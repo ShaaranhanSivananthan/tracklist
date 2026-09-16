@@ -17,6 +17,7 @@ const correctOrder = [
 const trackList = document.getElementById("track-list");
 const submitButton = document.getElementById("submit-button");
 const score = document.getElementById("score");
+const playAgainButton = document.getElementById("play-again-button");
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -130,6 +131,15 @@ function checkAnswer() {
 }
 
 submitButton.addEventListener("click", checkAnswer);
+
+function playAgain() {
+  shuffle(tracks);
+  displayTracks();
+
+  score.textContent = "";
+}
+
+playAgainButton.addEventListener("click", playAgain);
 
 shuffle(tracks);
 displayTracks();
