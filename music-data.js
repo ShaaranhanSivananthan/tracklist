@@ -265,7 +265,7 @@ const musicData = [
             {
                 name: "Mr. Morale & the Big Steppers",
                 year: 2022,
-                cover: "images/albums/mr&bs.jpg",
+                cover: "images/albums/mm&bs.jpg",
 
                 theme: {
                     background: "#D6C4A5",
