@@ -243,14 +243,14 @@ const musicData = [
     
         albums: [
             {
-                name: "LIVE.LOVE.A$AP",
+                name: "Live. Love. ASAP",
                 year: 2011,
-                cover: "images/albums/live-love-asap.jpg",
+                cover: "images/albums/livela.jpg",
     
                 theme: {
-                    background: "#1c1c1c",
-                    text: "#e6e6e6",
-                    accent: "#666666"
+                    background: "#7F7F7F",
+                    text: "#FFFFFF",
+                    accent: "#000000"
                 },
     
                 tracks: [
@@ -262,29 +262,30 @@ const musicData = [
                     "Purple Swag",
                     "Get Lit",
                     "Trilla",
+                    "Keep It G",
+                    "Kissin' Pink",
                     "Houston Old Head",
                     "Acid Drip",
                     "Leaf",
                     "Roll One Up",
                     "Demons",
-                    "Out of This World",
-                    "Keep It G"
+                    "Out of This World"
                 ]
             },
     
             {
-                name: "LONG.LIVE.A$AP",
+                name: "Long. Live. ASAP",
                 year: 2013,
-                cover: "images/albums/long-live-asap.jpg",
+                cover: "images/albums/longla.jpg",
     
                 theme: {
-                    background: "#0d0d0d",
-                    text: "#f0f0f0",
-                    accent: "#404040"
+                    background: "#7F7F7F",
+                    text: "#FFFFFF",
+                    accent: "#000000"
                 },
     
                 tracks: [
-                    "Long Live A$AP",
+                    "Long Live ASAP",
                     "Goldie",
                     "PMW (All I Really Need)",
                     "LVL",
@@ -292,7 +293,7 @@ const musicData = [
                     "Pain",
                     "Fuckin' Problems",
                     "Wild for the Night",
-                    "1Train",
+                    "1 Train",
                     "Fashion Killa",
                     "Phoenix",
                     "Suddenly"
@@ -300,22 +301,23 @@ const musicData = [
             },
     
             {
-                name: "AT.LONG.LAST.A$AP",
+                name: "At. Long. Last. ASAP",
                 year: 2015,
-                cover: "images/albums/at-long-last-asap.jpg",
+                cover: "images/albums/alla.jpg",
     
                 theme: {
-                    background: "#2b1a10",
-                    text: "#e0d3c1",
-                    accent: "#8c5a32"
+                    background: "#7F7F7F",
+                    text: "#FFFFFF",
+                    accent: "#63237A"
                 },
     
                 tracks: [
                     "Holy Ghost",
                     "Canal St.",
-                    "Fine Wine",
+                    "Fine Whine",
                     "L$D",
-                    "Excused",
+                    "Excuse Me",
+                    "JD",
                     "Lord Pretty Flacko Jodye 2 (LPFJ2)",
                     "Electric Body",
                     "Jukebox Joints",
@@ -325,31 +327,32 @@ const musicData = [
                     "West Side Highway",
                     "Better Things",
                     "M'$",
-                    "Holy Ghost",
+                    "Dreams (Interlude)",
                     "Everyday",
                     "Back Home"
                 ]
             },
     
             {
-                name: "TESTING",
+                name: "Testing",
                 year: 2018,
                 cover: "images/albums/testing.jpg",
     
                 theme: {
-                    background: "#e6ad00",
-                    text: "#121212",
-                    accent: "#ffffff"
+                    background: "#7F7F7F",
+                    text: "#FFFFFF",
+                    accent: "#FFD700"
                 },
     
                 tracks: [
                     "Distorted Records",
-                    "A$AP Forever REMIX",
+                    "A$AP Forever",
                     "Tony Tone",
-                    "F射k Testing",
+                    "Fukk Sleep",
                     "Praise the Lord (Da Shine)",
-                    "CALLDROPS",
+                    "Calldrops",
                     "Buck Shots",
+                    "Gunz N Butter",
                     "Brotha Man",
                     "OG Beeper",
                     "Kids Turned Out Fine",
@@ -361,24 +364,32 @@ const musicData = [
             },
     
             {
-                name: "DON'T BE DUMB",
-                year: 2024,
-                cover: "images/albums/dont-be-dumb.jpg",
+                name: "Don't Be Dumb",
+                year: 2026,
+                cover: "images/albums/dbd.jpg",
     
                 theme: {
-                    background: "#111111",
-                    text: "#ffffff",
-                    accent: "#d90429"
+                    background: "#7F7F7F",
+                    text: "#FFFFFF",
+                    accent: "#5A8F4E"
                 },
     
                 tracks: [
-                    "HIGHJACK",
-                    "Tailor Swif",
-                    "Ruby Rosary",
-                    "DON'T BE DUMB",
-                    "PUNK",
-                    "WHISKEY",
-                    "STOLE YOUR BITCH"
+                    "Order of Protection",
+                    "Helicopter",
+                    "Interrogation (Skit)",
+                    "Stole Ya Flow",
+                    "Stay Here 4 Life",
+                    "Playa",
+                    "No Trespassing",
+                    "Stop Snitching",
+                    "STFU",
+                    "Punk Rocky",
+                    "Air Force (Black DeMarco)",
+                    "Whiskey (Release Me)",
+                    "Robbery",
+                    "Don't Be Dumb / Trip Baby",
+                    "The End"
                 ]
             }
         ]
