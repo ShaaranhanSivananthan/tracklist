@@ -79,7 +79,7 @@ button:focus-visible,
    ============================================================ */
 
 .game {
-    width: min(100% - 32px, 720px);
+    width: min(100% - 32px, 1200px);
     margin: 0 auto;
     padding: 32px 0 60px;
 }
@@ -199,7 +199,7 @@ button:disabled {
     display: grid;
 
     grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        repeat(auto-fill, minmax(220px, 1fr));
 
     gap: 18px;
 }
@@ -279,7 +279,7 @@ button:disabled {
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(auto-fill, minmax(320px, 1fr));
 
     gap: 18px;
 }
@@ -387,7 +387,8 @@ button:disabled {
 
 
 .game-status {
-    margin-bottom: 18px;
+    max-width: 720px;
+    margin: 0 auto 18px;
 
     padding: 12px 16px;
 
@@ -411,6 +412,9 @@ button:disabled {
     flex-direction: column;
 
     gap: 10px;
+
+    max-width: 720px;
+    margin: 0 auto;
 }
 
 
@@ -535,27 +539,6 @@ button:disabled {
 
 
 /* ============================================================
-   KEYBOARD HELP
-   ============================================================ */
-
-.keyboard-help {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 7px;
-
-    margin: 16px 0;
-
-    font-size: 13px;
-
-    opacity: 0.65;
-
-    text-align: center;
-}
-
-
-/* ============================================================
    GAME ACTIONS
    ============================================================ */
 
@@ -565,7 +548,8 @@ button:disabled {
 
     gap: 12px;
 
-    margin-top: 24px;
+    max-width: 720px;
+    margin: 24px auto 0;
 }
 
 
@@ -593,6 +577,9 @@ button:disabled {
     flex-direction: column;
 
     gap: 9px;
+
+    max-width: 720px;
+    margin: 0 auto;
 }
 
 
@@ -601,8 +588,7 @@ button:disabled {
 
     grid-template-columns:
         38px
-        minmax(0, 1fr)
-        30px;
+        minmax(0, 1fr);
 
     align-items: center;
 
@@ -653,14 +639,6 @@ button:disabled {
 }
 
 
-.result-icon {
-    font-size: 20px;
-    font-weight: 900;
-
-    text-align: center;
-}
-
-
 .correct-answer {
     grid-column: 2 / -1;
 
@@ -703,7 +681,7 @@ button:disabled {
 @media (max-width: 600px) {
 
     .game {
-        width: min(100% - 22px, 720px);
+        width: min(100% - 22px, 1200px);
         padding-top: 20px;
     }
 
@@ -782,7 +760,7 @@ button:disabled {
 @media (max-width: 380px) {
 
     .game {
-        width: min(100% - 16px, 720px);
+        width: min(100% - 16px, 1200px);
     }
 
 
