@@ -396,6 +396,67 @@ const musicData = [
             },
 
             {
+                name: "Vultures 1",
+                year: 2024,
+                cover: "images/albums/vultures1.jpg",
+
+                theme: {
+                    background: "#D9C29C",
+                    text: "#17130E",
+                    accent: "#8A5A24"
+                },
+
+                tracks: [
+                    "Stars",
+                    "Keys To My Life",
+                    "Paid",
+                    "Talking",
+                    "Back To Me",
+                    "Hoodrat",
+                    "Do It",
+                    "Paperwork",
+                    "Burn",
+                    "Fuk Sumn",
+                    "Vultures",
+                    "Carnival",
+                    "Beg Forgiveness",
+                    "Problematic",
+                    "King"
+                ]
+            },
+
+            {
+                name: "Vultures 2",
+                year: 2024,
+                cover: "images/albums/vultures2.jpg",
+
+                theme: {
+                    background: "#D9C29C",
+                    text: "#17130E",
+                    accent: "#8A5A24"
+                },
+
+                tracks: [
+                    "Slide",
+                    "Time Moving Slow",
+                    "Field Trip",
+                    "Fried",
+                    "Isabella",
+                    "Promotion",
+                    "530",
+                    "Dead",
+                    "Forever Rolling",
+                    "Bomb",
+                    "River",
+                    "Forever",
+                    "Husband",
+                    "Lifestyle",
+                    "Sky City",
+                    "My Soul"
+                ]
+            },
+
+            {
                 name: "Bully",
                 year: 2026,
                 cover: "images/albums/bully.jpg",
