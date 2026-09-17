@@ -51,7 +51,7 @@ const musicData = [
 
     {
         name: "A$AP Rocky",
-        image: "images/artists/rocky.jpg",
+        image: "images/artists/asap.jpg",
 
         // albums: [
 
