@@ -97,8 +97,8 @@ const musicData = [
 
                 theme: {
                     background: "#d8b186",
-                    text: "#d49270",
-                    accent: "#f4d6b4"
+                    text: "#f7ebdb",
+                    accent: "#bd7d62"
                 },
 
                 tracks: [
@@ -153,9 +153,9 @@ const musicData = [
                 cover: "images/albums/positions.jpg",
 
                 theme: {
-                    background: "#b1af96",
-                    text: "#aec6a5",
-                    accent: "#91887b"
+                    background: "#cbeabd",
+                    text: "#91887b",
+                    accent: "#769174"
                 },
 
                 tracks: [
