@@ -3,48 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tracklist Game</title>
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Test your music knowledge by putting album tracks in the correct order.">
+  <title>Tracklist — Album Tracklist Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <main class="game">
 
+    <!-- Optional ad slot: add your ad provider here later. -->
+    <div id="top-ad" class="ad-slot" aria-hidden="true"></div>
+
     <!-- ARTIST SELECTION SCREEN -->
-    <section id="artist-screen">
-      <h1>Tracklist</h1>
+    <section id="artist-screen" aria-labelledby="artist-title">
+      <h1 id="artist-title">Tracklist</h1>
       <p>Choose an artist:</p>
-      <div id="artist-list"></div>
+      <div id="artist-list" class="artist-list"></div>
     </section>
 
     <!-- ALBUM SELECTION SCREEN -->
-    <section id="album-screen" style="display: none;">
+    <section
+      id="album-screen"
+      class="screen-hidden"
+      aria-labelledby="album-selection-title"
+      hidden
+    >
       <div id="artist-header-container"></div>
+
+      <h2 id="album-selection-title" class="sr-only">
+        Album selection
+      </h2>
+
       <p>Choose an album:</p>
-      <div id="album-list"></div>
-      <button id="back-to-artists-button">Choose Another Artist</button>
+
+      <div id="album-list" class="album-list"></div>
+
+      <button
+        id="back-to-artists-button"
+        class="secondary-button"
+        type="button"
+      >
+        Choose Another Artist
+      </button>
     </section>
 
     <!-- GAME SCREEN -->
-    <section id="game-screen" style="display: none;">
+    <section
+      id="game-screen"
+      class="screen-hidden"
+      aria-labelledby="game-title"
+      hidden
+    >
       <div id="game-album-container"></div>
-      <p id="game-status">Put the tracks in the correct order:</p>
 
-      <div id="track-list"></div>
+      <p id="game-status">
+        Put the tracks in the correct order:
+      </p>
 
-      <button id="submit-button">Submit</button>
+      <div
+        id="track-list"
+        class="track-list"
+        role="list"
+        aria-label="Tracks to arrange"
+      ></div>
 
-      <h2 id="score"></h2>
+      <button id="submit-button" type="button">
+        Submit
+      </button>
 
-      <div id="game-controls" style="display: none;">
-        <button id="play-again-button">Play Again</button>
-        <button id="choose-album-button">Choose Another Album</button>
-        <button id="choose-artist-button">Choose Another Artist</button>
+      <h2 id="score" aria-live="polite"></h2>
+
+      <div id="game-controls" class="game-controls" hidden>
+        <button id="play-again-button" type="button">
+          Play Again
+        </button>
+
+        <button
+          id="choose-album-button"
+          class="secondary-button"
+          type="button"
+        >
+          Choose Another Album
+        </button>
+
+        <button
+          id="choose-artist-button"
+          class="secondary-button"
+          type="button"
+        >
+          Choose Another Artist
+        </button>
       </div>
     </section>
 
+    <!-- Optional ad slot for the result screen later. -->
+    <div id="bottom-ad" class="ad-slot" aria-hidden="true"></div>
+
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
