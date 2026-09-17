@@ -1,85 +1,352 @@
-const API_BASE_URL =
-  "https://tracklist-api.shaaranhan-sivananthan.workers.dev";
-
+/* ---------------------------------------------------------
+   HARDCODED MUSIC DATA
+--------------------------------------------------------- */
+const MUSIC_DATA = [
+  {
+    name: "Kanye West",
+    albums: [
+      {
+        title: "The College Dropout",
+        year: 2004,
+        tracks: [
+          "Intro",
+          "We Don't Care",
+          "Graduation Day",
+          "All Falls Down",
+          "I'll Fly Away",
+          "Spaceship",
+          "Jesus Walks",
+          "Never Let Me Down",
+          "Get Em High",
+          "Workout Plan",
+          "The New Workout Plan",
+          "Slow Jamz",
+          "Breathe In Breathe Out",
+          "School Spirit Skit 1",
+          "School Spirit",
+          "School Spirit Skit 2",
+          "Lil Jimmy Skit",
+          "Two Words",
+          "Through the Wire",
+          "Family Business",
+          "Last Call"
+        ]
+      },
+      {
+        title: "Late Registration",
+        year: 2005,
+        tracks: [
+          "Wake Up Mr. West",
+          "Heard 'Em Say",
+          "Touch the Sky",
+          "Gold Digger",
+          "Sk道を (Skit #1)",
+          "Drive Slow",
+          "My Way Home",
+          "Crack Music",
+          "Roses",
+          "Bring Me Down",
+          "Addiction",
+          "Skit #2",
+          "Diamonds From Sierra Leone (Remix)",
+          "We Major",
+          "Skit #3",
+          "Hey Mama",
+          "Celebration",
+          "Skit #4",
+          "Gone",
+          "Diamonds From Sierra Leone"
+        ]
+      },
+      {
+        title: "Graduation",
+        year: 2007,
+        tracks: [
+          "Good Morning",
+          "Champion",
+          "Stronger",
+          "I Wonder",
+          "Good Life",
+          "Can't Tell Me Nothing",
+          "Barry Bonds",
+          "Drunk and Hot Girls",
+          "Flashing Lights",
+          "Everything I Am",
+          "The Glory",
+          "Homecoming",
+          "Big Brother"
+        ]
+      },
+      {
+        title: "My Beautiful Dark Twisted Fantasy",
+        year: 2010,
+        tracks: [
+          "Dark Fantasy",
+          "Gorgeous",
+          "POWER",
+          "All of the Lights (Interlude)",
+          "All of the Lights",
+          "Monster",
+          "So Appalled",
+          "Devil in a New Dress",
+          "Runaway",
+          "Hell of a Life",
+          "Blame Game",
+          "Lost in the World",
+          "Who Will Survive in America"
+        ]
+      },
+      {
+        title: "Yeezus",
+        year: 2013,
+        tracks: [
+          "On Sight",
+          "Black Skinhead",
+          "I Am a God",
+          "New Slaves",
+          "Hold My Liquor",
+          "I'm in It",
+          "Blood on the Leaves",
+          "Guilt Trip",
+          "Send It Up",
+          "Bound 2"
+        ]
+      }
+    ]
+  },
+  {
+    name: "Kendrick Lamar",
+    albums: [
+      {
+        title: "good kid, m.A.A.d city",
+        year: 2012,
+        tracks: [
+          "Sherane a.k.a Master Splinter's Daughter",
+          "Bitch, Don't Kill My Vibe",
+          "Backseat Freestyle",
+          "The Art of Peer Pressure",
+          "Money Trees",
+          "Poetic Justice",
+          "good kid",
+          "m.A.A.d city",
+          "Swimming Pools (Drank)",
+          "Sing About Me, I'm Dying of Thirst",
+          "Real",
+          "Compton"
+        ]
+      },
+      {
+        title: "To Pimp a Butterfly",
+        year: 2015,
+        tracks: [
+          "Wesley's Theory",
+          "For Free? (Interlude)",
+          "King Kunta",
+          "Institutionalized",
+          "These Walls",
+          "u",
+          "Alright",
+          "For Sale? (Interlude)",
+          "Momma",
+          "Hood Politics",
+          "How Much a Dollar Cost",
+          "Complexion (A Zulu Love)",
+          "The Blacker the Berry",
+          "You Ain't Gotta Lie (Momma Said)",
+          "i",
+          "Mortal Man"
+        ]
+      },
+      {
+        title: "DAMN.",
+        year: 2017,
+        tracks: [
+          "BLOOD.",
+          "DNA.",
+          "YAH.",
+          "ELEMENT.",
+          "FEEL.",
+          "LOYALTY.",
+          "PRIDE.",
+          "HUMBLE.",
+          "LUST.",
+          "LOVE.",
+          "XXX.",
+          "FEAR.",
+          "GOD.",
+          "DUCKWORTH."
+        ]
+      },
+      {
+        title: "Mr. Morale & the Big Steppers",
+        year: 2022,
+        tracks: [
+          "United in Grief",
+          "N95",
+          "Worldwide Steppers",
+          "Die Hard",
+          "Father Time",
+          "Rich (Interlude)",
+          "Rich Spirit",
+          "We Cry Together",
+          "Purple Hearts",
+          "Count Me Out",
+          "Crown",
+          "Silent Hill",
+          "Savior (Interlude)",
+          "Savior",
+          "Auntie Diaries",
+          "Mr. Morale",
+          "Mother I Sober",
+          "Mirror"
+        ]
+      }
+    ]
+  },
+  {
+    name: "The Weeknd",
+    albums: [
+      {
+        title: "House of Balloons",
+        year: 2011,
+        tracks: [
+          "High for This",
+          "What You Need",
+          "House of Balloons / Glass Table Girls",
+          "The Morning",
+          "Wicked Games",
+          "The Party & The After Party",
+          "Coming Down",
+          "Loft Music",
+          "The Knowing"
+        ]
+      },
+      {
+        title: "Beauty Behind the Madness",
+        year: 2015,
+        tracks: [
+          "Real Life",
+          "Losers",
+          "Tell Your Friends",
+          "Often",
+          "The Hills",
+          "Acquainted",
+          "Can't Feel My Face",
+          "Shameless",
+          "Earned It",
+          "In the Night",
+          "As You Are",
+          "Dark Times",
+          "Prisoner",
+          "Angel"
+        ]
+      },
+      {
+        title: "Starboy",
+        year: 2016,
+        tracks: [
+          "Starboy",
+          "Party Monster",
+          "False Alarm",
+          "Reminder",
+          "Rockin'",
+          "Secrets",
+          "True Colors",
+          "Stargirl Interlude",
+          "Sidewalks",
+          "Six Feet Under",
+          "Love to Lay",
+          "A Lonely Night",
+          "Attention",
+          "Ordinary Life",
+          "Nothing Without You",
+          "All I Know",
+          "Die for You",
+          "I Feel It Coming"
+        ]
+      },
+      {
+        title: "After Hours",
+        year: 2020,
+        tracks: [
+          "Alone Again",
+          "Too Late",
+          "Hardest to Love",
+          "Scared to Live",
+          "Snowchild",
+          "Escape from LA",
+          "Heartless",
+          "Faith",
+          "Blinding Lights",
+          "In Your Eyes",
+          "Save Your Tears",
+          "Repeat After Me (Interlude)",
+          "After Hours",
+          "Until I Bleed Out"
+        ]
+      },
+      {
+        title: "Dawn FM",
+        year: 2022,
+        tracks: [
+          "Dawn FM",
+          "Gasoline",
+          "How Do I Make You Love Me?",
+          "Take My Breath",
+          "Sacrifice",
+          "A Tale By Quincy",
+          "Out of Time",
+          "Here We Go... Again",
+          "Best Friends",
+          "Is There Someone Else?",
+          "Starry Eyes",
+          "Every Angel is Terrifying",
+          "Don't Break My Heart",
+          "I Heard You're Married",
+          "Less Than Zero",
+          "Phantom Regret by Jim"
+        ]
+      }
+    ]
+  }
+];
 
 /* ---------------------------------------------------------
-   SCREEN ELEMENTS
+   DOM ELEMENTS
 --------------------------------------------------------- */
-
 const artistScreen = document.getElementById("artist-screen");
 const albumScreen = document.getElementById("album-screen");
 const gameScreen = document.getElementById("game-screen");
 
-const artistSearch = document.getElementById("artist-search");
-const artistSearchButton =
-  document.getElementById("artist-search-button");
+const artistList = document.getElementById("artist-list");
+const albumList = document.getElementById("album-list");
+const selectedArtistHeader = document.getElementById("selected-artist");
 
-const artistStatus =
-  document.getElementById("artist-status");
+const gameAlbum = document.getElementById("game-album");
+const gameArtist = document.getElementById("game-artist");
+const gameStatus = document.getElementById("game-status");
+const trackList = document.getElementById("track-list");
+const submitButton = document.getElementById("submit-button");
+const scoreElement = document.getElementById("score");
+const gameControls = document.getElementById("game-controls");
 
-const artistList =
-  document.getElementById("artist-list");
-
-const selectedArtist =
-  document.getElementById("selected-artist");
-
-const albumStatus =
-  document.getElementById("album-status");
-
-const albumList =
-  document.getElementById("album-list");
-
-const backToArtistsButton =
-  document.getElementById("back-to-artists-button");
-
-const gameAlbum =
-  document.getElementById("game-album");
-
-const gameArtist =
-  document.getElementById("game-artist");
-
-const gameVersion =
-  document.getElementById("game-version");
-
-const gameStatus =
-  document.getElementById("game-status");
-
-const trackList =
-  document.getElementById("track-list");
-
-const submitButton =
-  document.getElementById("submit-button");
-
-const scoreElement =
-  document.getElementById("score");
-
-const playAgainButton =
-  document.getElementById("play-again-button");
-
-const chooseAlbumButton =
-  document.getElementById("choose-album-button");
-
-const chooseArtistButton =
-  document.getElementById("choose-artist-button");
-
+const backToArtistsButton = document.getElementById("back-to-artists-button");
+const playAgainButton = document.getElementById("play-again-button");
+const chooseAlbumButton = document.getElementById("choose-album-button");
+const chooseArtistButton = document.getElementById("choose-artist-button");
 
 /* ---------------------------------------------------------
    GAME STATE
 --------------------------------------------------------- */
-
 let currentArtist = null;
 let currentAlbum = null;
-
 let correctOrder = [];
-let tracks = [];
-
+let currentTracks = [];
 let draggedElement = null;
 
-
 /* ---------------------------------------------------------
-   SCREEN MANAGEMENT
+   NAVIGATION
 --------------------------------------------------------- */
-
 function showScreen(screen) {
   artistScreen.style.display = "none";
   albumScreen.style.display = "none";
@@ -88,359 +355,89 @@ function showScreen(screen) {
   screen.style.display = "block";
 }
 
-
-/* ---------------------------------------------------------
-   INITIAL STATE
---------------------------------------------------------- */
-
-showScreen(artistScreen);
-
-gameVersion.textContent = "";
-
-scoreElement.textContent = "";
-
-artistSearch.focus();
-
-
-/* ---------------------------------------------------------
-   ARTIST SEARCH
---------------------------------------------------------- */
-
-artistSearchButton.addEventListener(
-  "click",
-  searchForArtist
-);
-
-artistSearch.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    searchForArtist();
-  }
-});
-
-
-async function searchForArtist() {
-  const query = artistSearch.value.trim();
-
-  if (!query) {
-    artistStatus.textContent =
-      "Enter an artist name.";
-
-    return;
-  }
-
-  artistSearchButton.disabled = true;
-
-  artistStatus.textContent =
-    "Searching...";
-
+function initArtistScreen() {
   artistList.innerHTML = "";
-
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/search-artists?query=${encodeURIComponent(query)}`
-    );
-
-    if (!response.ok) {
-      throw new Error("Artist search failed.");
-    }
-
-    const data = await response.json();
-
-    artistList.innerHTML = "";
-
-    if (!data.artists || data.artists.length === 0) {
-      artistStatus.textContent =
-        "No artists found.";
-
-      return;
-    }
-
-    artistStatus.textContent =
-      "Choose an artist:";
-
-    data.artists.forEach((artist) => {
-      const button =
-        document.createElement("button");
-
-      button.className =
-        "selection-button";
-
-      button.textContent =
-        artist.disambiguation
-          ? `${artist.name} — ${artist.disambiguation}`
-          : artist.name;
-
-      button.addEventListener("click", () => {
-        selectArtist(artist);
-      });
-
-      artistList.appendChild(button);
-    });
-  } catch (error) {
-    console.error(error);
-
-    artistStatus.textContent =
-      "Something went wrong. Try again.";
-  } finally {
-    artistSearchButton.disabled = false;
-  }
+  MUSIC_DATA.forEach((artist) => {
+    const button = document.createElement("button");
+    button.className = "selection-button";
+    button.textContent = artist.name;
+    button.addEventListener("click", () => selectArtist(artist));
+    artistList.appendChild(button);
+  });
+  showScreen(artistScreen);
 }
 
-
-/* ---------------------------------------------------------
-   SELECT ARTIST
---------------------------------------------------------- */
-
-async function selectArtist(artist) {
+function selectArtist(artist) {
   currentArtist = artist;
-
-  selectedArtist.textContent =
-    artist.name;
-
-  albumStatus.textContent =
-    "Loading albums...";
-
+  selectedArtistHeader.textContent = artist.name;
   albumList.innerHTML = "";
 
+  artist.albums.forEach((album) => {
+    const button = document.createElement("button");
+    button.className = "selection-button";
+    button.textContent = `${album.title} (${album.year})`;
+    button.addEventListener("click", () => selectAlbum(album));
+    albumList.appendChild(button);
+  });
+
   showScreen(albumScreen);
-
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/artist/${artist.id}/albums`
-    );
-
-    if (!response.ok) {
-      throw new Error("Could not load albums.");
-    }
-
-    const data = await response.json();
-
-    albumList.innerHTML = "";
-
-    if (!data.albums || data.albums.length === 0) {
-      albumStatus.textContent =
-        "No standard albums found for this artist.";
-
-      return;
-    }
-
-    albumStatus.textContent =
-      "Choose an album:";
-
-    data.albums.forEach((album) => {
-      const button =
-        document.createElement("button");
-
-      button.className =
-        "selection-button";
-
-      const year =
-        album.year
-          ? ` (${album.year})`
-          : "";
-
-      button.textContent =
-        `${album.title}${year}`;
-
-      button.addEventListener("click", () => {
-        selectAlbum(album);
-      });
-
-      albumList.appendChild(button);
-    });
-  } catch (error) {
-    console.error(error);
-
-    albumStatus.textContent =
-      "Something went wrong loading the albums.";
-  }
 }
 
-
-/* ---------------------------------------------------------
-   SELECT ALBUM
---------------------------------------------------------- */
-
-async function selectAlbum(album) {
+function selectAlbum(album) {
   currentAlbum = album;
-
-  gameAlbum.textContent =
-    album.title;
-
-  gameArtist.textContent =
-    currentArtist.name;
-
-  /*
-   * There is intentionally no version selection anymore.
-   *
-   * First find the standard release behind the release group.
-   */
-  gameStatus.textContent =
-    "Loading album...";
-
-  trackList.innerHTML = "";
-
-  scoreElement.textContent = "";
-
-  submitButton.disabled = true;
-
+  correctOrder = [...album.tracks];
+  
+  gameAlbum.textContent = album.title;
+  gameArtist.textContent = currentArtist.name;
+  
+  startGame();
   showScreen(gameScreen);
-
-  try {
-    const releaseResponse = await fetch(
-      `${API_BASE_URL}/release-group/${album.id}/standard-release`
-    );
-
-    if (!releaseResponse.ok) {
-      throw new Error(
-        "Could not find the standard album release."
-      );
-    }
-
-    const releaseData =
-      await releaseResponse.json();
-
-    const releaseId =
-      releaseData.release?.id;
-
-    if (!releaseId) {
-      throw new Error(
-        "No standard release was found."
-      );
-    }
-
-    /*
-     * Now get the actual tracklist.
-     */
-    const tracksResponse = await fetch(
-      `${API_BASE_URL}/release/${releaseId}/tracks`
-    );
-
-    if (!tracksResponse.ok) {
-      throw new Error(
-        "Could not load the tracklist."
-      );
-    }
-
-    const trackData =
-      await tracksResponse.json();
-
-    if (
-      !trackData.tracks ||
-      trackData.tracks.length === 0
-    ) {
-      throw new Error(
-        "This album has no usable tracks."
-      );
-    }
-
-    correctOrder =
-      trackData.tracks.map((track) => ({
-        title: track.title,
-      }));
-
-    startGame();
-  } catch (error) {
-    console.error(error);
-
-    gameStatus.textContent =
-      "Could not load this album. Try another album.";
-  }
 }
 
-
 /* ---------------------------------------------------------
-   START GAME
+   GAME LOGIC
 --------------------------------------------------------- */
-
 function startGame() {
-  gameStatus.textContent =
-    "Put the tracks in the correct order:";
-
+  gameStatus.textContent = "Put the tracks in the correct order:";
   scoreElement.textContent = "";
-
+  submitButton.style.display = "inline-block";
   submitButton.disabled = false;
+  gameControls.style.display = "none";
 
-  /*
-   * Make a fresh copy every time.
-   */
-  tracks =
-    correctOrder.map((track) => ({
-      title: track.title,
-    }));
-
-  shuffle(tracks);
+  // Shuffle tracks
+  currentTracks = [...correctOrder];
+  shuffle(currentTracks);
 
   renderTracks();
 }
 
-
-/* ---------------------------------------------------------
-   SHUFFLE
---------------------------------------------------------- */
-
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
-    const j =
-      Math.floor(Math.random() * (i + 1));
-
-    [array[i], array[j]] =
-      [array[j], array[i]];
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
 }
-
-
-/* ---------------------------------------------------------
-   RENDER TRACKS
---------------------------------------------------------- */
 
 function renderTracks() {
   trackList.innerHTML = "";
 
-  tracks.forEach((track, index) => {
-    const trackElement =
-      document.createElement("div");
+  currentTracks.forEach((title, index) => {
+    const trackElement = document.createElement("div");
+    trackElement.className = "track";
 
-    trackElement.className =
-      "track";
+    const number = document.createElement("div");
+    number.className = "track-number";
+    number.textContent = index + 1;
 
-    trackElement.dataset.index =
-      index;
+    const name = document.createElement("div");
+    name.className = "track-name";
+    name.textContent = title;
 
-    const number =
-      document.createElement("div");
+    const handle = document.createElement("div");
+    handle.className = "drag-handle";
+    handle.textContent = "☰";
 
-    number.className =
-      "track-number";
-
-    number.textContent =
-      index + 1;
-
-    const name =
-      document.createElement("div");
-
-    name.className =
-      "track-name";
-
-    name.textContent =
-      track.title;
-
-    const handle =
-      document.createElement("div");
-
-    handle.className =
-      "drag-handle";
-
-    handle.textContent =
-      "☰";
-
-    /*
-     * Pointer events work with both mouse and touch.
-     */
-    handle.addEventListener(
-      "pointerdown",
-      startDragging
-    );
+    handle.addEventListener("pointerdown", startDragging);
 
     trackElement.appendChild(number);
     trackElement.appendChild(name);
@@ -450,366 +447,122 @@ function renderTracks() {
   });
 }
 
-
 /* ---------------------------------------------------------
-   DRAGGING
+   DRAG AND DROP HANDLERS (POINTER EVENTS)
 --------------------------------------------------------- */
-
 function startDragging(event) {
   event.preventDefault();
+  draggedElement = event.currentTarget.parentElement;
+  draggedElement.classList.add("dragging");
 
-  draggedElement =
-    event.currentTarget.parentElement;
-
-  draggedElement.classList.add(
-    "dragging"
-  );
-
-  document.addEventListener(
-    "pointermove",
-    moveDragging
-  );
-
-  document.addEventListener(
-    "pointerup",
-    stopDragging,
-    { once: true }
-  );
+  document.addEventListener("pointermove", moveDragging);
+  document.addEventListener("pointerup", stopDragging, { once: true });
 }
-
 
 function moveDragging(event) {
-  if (!draggedElement) {
-    return;
-  }
+  if (!draggedElement) return;
 
-  const elements =
-    [...trackList.querySelectorAll(".track:not(.dragging)")];
-
-  const afterElement =
-    getDragAfterElement(
-      trackList,
-      event.clientY
-    );
-
+  const afterElement = getDragAfterElement(trackList, event.clientY);
   if (afterElement == null) {
-    trackList.appendChild(
-      draggedElement
-    );
+    trackList.appendChild(draggedElement);
   } else {
-    trackList.insertBefore(
-      draggedElement,
-      afterElement
-    );
+    trackList.insertBefore(draggedElement, afterElement);
   }
 }
 
-
 function stopDragging() {
-  if (!draggedElement) {
-    return;
-  }
+  if (!draggedElement) return;
 
-  draggedElement.classList.remove(
-    "dragging"
-  );
+  draggedElement.classList.remove("dragging");
+  document.removeEventListener("pointermove", moveDragging);
 
-  document.removeEventListener(
-    "pointermove",
-    moveDragging
-  );
-
-  updateTrackArrayFromDOM();
-
+  updateTrackNumbers();
   draggedElement = null;
 }
 
-
-function getDragAfterElement(
-  container,
-  y
-) {
-  const elements =
-    [
-      ...container.querySelectorAll(
-        ".track:not(.dragging)"
-      ),
-    ];
+function getDragAfterElement(container, y) {
+  const elements = [...container.querySelectorAll(".track:not(.dragging)")];
 
   return elements.reduce(
     (closest, child) => {
-      const box =
-        child.getBoundingClientRect();
+      const box = child.getBoundingClientRect();
+      const offset = y - box.top - box.height / 2;
 
-      const offset =
-        y -
-        box.top -
-        box.height / 2;
-
-      if (
-        offset < 0 &&
-        offset > closest.offset
-      ) {
-        return {
-          offset,
-          element: child,
-        };
+      if (offset < 0 && offset > closest.offset) {
+        return { offset: offset, element: child };
+      } else {
+        return closest;
       }
-
-      return closest;
     },
-    {
-      offset: Number.NEGATIVE_INFINITY,
-    }
+    { offset: Number.NEGATIVE_INFINITY }
   ).element;
 }
 
-
-/* ---------------------------------------------------------
-   UPDATE ARRAY AFTER DRAGGING
---------------------------------------------------------- */
-
-function updateTrackArrayFromDOM() {
-  const elements =
-    [...trackList.querySelectorAll(".track")];
-
-  tracks =
-    elements.map((element) => ({
-      title:
-        element.querySelector(
-          ".track-name"
-        ).textContent,
-    }));
-
-  /*
-   * Update visible position numbers.
-   */
+function updateTrackNumbers() {
+  const elements = [...trackList.querySelectorAll(".track")];
   elements.forEach((element, index) => {
-    element
-      .querySelector(".track-number")
-      .textContent = index + 1;
+    element.querySelector(".track-number").textContent = index + 1;
   });
 }
 
-
 /* ---------------------------------------------------------
-   SUBMIT
+   SUBMIT & RESULTS
 --------------------------------------------------------- */
-
-submitButton.addEventListener(
-  "click",
-  submitGame
-);
-
+submitButton.addEventListener("click", submitGame);
 
 function submitGame() {
-  updateTrackArrayFromDOM();
-
+  const elements = [...trackList.querySelectorAll(".track")];
   let score = 0;
 
   trackList.innerHTML = "";
 
-  tracks.forEach((track, index) => {
-    const correctTrack =
-      correctOrder[index];
+  elements.forEach((element, index) => {
+    const trackTitle = element.querySelector(".track-name").textContent;
+    const isCorrect = trackTitle === correctOrder[index];
 
-    const trackElement =
-      document.createElement("div");
+    const resultTrack = document.createElement("div");
+    resultTrack.className = "track " + (isCorrect ? "track-correct" : "track-incorrect");
 
-    trackElement.className =
-      "track";
+    const number = document.createElement("div");
+    number.className = "track-number";
+    number.textContent = index + 1;
 
-    const number =
-      document.createElement("div");
+    const name = document.createElement("div");
+    name.className = "track-name";
+    name.textContent = trackTitle;
 
-    number.className =
-      "track-number";
+    const result = document.createElement("div");
+    result.className = "result " + (isCorrect ? "correct" : "incorrect");
 
-    number.textContent =
-      index + 1;
-
-    const name =
-      document.createElement("div");
-
-    name.className =
-      "track-name";
-
-    name.textContent =
-      track.title;
-
-    const result =
-      document.createElement("div");
-
-    result.className =
-      "result";
-
-    if (
-      track.title === correctTrack.title
-    ) {
+    if (isCorrect) {
       score++;
-
-      trackElement.classList.add(
-        "track-correct"
-      );
-
-      result.classList.add(
-        "correct"
-      );
-
-      result.textContent =
-        "✓";
+      result.textContent = "✓";
     } else {
-      trackElement.classList.add(
-        "track-incorrect"
-      );
-
-      result.classList.add(
-        "incorrect"
-      );
-
-      const correctPosition =
-        correctOrder.findIndex(
-          (item) =>
-            item.title === track.title
-        ) + 1;
-
-      result.textContent =
-        `✗ #${correctPosition}`;
+      const correctPosition = correctOrder.indexOf(trackTitle) + 1;
+      result.textContent = `✗ #${correctPosition}`;
     }
 
-    trackElement.appendChild(number);
-    trackElement.appendChild(name);
-    trackElement.appendChild(result);
+    resultTrack.appendChild(number);
+    resultTrack.appendChild(name);
+    resultTrack.appendChild(result);
 
-    trackList.appendChild(trackElement);
+    trackList.appendChild(resultTrack);
   });
 
-  scoreElement.textContent =
-    `Score: ${score} / ${correctOrder.length}`;
+  scoreElement.textContent = `Score: ${score} / ${correctOrder.length}`;
+  gameStatus.textContent = "Results:";
 
-  gameStatus.textContent =
-    "Results:";
-
-  submitButton.disabled = true;
+  submitButton.style.display = "none";
+  gameControls.style.display = "block";
 }
 
-
 /* ---------------------------------------------------------
-   PLAY AGAIN
+   BUTTON EVENT LISTENERS
 --------------------------------------------------------- */
+backToArtistsButton.addEventListener("click", () => showScreen(artistScreen));
+chooseArtistButton.addEventListener("click", () => showScreen(artistScreen));
+chooseAlbumButton.addEventListener("click", () => selectArtist(currentArtist));
+playAgainButton.addEventListener("click", () => startGame());
 
-playAgainButton.addEventListener(
-  "click",
-  () => {
-    startGame();
-  }
-);
-
-
-/* ---------------------------------------------------------
-   BACK TO ARTISTS
---------------------------------------------------------- */
-
-backToArtistsButton.addEventListener(
-  "click",
-  () => {
-    artistList.innerHTML = "";
-
-    artistStatus.textContent = "";
-
-    showScreen(artistScreen);
-
-    artistSearch.focus();
-  }
-);
-
-
-/* ---------------------------------------------------------
-   CHOOSE ANOTHER ALBUM
---------------------------------------------------------- */
-
-chooseAlbumButton.addEventListener(
-  "click",
-  async () => {
-    if (!currentArtist) {
-      showScreen(artistScreen);
-      return;
-    }
-
-    albumStatus.textContent =
-      "Loading albums...";
-
-    albumList.innerHTML = "";
-
-    showScreen(albumScreen);
-
-    try {
-      const response = await fetch(
-        `${API_BASE_URL}/artist/${currentArtist.id}/albums`
-      );
-
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      const data =
-        await response.json();
-
-      albumList.innerHTML = "";
-
-      data.albums.forEach((album) => {
-        const button =
-          document.createElement("button");
-
-        button.className =
-          "selection-button";
-
-        const year =
-          album.year
-            ? ` (${album.year})`
-            : "";
-
-        button.textContent =
-          `${album.title}${year}`;
-
-        button.addEventListener(
-          "click",
-          () => selectAlbum(album)
-        );
-
-        albumList.appendChild(button);
-      });
-
-      albumStatus.textContent =
-        "Choose an album:";
-    } catch (error) {
-      console.error(error);
-
-      albumStatus.textContent =
-        "Could not load the albums.";
-    }
-  }
-);
-
-
-/* ---------------------------------------------------------
-   CHOOSE ANOTHER ARTIST
---------------------------------------------------------- */
-
-chooseArtistButton.addEventListener(
-  "click",
-  () => {
-    currentArtist = null;
-    currentAlbum = null;
-
-    artistSearch.value = "";
-
-    artistList.innerHTML = "";
-
-    artistStatus.textContent = "";
-
-    showScreen(artistScreen);
-
-    artistSearch.focus();
-  }
-);
+// Run initial screen on load
+initArtistScreen();
