@@ -698,9 +698,9 @@ const musicData = [
                 cover: "images/albums/hob.jpg",
 
                 theme: {
-                    background: "#17151B",
-                    text: "#FFFFFF",
-                    accent: "#8C62A8"
+                    background: "#B8C0BE",
+                    text: "#3E4644",
+                    accent: "#7C747C"
                 },
 
                 tracks: [
