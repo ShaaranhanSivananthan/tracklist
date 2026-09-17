@@ -16,9 +16,9 @@ const musicData = [
                 cover: "images/albums/tcd.jpg",
 
                 theme: {
-                    background: "#D9C29C",
-                    text: "#17130E",
-                    accent: "#8A5A24"
+                    background: "#C9B08A",
+                    text: "#1C1714",
+                    accent: "#B52B2B"
                 },
 
                 tracks: [
@@ -52,9 +52,9 @@ const musicData = [
                 cover: "images/albums/lr.jpg",
 
                 theme: {
-                    background: "#B7C9D6",
-                    text: "#101820",
-                    accent: "#31556D"
+                    background: "#D8C7A8",
+                    text: "#302820",
+                    accent: "#A66A32"
                 },
 
                 tracks: [
@@ -87,9 +87,9 @@ const musicData = [
                 cover: "images/albums/grad.jpg",
 
                 theme: {
-                    background: "#6F86A8",
-                    text: "#FFFFFF",
-                    accent: "#263B5A"
+                    background: "#F0C928",
+                    text: "#1B2A5B",
+                    accent: "#E94B35"
                 },
 
                 tracks: [
@@ -115,9 +115,9 @@ const musicData = [
                 cover: "images/albums/808s.jpg",
 
                 theme: {
-                    background: "#D9C29C",
-                    text: "#17130E",
-                    accent: "#8A5A24"
+                    background: "#D9D9D9",
+                    text: "#171717",
+                    accent: "#6D6D6D"
                 },
 
                 tracks: [
@@ -142,9 +142,9 @@ const musicData = [
                 cover: "images/albums/mbdtf.jpg",
 
                 theme: {
-                    background: "#3A251D",
-                    text: "#FFFFFF",
-                    accent: "#FFD700"
+                    background: "#171313",
+                    text: "#E8DDD0",
+                    accent: "#A52B2B"
                 },
 
                 tracks: [
@@ -170,9 +170,9 @@ const musicData = [
                 cover: "images/albums/wtt.jpg",
 
                 theme: {
-                    background: "#D9C29C",
-                    text: "#17130E",
-                    accent: "#8A5A24"
+                    background: "#111111",
+                    text: "#F2D27A",
+                    accent: "#B58B32"
                 },
 
                 tracks: [
@@ -197,9 +197,9 @@ const musicData = [
                 cover: "images/albums/yeezus.jpg",
 
                 theme: {
-                    background: "#222222",
-                    text: "#FFFFFF",
-                    accent: "#FFFFFF"
+                    background: "#E7E3DB",
+                    text: "#111111",
+                    accent: "#C63B2E"
                 },
 
                 tracks: [
@@ -222,9 +222,9 @@ const musicData = [
                 cover: "images/albums/tlop.jpg",
 
                 theme: {
-                    background: "#D9C29C",
-                    text: "#17130E",
-                    accent: "#8A5A24"
+                    background: "#B9B3A7",
+                    text: "#171717",
+                    accent: "#D56B3F"
                 },
 
                 tracks: [
@@ -257,9 +257,9 @@ const musicData = [
                 cover: "images/albums/ye.jpg",
 
                 theme: {
-                    background: "#D9C29C",
-                    text: "#17130E",
-                    accent: "#8A5A24"
+                    background: "#B8C4B0",
+                    text: "#F4F1E8",
+                    accent: "#596A58"
                 },
 
                 tracks: [
@@ -279,9 +279,9 @@ const musicData = [
                 cover: "images/albums/ksg.jpg",
 
                 theme: {
-                    background: "#D9C29C",
-                    text: "#17130E",
-                    accent: "#8A5A24"
+                    background: "#F0C2C8",
+                    text: "#191919",
+                    accent: "#E44C58"
                 },
 
                 tracks: [
@@ -301,9 +301,9 @@ const musicData = [
                 cover: "images/albums/jik.jpg",
 
                 theme: {
-                    background: "#D9C29C",
-                    text: "#17130E",
-                    accent: "#8A5A24"
+                    background: "#A8D8E5",
+                    text: "#111111",
+                    accent: "#5AA9C0"
                 },
 
                 tracks: [
@@ -327,9 +327,9 @@ const musicData = [
                 cover: "images/albums/donda.jpg",
 
                 theme: {
-                    background: "#D9C29C",
-                    text: "#17130E",
-                    accent: "#8A5A24"
+                    background: "#0A0A0A",
+                    text: "#E5E5E5",
+                    accent: "#6E6E6E"
                 },
 
                 tracks: [
@@ -365,9 +365,9 @@ const musicData = [
                 cover: "images/albums/d2.jpg",
 
                 theme: {
-                    background: "#D9C29C",
-                    text: "#17130E",
-                    accent: "#8A5A24"
+                    background: "#3A2925",
+                    text: "#F1E6D3",
+                    accent: "#A86F4D"
                 },
 
                 tracks: [
@@ -401,9 +401,9 @@ const musicData = [
                 cover: "images/albums/vultures1.jpg",
 
                 theme: {
-                    background: "#D9C29C",
-                    text: "#17130E",
-                    accent: "#8A5A24"
+                    background: "#4A4844",
+                    text: "#E7E1D6",
+                    accent: "#B52E2E"
                 },
 
                 tracks: [
@@ -431,9 +431,9 @@ const musicData = [
                 cover: "images/albums/vultures2.jpg",
 
                 theme: {
-                    background: "#D9C29C",
-                    text: "#17130E",
-                    accent: "#8A5A24"
+                    background: "#181818",
+                    text: "#D7D0C4",
+                    accent: "#8C7460"
                 },
 
                 tracks: [
@@ -462,9 +462,9 @@ const musicData = [
                 cover: "images/albums/bully.jpg",
 
                 theme: {
-                    background: "#D9C29C",
-                    text: "#17130E",
-                    accent: "#8A5A24"
+                    background: "#E5E1D8",
+                    text: "#0B0B0B",
+                    accent: "#7D1717"
                 },
 
                 tracks: [
