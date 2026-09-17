@@ -8,41 +8,229 @@ const musicData = [
         name: "Ariana Grande",
         image: "images/artists/ariana.jpg",
 
-        // albums: [
+        albums: [
 
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
+            {
+                name: "Yours Truly",
+                year: 2013,
+                cover: "images/albums/yt.jpg",
 
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
+                theme: {
+                    background: "#949ca8",
+                    text: "#6d6d6d",
+                    accent: "#acb7bf"
+                },
 
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+                tracks: [
+                    "Honeymoon Avenue",
+                    "Baby I",
+                    "Right There",
+                    "Tattooed Heart",
+                    "Lovin' It",
+                    "Piano",
+                    "Daydreamin",
+                    "The Way",
+                    "You'll Never Know",
+                    "Almost Is Never Enough",
+                    "Popular Song",
+                    "Better Left Unsaid"
+                ]
+            },
+
+            {
+                name: "My Everything",
+                year: 2014,
+                cover: "images/albums/me.jpg",
+
+                theme: {
+                    background: "#b9a7b6",
+                    text: "#7a7a7a",
+                    accent: "#f2f2f2"
+                },
+
+                tracks: [
+                    "Intro",
+                    "Problem",
+                    "One Last Time",
+                    "Why Try",
+                    "Break Free",
+                    "Best Mistake",
+                    "Be My Baby",
+                    "Break Your Heart Right Back",
+                    "Love Me Harder",
+                    "Just a Little Bit of Your Heart",
+                    "Hands on Me",
+                    "My Everything"
+                ]
+            },
+
+            {
+                name: "Dangerous Woman",
+                year: 2016,
+                cover: "images/albums/dw.jpg",
+
+                theme: {
+                    background: "#858585",
+                    text: "#f3f3f6",
+                    accent: "#d2d2d2"
+                },
+
+                tracks: [
+                    "Moonlight",
+                    "Dangerous Woman",
+                    "Be Alright",
+                    "Into You",
+                    "Side to Side",
+                    "Let Me Love You",
+                    "Greedy",
+                    "Leave Me Lonely",
+                    "Everyday",
+                    "Bad Decisions",
+                    "Thinking Bout You"
+                ]
+            },
+
+            {
+                name: "Sweetener",
+                year: 2018,
+                cover: "images/albums/sweetener.jpg",
+
+                theme: {
+                    background: "#d8b186",
+                    text: "#f4d6b4",
+                    accent: "#d49270"
+                },
+
+                tracks: [
+                    "Raindrops (An Angel Cried)",
+                    "Blazed",
+                    "The Light Is Coming",
+                    "R.E.M.",
+                    "God Is a Woman",
+                    "Sweetener",
+                    "Successful",
+                    "Everytime",
+                    "Breathin",
+                    "No Tears Left to Cry",
+                    "Borderline",
+                    "Better Off",
+                    "Goodnight n Go",
+                    "Pete Davidson",
+                    "Get Well Soon"
+                ]
+            },
+
+            {
+                name: "Thank U, Next",
+                year: 2019,
+                cover: "images/albums/tun.jpg",
+
+                theme: {
+                    background: "#d96f9e",
+                    text: "#393020",
+                    accent: "#ead1dc"
+                },
+
+                tracks: [
+                    "Imagine",
+                    "Needy",
+                    "NASA",
+                    "Bloodline",
+                    "Fake Smile",
+                    "Bad Idea",
+                    "Make Up",
+                    "Ghostin",
+                    "In My Head",
+                    "7 Rings",
+                    "Thank U, Next",
+                    "Break Up with Your Girlfriend, I'm Bored"
+                ]
+            },
+
+            {
+                name: "Positions",
+                year: 2020,
+                cover: "images/albums/positions.jpg",
+
+                theme: {
+                    background: "#769174",
+                    text: "#91887b",
+                    accent: "#cbeabd"
+                },
+
+                tracks: [
+                    "Shut Up",
+                    "34+35",
+                    "Motive",
+                    "Just like Magic",
+                    "Off the Table",
+                    "Six Thirty",
+                    "Safety Net",
+                    "My Hair",
+                    "Nasty",
+                    "West Side",
+                    "Love Language",
+                    "Positions",
+                    "Obvious",
+                    "POV"
+                ]
+            },
+
+            {
+                name: "Eternal Sunshine",
+                year: 2024,
+                cover: "images/albums/es.jpg",
+
+                theme: {
+                    background: "#fff2cc",
+                    text: "#660000",
+                    accent: "#cc0000"
+                },
+
+                tracks: [
+                    "Intro (End of the World)",
+                    "Bye",
+                    "Don't Wanna Break Up Again",
+                    "Saturn Returns Interlude",
+                    "Eternal Sunshine",
+                    "Supernatural",
+                    "True Story",
+                    "The Boy Is Mine",
+                    "Yes, And?",
+                    "We Can't Be Friends (Wait for Your Love)",
+                    "I Wish I Hated You",
+                    "Imperfect for You",
+                    "Ordinary Things"
+                ]
+            },
+
+            {
+                name: "Petal",
+                year: 2026,
+                cover: "images/albums/petal.jpg",
+
+                theme: {
+                    background: "#585858",
+                    text: "#e0e0e0",
+                    accent: "#6d6d6d"
+                },
+
+                tracks: [
+                    "Kiss Me",
+                    "Hate That I Made You Love Me",
+                    "Petal",
+                    "Stay",
+                    "Oh Well",
+                    "Big Feelings",
+                    "Freak",
+                    "Warning Signs (Interlude)",
+                    "Like I Do",
+                    "Never Get Over Me",
+                    "Bad Thing (Bunny Hop)",
+                    "Nowhere, Nobody"
+                ]
+            }
+        ]
     },
         
     // ============================================================
