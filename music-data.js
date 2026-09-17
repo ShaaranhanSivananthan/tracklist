@@ -240,43 +240,149 @@ const musicData = [
     {
         name: "A$AP Rocky",
         image: "images/artists/asap.jpg",
-
-        // albums: [
-
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
-
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
-
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
-    },
+    
+        albums: [
+            {
+                name: "LIVE.LOVE.A$AP",
+                year: 2011,
+                cover: "images/albums/live-love-asap.jpg",
+    
+                theme: {
+                    background: "#1c1c1c",
+                    text: "#e6e6e6",
+                    accent: "#666666"
+                },
+    
+                tracks: [
+                    "Palace",
+                    "Peso",
+                    "Bass",
+                    "Wassup",
+                    "Brand New Guy",
+                    "Purple Swag",
+                    "Get Lit",
+                    "Trilla",
+                    "Houston Old Head",
+                    "Acid Drip",
+                    "Leaf",
+                    "Roll One Up",
+                    "Demons",
+                    "Out of This World",
+                    "Keep It G"
+                ]
+            },
+    
+            {
+                name: "LONG.LIVE.A$AP",
+                year: 2013,
+                cover: "images/albums/long-live-asap.jpg",
+    
+                theme: {
+                    background: "#0d0d0d",
+                    text: "#f0f0f0",
+                    accent: "#404040"
+                },
+    
+                tracks: [
+                    "Long Live A$AP",
+                    "Goldie",
+                    "PMW (All I Really Need)",
+                    "LVL",
+                    "Hell",
+                    "Pain",
+                    "Fuckin' Problems",
+                    "Wild for the Night",
+                    "1Train",
+                    "Fashion Killa",
+                    "Phoenix",
+                    "Suddenly"
+                ]
+            },
+    
+            {
+                name: "AT.LONG.LAST.A$AP",
+                year: 2015,
+                cover: "images/albums/at-long-last-asap.jpg",
+    
+                theme: {
+                    background: "#2b1a10",
+                    text: "#e0d3c1",
+                    accent: "#8c5a32"
+                },
+    
+                tracks: [
+                    "Holy Ghost",
+                    "Canal St.",
+                    "Fine Wine",
+                    "L$D",
+                    "Excused",
+                    "Lord Pretty Flacko Jodye 2 (LPFJ2)",
+                    "Electric Body",
+                    "Jukebox Joints",
+                    "Max B",
+                    "Pharsyde",
+                    "Wavybone",
+                    "West Side Highway",
+                    "Better Things",
+                    "M'$",
+                    "Holy Ghost",
+                    "Everyday",
+                    "Back Home"
+                ]
+            },
+    
+            {
+                name: "TESTING",
+                year: 2018,
+                cover: "images/albums/testing.jpg",
+    
+                theme: {
+                    background: "#e6ad00",
+                    text: "#121212",
+                    accent: "#ffffff"
+                },
+    
+                tracks: [
+                    "Distorted Records",
+                    "A$AP Forever REMIX",
+                    "Tony Tone",
+                    "F射k Testing",
+                    "Praise the Lord (Da Shine)",
+                    "CALLDROPS",
+                    "Buck Shots",
+                    "Brotha Man",
+                    "OG Beeper",
+                    "Kids Turned Out Fine",
+                    "Hun43rd",
+                    "Changes",
+                    "Black Tux, White Collar",
+                    "Purity"
+                ]
+            },
+    
+            {
+                name: "DON'T BE DUMB",
+                year: 2024,
+                cover: "images/albums/dont-be-dumb.jpg",
+    
+                theme: {
+                    background: "#111111",
+                    text: "#ffffff",
+                    accent: "#d90429"
+                },
+    
+                tracks: [
+                    "HIGHJACK",
+                    "Tailor Swif",
+                    "Ruby Rosary",
+                    "DON'T BE DUMB",
+                    "PUNK",
+                    "WHISKEY",
+                    "STOLE YOUR BITCH"
+                ]
+            }
+        ]
+    }
 
     // ============================================================
     // The Beatles
