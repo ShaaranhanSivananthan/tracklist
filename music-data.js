@@ -722,9 +722,9 @@ const musicData = [
                 cover: "images/albums/thursday.jpg",
 
                 theme: {
-                    background: "#121214",
-                    text: "#E3E4E8",
-                    accent: "#E20074"
+                    background: "#D7BFB7",
+                    text: "#DCB849",
+                    accent: "#DC6CA4"
                 },
 
                 tracks: [
@@ -746,9 +746,9 @@ const musicData = [
                 cover: "images/albums/eos.jpg",
 
                 theme: {
-                    background: "#181818",
-                    text: "#F0F0F0",
-                    accent: "#B80000"
+                    background: "#BCCCC4",
+                    text: "#923B39",
+                    accent: "#C48C7C"
                 },
 
                 tracks: [
@@ -770,9 +770,9 @@ const musicData = [
                 cover: "images/albums/kl.jpg",
 
                 theme: {
-                    background: "#0B1410",
-                    text: "#00FF66",
-                    accent: "#4D8C6F"
+                    background: "#B7C7BA",
+                    text: "#3EC383",
+                    accent: "#C7A775"
                 },
 
                 tracks: [
@@ -795,9 +795,9 @@ const musicData = [
                 cover: "images/albums/bbtm.jpg",
 
                 theme: {
-                    background: "#A89B87",
-                    text: "#16130F",
-                    accent: "#5A4A3A"
+                    background: "#84847C",
+                    text: "#C1BEB9",
+                    accent: "#040B0B"
                 },
 
                 tracks: [
@@ -824,9 +824,9 @@ const musicData = [
                 cover: "images/albums/starboy.jpg",
 
                 theme: {
-                    background: "#111111",
-                    text: "#FFFFFF",
-                    accent: "#C6A15B"
+                    background: "#C50635",
+                    text: "#E4B60B",
+                    accent: "#B0C6CC"
                 },
 
                 tracks: [
@@ -857,9 +857,9 @@ const musicData = [
                 cover: "images/albums/mdm.jpg",
 
                 theme: {
-                    background: "#1C0D08",
-                    text: "#E67035",
-                    accent: "#7A2E10"
+                    background: "#772C13",
+                    text: "#CD5F37",
+                    accent: "#E4AA94"
                 },
 
                 tracks: [
@@ -878,9 +878,9 @@ const musicData = [
                 cover: "images/albums/ah.jpg",
 
                 theme: {
-                    background: "#8C1D25",
-                    text: "#FFFFFF",
-                    accent: "#2C1114"
+                    background: "#710912",
+                    text: "#B6D4BE",
+                    accent: "#A76F3B"
                 },
 
                 tracks: [
@@ -907,9 +907,9 @@ const musicData = [
                 cover: "images/albums/dfm.jpg",
 
                 theme: {
-                    background: "#B7B7B7",
-                    text: "#151515",
-                    accent: "#555555"
+                    background: "#518EAC",
+                    text: "#A4C4D4",
+                    accent: "#C8C8C8"
                 },
 
                 tracks: [
