@@ -1748,9 +1748,9 @@ const musicData = [
                 cover: "images/albums/thursday.jpg",
 
                 theme: {
-                    background: "#FCEFB0",
-                    text: "#DCB849",
-                    accent: "#C57613"
+                    background: "#D7BFB7",
+                    text: "#26608B",
+                    accent: "#DCB849"
                 },
 
                 tracks: [
