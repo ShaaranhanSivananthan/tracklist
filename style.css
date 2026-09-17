@@ -1,3 +1,11 @@
+:root {
+  --bg-color: #f2f2f2;
+  --card-bg: #ffffff;
+  --text-color: #222222;
+  --accent-color: #222222;
+  --button-hover: #e2e2e2;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,16 +13,17 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f2f2f2;
-  color: #222;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   user-select: none;
   -webkit-user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .game {
   width: 90%;
   max-width: 600px;
-  margin: 50px auto;
+  margin: 40px auto;
   text-align: center;
 }
 
@@ -24,83 +33,166 @@ h1 {
 }
 
 h2 {
+  margin-top: 10px;
   margin-bottom: 5px;
 }
 
-.artist {
-  color: #666;
+.artist-sub {
+  opacity: 0.8;
   margin-top: 0;
   font-size: 18px;
 }
 
-#selected-artist {
-  color: #666;
-  margin-top: 5px;
-}
-
 #game-status {
-  color: #666;
+  opacity: 0.8;
   min-height: 22px;
   margin: 15px 0;
 }
 
-/* SELECTION LISTS */
-#artist-list,
-#album-list {
+/* ARTIST LIST (GRID / CARDS) */
+#artist-list {
   display: flex;
   flex-direction: column;
   gap: 15px;
   margin: 30px 0;
 }
 
-.selection-button {
-  width: 100%;
-  padding: 20px;
-  background: white;
+.artist-card {
+  display: flex;
+  align-items: center;
+  background: var(--card-bg);
   border: 2px solid #ddd;
-  border-radius: 10px;
-  font-size: 18px;
+  border-radius: 12px;
+  padding: 10px;
   cursor: pointer;
-  text-align: left;
+  transition: transform 0.1s ease, border-color 0.2s ease;
+}
+
+.artist-card:hover {
+  border-color: var(--accent-color);
+}
+
+.artist-card:active {
+  transform: scale(0.98);
+}
+
+.artist-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.artist-name-text {
+  font-size: 22px;
   font-weight: bold;
 }
 
-.selection-button:hover {
-  border-color: #222;
+/* ALBUM LIST */
+#artist-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.selection-button:active {
-  transform: scale(0.99);
+.header-artist-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+#album-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.album-card {
+  display: flex;
+  align-items: center;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.15s ease;
+}
+
+.album-card:hover {
+  transform: translateY(-2px);
+}
+
+.album-card:active {
+  transform: scale(0.98);
+}
+
+.album-cover-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.album-info {
+  text-align: left;
+}
+
+.album-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.album-year {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* GAME SCREEN */
+.game-album-cover {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  margin-bottom: 10px;
 }
 
 /* TRACKS */
 #track-list {
-  margin: 30px 0;
+  margin: 25px 0;
 }
 
 .track {
   display: flex;
   align-items: center;
-  background: white;
-  border: 1px solid #ddd;
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   padding: 0;
   margin: 10px 0;
   font-size: 18px;
   overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: var(--text-color);
 }
 
 .track-number {
-  padding: 18px 0 18px 18px;
+  padding: 16px 0 16px 16px;
   min-width: 45px;
   text-align: right;
   font-weight: bold;
-  color: #888;
+  opacity: 0.6;
   font-size: 16px;
 }
 
 .track-name {
-  padding: 18px;
+  padding: 16px;
   flex: 1;
   text-align: left;
   font-weight: 500;
@@ -108,13 +200,12 @@ h2 {
 
 .drag-handle {
   order: 2;
-  padding: 18px 20px;
-  background: #eee;
-  color: #555;
+  padding: 16px 20px;
+  background: rgba(0, 0, 0, 0.15);
+  color: var(--text-color);
   cursor: grab;
   font-size: 22px;
   touch-action: none;
-  -webkit-user-select: none;
 }
 
 .drag-handle:active {
@@ -122,86 +213,81 @@ h2 {
 }
 
 .dragging {
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
-/* BUTTONS & CONTROLS */
-#submit-button {
-  background: #222;
-  color: white;
-  border: none;
+/* BUTTONS */
+button {
+  display: block;
+  width: 100%;
+  background: var(--accent-color);
+  color: var(--text-color);
+  border: 2px solid var(--accent-color);
   border-radius: 10px;
-  padding: 15px 35px;
+  padding: 14px 20px;
   font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
+  margin-top: 10px;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
 }
 
-#submit-button:hover {
-  background: #444;
+button:hover {
+  opacity: 0.85;
+}
+
+#submit-button {
+  background: var(--accent-color);
+  color: #ffffff;
+  border: none;
 }
 
 #score {
   margin-top: 25px;
 }
 
-#play-again-button,
-#choose-album-button,
-#choose-artist-button,
-#back-to-artists-button {
-  display: block;
-  width: 100%;
-  background: white;
-  color: #222;
-  border: 2px solid #222;
-  border-radius: 10px;
-  padding: 13px 30px;
-  font-size: 18px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-#play-again-button:hover,
-#choose-album-button:hover,
-#choose-artist-button:hover,
-#back-to-artists-button:hover {
-  background: #e2e2e2;
-}
-
 /* RESULTS DISPLAY */
 .result {
-  padding: 18px 20px;
+  padding: 16px 20px;
   font-size: 18px;
   font-weight: bold;
   white-space: nowrap;
 }
 
 .correct {
-  color: green;
+  color: #2e7d32;
 }
 
 .incorrect {
-  color: red;
+  color: #d32f2f;
 }
 
 .track-correct {
-  border-color: #9ccc9c;
-  background: #f1faf1;
+  border: 2px solid #2e7d32;
+  background: #e8f5e9;
+  color: #1b5e20;
 }
 
 .track-incorrect {
-  border-color: #e0a0a0;
-  background: #fff5f5;
+  border: 2px solid #d32f2f;
+  background: #ffebee;
+  color: #b71c1c;
 }
 
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 500px) {
   .game {
     width: 94%;
-    margin: 30px auto;
+    margin: 20px auto;
   }
 
   h1 {
-    font-size: 34px;
+    font-size: 32px;
+  }
+
+  .game-album-cover {
+    width: 140px;
+    height: 140px;
   }
 
   .track {
@@ -209,7 +295,7 @@ h2 {
   }
 
   .track-name {
-    padding: 16px 12px;
+    padding: 14px 10px;
   }
 
   .track-number {
@@ -218,10 +304,6 @@ h2 {
   }
 
   .drag-handle {
-    padding: 16px;
-  }
-
-  .selection-button {
-    padding: 18px;
+    padding: 14px;
   }
 }
