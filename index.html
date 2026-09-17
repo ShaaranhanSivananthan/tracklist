@@ -1,106 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111111">
-  <meta name="description" content="Test your music knowledge by putting album tracks in the correct order.">
-  <title>Tracklist — Album Tracklist Game</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Test your music knowledge by putting album tracks in the correct order."
+    >
+
+    <meta name="theme-color" content="#111111">
+
+    <title>Album Order Game</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <main class="game">
 
-    <!-- Optional ad slot: add your ad provider here later. -->
-    <div id="top-ad" class="ad-slot" aria-hidden="true"></div>
+    <main class="game">
 
-    <!-- ARTIST SELECTION SCREEN -->
-    <section id="artist-screen" aria-labelledby="artist-title">
-      <h1 id="artist-title">Tracklist</h1>
-      <p>Choose an artist:</p>
-      <div id="artist-list" class="artist-list"></div>
-    </section>
+        <!-- ==================== ARTIST SCREEN ==================== -->
 
-    <!-- ALBUM SELECTION SCREEN -->
-    <section
-      id="album-screen"
-      class="screen-hidden"
-      aria-labelledby="album-selection-title"
-      hidden
-    >
-      <div id="artist-header-container"></div>
+        <section id="artist-screen" class="screen" aria-labelledby="artist-title">
 
-      <h2 id="album-selection-title" class="sr-only">
-        Album selection
-      </h2>
+            <header class="screen-header">
+                <h1 id="artist-title">Album Order</h1>
+                <p>Choose an artist</p>
+            </header>
 
-      <p>Choose an album:</p>
+            <div
+                id="artist-list"
+                class="artist-list"
+                aria-label="Artists"
+            ></div>
 
-      <div id="album-list" class="album-list"></div>
+        </section>
 
-      <button
-        id="back-to-artists-button"
-        class="secondary-button"
-        type="button"
-      >
-        Choose Another Artist
-      </button>
-    </section>
 
-    <!-- GAME SCREEN -->
-    <section
-      id="game-screen"
-      class="screen-hidden"
-      aria-labelledby="game-title"
-      hidden
-    >
-      <div id="game-album-container"></div>
+        <!-- ==================== ALBUM SCREEN ==================== -->
 
-      <p id="game-status">
-        Put the tracks in the correct order:
-      </p>
-
-      <div
-        id="track-list"
-        class="track-list"
-        role="list"
-        aria-label="Tracks to arrange"
-      ></div>
-
-      <button id="submit-button" type="button">
-        Submit
-      </button>
-
-      <h2 id="score" aria-live="polite"></h2>
-
-      <div id="game-controls" class="game-controls" hidden>
-        <button id="play-again-button" type="button">
-          Play Again
-        </button>
-
-        <button
-          id="choose-album-button"
-          class="secondary-button"
-          type="button"
+        <section
+            id="album-screen"
+            class="screen"
+            aria-labelledby="album-title"
+            hidden
         >
-          Choose Another Album
-        </button>
 
-        <button
-          id="choose-artist-button"
-          class="secondary-button"
-          type="button"
+            <button
+                id="back-to-artists"
+                class="secondary-button back-button"
+                type="button"
+            >
+                ← Artists
+            </button>
+
+            <header class="screen-header">
+                <h1 id="album-title">Choose an Album</h1>
+                <p id="album-subtitle"></p>
+            </header>
+
+            <div
+                id="album-list"
+                class="album-list"
+                aria-label="Albums"
+            ></div>
+
+        </section>
+
+
+        <!-- ==================== GAME SCREEN ==================== -->
+
+        <section
+            id="game-screen"
+            class="screen"
+            aria-labelledby="game-title"
+            hidden
         >
-          Choose Another Artist
-        </button>
-      </div>
-    </section>
 
-    <!-- Optional ad slot for the result screen later. -->
-    <div id="bottom-ad" class="ad-slot" aria-hidden="true"></div>
+            <button
+                id="back-to-albums"
+                class="secondary-button back-button"
+                type="button"
+            >
+                ← Albums
+            </button>
 
-  </main>
+            <header class="screen-header">
+                <img
+                    id="game-cover"
+                    class="game-cover"
+                    src=""
+                    alt=""
+                >
 
-  <script src="script.js" defer></script>
+                <h1 id="game-title"></h1>
+                <p id="game-instructions">
+                    Put the tracks in the correct order.
+                </p>
+            </header>
+
+            <div
+                id="game-status"
+                class="game-status"
+                role="status"
+                aria-live="polite"
+            >
+                Drag the tracks into the correct order.
+            </div>
+
+            <div
+                id="track-list"
+                class="track-list"
+                role="list"
+                aria-label="Tracks to order"
+            ></div>
+
+            <div class="keyboard-help">
+                <span>⌨️</span>
+                <span>Tip: focus a track and use ↑ / ↓ to move it.</span>
+            </div>
+
+            <div class="game-actions">
+                <button
+                    id="submit-button"
+                    class="primary-button"
+                    type="button"
+                >
+                    Check Answer
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- ==================== RESULTS SCREEN ==================== -->
+
+        <section
+            id="results-screen"
+            class="screen"
+            aria-labelledby="results-title"
+            hidden
+        >
+
+            <header class="screen-header">
+                <h1 id="results-title">Results</h1>
+
+                <div
+                    id="score"
+                    class="score"
+                    aria-live="polite"
+                ></div>
+
+                <p id="results-message"></p>
+            </header>
+
+            <div
+                id="results-list"
+                class="results-list"
+                role="list"
+                aria-label="Answer results"
+            ></div>
+
+            <div class="game-actions results-actions">
+
+                <button
+                    id="play-again-button"
+                    class="primary-button"
+                    type="button"
+                >
+                    Play Again
+                </button>
+
+                <button
+                    id="choose-album-button"
+                    class="secondary-button"
+                    type="button"
+                >
+                    Choose Another Album
+                </button>
+
+                <button
+                    id="choose-artist-button"
+                    class="secondary-button"
+                    type="button"
+                >
+                    Choose Another Artist
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <noscript>
+        <div class="noscript-message">
+            This game requires JavaScript to be enabled.
+        </div>
+    </noscript>
+
+
+    <!--
+        MUSIC DATA MUST LOAD BEFORE SCRIPT.JS.
+    -->
+    <script src="music-data.js" defer></script>
+    <script src="script.js" defer></script>
+
 </body>
 </html>
