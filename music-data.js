@@ -650,7 +650,7 @@ const musicData = [
                     "Mother I Sober",
                     "Mirror"
                 ]
-            }
+            },
 
             {
                 name: "GNX",
