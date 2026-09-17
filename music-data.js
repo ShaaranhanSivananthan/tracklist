@@ -693,7 +693,7 @@ const musicData = [
         albums: [
 
             {
-                name: "House of Balloons",
+                name: "House Of Balloons",
                 year: 2011,
                 cover: "images/albums/hob.jpg",
 
@@ -704,12 +704,12 @@ const musicData = [
                 },
 
                 tracks: [
-                    "High for This",
+                    "High For This",
                     "What You Need",
-                    "House of Balloons / Glass Table Girls",
+                    "House Of Balloons / Glass Table Girls",
                     "The Morning",
                     "Wicked Games",
-                    "The Party & the After Party",
+                    "The Party & The After Party",
                     "Coming Down",
                     "Loft Music",
                     "The Knowing"
@@ -717,7 +717,80 @@ const musicData = [
             },
 
             {
-                name: "Beauty Behind the Madness",
+                name: "Thursday",
+                year: 2011,
+                cover: "images/albums/thursday.jpg",
+
+                theme: {
+                    background: "#121214",
+                    text: "#E3E4E8",
+                    accent: "#E20074"
+                },
+
+                tracks: [
+                    "Lonely Star",
+                    "Life Of The Party",
+                    "Thursday",
+                    "The Zone",
+                    "The Birds Pt. 1",
+                    "The Birds Pt. 2",
+                    "Gone",
+                    "Rolling Stone",
+                    "Heaven Or Las Vegas"
+                ]
+            },
+
+            {
+                name: "Echoes Of Silence",
+                year: 2011,
+                cover: "images/albums/eos.jpg",
+
+                theme: {
+                    background: "#181818",
+                    text: "#F0F0F0",
+                    accent: "#B80000"
+                },
+
+                tracks: [
+                    "D.D.",
+                    "Montreal",
+                    "Outside",
+                    "XO / The Host",
+                    "Initiation",
+                    "Same Old Song",
+                    "The Fall",
+                    "Next",
+                    "Echoes Of Silence"
+                ]
+            },
+
+            {
+                name: "Kiss Land",
+                year: 2013,
+                cover: "images/albums/kl.jpg",
+
+                theme: {
+                    background: "#0B1410",
+                    text: "#00FF66",
+                    accent: "#4D8C6F"
+                },
+
+                tracks: [
+                    "Professional",
+                    "The Town",
+                    "Adaptation",
+                    "Love In The Sky",
+                    "Belong To The World",
+                    "Live For",
+                    "Wanderlust",
+                    "Kiss Land",
+                    "Pretty",
+                    "Tears In The Rain"
+                ]
+            },
+
+            {
+                name: "Beauty Behind The Madness",
                 year: 2015,
                 cover: "images/albums/bbtm.jpg",
 
@@ -737,7 +810,7 @@ const musicData = [
                     "Can't Feel My Face",
                     "Shameless",
                     "Earned It",
-                    "In the Night",
+                    "In The Night",
                     "As You Are",
                     "Dark Times",
                     "Prisoner",
@@ -767,14 +840,35 @@ const musicData = [
                     "Stargirl Interlude",
                     "Sidewalks",
                     "Six Feet Under",
-                    "Love to Lay",
+                    "Love To Lay",
                     "A Lonely Night",
                     "Attention",
                     "Ordinary Life",
                     "Nothing Without You",
                     "All I Know",
-                    "Die for You",
+                    "Die For You",
                     "I Feel It Coming"
+                ]
+            },
+
+            {
+                name: "My Dear Melancholy,",
+                year: 2018,
+                cover: "images/albums/mdm.jpg",
+
+                theme: {
+                    background: "#1C0D08",
+                    text: "#E67035",
+                    accent: "#7A2E10"
+                },
+
+                tracks: [
+                    "Call Out My Name",
+                    "Try Me",
+                    "Wasted Times",
+                    "I Was Never There",
+                    "Hurt You",
+                    "Privilege"
                 ]
             },
 
@@ -792,10 +886,10 @@ const musicData = [
                 tracks: [
                     "Alone Again",
                     "Too Late",
-                    "Hardest to Love",
-                    "Scared to Live",
+                    "Hardest To Love",
+                    "Scared To Live",
                     "Snowchild",
-                    "Escape from LA",
+                    "Escape From LA",
                     "Heartless",
                     "Faith",
                     "Blinding Lights",
@@ -825,7 +919,7 @@ const musicData = [
                     "Take My Breath",
                     "Sacrifice",
                     "A Tale by Quincy",
-                    "Out of Time",
+                    "Out Of Time",
                     "Here We Go... Again",
                     "Best Friends",
                     "Is There Someone Else?",
@@ -834,7 +928,44 @@ const musicData = [
                     "Don't Break My Heart",
                     "I Heard You're Married",
                     "Less Than Zero",
-                    "Phantom Regret by Jim"
+                    "Phantom Regret By Jim"
+                ]
+            },
+
+            {
+                name: "Hurry Up Tomorrow",
+                year: 2025,
+                cover: "images/albums/hut.jpg",
+
+                theme: {
+                    background: "#0A0A0C",
+                    text: "#FFFFFF",
+                    accent: "#9E1B1B"
+                },
+
+                tracks: [
+                    "Wake Me Up",
+                    "Cry For Me",
+                    "I Can't Fucking Sing",
+                    "São Paulo",
+                    "Until We're Skin & Bones",
+                    "Baptized In Fear",
+                    "Open Hearts",
+                    "Opening Night",
+                    "Reflections Laughing",
+                    "Enjoy The Show",
+                    "Given Up On Me",
+                    "I Can't Wait To Get There",
+                    "Timeless",
+                    "Niagara Falls",
+                    "Take Me Back To LA",
+                    "Big Sleep",
+                    "Give Me Mercy",
+                    "Drive",
+                    "The Abyss",
+                    "Red Terror",
+                    "Without A Warning",
+                    "Hurry Up Tomorrow"
                 ]
             }
         ]
