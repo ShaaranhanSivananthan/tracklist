@@ -17,8 +17,8 @@ const musicData = [
 
                 theme: {
                     background: "#C9B08A",
-                    text: "#1C1714",
-                    accent: "#B52B2B"
+                    text: "#211A16",
+                    accent: "#C42D2D"
                 },
 
                 tracks: [
@@ -52,9 +52,9 @@ const musicData = [
                 cover: "images/albums/lr.jpg",
 
                 theme: {
-                    background: "#D8C7A8",
-                    text: "#302820",
-                    accent: "#A66A32"
+                    background: "#D6C3A0",
+                    text: "#3A2A20",
+                    accent: "#B47738"
                 },
 
                 tracks: [
@@ -87,9 +87,9 @@ const musicData = [
                 cover: "images/albums/grad.jpg",
 
                 theme: {
-                    background: "#F0C928",
-                    text: "#1B2A5B",
-                    accent: "#E94B35"
+                    background: "#FFD21C",
+                    text: "#172B72",
+                    accent: "#F04B36"
                 },
 
                 tracks: [
