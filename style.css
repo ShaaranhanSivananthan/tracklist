@@ -4,13 +4,9 @@
 
 body {
   margin: 0;
-
   font-family: Arial, sans-serif;
-
   background: #f2f2f2;
-
   color: #222;
-
   user-select: none;
   -webkit-user-select: none;
 }
@@ -18,15 +14,12 @@ body {
 .game {
   width: 90%;
   max-width: 600px;
-
   margin: 50px auto;
-
   text-align: center;
 }
 
 h1 {
   font-size: 42px;
-
   margin-bottom: 10px;
 }
 
@@ -36,134 +29,40 @@ h2 {
 
 .artist {
   color: #666;
-
   margin-top: 0;
-
   font-size: 18px;
 }
 
-#selected-artist,
-#version-artist {
+#selected-artist {
   color: #666;
-
   margin-top: 5px;
 }
 
-#game-version {
-  color: #888;
-
-  font-size: 15px;
-
-  margin-top: 5px;
-}
-
-
-/* SEARCH */
-
-.search-box {
-  display: flex;
-
-  gap: 10px;
-
-  margin: 30px 0;
-}
-
-#artist-search {
-  flex: 1;
-
-  min-width: 0;
-
-  padding: 16px;
-
-  border: 2px solid #ddd;
-
-  border-radius: 10px;
-
-  font-size: 18px;
-
-  background: white;
-
-  user-select: text;
-  -webkit-user-select: text;
-}
-
-#artist-search:focus {
-  outline: none;
-
-  border-color: #222;
-}
-
-#artist-search-button {
-  padding: 16px 22px;
-
-  background: #222;
-
-  color: white;
-
-  border: none;
-
-  border-radius: 10px;
-
-  font-size: 18px;
-
-  cursor: pointer;
-}
-
-#artist-search-button:hover {
-  background: #444;
-}
-
-#artist-search-button:disabled {
-  opacity: 0.5;
-
-  cursor: default;
-}
-
-
-/* STATUS */
-
-#artist-status,
-#album-status,
-#version-status,
 #game-status {
   color: #666;
-
   min-height: 22px;
-
   margin: 15px 0;
 }
 
-
 /* SELECTION LISTS */
-
 #artist-list,
-#album-list,
-#version-list {
+#album-list {
   display: flex;
-
   flex-direction: column;
-
   gap: 15px;
-
   margin: 30px 0;
 }
 
 .selection-button {
   width: 100%;
-
   padding: 20px;
-
   background: white;
-
   border: 2px solid #ddd;
-
   border-radius: 10px;
-
   font-size: 18px;
-
   cursor: pointer;
-
   text-align: left;
+  font-weight: bold;
 }
 
 .selection-button:hover {
@@ -174,127 +73,47 @@ h2 {
   transform: scale(0.99);
 }
 
-
-/* SELECTION INFORMATION */
-
-.selection-title {
-  display: block;
-
-  font-weight: bold;
-
-  line-height: 1.3;
-}
-
-.selection-subtitle {
-  display: block;
-
-  color: #666;
-
-  font-size: 15px;
-
-  margin-top: 6px;
-
-  line-height: 1.4;
-}
-
-.selection-year {
-  display: inline-block;
-
-  margin-left: 8px;
-
-  color: #666;
-
-  font-weight: normal;
-}
-
-.selection-disambiguation {
-  display: inline-block;
-
-  margin-left: 8px;
-
-  color: #666;
-
-  font-weight: normal;
-}
-
-.selection-details {
-  display: block;
-
-  color: #777;
-
-  font-size: 15px;
-
-  margin-top: 6px;
-
-  line-height: 1.4;
-}
-
-
 /* TRACKS */
-
 #track-list {
   margin: 30px 0;
 }
 
 .track {
   display: flex;
-
   align-items: center;
-
   background: white;
-
   border: 1px solid #ddd;
-
   border-radius: 10px;
-
   padding: 0;
-
   margin: 10px 0;
-
   font-size: 18px;
-
   overflow: hidden;
 }
 
 .track-number {
   padding: 18px 0 18px 18px;
-
   min-width: 45px;
-
   text-align: right;
-
   font-weight: bold;
-
   color: #888;
-
   font-size: 16px;
 }
 
 .track-name {
   padding: 18px;
-
   flex: 1;
-
   text-align: left;
-
   font-weight: 500;
 }
 
 .drag-handle {
   order: 2;
-
   padding: 18px 20px;
-
   background: #eee;
-
   color: #555;
-
   cursor: grab;
-
   font-size: 22px;
-
   touch-action: none;
-
   -webkit-user-select: none;
 }
 
@@ -306,33 +125,19 @@ h2 {
   opacity: 0.5;
 }
 
-
-/* BUTTONS */
-
+/* BUTTONS & CONTROLS */
 #submit-button {
   background: #222;
-
   color: white;
-
   border: none;
-
   border-radius: 10px;
-
   padding: 15px 35px;
-
   font-size: 18px;
-
   cursor: pointer;
 }
 
 #submit-button:hover {
   background: #444;
-}
-
-#submit-button:disabled {
-  opacity: 0.5;
-
-  cursor: default;
 }
 
 #score {
@@ -342,46 +147,32 @@ h2 {
 #play-again-button,
 #choose-album-button,
 #choose-artist-button,
-#back-to-artists-button,
-#back-to-albums-button {
+#back-to-artists-button {
   display: block;
-
   width: 100%;
-
   background: white;
-
   color: #222;
-
   border: 2px solid #222;
-
   border-radius: 10px;
-
   padding: 13px 30px;
-
   font-size: 18px;
-
   cursor: pointer;
-
   margin-top: 10px;
 }
 
 #play-again-button:hover,
 #choose-album-button:hover,
 #choose-artist-button:hover,
-#back-to-artists-button:hover,
-#back-to-albums-button:hover {
-  background: #f2f2f2;
+#back-to-artists-button:hover {
+  background: #e2e2e2;
 }
 
-
-/* ANSWER RESULTS */
-
+/* RESULTS DISPLAY */
 .result {
   padding: 18px 20px;
-
-  font-size: 22px;
-
+  font-size: 18px;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .correct {
@@ -394,45 +185,23 @@ h2 {
 
 .track-correct {
   border-color: #9ccc9c;
-
   background: #f1faf1;
 }
 
 .track-incorrect {
   border-color: #e0a0a0;
-
   background: #fff5f5;
 }
 
-
-/* MOBILE */
-
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 500px) {
-
   .game {
     width: 94%;
-
     margin: 30px auto;
   }
 
   h1 {
     font-size: 34px;
-  }
-
-  .search-box {
-    gap: 8px;
-  }
-
-  #artist-search {
-    padding: 14px;
-
-    font-size: 16px;
-  }
-
-  #artist-search-button {
-    padding: 14px;
-
-    font-size: 16px;
   }
 
   .track {
@@ -445,7 +214,6 @@ h2 {
 
   .track-number {
     padding-left: 10px;
-
     min-width: 35px;
   }
 
