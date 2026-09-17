@@ -1,1467 +1,949 @@
-/* =========================================================
-   TRACKLIST GAME
+"use strict";
 
-   Music data is kept here for now.
 
-   Later, if you have a large number of artists/albums,
-   you can move MUSIC_DATA into a separate music-data.js
-   or JSON file.
-========================================================= */
+// ============================================================
+// ELEMENTS
+// ============================================================
 
-const MUSIC_DATA = [
-  {
-    name: "Kanye West",
+const artistScreen = document.getElementById("artist-screen");
+const albumScreen = document.getElementById("album-screen");
+const gameScreen = document.getElementById("game-screen");
+const resultsScreen = document.getElementById("results-screen");
 
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop%29.jpg/800px-Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop%29.jpg",
+const artistList = document.getElementById("artist-list");
+const albumList = document.getElementById("album-list");
 
-    albums: [
-      {
-        title: "The College Dropout",
+const albumSubtitle = document.getElementById("album-subtitle");
 
-        year: 2004,
+const gameCover = document.getElementById("game-cover");
+const gameTitle = document.getElementById("game-title");
+const gameStatus = document.getElementById("game-status");
+const trackList = document.getElementById("track-list");
 
-        cover:
-          "https://upload.wikimedia.org/wikipedia/en/a/a3/Kanyewest_collegedropout.jpg",
+const submitButton = document.getElementById("submit-button");
 
-        theme: {
-          bg: "#8C4A27",
-          color: "#FFFFFF",
-          accent: "#D49B4B"
-        },
+const scoreElement = document.getElementById("score");
+const resultsMessage = document.getElementById("results-message");
+const resultsList = document.getElementById("results-list");
 
-        tracks: [
-          "Intro",
-          "We Don't Care",
-          "Graduation Day",
-          "All Falls Down",
-          "I'll Fly Away",
-          "Spaceship",
-          "Jesus Walks",
-          "Never Let Me Down",
-          "Get Em High",
-          "Workout Plan",
-          "The New Workout Plan",
-          "Slow Jamz",
-          "Breathe In Breathe Out",
-          "School Spirit Skit 1",
-          "School Spirit",
-          "School Spirit Skit 2",
-          "Lil Jimmy Skit",
-          "Two Words",
-          "Through the Wire",
-          "Family Business",
-          "Last Call"
-        ]
-      },
+const backToArtistsButton = document.getElementById("back-to-artists");
+const backToAlbumsButton = document.getElementById("back-to-albums");
 
-      {
-        title: "Late Registration",
+const playAgainButton = document.getElementById("play-again-button");
+const chooseAlbumButton = document.getElementById("choose-album-button");
+const chooseArtistButton = document.getElementById("choose-artist-button");
 
-        year: 2005,
 
-        cover:
-          "https://upload.wikimedia.org/wikipedia/en/f/f4/Late_registration.jpg",
-
-        theme: {
-          bg: "#4A3525",
-          color: "#FFFFFF",
-          accent: "#C59B27"
-        },
-
-        tracks: [
-          "Wake Up Mr. West",
-          "Heard 'Em Say",
-          "Touch the Sky",
-          "Gold Digger",
-          "Skit #1",
-          "Drive Slow",
-          "My Way Home",
-          "Crack Music",
-          "Roses",
-          "Bring Me Down",
-          "Addiction",
-          "Skit #2",
-          "Diamonds From Sierra Leone (Remix)",
-          "We Major",
-          "Skit #3",
-          "Hey Mama",
-          "Celebration",
-          "Skit #4",
-          "Gone",
-          "Diamonds From Sierra Leone"
-        ]
-      },
-
-      {
-        title: "Graduation",
-
-        year: 2007,
-
-        cover:
-          "https://upload.wikimedia.org/wikipedia/en/7/70/Graduation_album.jpg",
-
-        theme: {
-          bg: "#8A2BE2",
-          color: "#FFFFFF",
-          accent: "#FF007F"
-        },
-
-        tracks: [
-          "Good Morning",
-          "Champion",
-          "Stronger",
-          "I Wonder",
-          "Good Life",
-          "Can't Tell Me Nothing",
-          "Barry Bonds",
-          "Drunk and Hot Girls",
-          "Flashing Lights",
-          "Everything I Am",
-          "The Glory",
-          "Homecoming",
-          "Big Brother"
-        ]
-      },
-
-      {
-        title: "My Beautiful Dark Twisted Fantasy",
-
-        year: 2010,
-
-        cover:
-          "https://upload.wikimedia.org/wikipedia/en/f/f0/My_Beautiful_Dark_Twisted_Fantasy.jpg",
-
-        theme: {
-          bg: "#B22222",
-          color: "#FFFFFF",
-          accent: "#FFD700"
-        },
-
-        tracks: [
-          "Dark Fantasy",
-          "Gorgeous",
-          "POWER",
-          "All of the Lights (Interlude)",
-          "All of the Lights",
-          "Monster",
-          "So Appalled",
-          "Devil in a New Dress",
-          "Runaway",
-          "Hell of a Life",
-          "Blame Game",
-          "Lost in the World",
-          "Who Will Survive in America"
-        ]
-      },
-
-      {
-        title: "Yeezus",
-
-        year: 2013,
-
-        cover:
-          "https://upload.wikimedia.org/wikipedia/en/0/03/Yeezus_album_cover.png",
-
-        theme: {
-          bg: "#222222",
-          color: "#FFFFFF",
-          accent: "#FF0000"
-        },
-
-        tracks: [
-          "On Sight",
-          "Black Skinhead",
-          "I Am a God",
-          "New Slaves",
-          "Hold My Liquor",
-          "I'm in It",
-          "Blood on the Leaves",
-          "Guilt Trip",
-          "Send It Up",
-          "Bound 2"
-        ]
-      }
-    ]
-  },
-
-  {
-    name: "Kendrick Lamar",
-
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Kendrick_Lamar_2018.jpg/800px-Kendrick_Lamar_2018.jpg",
-
-    albums: [
-      {
-        title: "good kid, m.A.A.d city",
-
-        year: 2012,
-
-        cover:
-          "https://upload.wikimedia.org/wikipedia/en/d/d3/Good_kid_m.a.a.d_city_cover.jpg",
-
-        theme: {
-          bg: "#2F4F4F",
-          color: "#FFFFFF",
-          accent: "#00CED1"
-        },
-
-        tracks: [
-          "Sherane a.k.a Master Splinter's Daughter",
-          "Bitch, Don't Kill My Vibe",
-          "Backseat Freestyle",
-          "The Art of Peer Pressure",
-          "Money Trees",
-          "Poetic Justice",
-          "good kid",
-          "m.A.A.d city",
-          "Swimming Pools (Drank)",
-          "Sing About Me, I'm Dying of Thirst",
-          "Real",
-          "Compton"
-        ]
-      },
-
-      {
-        title: "To Pimp a Butterfly",
-
-        year: 2015,
-
-        cover:
-          "https://upload.wikimedia.org/wikipedia/en/f/f6/Kendrick_Lamar_-_To_Pimp_a_Butterfly.png",
-
-        theme: {
-          bg: "#1A1A1A",
-          color: "#FFFFFF",
-          accent: "#A9A9A9"
-        },
-
-        tracks: [
-          "Wesley's Theory",
-          "For Free? (Interlude)",
-          "King Kunta",
-          "Institutionalized",
-          "These Walls",
-          "u",
-          "Alright",
-          "For Sale? (Interlude)",
-          "Momma",
-          "Hood Politics",
-          "How Much a Dollar Cost",
-          "Complexion (A Zulu Love)",
-          "The Blacker the Berry",
-          "You Ain't Gotta Lie (Momma Said)",
-          "i",
-          "Mortal Man"
-        ]
-      },
-
-      {
-        title: "DAMN.",
-
-        year: 2017,
-
-        cover:
-          "https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png",
-
-        theme: {
-          bg: "#8B0000",
-          color: "#FFFFFF",
-          accent: "#FFFFFF"
-        },
-
-        tracks: [
-          "BLOOD.",
-          "DNA.",
-          "YAH.",
-          "ELEMENT.",
-          "FEEL.",
-          "LOYALTY.",
-          "PRIDE.",
-          "HUMBLE.",
-          "LUST.",
-          "LOVE.",
-          "XXX.",
-          "FEAR.",
-          "GOD.",
-          "DUCKWORTH."
-        ]
-      },
-
-      {
-        title: "Mr. Morale & the Big Steppers",
-
-        year: 2022,
-
-        cover:
-          "https://upload.wikimedia.org/wikipedia/en/e/e5/Kendrick_Lamar_-_Mr._Morale_%26_the_Big_Steppers.png",
-
-        theme: {
-          bg: "#5A4D41",
-          color: "#FFFFFF",
-          accent: "#D2B48C"
-        },
-
-        tracks: [
-          "United in Grief",
-          "N95",
-          "Worldwide Steppers",
-          "Die Hard",
-          "Father Time",
-          "Rich (Interlude)",
-          "Rich Spirit",
-          "We Cry Together",
-          "Purple Hearts",
-          "Count Me Out",
-          "Crown",
-          "Silent Hill",
-          "Savior (Interlude)",
-          "Savior",
-          "Auntie Diaries",
-          "Mr. Morale",
-          "Mother I Sober",
-          "Mirror"
-        ]
-      }
-    ]
-  },
-
-  {
-    name: "The Weeknd",
-
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/The_Weeknd_Cannes_2023.see2_%28cropped%29.jpg/800px-The_Weeknd_Cannes_2023.see2_%28cropped%29.jpg",
-
-    albums: [
-      {
-        title: "House of Balloons",
-
-        year: 2011,
-
-        cover:
-          "https://upload.wikimedia.org/wikipedia/en/2/22/House_Of_Balloons.png",
-
-        theme: {
-          bg: "#111111",
-          color: "#FFFFFF",
-          accent: "#E6E6E6"
-        },
-
-        tracks: [
-          "High for This",
-          "What You Need",
-          "House of Balloons / Glass Table Girls",
-          "The Morning",
-          "Wicked Games",
-          "The Party & The After Party",
-          "Coming Down",
-          "Loft Music",
-          "The Knowing"
-        ]
-      },
-
-      {
-        title: "Beauty Behind the Madness",
-
-        year: 2015,
-
-        cover:
-          "https://upload.wikimedia.org/wikipedia/en/b/bd/The_Weeknd_-_Beauty_Behind_the_Madness.png",
-
-        theme: {
-          bg: "#2B2B2B",
-          color: "#FFFFFF",
-          accent: "#808080"
-        },
-
-        tracks: [
-          "Real Life",
-          "Losers",
-          "Tell Your Friends",
-          "Often",
-          "The Hills",
-          "Acquainted",
-          "Can't Feel My Face",
-          "Shameless",
-          "Earned It",
-          "In the Night",
-          "As You Are",
-          "Dark Times",
-          "Prisoner",
-          "Angel"
-        ]
-      },
-
-      {
-        title: "Starboy",
-
-        year: 2016,
-
-        cover:
-          "https://upload.wikimedia.org/wikipedia/en/3/39/The_Weeknd_-_Starboy.png",
-
-        theme: {
-          bg: "#1B003A",
-          color: "#FFFFFF",
-          accent: "#FF1493"
-        },
-
-        tracks: [
-          "Starboy",
-          "Party Monster",
-          "False Alarm",
-          "Reminder",
-          "Rockin'",
-          "Secrets",
-          "True Colors",
-          "Stargirl Interlude",
-          "Sidewalks",
-          "Six Feet Under",
-          "Love to Lay",
-          "A Lonely Night",
-          "Attention",
-          "Ordinary Life",
-          "Nothing Without You",
-          "All I Know",
-          "Die for You",
-          "I Feel It Coming"
-        ]
-      },
-
-      {
-        title: "After Hours",
-
-        year: 2020,
-
-        cover:
-          "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Weeknd_-_After_Hours.png",
-
-        theme: {
-          bg: "#600000",
-          color: "#FFFFFF",
-          accent: "#FF3333"
-        },
-
-        tracks: [
-          "Alone Again",
-          "Too Late",
-          "Hardest to Love",
-          "Scared to Live",
-          "Snowchild",
-          "Escape from LA",
-          "Heartless",
-          "Faith",
-          "Blinding Lights",
-          "In Your Eyes",
-          "Save Your Tears",
-          "Repeat After Me (Interlude)",
-          "After Hours",
-          "Until I Bleed Out"
-        ]
-      },
-
-      {
-        title: "Dawn FM",
-
-        year: 2022,
-
-        cover:
-          "https://upload.wikimedia.org/wikipedia/en/b/b9/The_Weeknd_-_Dawn_FM.png",
-
-        theme: {
-          bg: "#001F3F",
-          color: "#FFFFFF",
-          accent: "#00BFFF"
-        },
-
-        tracks: [
-          "Dawn FM",
-          "Gasoline",
-          "How Do I Make You Love Me?",
-          "Take My Breath",
-          "Sacrifice",
-          "A Tale By Quincy",
-          "Out of Time",
-          "Here We Go... Again",
-          "Best Friends",
-          "Is There Someone Else?",
-          "Starry Eyes",
-          "Every Angel is Terrifying",
-          "Don't Break My Heart",
-          "I Heard You're Married",
-          "Less Than Zero",
-          "Phantom Regret by Jim"
-        ]
-      }
-    ]
-  }
-];
-
-/* =========================================================
-   DOM ELEMENTS
-========================================================= */
-
-const artistScreen =
-  document.getElementById("artist-screen");
-
-const albumScreen =
-  document.getElementById("album-screen");
-
-const gameScreen =
-  document.getElementById("game-screen");
-
-const artistList =
-  document.getElementById("artist-list");
-
-const albumList =
-  document.getElementById("album-list");
-
-const artistHeaderContainer =
-  document.getElementById("artist-header-container");
-
-const gameAlbumContainer =
-  document.getElementById("game-album-container");
-
-const gameStatus =
-  document.getElementById("game-status");
-
-const trackList =
-  document.getElementById("track-list");
-
-const submitButton =
-  document.getElementById("submit-button");
-
-const scoreElement =
-  document.getElementById("score");
-
-const gameControls =
-  document.getElementById("game-controls");
-
-const backToArtistsButton =
-  document.getElementById("back-to-artists-button");
-
-const playAgainButton =
-  document.getElementById("play-again-button");
-
-const chooseAlbumButton =
-  document.getElementById("choose-album-button");
-
-const chooseArtistButton =
-  document.getElementById("choose-artist-button");
-
-/* =========================================================
-   GAME STATE
-========================================================= */
+// ============================================================
+// GAME STATE
+// ============================================================
 
 let currentArtist = null;
 let currentAlbum = null;
+let currentTracks = [];
 
-let correctOrder = [];
 
-let draggedElement = null;
+// ============================================================
+// DEFAULT THEME
+// ============================================================
 
-/* =========================================================
-   THEME
-========================================================= */
+const defaultTheme = {
+    background: "#F4F4F4",
+    text: "#171717",
+    accent: "#222222"
+};
 
-function applyTheme(theme = null) {
-  const root = document.documentElement;
 
-  if (!theme) {
-    root.style.setProperty(
-      "--bg-color",
-      "#f2f2f2"
-    );
+// ============================================================
+// SCREEN MANAGEMENT
+// ============================================================
 
-    root.style.setProperty(
-      "--card-bg",
-      "#ffffff"
-    );
+function showScreen(screenToShow) {
 
-    root.style.setProperty(
-      "--text-color",
-      "#222222"
-    );
+    const screens = [
+        artistScreen,
+        albumScreen,
+        gameScreen,
+        resultsScreen
+    ];
 
-    root.style.setProperty(
-      "--accent-color",
-      "#222222"
-    );
+    screens.forEach(screen => {
+        screen.hidden = screen !== screenToShow;
+    });
 
-    root.style.setProperty(
-      "--button-text-color",
-      "#ffffff"
-    );
-
-    root.style.setProperty(
-      "--button-hover",
-      "#111111"
-    );
-
-    return;
-  }
-
-  root.style.setProperty(
-    "--bg-color",
-    theme.bg
-  );
-
-  root.style.setProperty(
-    "--card-bg",
-    adjustColorBrightness(theme.bg, 20)
-  );
-
-  root.style.setProperty(
-    "--text-color",
-    theme.color
-  );
-
-  root.style.setProperty(
-    "--accent-color",
-    theme.accent
-  );
-
-  const accentTextColor =
-    getContrastColor(theme.accent);
-
-  root.style.setProperty(
-    "--button-text-color",
-    accentTextColor
-  );
-
-  root.style.setProperty(
-    "--button-hover",
-    adjustColorBrightness(
-      theme.accent,
-      accentTextColor === "#FFFFFF"
-        ? -12
-        : 12
-    )
-  );
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
-/*
-  Adjusts a hex color by a percentage.
 
-  This fixes the channel-order bug in the original version.
-*/
+// ============================================================
+// THEME
+// ============================================================
 
-function adjustColorBrightness(hex, percent) {
-  const value = hex.replace("#", "");
+function hexToRgb(hex) {
 
-  if (!/^[0-9a-fA-F]{6}$/.test(value)) {
-    return hex;
-  }
+    const cleanHex = hex.replace("#", "");
 
-  const num =
-    Number.parseInt(value, 16);
+    const fullHex = cleanHex.length === 3
+        ? cleanHex
+            .split("")
+            .map(character => character + character)
+            .join("")
+        : cleanHex;
 
-  const amount =
-    Math.round(2.55 * percent);
+    const number = parseInt(fullHex, 16);
 
-  const r =
-    clamp(
-      (num >> 16) + amount
-    );
-
-  const g =
-    clamp(
-      ((num >> 8) & 0xff) + amount
-    );
-
-  const b =
-    clamp(
-      (num & 0xff) + amount
-    );
-
-  return (
-    "#" +
-    [r, g, b]
-      .map(
-        channel =>
-          channel
-            .toString(16)
-            .padStart(2, "0")
-      )
-      .join("")
-  );
+    return {
+        r: (number >> 16) & 255,
+        g: (number >> 8) & 255,
+        b: number & 255
+    };
 }
 
-function clamp(value) {
-  return Math.max(
-    0,
-    Math.min(255, value)
-  );
+
+function rgbToHex(r, g, b) {
+
+    return "#" + [r, g, b]
+        .map(value =>
+            Math.max(0, Math.min(255, Math.round(value)))
+                .toString(16)
+                .padStart(2, "0")
+        )
+        .join("");
 }
+
+
+function adjustColorBrightness(hex, amount) {
+
+    const { r, g, b } = hexToRgb(hex);
+
+    return rgbToHex(
+        r + amount,
+        g + amount,
+        b + amount
+    );
+}
+
 
 function getContrastColor(hex) {
-  const value =
-    hex.replace("#", "");
 
-  if (!/^[0-9a-fA-F]{6}$/.test(value)) {
-    return "#FFFFFF";
-  }
+    const { r, g, b } = hexToRgb(hex);
 
-  const r =
-    Number.parseInt(
-      value.slice(0, 2),
-      16
-    );
+    const luminance =
+        (0.299 * r) +
+        (0.587 * g) +
+        (0.114 * b);
 
-  const g =
-    Number.parseInt(
-      value.slice(2, 4),
-      16
-    );
-
-  const b =
-    Number.parseInt(
-      value.slice(4, 6),
-      16
-    );
-
-  const luminance =
-    (
-      0.299 * r +
-      0.587 * g +
-      0.114 * b
-    ) / 255;
-
-  return luminance > 0.58
-    ? "#111111"
-    : "#FFFFFF";
+    return luminance > 150
+        ? "#111111"
+        : "#FFFFFF";
 }
 
-/* =========================================================
-   IMAGE HELPER
-========================================================= */
 
-function createImage(
-  src,
-  alt,
-  className,
-  loading = "lazy"
-) {
-  const img =
-    document.createElement("img");
+function applyTheme(theme = defaultTheme) {
 
-  img.src = src;
-  img.alt = alt;
-  img.className = className;
+    const background = theme.background || defaultTheme.background;
+    const text = theme.text || defaultTheme.text;
+    const accent = theme.accent || defaultTheme.accent;
 
-  img.loading = loading;
-  img.decoding = "async";
-
-  return img;
-}
-
-/* =========================================================
-   SCREEN MANAGEMENT
-========================================================= */
-
-function setScreen(screenToShow) {
-  [
-    artistScreen,
-    albumScreen,
-    gameScreen
-  ].forEach(screen => {
-    const visible =
-      screen === screenToShow;
-
-    screen.hidden = !visible;
-
-    screen.classList.toggle(
-      "screen-hidden",
-      !visible
-    );
-  });
-}
-
-/* =========================================================
-   ARTIST SCREEN
-========================================================= */
-
-function initArtistScreen() {
-  currentArtist = null;
-  currentAlbum = null;
-
-  applyTheme();
-
-  artistList.replaceChildren();
-
-  MUSIC_DATA.forEach(artist => {
-    /*
-      Using a real button instead of a div makes the
-      artist cards keyboard accessible.
-    */
-
-    const card =
-      document.createElement("button");
-
-    card.type = "button";
-    card.className = "artist-card";
-
-    const image =
-      createImage(
-        artist.image,
-        artist.name,
-        "artist-img"
-      );
-
-    const name =
-      document.createElement("span");
-
-    name.className =
-      "artist-name-text";
-
-    name.textContent =
-      artist.name;
-
-    card.append(
-      image,
-      name
+    document.documentElement.style.setProperty(
+        "--bg-color",
+        background
     );
 
-    card.addEventListener(
-      "click",
-      () => selectArtist(artist)
+    document.documentElement.style.setProperty(
+        "--text-color",
+        text
     );
 
-    artistList.appendChild(card);
-  });
+    document.documentElement.style.setProperty(
+        "--accent-color",
+        accent
+    );
 
-  setScreen(artistScreen);
+    document.documentElement.style.setProperty(
+        "--button-text",
+        getContrastColor(accent)
+    );
+
+    document.documentElement.style.setProperty(
+        "--card-bg",
+        adjustColorBrightness(background, 15)
+    );
+
+    document.documentElement.style.setProperty(
+        "--card-bg-hover",
+        adjustColorBrightness(background, 25)
+    );
 }
 
-/* =========================================================
-   ARTIST SELECTION
-========================================================= */
+
+// ============================================================
+// IMAGE CREATION
+// ============================================================
+
+function createImage(src, alt, className, lazy = true) {
+
+    const image = document.createElement("img");
+
+    image.src = src;
+    image.alt = alt;
+    image.className = className;
+
+    image.loading = lazy ? "lazy" : "eager";
+    image.decoding = "async";
+    image.referrerPolicy = "no-referrer";
+
+    image.addEventListener("error", () => {
+
+        image.classList.add("image-error");
+
+        image.alt = `${alt} image unavailable`;
+
+    });
+
+    return image;
+}
+
+
+// ============================================================
+// ARTIST SCREEN
+// ============================================================
+
+function renderArtists() {
+
+    artistList.replaceChildren();
+
+    applyTheme(defaultTheme);
+
+    musicData.forEach(artist => {
+
+        const card = document.createElement("button");
+
+        card.type = "button";
+        card.className = "artist-card";
+
+        const image = createImage(
+            artist.image,
+            `${artist.name} photo`,
+            "artist-image"
+        );
+
+        const name = document.createElement("span");
+
+        name.className = "artist-name";
+        name.textContent = artist.name;
+
+        card.appendChild(image);
+        card.appendChild(name);
+
+        card.addEventListener("click", () => {
+            selectArtist(artist);
+        });
+
+        artistList.appendChild(card);
+    });
+}
+
 
 function selectArtist(artist) {
-  currentArtist = artist;
 
-  applyTheme();
+    currentArtist = artist;
 
-  artistHeaderContainer.replaceChildren();
+    applyTheme(defaultTheme);
 
-  const artistImage =
-    createImage(
-      artist.image,
-      artist.name,
-      "header-artist-img",
-      "eager"
-    );
+    albumSubtitle.textContent =
+        `${artist.albums.length} albums available`;
 
-  const heading =
-    document.createElement("h2");
+    renderAlbums();
 
-  heading.textContent =
-    artist.name;
+    showScreen(albumScreen);
 
-  artistHeaderContainer.append(
-    artistImage,
-    heading
-  );
-
-  albumList.replaceChildren();
-
-  artist.albums.forEach(album => {
-    const card =
-      document.createElement("button");
-
-    card.type = "button";
-    card.className = "album-card";
-
-    card.style.borderColor =
-      album.theme.accent;
-
-    card.style.backgroundColor =
-      album.theme.bg;
-
-    card.style.color =
-      album.theme.color;
-
-    const image =
-      createImage(
-        album.cover,
-        `${album.title} album cover`,
-        "album-cover-img"
-      );
-
-    const info =
-      document.createElement("span");
-
-    info.className =
-      "album-info";
-
-    const title =
-      document.createElement("span");
-
-    title.className =
-      "album-title";
-
-    title.textContent =
-      album.title;
-
-    const year =
-      document.createElement("span");
-
-    year.className =
-      "album-year";
-
-    year.textContent =
-      album.year;
-
-    info.append(
-      title,
-      year
-    );
-
-    card.append(
-      image,
-      info
-    );
-
-    card.addEventListener(
-      "click",
-      () => selectAlbum(album)
-    );
-
-    albumList.appendChild(card);
-  });
-
-  setScreen(albumScreen);
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+    requestAnimationFrame(() => {
+        backToArtistsButton.focus();
+    });
 }
 
-/* =========================================================
-   ALBUM SELECTION
-========================================================= */
+
+// ============================================================
+// ALBUM SCREEN
+// ============================================================
+
+function renderAlbums() {
+
+    albumList.replaceChildren();
+
+    currentArtist.albums.forEach(album => {
+
+        const card = document.createElement("button");
+
+        card.type = "button";
+        card.className = "album-card";
+
+        card.style.backgroundColor =
+            album.theme?.background || defaultTheme.background;
+
+        card.style.color =
+            album.theme?.text || defaultTheme.text;
+
+        const image = createImage(
+            album.cover,
+            `${album.name} album cover`,
+            "album-cover"
+        );
+
+        const information = document.createElement("div");
+
+        information.className = "album-information";
+
+        const title = document.createElement("span");
+
+        title.className = "album-name";
+        title.textContent = album.name;
+
+        const year = document.createElement("span");
+
+        year.className = "album-year";
+        year.textContent = album.year;
+
+        information.appendChild(title);
+        information.appendChild(year);
+
+        card.appendChild(image);
+        card.appendChild(information);
+
+        card.addEventListener("click", () => {
+            selectAlbum(album);
+        });
+
+        albumList.appendChild(card);
+    });
+}
+
 
 function selectAlbum(album) {
-  currentAlbum = album;
 
-  correctOrder = [
-    ...album.tracks
-  ];
+    currentAlbum = album;
 
-  applyTheme(album.theme);
+    applyTheme(album.theme);
 
-  gameAlbumContainer.replaceChildren();
+    startGame();
 
-  const cover =
-    createImage(
-      album.cover,
-      `${album.title} album cover`,
-      "game-album-cover",
-      "eager"
-    );
+    showScreen(gameScreen);
 
-  const title =
-    document.createElement("h2");
+    requestAnimationFrame(() => {
+        const firstTrack = trackList.querySelector(".track");
 
-  title.textContent =
-    album.title;
-
-  const artist =
-    document.createElement("p");
-
-  artist.className =
-    "artist-sub";
-
-  artist.textContent =
-    currentArtist.name;
-
-  gameAlbumContainer.append(
-    cover,
-    title,
-    artist
-  );
-
-  startGame();
-
-  setScreen(gameScreen);
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+        if (firstTrack) {
+            firstTrack.focus();
+        }
+    });
 }
 
-/* =========================================================
-   START GAME
-========================================================= */
+
+// ============================================================
+// SHUFFLING
+// ============================================================
+
+function shuffleArray(array) {
+
+    for (let i = array.length - 1; i > 0; i--) {
+
+        const randomIndex =
+            Math.floor(Math.random() * (i + 1));
+
+        [array[i], array[randomIndex]] =
+            [array[randomIndex], array[i]];
+    }
+
+    return array;
+}
+
+
+function isCorrectOrder(tracks) {
+
+    return tracks.every(
+        (track, index) =>
+            track === currentAlbum.tracks[index]
+    );
+}
+
+
+function shuffleForGame(tracks) {
+
+    if (tracks.length < 2) {
+        return tracks;
+    }
+
+    let attempts = 0;
+
+    do {
+
+        shuffleArray(tracks);
+        attempts++;
+
+    } while (
+        isCorrectOrder(tracks) &&
+        attempts < 30
+    );
+
+    // Guarantees that a game with at least two tracks
+    // won't accidentally begin already solved.
+    if (isCorrectOrder(tracks)) {
+
+        [tracks[0], tracks[1]] =
+            [tracks[1], tracks[0]];
+    }
+
+    return tracks;
+}
+
+
+// ============================================================
+// START GAME
+// ============================================================
 
 function startGame() {
-  gameStatus.textContent =
-    "Put the tracks in the correct order:";
 
-  scoreElement.textContent = "";
+    currentTracks =
+        shuffleForGame([...currentAlbum.tracks]);
 
-  submitButton.hidden = false;
-  submitButton.disabled = false;
+    renderTracks();
 
-  gameControls.hidden = true;
+    gameCover.src = currentAlbum.cover;
+    gameCover.alt = `${currentAlbum.name} album cover`;
 
-  const shuffledTracks =
-    [...correctOrder];
+    gameTitle.textContent =
+        `${currentArtist.name} — ${currentAlbum.name}`;
 
-  /*
-    Don't let the game occasionally start already solved.
-  */
+    gameStatus.textContent =
+        `Put all ${currentAlbum.tracks.length} tracks in the correct order.`;
 
-  if (shuffledTracks.length > 1) {
-    do {
-      shuffle(shuffledTracks);
-    } while (
-      shuffledTracks.every(
-        (track, index) =>
-          track === correctOrder[index]
-      )
-    );
-  }
+    submitButton.disabled = false;
+    submitButton.hidden = false;
 
-  renderTracks(shuffledTracks);
+    applyTheme(currentAlbum.theme);
 }
 
-/* =========================================================
-   SHUFFLE
-========================================================= */
 
-function shuffle(array) {
-  for (
-    let i = array.length - 1;
-    i > 0;
-    i--
-  ) {
-    const j =
-      Math.floor(
-        Math.random() * (i + 1)
-      );
+// ============================================================
+// TRACK RENDERING
+// ============================================================
 
-    [
-      array[i],
-      array[j]
-    ] = [
-      array[j],
-      array[i]
-    ];
-  }
+function renderTracks() {
+
+    trackList.replaceChildren();
+
+    currentTracks.forEach((title, index) => {
+
+        const track = createTrackElement(title, index);
+
+        trackList.appendChild(track);
+    });
 }
 
-/* =========================================================
-   RENDER TRACKS
-========================================================= */
 
-function renderTracks(tracks) {
-  trackList.replaceChildren();
+function createTrackElement(title, index) {
 
-  tracks.forEach(
-    (title, index) => {
-      const trackElement =
-        document.createElement("div");
+    const track = document.createElement("div");
 
-      trackElement.className =
-        "track";
+    track.className = "track";
+    track.draggable = false;
+    track.tabIndex = 0;
+    track.setAttribute("role", "listitem");
 
-      trackElement.dataset.trackTitle =
-        title;
+    track.dataset.title = title;
 
-      trackElement.setAttribute(
-        "role",
-        "listitem"
-      );
+    const number = document.createElement("span");
 
-      const number =
-        document.createElement("div");
+    number.className = "track-number";
+    number.textContent = index + 1;
 
-      number.className =
-        "track-number";
+    const trackTitle = document.createElement("span");
 
-      number.textContent =
-        index + 1;
+    trackTitle.className = "track-title";
+    trackTitle.textContent = title;
 
-      const name =
-        document.createElement("div");
+    const dragHandle = document.createElement("button");
 
-      name.className =
-        "track-name";
-
-      name.textContent =
-        title;
-
-      /*
-        The handle itself is a button so keyboard users
-        can focus it. The actual sorting is pointer based.
-      */
-
-      const handle =
-        document.createElement("button");
-
-      handle.type = "button";
-
-      handle.className =
-        "drag-handle";
-
-      handle.setAttribute(
+    dragHandle.type = "button";
+    dragHandle.className = "drag-handle";
+    dragHandle.textContent = "☷";
+    dragHandle.setAttribute(
         "aria-label",
-        `Drag ${title} to reorder`
-      );
+        `Drag ${title}`
+    );
 
-      handle.setAttribute(
-        "title",
-        "Drag to reorder"
-      );
-
-      handle.textContent =
-        "☰";
-
-      handle.addEventListener(
+    dragHandle.addEventListener(
         "pointerdown",
         startDragging
-      );
-
-      trackElement.append(
-        number,
-        name,
-        handle
-      );
-
-      trackList.appendChild(
-        trackElement
-      );
-    }
-  );
-}
-
-/* =========================================================
-   POINTER DRAGGING
-========================================================= */
-
-function startDragging(event) {
-  /*
-    Only respond to primary pointer button.
-  */
-
-  if (
-    event.button !== undefined &&
-    event.button !== 0
-  ) {
-    return;
-  }
-
-  event.preventDefault();
-
-  draggedElement =
-    event.currentTarget.closest(
-      ".track"
     );
 
-  if (!draggedElement) {
-    return;
-  }
-
-  draggedElement.classList.add(
-    "dragging"
-  );
-
-  document.addEventListener(
-    "pointermove",
-    moveDragging
-  );
-
-  document.addEventListener(
-    "pointerup",
-    stopDragging,
-    { once: true }
-  );
-
-  /*
-    Important for mobile devices if a gesture is
-    interrupted or cancelled.
-  */
-
-  document.addEventListener(
-    "pointercancel",
-    stopDragging,
-    { once: true }
-  );
-}
-
-function moveDragging(event) {
-  if (!draggedElement) {
-    return;
-  }
-
-  const afterElement =
-    getDragAfterElement(
-      trackList,
-      event.clientY
+    track.addEventListener(
+        "keydown",
+        handleTrackKeyboard
     );
 
-  if (afterElement === null) {
-    trackList.appendChild(
-      draggedElement
-    );
-  } else {
-    trackList.insertBefore(
-      draggedElement,
-      afterElement
-    );
-  }
+    track.appendChild(number);
+    track.appendChild(trackTitle);
+    track.appendChild(dragHandle);
+
+    updateTrackAccessibility(track, index);
+
+    return track;
 }
 
-function stopDragging() {
-  if (!draggedElement) {
-    return;
-  }
 
-  draggedElement.classList.remove(
-    "dragging"
-  );
+function updateTrackAccessibility(track, index) {
 
-  document.removeEventListener(
-    "pointermove",
-    moveDragging
-  );
+    const title = track.dataset.title;
 
-  document.removeEventListener(
-    "pointerup",
-    stopDragging
-  );
-
-  document.removeEventListener(
-    "pointercancel",
-    stopDragging
-  );
-
-  updateTrackNumbers();
-
-  draggedElement = null;
-}
-
-function getDragAfterElement(
-  container,
-  y
-) {
-  const elements = [
-    ...container.querySelectorAll(
-      ".track:not(.dragging)"
-    )
-  ];
-
-  const closest =
-    elements.reduce(
-      (result, child) => {
-        const box =
-          child.getBoundingClientRect();
-
-        const offset =
-          y -
-          box.top -
-          box.height / 2;
-
-        if (
-          offset < 0 &&
-          offset > result.offset
-        ) {
-          return {
-            offset,
-            element: child
-          };
-        }
-
-        return result;
-      },
-      {
-        offset:
-          Number.NEGATIVE_INFINITY,
-
-        element: null
-      }
+    track.setAttribute(
+        "aria-label",
+        `Position ${index + 1}: ${title}`
     );
-
-  return closest.element;
 }
 
-/* =========================================================
-   UPDATE TRACK NUMBERS
-========================================================= */
 
 function updateTrackNumbers() {
-  [
-    ...trackList.querySelectorAll(
-      ".track"
-    )
-  ].forEach(
-    (element, index) => {
-      element.querySelector(
-        ".track-number"
-      ).textContent =
-        index + 1;
-    }
-  );
+
+    const tracks = [
+        ...trackList.querySelectorAll(".track")
+    ];
+
+    tracks.forEach((track, index) => {
+
+        const number =
+            track.querySelector(".track-number");
+
+        number.textContent = index + 1;
+
+        updateTrackAccessibility(track, index);
+    });
+
+    currentTracks = getTracksFromDOM();
 }
 
-/* =========================================================
-   SUBMIT GAME
-========================================================= */
 
-function submitGame() {
-  const elements = [
-    ...trackList.querySelectorAll(
-      ".track"
-    )
-  ];
+// ============================================================
+// GET CURRENT ORDER
+// ============================================================
 
-  let score = 0;
+function getTracksFromDOM() {
 
-  trackList.replaceChildren();
-
-  elements.forEach(
-    (element, index) => {
-      const trackTitle =
-        element.dataset.trackTitle;
-
-      const isCorrect =
-        trackTitle ===
-        correctOrder[index];
-
-      const resultTrack =
-        document.createElement("div");
-
-      resultTrack.className =
-        `track ${
-          isCorrect
-            ? "track-correct"
-            : "track-incorrect"
-        }`;
-
-      resultTrack.setAttribute(
-        "role",
-        "listitem"
-      );
-
-      const number =
-        document.createElement("div");
-
-      number.className =
-        "track-number";
-
-      number.textContent =
-        index + 1;
-
-      const name =
-        document.createElement("div");
-
-      name.className =
-        "track-name";
-
-      name.textContent =
-        trackTitle;
-
-      const result =
-        document.createElement("div");
-
-      result.className =
-        `result ${
-          isCorrect
-            ? "correct"
-            : "incorrect"
-        }`;
-
-      if (isCorrect) {
-        score++;
-
-        result.textContent =
-          "✓";
-
-        result.setAttribute(
-          "aria-label",
-          "Correct"
-        );
-      } else {
-        const correctPosition =
-          correctOrder.indexOf(
-            trackTitle
-          ) + 1;
-
-        result.textContent =
-          `✗ #${correctPosition}`;
-
-        result.setAttribute(
-          "aria-label",
-          `Incorrect. Correct position: ${correctPosition}`
-        );
-      }
-
-      resultTrack.append(
-        number,
-        name,
-        result
-      );
-
-      trackList.appendChild(
-        resultTrack
-      );
-    }
-  );
-
-  scoreElement.textContent =
-    `Score: ${score} / ${correctOrder.length}`;
-
-  gameStatus.textContent =
-    "Results:";
-
-  submitButton.hidden = true;
-
-  gameControls.hidden = false;
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+    return [
+        ...trackList.querySelectorAll(".track")
+    ].map(track => track.dataset.title);
 }
 
-/* =========================================================
-   BUTTON EVENTS
-========================================================= */
 
-submitButton.addEventListener(
-  "click",
-  submitGame
-);
+// ============================================================
+// MOVE TRACK
+// ============================================================
+
+function moveTrack(track, newIndex) {
+
+    const tracks = [
+        ...trackList.querySelectorAll(".track")
+    ];
+
+    const oldIndex = tracks.indexOf(track);
+
+    if (
+        oldIndex === -1 ||
+        newIndex < 0 ||
+        newIndex >= tracks.length
+    ) {
+        return;
+    }
+
+    if (oldIndex === newIndex) {
+        return;
+    }
+
+    if (newIndex < oldIndex) {
+
+        trackList.insertBefore(
+            track,
+            tracks[newIndex]
+        );
+
+    } else {
+
+        const nextTrack =
+            tracks[newIndex].nextSibling;
+
+        trackList.insertBefore(
+            track,
+            nextTrack
+        );
+    }
+
+    updateTrackNumbers();
+
+    gameStatus.textContent =
+        `${track.dataset.title} moved to position ${newIndex + 1}.`;
+}
+
+
+// ============================================================
+// KEYBOARD CONTROLS
+// ============================================================
+
+function handleTrackKeyboard(event) {
+
+    const track = event.currentTarget;
+
+    const tracks = [
+        ...trackList.querySelectorAll(".track")
+    ];
+
+    const currentIndex = tracks.indexOf(track);
+
+    if (event.key === "ArrowUp") {
+
+        event.preventDefault();
+
+        moveTrack(
+            track,
+            currentIndex - 1
+        );
+
+        track.focus();
+
+    } else if (event.key === "ArrowDown") {
+
+        event.preventDefault();
+
+        moveTrack(
+            track,
+            currentIndex + 1
+        );
+
+        track.focus();
+    }
+}
+
+
+// ============================================================
+// DRAG AND DROP
+// ============================================================
+
+let draggedTrack = null;
+
+
+function startDragging(event) {
+
+    event.preventDefault();
+
+    const handle = event.currentTarget;
+
+    draggedTrack = handle.closest(".track");
+
+    if (!draggedTrack) {
+        return;
+    }
+
+    draggedTrack.classList.add("dragging");
+
+    document.addEventListener(
+        "pointermove",
+        moveDragging
+    );
+
+    document.addEventListener(
+        "pointerup",
+        stopDragging,
+        { once: true }
+    );
+
+    document.addEventListener(
+        "pointercancel",
+        stopDragging,
+        { once: true }
+    );
+}
+
+
+function moveDragging(event) {
+
+    if (!draggedTrack) {
+        return;
+    }
+
+    event.preventDefault();
+
+    const elementUnderPointer =
+        document.elementFromPoint(
+            event.clientX,
+            event.clientY
+        );
+
+    const targetTrack =
+        elementUnderPointer?.closest(".track");
+
+    if (
+        !targetTrack ||
+        targetTrack === draggedTrack
+    ) {
+        return;
+    }
+
+    const rect =
+        targetTrack.getBoundingClientRect();
+
+    const targetMiddle =
+        rect.top + (rect.height / 2);
+
+    if (event.clientY < targetMiddle) {
+
+        trackList.insertBefore(
+            draggedTrack,
+            targetTrack
+        );
+
+    } else {
+
+        trackList.insertBefore(
+            draggedTrack,
+            targetTrack.nextSibling
+        );
+    }
+
+    updateTrackNumbers();
+}
+
+
+function stopDragging() {
+
+    if (draggedTrack) {
+
+        draggedTrack.classList.remove(
+            "dragging"
+        );
+
+        draggedTrack = null;
+    }
+
+    document.removeEventListener(
+        "pointermove",
+        moveDragging
+    );
+}
+
+
+// ============================================================
+// SUBMIT ANSWER
+// ============================================================
+
+function submitAnswer() {
+
+    const playerOrder = getTracksFromDOM();
+    const correctOrder = currentAlbum.tracks;
+
+    let correctCount = 0;
+
+    resultsList.replaceChildren();
+
+    playerOrder.forEach((track, index) => {
+
+        const correctTrack =
+            correctOrder[index];
+
+        const isCorrect =
+            track === correctTrack;
+
+        if (isCorrect) {
+            correctCount++;
+        }
+
+        const result = document.createElement("div");
+
+        result.className =
+            `result-row ${isCorrect ? "correct" : "incorrect"}`;
+
+        result.setAttribute("role", "listitem");
+
+        const position = document.createElement("span");
+
+        position.className = "result-position";
+        position.textContent = index + 1;
+
+        const answer = document.createElement("span");
+
+        answer.className = "result-answer";
+        answer.textContent = track;
+
+        const icon = document.createElement("span");
+
+        icon.className = "result-icon";
+        icon.textContent = isCorrect ? "✓" : "✗";
+        icon.setAttribute(
+            "aria-label",
+            isCorrect ? "Correct" : "Incorrect"
+        );
+
+        result.appendChild(position);
+        result.appendChild(answer);
+        result.appendChild(icon);
+
+        if (!isCorrect) {
+
+            const correction =
+                document.createElement("span");
+
+            correction.className =
+                "correct-answer";
+
+            correction.textContent =
+                `Correct: ${correctTrack}`;
+
+            result.appendChild(correction);
+        }
+
+        resultsList.appendChild(result);
+    });
+
+    const total = correctOrder.length;
+
+    const percentage =
+        Math.round((correctCount / total) * 100);
+
+    scoreElement.textContent =
+        `${correctCount} / ${total} correct (${percentage}%)`;
+
+    resultsMessage.textContent =
+        getResultsMessage(correctCount, total);
+
+    submitButton.disabled = true;
+
+    showScreen(resultsScreen);
+
+    requestAnimationFrame(() => {
+        playAgainButton.focus();
+    });
+}
+
+
+function getResultsMessage(correct, total) {
+
+    const percentage =
+        (correct / total) * 100;
+
+    if (percentage === 100) {
+        return "Every track was in the correct position.";
+    }
+
+    if (percentage >= 75) {
+        return "Most of the tracklist was in the correct position.";
+    }
+
+    if (percentage >= 50) {
+        return "You got at least half of the positions correct.";
+    }
+
+    return "The correct tracklist is shown below for comparison.";
+}
+
+
+// ============================================================
+// BUTTON ACTIONS
+// ============================================================
 
 backToArtistsButton.addEventListener(
-  "click",
-  initArtistScreen
-);
+    "click",
+    () => {
 
-chooseArtistButton.addEventListener(
-  "click",
-  initArtistScreen
-);
+        currentArtist = null;
+        currentAlbum = null;
 
-chooseAlbumButton.addEventListener(
-  "click",
-  () => {
-    if (currentArtist) {
-      selectArtist(currentArtist);
+        applyTheme(defaultTheme);
+
+        renderArtists();
+        showScreen(artistScreen);
     }
-  }
 );
+
+
+backToAlbumsButton.addEventListener(
+    "click",
+    () => {
+
+        currentAlbum = null;
+
+        applyTheme(defaultTheme);
+
+        renderAlbums();
+        showScreen(albumScreen);
+    }
+);
+
+
+submitButton.addEventListener(
+    "click",
+    submitAnswer
+);
+
 
 playAgainButton.addEventListener(
-  "click",
-  startGame
+    "click",
+    () => {
+
+        startGame();
+        showScreen(gameScreen);
+
+        requestAnimationFrame(() => {
+
+            const firstTrack =
+                trackList.querySelector(".track");
+
+            if (firstTrack) {
+                firstTrack.focus();
+            }
+        });
+    }
 );
 
-/* =========================================================
-   INITIALIZE
-========================================================= */
 
-initArtistScreen();
+chooseAlbumButton.addEventListener(
+    "click",
+    () => {
+
+        currentAlbum = null;
+
+        applyTheme(defaultTheme);
+
+        renderAlbums();
+        showScreen(albumScreen);
+
+        requestAnimationFrame(() => {
+            backToAlbumsButton.focus();
+        });
+    }
+);
+
+
+chooseArtistButton.addEventListener(
+    "click",
+    () => {
+
+        currentArtist = null;
+        currentAlbum = null;
+
+        applyTheme(defaultTheme);
+
+        renderArtists();
+        showScreen(artistScreen);
+    }
+);
+
+
+// ============================================================
+// INITIALIZE
+// ============================================================
+
+applyTheme(defaultTheme);
+renderArtists();
+showScreen(artistScreen);
