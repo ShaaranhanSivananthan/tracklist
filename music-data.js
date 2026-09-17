@@ -503,14 +503,44 @@ const musicData = [
         albums: [
 
             {
+                name: "Section.80",
+                year: 2011,
+                cover: "images/albums/s80.jpg",
+
+                theme: {
+                    background: "#1C1917",
+                    text: "#F5F5F4",
+                    accent: "#C68A4C"
+                },
+
+                tracks: [
+                    "Fuck Your Ethnicity",
+                    "Hol' Up",
+                    "A.D.H.D",
+                    "No Make-Up (Her Vice)",
+                    "Tammy's Song (Her Evils)",
+                    "Chapter Six",
+                    "Ronald Reagan Era",
+                    "Poe Mans Dreams (His Vice)",
+                    "Chapter Ten",
+                    "Keisha's Song (Her Pain)",
+                    "Rigamortus",
+                    "Kush & Corinthians",
+                    "Blow My High (Members Only)",
+                    "Ab-Souls Outro",
+                    "HiiiPower"
+                ]
+            },
+            
+            {
                 name: "good kid, m.A.A.d city",
                 year: 2012,
                 cover: "images/albums/gkmc.jpg",
 
                 theme: {
-                    background: "#C7A77A",
-                    text: "#17120C",
-                    accent: "#714B2A"
+                    background: "#3B4856",
+                    text: "#FFFFFF",
+                    accent: "#B91C1C"
                 },
 
                 tracks: [
@@ -535,9 +565,9 @@ const musicData = [
                 cover: "images/albums/tpab.jpg",
 
                 theme: {
-                    background: "#4C3127",
-                    text: "#FFFFFF",
-                    accent: "#C98B4A"
+                    background: "#121212",
+                    text: "#E5E5E5",
+                    accent: "#8C8C8C"
                 },
 
                 tracks: [
@@ -561,31 +591,31 @@ const musicData = [
             },
 
             {
-                name: "DAMN.",
+                name: "Damn",
                 year: 2017,
                 cover: "images/albums/damn.jpg",
 
                 theme: {
-                    background: "#9A1515",
-                    text: "#FFFFFF",
-                    accent: "#111111"
+                    background: "#18181B",
+                    text: "#FAFAFA",
+                    accent: "#B91C1C"
                 },
 
                 tracks: [
-                    "BLOOD.",
-                    "DNA.",
-                    "YAH.",
-                    "ELEMENT.",
-                    "FEEL.",
-                    "LOYALTY. FEAT. RIHANNA",
-                    "PRIDE.",
-                    "HUMBLE.",
-                    "LUST.",
-                    "LOVE. FEAT. ZACARI",
-                    "XXX. FEAT. U2",
-                    "FEAR.",
-                    "GOD.",
-                    "DUCKWORTH."
+                    "Blood",
+                    "Dna",
+                    "Yah",
+                    "Element",
+                    "Feel",
+                    "Loyalty",
+                    "Pride",
+                    "Humble",
+                    "Lust",
+                    "Love",
+                    "XXX",
+                    "Fear",
+                    "God",
+                    "Duckworth"
                 ]
             },
 
@@ -595,9 +625,9 @@ const musicData = [
                 cover: "images/albums/mm&bs.jpg",
 
                 theme: {
-                    background: "#D6C4A5",
-                    text: "#19140E",
-                    accent: "#624F3A"
+                    background: "#D4C5B9",
+                    text: "#1C1917",
+                    accent: "#8C7A6B"
                 },
 
                 tracks: [
@@ -619,6 +649,33 @@ const musicData = [
                     "Mr. Morale",
                     "Mother I Sober",
                     "Mirror"
+                ]
+            }
+
+            {
+                name: "GNX",
+                year: 2024,
+                cover: "images/albums/gnx.jpg",
+
+                theme: {
+                    background: "#09090B",
+                    text: "#F4F4F5",
+                    accent: "#E11D48"
+                },
+
+                tracks: [
+                    "Wacced Out Murals",
+                    "Squabble Up",
+                    "Luther",
+                    "Man at the Garden",
+                    "Hey Now",
+                    "Reincarnated",
+                    "TV Off",
+                    "Dodger Blue",
+                    "Peekaboo",
+                    "Heart Pt. 6",
+                    "GNX",
+                    "Gloria"
                 ]
             }
         ]
