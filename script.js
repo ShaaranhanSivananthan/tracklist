@@ -1,13 +1,16 @@
 /* ---------------------------------------------------------
-   HARDCODED MUSIC DATA
+   HARDCODED MUSIC DATA (WITH IMAGES & COLORS)
 --------------------------------------------------------- */
 const MUSIC_DATA = [
   {
     name: "Kanye West",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop%29.jpg/800px-Kanye_West_at_the_2009_Tribeca_Film_Festival_%28crop%29.jpg",
     albums: [
       {
         title: "The College Dropout",
         year: 2004,
+        cover: "https://upload.wikimedia.org/wikipedia/en/a/a3/Kanyewest_collegedropout.jpg",
+        theme: { bg: "#8C4A27", color: "#FFFFFF", accent: "#D49B4B" },
         tracks: [
           "Intro",
           "We Don't Care",
@@ -35,12 +38,14 @@ const MUSIC_DATA = [
       {
         title: "Late Registration",
         year: 2005,
+        cover: "https://upload.wikimedia.org/wikipedia/en/f/f4/Late_registration.jpg",
+        theme: { bg: "#4A3525", color: "#FFFFFF", accent: "#C59B27" },
         tracks: [
           "Wake Up Mr. West",
           "Heard 'Em Say",
           "Touch the Sky",
           "Gold Digger",
-          "Sk道を (Skit #1)",
+          "Skit #1",
           "Drive Slow",
           "My Way Home",
           "Crack Music",
@@ -61,6 +66,8 @@ const MUSIC_DATA = [
       {
         title: "Graduation",
         year: 2007,
+        cover: "https://upload.wikimedia.org/wikipedia/en/7/70/Graduation_album.jpg",
+        theme: { bg: "#8A2BE2", color: "#FFFFFF", accent: "#FF007F" },
         tracks: [
           "Good Morning",
           "Champion",
@@ -80,6 +87,8 @@ const MUSIC_DATA = [
       {
         title: "My Beautiful Dark Twisted Fantasy",
         year: 2010,
+        cover: "https://upload.wikimedia.org/wikipedia/en/f/f0/My_Beautiful_Dark_Twisted_Fantasy.jpg",
+        theme: { bg: "#B22222", color: "#FFFFFF", accent: "#FFD700" },
         tracks: [
           "Dark Fantasy",
           "Gorgeous",
@@ -99,6 +108,8 @@ const MUSIC_DATA = [
       {
         title: "Yeezus",
         year: 2013,
+        cover: "https://upload.wikimedia.org/wikipedia/en/0/03/Yeezus_album_cover.png",
+        theme: { bg: "#222222", color: "#FFFFFF", accent: "#FF0000" },
         tracks: [
           "On Sight",
           "Black Skinhead",
@@ -116,10 +127,13 @@ const MUSIC_DATA = [
   },
   {
     name: "Kendrick Lamar",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Kendrick_Lamar_2018.jpg/800px-Kendrick_Lamar_2018.jpg",
     albums: [
       {
         title: "good kid, m.A.A.d city",
         year: 2012,
+        cover: "https://upload.wikimedia.org/wikipedia/en/d/d3/Good_kid_m.a.a.d_city_cover.jpg",
+        theme: { bg: "#2F4F4F", color: "#FFFFFF", accent: "#00CED1" },
         tracks: [
           "Sherane a.k.a Master Splinter's Daughter",
           "Bitch, Don't Kill My Vibe",
@@ -138,6 +152,8 @@ const MUSIC_DATA = [
       {
         title: "To Pimp a Butterfly",
         year: 2015,
+        cover: "https://upload.wikimedia.org/wikipedia/en/f/f6/Kendrick_Lamar_-_To_Pimp_a_Butterfly.png",
+        theme: { bg: "#1A1A1A", color: "#FFFFFF", accent: "#A9A9A9" },
         tracks: [
           "Wesley's Theory",
           "For Free? (Interlude)",
@@ -160,6 +176,8 @@ const MUSIC_DATA = [
       {
         title: "DAMN.",
         year: 2017,
+        cover: "https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png",
+        theme: { bg: "#8B0000", color: "#FFFFFF", accent: "#FFFFFF" },
         tracks: [
           "BLOOD.",
           "DNA.",
@@ -180,6 +198,8 @@ const MUSIC_DATA = [
       {
         title: "Mr. Morale & the Big Steppers",
         year: 2022,
+        cover: "https://upload.wikimedia.org/wikipedia/en/e/e5/Kendrick_Lamar_-_Mr._Morale_%26_the_Big_Steppers.png",
+        theme: { bg: "#5A4D41", color: "#FFFFFF", accent: "#D2B48C" },
         tracks: [
           "United in Grief",
           "N95",
@@ -205,10 +225,13 @@ const MUSIC_DATA = [
   },
   {
     name: "The Weeknd",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/The_Weeknd_Cannes_2023.see2_%28cropped%29.jpg/800px-The_Weeknd_Cannes_2023.see2_%28cropped%29.jpg",
     albums: [
       {
         title: "House of Balloons",
         year: 2011,
+        cover: "https://upload.wikimedia.org/wikipedia/en/2/22/House_Of_Balloons.png",
+        theme: { bg: "#111111", color: "#FFFFFF", accent: "#E6E6E6" },
         tracks: [
           "High for This",
           "What You Need",
@@ -224,6 +247,8 @@ const MUSIC_DATA = [
       {
         title: "Beauty Behind the Madness",
         year: 2015,
+        cover: "https://upload.wikimedia.org/wikipedia/en/b/bd/The_Weeknd_-_Beauty_Behind_the_Madness.png",
+        theme: { bg: "#2B2B2B", color: "#FFFFFF", accent: "#808080" },
         tracks: [
           "Real Life",
           "Losers",
@@ -244,6 +269,8 @@ const MUSIC_DATA = [
       {
         title: "Starboy",
         year: 2016,
+        cover: "https://upload.wikimedia.org/wikipedia/en/3/39/The_Weeknd_-_Starboy.png",
+        theme: { bg: "#1B003A", color: "#FFFFFF", accent: "#FF1493" },
         tracks: [
           "Starboy",
           "Party Monster",
@@ -268,6 +295,8 @@ const MUSIC_DATA = [
       {
         title: "After Hours",
         year: 2020,
+        cover: "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Weeknd_-_After_Hours.png",
+        theme: { bg: "#600000", color: "#FFFFFF", accent: "#FF3333" },
         tracks: [
           "Alone Again",
           "Too Late",
@@ -288,6 +317,8 @@ const MUSIC_DATA = [
       {
         title: "Dawn FM",
         year: 2022,
+        cover: "https://upload.wikimedia.org/wikipedia/en/b/b9/The_Weeknd_-_Dawn_FM.png",
+        theme: { bg: "#001F3F", color: "#FFFFFF", accent: "#00BFFF" },
         tracks: [
           "Dawn FM",
           "Gasoline",
@@ -320,10 +351,9 @@ const gameScreen = document.getElementById("game-screen");
 
 const artistList = document.getElementById("artist-list");
 const albumList = document.getElementById("album-list");
-const selectedArtistHeader = document.getElementById("selected-artist");
+const artistHeaderContainer = document.getElementById("artist-header-container");
+const gameAlbumContainer = document.getElementById("game-album-container");
 
-const gameAlbum = document.getElementById("game-album");
-const gameArtist = document.getElementById("game-artist");
 const gameStatus = document.getElementById("game-status");
 const trackList = document.getElementById("track-list");
 const submitButton = document.getElementById("submit-button");
@@ -345,6 +375,41 @@ let currentTracks = [];
 let draggedElement = null;
 
 /* ---------------------------------------------------------
+   THEME APPLIER
+--------------------------------------------------------- */
+function applyTheme(theme) {
+  if (!theme) {
+    document.documentElement.style.setProperty('--bg-color', '#f2f2f2');
+    document.documentElement.style.setProperty('--card-bg', '#ffffff');
+    document.documentElement.style.setProperty('--text-color', '#222222');
+    document.documentElement.style.setProperty('--accent-color', '#222222');
+    document.documentElement.style.setProperty('--button-hover', '#e2e2e2');
+    return;
+  }
+
+  document.documentElement.style.setProperty('--bg-color', theme.bg);
+  document.documentElement.style.setProperty('--card-bg', adjustColorBrightness(theme.bg, 20));
+  document.documentElement.style.setProperty('--text-color', theme.color);
+  document.documentElement.style.setProperty('--accent-color', theme.accent);
+  document.documentElement.style.setProperty('--button-hover', adjustColorBrightness(theme.bg, 40));
+}
+
+function adjustColorBrightness(hex, percent) {
+  let num = parseInt(hex.replace("#", ""), 16),
+    amt = Math.round(2.55 * percent),
+    R = (num >> 16) + amt,
+    B = ((num >> 8) & 0x00FF) + amt,
+    G = (num & 0x0000FF) + amt;
+
+  return "#" + (
+    0x1000000 +
+    (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 +
+    (B < 255 ? (B < 1 ? 0 : B) : 255) * 0x100 +
+    (G < 255 ? (G < 1 ? 0 : G) : 255)
+  ).toString(16).slice(1);
+}
+
+/* ---------------------------------------------------------
    NAVIGATION
 --------------------------------------------------------- */
 function showScreen(screen) {
@@ -356,28 +421,53 @@ function showScreen(screen) {
 }
 
 function initArtistScreen() {
+  applyTheme(null);
   artistList.innerHTML = "";
+  
   MUSIC_DATA.forEach((artist) => {
-    const button = document.createElement("button");
-    button.className = "selection-button";
-    button.textContent = artist.name;
-    button.addEventListener("click", () => selectArtist(artist));
-    artistList.appendChild(button);
+    const card = document.createElement("div");
+    card.className = "artist-card";
+    
+    card.innerHTML = `
+      <img src="${artist.image}" alt="${artist.name}" class="artist-img" />
+      <span class="artist-name-text">${artist.name}</span>
+    `;
+
+    card.addEventListener("click", () => selectArtist(artist));
+    artistList.appendChild(card);
   });
+
   showScreen(artistScreen);
 }
 
 function selectArtist(artist) {
   currentArtist = artist;
-  selectedArtistHeader.textContent = artist.name;
+  applyTheme(null);
+
+  artistHeaderContainer.innerHTML = `
+    <img src="${artist.image}" alt="${artist.name}" class="header-artist-img" />
+    <h2>${artist.name}</h2>
+  `;
+
   albumList.innerHTML = "";
 
   artist.albums.forEach((album) => {
-    const button = document.createElement("button");
-    button.className = "selection-button";
-    button.textContent = `${album.title} (${album.year})`;
-    button.addEventListener("click", () => selectAlbum(album));
-    albumList.appendChild(button);
+    const card = document.createElement("div");
+    card.className = "album-card";
+    card.style.borderColor = album.theme.accent;
+    card.style.background = album.theme.bg;
+    card.style.color = album.theme.color;
+
+    card.innerHTML = `
+      <img src="${album.cover}" alt="${album.title}" class="album-cover-img" />
+      <div class="album-info">
+        <div class="album-title">${album.title}</div>
+        <div class="album-year">${album.year}</div>
+      </div>
+    `;
+
+    card.addEventListener("click", () => selectAlbum(album));
+    albumList.appendChild(card);
   });
 
   showScreen(albumScreen);
@@ -386,10 +476,14 @@ function selectArtist(artist) {
 function selectAlbum(album) {
   currentAlbum = album;
   correctOrder = [...album.tracks];
-  
-  gameAlbum.textContent = album.title;
-  gameArtist.textContent = currentArtist.name;
-  
+  applyTheme(album.theme);
+
+  gameAlbumContainer.innerHTML = `
+    <img src="${album.cover}" alt="${album.title}" class="game-album-cover" />
+    <h2>${album.title}</h2>
+    <p class="artist-sub">${currentArtist.name}</p>
+  `;
+
   startGame();
   showScreen(gameScreen);
 }
@@ -404,7 +498,6 @@ function startGame() {
   submitButton.disabled = false;
   gameControls.style.display = "none";
 
-  // Shuffle tracks
   currentTracks = [...correctOrder];
   shuffle(currentTracks);
 
@@ -448,7 +541,7 @@ function renderTracks() {
 }
 
 /* ---------------------------------------------------------
-   DRAG AND DROP HANDLERS (POINTER EVENTS)
+   DRAG AND DROP HANDLERS
 --------------------------------------------------------- */
 function startDragging(event) {
   event.preventDefault();
@@ -559,10 +652,10 @@ function submitGame() {
 /* ---------------------------------------------------------
    BUTTON EVENT LISTENERS
 --------------------------------------------------------- */
-backToArtistsButton.addEventListener("click", () => showScreen(artistScreen));
-chooseArtistButton.addEventListener("click", () => showScreen(artistScreen));
+backToArtistsButton.addEventListener("click", () => initArtistScreen());
+chooseArtistButton.addEventListener("click", () => initArtistScreen());
 chooseAlbumButton.addEventListener("click", () => selectArtist(currentArtist));
 playAgainButton.addEventListener("click", () => startGame());
 
-// Run initial screen on load
+// Init initial view
 initArtistScreen();
