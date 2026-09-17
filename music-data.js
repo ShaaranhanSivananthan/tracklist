@@ -508,9 +508,9 @@ const musicData = [
                 cover: "images/albums/s80.jpg",
 
                 theme: {
-                    background: "#1C1917",
-                    text: "#F5F5F4",
-                    accent: "#C68A4C"
+                    background: "#A8A39A",
+                    text: "#1A1815",
+                    accent: "#8B261D"
                 },
 
                 tracks: [
@@ -538,9 +538,9 @@ const musicData = [
                 cover: "images/albums/gkmc.jpg",
 
                 theme: {
-                    background: "#3B4856",
+                    background: "#3D5A80",
                     text: "#FFFFFF",
-                    accent: "#B91C1C"
+                    accent: "#D90429"
                 },
 
                 tracks: [
@@ -565,9 +565,9 @@ const musicData = [
                 cover: "images/albums/tpab.jpg",
 
                 theme: {
-                    background: "#121212",
-                    text: "#E5E5E5",
-                    accent: "#8C8C8C"
+                    background: "#2B2927",
+                    text: "#F2EFE9",
+                    accent: "#A39E98"
                 },
 
                 tracks: [
@@ -596,9 +596,9 @@ const musicData = [
                 cover: "images/albums/damn.jpg",
 
                 theme: {
-                    background: "#18181B",
-                    text: "#FAFAFA",
-                    accent: "#B91C1C"
+                    background: "#D90429",
+                    text: "#FFFFFF",
+                    accent: "#111111"
                 },
 
                 tracks: [
@@ -625,9 +625,9 @@ const musicData = [
                 cover: "images/albums/mm&bs.jpg",
 
                 theme: {
-                    background: "#D4C5B9",
-                    text: "#1C1917",
-                    accent: "#8C7A6B"
+                    background: "#C2B29F",
+                    text: "#1F1A16",
+                    accent: "#704E32"
                 },
 
                 tracks: [
@@ -658,9 +658,9 @@ const musicData = [
                 cover: "images/albums/gnx.jpg",
 
                 theme: {
-                    background: "#09090B",
-                    text: "#F4F4F5",
-                    accent: "#E11D48"
+                    background: "#0D0D0D",
+                    text: "#E0E0E0",
+                    accent: "#D62828"
                 },
 
                 tracks: [
