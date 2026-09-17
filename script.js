@@ -415,8 +415,7 @@ function startGame() {
     gameCover.src = currentAlbum.cover;
     gameCover.alt = `${currentAlbum.name} album cover`;
 
-    gameTitle.textContent =
-        `${currentArtist.name} — ${currentAlbum.name}`;
+    gameTitle.textContent = currentAlbum.name;
 
     gameStatus.textContent =
         `Put all ${currentAlbum.tracks.length} tracks in the correct order.`;
@@ -481,11 +480,6 @@ function createTrackElement(title, index) {
         startDragging
     );
 
-    track.addEventListener(
-        "keydown",
-        handleTrackKeyboard
-    );
-
     track.appendChild(number);
     track.appendChild(trackTitle);
     track.appendChild(dragHandle);
@@ -536,94 +530,6 @@ function getTracksFromDOM() {
     return [
         ...trackList.querySelectorAll(".track")
     ].map(track => track.dataset.title);
-}
-
-
-// ============================================================
-// MOVE TRACK
-// ============================================================
-
-function moveTrack(track, newIndex) {
-
-    const tracks = [
-        ...trackList.querySelectorAll(".track")
-    ];
-
-    const oldIndex = tracks.indexOf(track);
-
-    if (
-        oldIndex === -1 ||
-        newIndex < 0 ||
-        newIndex >= tracks.length
-    ) {
-        return;
-    }
-
-    if (oldIndex === newIndex) {
-        return;
-    }
-
-    if (newIndex < oldIndex) {
-
-        trackList.insertBefore(
-            track,
-            tracks[newIndex]
-        );
-
-    } else {
-
-        const nextTrack =
-            tracks[newIndex].nextSibling;
-
-        trackList.insertBefore(
-            track,
-            nextTrack
-        );
-    }
-
-    updateTrackNumbers();
-
-    gameStatus.textContent =
-        `${track.dataset.title} moved to position ${newIndex + 1}.`;
-}
-
-
-// ============================================================
-// KEYBOARD CONTROLS
-// ============================================================
-
-function handleTrackKeyboard(event) {
-
-    const track = event.currentTarget;
-
-    const tracks = [
-        ...trackList.querySelectorAll(".track")
-    ];
-
-    const currentIndex = tracks.indexOf(track);
-
-    if (event.key === "ArrowUp") {
-
-        event.preventDefault();
-
-        moveTrack(
-            track,
-            currentIndex - 1
-        );
-
-        track.focus();
-
-    } else if (event.key === "ArrowDown") {
-
-        event.preventDefault();
-
-        moveTrack(
-            track,
-            currentIndex + 1
-        );
-
-        track.focus();
-    }
 }
 
 
@@ -776,18 +682,8 @@ function submitAnswer() {
         answer.className = "result-answer";
         answer.textContent = track;
 
-        const icon = document.createElement("span");
-
-        icon.className = "result-icon";
-        icon.textContent = isCorrect ? "✓" : "✗";
-        icon.setAttribute(
-            "aria-label",
-            isCorrect ? "Correct" : "Incorrect"
-        );
-
         result.appendChild(position);
         result.appendChild(answer);
-        result.appendChild(icon);
 
         if (!isCorrect) {
 
