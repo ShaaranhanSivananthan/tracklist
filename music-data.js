@@ -110,6 +110,33 @@ const musicData = [
             },
 
             {
+                name: "808s & Heartbreak",
+                year: 2008,
+                cover: "images/albums/808s.jpg",
+
+                theme: {
+                    background: "#D9C29C",
+                    text: "#17130E",
+                    accent: "#8A5A24"
+                },
+
+                tracks: [
+                    "Say You Will",
+                    "Welcome To Heartbreak",
+                    "Heartless",
+                    "Amazing",
+                    "Love Lockdown",
+                    "Paranoid",
+                    "RoboCop",
+                    "Street Lights",
+                    "Bad News",
+                    "See You In My Nightmares",
+                    "Coldest Winter",
+                    "Pinocchio Story"
+                ]
+            },
+
+            {
                 name: "My Beautiful Dark Twisted Fantasy",
                 year: 2010,
                 cover: "images/albums/mbdtf.jpg",
@@ -138,6 +165,33 @@ const musicData = [
             },
 
             {
+                name: "Watch the Throne",
+                year: 2011,
+                cover: "images/albums/wtt.jpg",
+
+                theme: {
+                    background: "#D9C29C",
+                    text: "#17130E",
+                    accent: "#8A5A24"
+                },
+
+                tracks: [
+                    "No Church in the Wild",
+                    "Lift Off",
+                    "Ni**as in Paris",
+                    "Otis",
+                    "Gotta Have It",
+                    "New Day",
+                    "That's My Bitch",
+                    "Welcome to the Jungle",
+                    "Who Gon Stop Me",
+                    "Murder to Excellence",
+                    "Made in America",
+                    "Why I Love You"
+                ]
+            },
+
+            {
                 name: "Yeezus",
                 year: 2013,
                 cover: "images/albums/yeezus.jpg",
@@ -159,6 +213,218 @@ const musicData = [
                     "Guilt Trip",
                     "Send It Up",
                     "Bound 2"
+                ]
+            },
+
+            {
+                name: "The Life of Pablo",
+                year: 2016,
+                cover: "images/albums/tlop.jpg",
+
+                theme: {
+                    background: "#D9C29C",
+                    text: "#17130E",
+                    accent: "#8A5A24"
+                },
+
+                tracks: [
+                    "Ultralight Beam",
+                    "Father Stretch My Hands, Pt. 1",
+                    "Pt. 2",
+                    "Famous",
+                    "Feedback",
+                    "Low Lights",
+                    "Highlights",
+                    "Freestyle 4",
+                    "I Love Kanye",
+                    "Waves",
+                    "FML",
+                    "Real Friends",
+                    "Wolves",
+                    "Frank's Track",
+                    "Siiiiiiiiilver Surffffeeeeer Intermission",
+                    "30 Hours",
+                    "No More Parties in LA",
+                    "Facts",
+                    "Fade",
+                    "Saint Pablo"
+                ]
+            },
+
+            {
+                name: "ye",
+                year: 2018,
+                cover: "images/albums/ye.jpg",
+
+                theme: {
+                    background: "#D9C29C",
+                    text: "#17130E",
+                    accent: "#8A5A24"
+                },
+
+                tracks: [
+                    "I Thought About Killing You",
+                    "Yikes",
+                    "All Mine",
+                    "Wouldn't Leave",
+                    "No Mistakes",
+                    "Ghost Town",
+                    "Violent Crimes"
+                ]
+            },
+
+            {
+                name: "Kids See Ghosts",
+                year: 2018,
+                cover: "images/albums/ksg.jpg",
+
+                theme: {
+                    background: "#D9C29C",
+                    text: "#17130E",
+                    accent: "#8A5A24"
+                },
+
+                tracks: [
+                    "Feel the Love",
+                    "Fire",
+                    "4th Dimension",
+                    "Freeee",
+                    "Reborn",
+                    "Kids See Ghosts",
+                    "Cudi Montage"
+                ]
+            },
+
+            {
+                name: "Jesus Is King",
+                year: 2019,
+                cover: "images/albums/jik.jpg",
+
+                theme: {
+                    background: "#D9C29C",
+                    text: "#17130E",
+                    accent: "#8A5A24"
+                },
+
+                tracks: [
+                    "Every Hour",
+                    "Selah",
+                    "Follow God",
+                    "Closed on Sunday",
+                    "On God",
+                    "Everything We Need",
+                    "Water",
+                    "God Is",
+                    "Hands On",
+                    "Use This Gospel",
+                    "Jesus Is Lord"
+                ]
+            },
+
+            {
+                name: "Donda",
+                year: 2021,
+                cover: "images/albums/donda.jpg",
+
+                theme: {
+                    background: "#D9C29C",
+                    text: "#17130E",
+                    accent: "#8A5A24"
+                },
+
+                tracks: [
+                    "Donda Chant",
+                    "Jail",
+                    "God Breathed",
+                    "Off The Grid",
+                    "Hurricane",
+                    "Praise God",
+                    "Jonah",
+                    "Ok Ok",
+                    "Junya",
+                    "Believe What I Say",
+                    "24",
+                    "Remote Control",
+                    "Moon",
+                    "Heaven and Hell",
+                    "Donda",
+                    "Keep My Spirit Alive",
+                    "Jesus Lord",
+                    "New Again",
+                    "Tell The Vision",
+                    "Lord I Need You",
+                    "Pure Souls",
+                    "Come to Life",
+                    "No Child Left Behind"
+                ]
+            },
+
+            {
+                name: "Donda 2",
+                year: 2022,
+                cover: "images/albums/d2.jpg",
+
+                theme: {
+                    background: "#D9C29C",
+                    text: "#17130E",
+                    accent: "#8A5A24"
+                },
+
+                tracks: [
+                    "True Love",
+                    "Broken Road",
+                    "Get Lost",
+                    "Keep The Flowers",
+                    "Jesse",
+                    "Too Easy",
+                    "Pablo",
+                    "Mr Miyagi",
+                    "Happy",
+                    "Security",
+                    "City of God",
+                    "530",
+                    "City of Chi",
+                    "Scifi",
+                    "Suzy",
+                    "Burn Everything",
+                    "Louie Bags",
+                    "We Did It",
+                    "Maintenance",
+                    "Lord Lift Me Up",
+                    "First Time In A Long Time"
+                ]
+            },
+
+            {
+                name: "Bully",
+                year: 2026,
+                cover: "images/albums/bully.jpg",
+
+                theme: {
+                    background: "#D9C29C",
+                    text: "#17130E",
+                    accent: "#8A5A24"
+                },
+
+                tracks: [
+                    "King",
+                    "This Is A Must",
+                    "Father",
+                    "All The Love",
+                    "Punch Drunk",
+                    "Whatever Works",
+                    "Mama's Favorite",
+                    "Sisters And Brothers",
+                    "Bully",
+                    "Highs And Lows",
+                    "I Can't Wait",
+                    "White Lines",
+                    "Circles",
+                    "Preacher Man",
+                    "Beauty And The Beast",
+                    "Damn",
+                    "Last Breath",
+                    "The One Here"
                 ]
             }
         ]
