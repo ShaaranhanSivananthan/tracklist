@@ -802,41 +802,270 @@ const musicData = [
         name: "Beyoncé",
         image: "images/artists/beyonce.jpg",
 
-        // albums: [
+        albums: [
+            
+            {
+                name: "Dangerously in Love",
+                year: 2003,
+                cover: "images/albums/dil.jpg",
+            
+                theme: {
+                    background: "#1c2b36",
+                    text: "#e0f2fe",
+                    accent: "#a2a3a5"
+                },
+            
+                tracks: [
+                    "Crazy in Love",
+                    "Naughty Girl",
+                    "Baby Boy",
+                    "Hip Hop Star",
+                    "Be with You",
+                    "Me, Myself and I",
+                    "Yes",
+                    "Signs",
+                    "Speechless",
+                    "That's How You Like It",
+                    "The Closer I Get to You",
+                    "Dangerously in Love 2",
+                    "Beyoncé Interlude",
+                    "Gift from Virgo",
+                    "Daddy"
+                ]
+            },
 
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
+            {
+                name: "B'Day",
+                year: 2006,
+                cover: "images/albums/bday.jpg",
+            
+                theme: {
+                    background: "#312a24",
+                    text: "#f0e6d2",
+                    accent: "#d4af37"
+                },
+            
+                tracks: [
+                    "Déjà Vu",
+                    "Get Me Bodied",
+                    "Suga Mama",
+                    "Upgrade U",
+                    "Ring the Alarm",
+                    "Kitty Kat",
+                    "Freakum Dress",
+                    "Green Light",
+                    "Irreplaceable",
+                    "Resentment"
+                ]
+            },
 
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
+            {
+                name: "I Am... Sasha Fierce",
+                year: 2008,
+                cover: "images/albums/iasf.jpg",
+            
+                theme: {
+                    background: "#121212",
+                    text: "#f5f5f5",
+                    accent: "#a6a6a6"
+                },
+            
+                tracks: [
+                    "If I Were a Boy",
+                    "Halo",
+                    "Disappear",
+                    "Broken-Hearted Girl",
+                    "Ave Maria",
+                    "Satellites",
+                    "Single Ladies (Put a Ring on It)",
+                    "Radio",
+                    "Diva",
+                    "Sweet Dreams",
+                    "Video Phone"
+                ]
+            },
 
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+            {
+                name: "4",
+                year: 2011,
+                cover: "images/albums/4.jpg",
+            
+                theme: {
+                    background: "#8c6e54",
+                    text: "#f4ece1",
+                    accent: "#d4af37"
+                },
+            
+                tracks: [
+                    "1+1",
+                    "I Care",
+                    "I Miss You",
+                    "Best Thing I Never Had",
+                    "Party",
+                    "Rather Die Young",
+                    "Start Over",
+                    "Love On Top",
+                    "Countdown",
+                    "End of Time",
+                    "I Was Here",
+                    "Run the World (Girls)"
+                ]
+            },
+
+            {
+                name: "Beyoncé",
+                year: 2013,
+                cover: "images/albums/beyonce.jpg",
+            
+                theme: {
+                    background: "#0a0a0a",
+                    text: "#e81a70",
+                    accent: "#ffffff"
+                },
+            
+                tracks: [
+                    "Pretty Hurts",
+                    "Haunted",
+                    "Drunk in Love",
+                    "Blow",
+                    "No Angel",
+                    "Partition",
+                    "Jealous",
+                    "Rocket",
+                    "Mine",
+                    "XO",
+                    "Flawless",
+                    "Superpower",
+                    "Heaven",
+                    "Blue"
+                ]
+            },
+
+            {
+                name: "Lemonade",
+                year: 2016,
+                cover: "images/albums/lemonade.jpg",
+            
+                theme: {
+                    background: "#e6ad00",
+                    text: "#121212",
+                    accent: "#ffffff"
+                },
+            
+                tracks: [
+                    "Pray You Catch Me",
+                    "Hold Up",
+                    "Don't Hurt Yourself",
+                    "Sorry",
+                    "6 Inch",
+                    "Daddy Lessons",
+                    "Love Drought",
+                    "Sandcastles",
+                    "Forward",
+                    "Freedom",
+                    "All Night",
+                    "Formation"
+                ]
+            },
+
+            {
+                name: "Everything Is Love",
+                year: 2018,
+                cover: "images/albums/eil.jpg",
+            
+                theme: {
+                    background: "#3e3128",
+                    text: "#f5e6d3",
+                    accent: "#c29b68"
+                },
+            
+                tracks: [
+                    "Summer",
+                    "Apeshit",
+                    "Boss",
+                    "Nice",
+                    "713",
+                    "Friends",
+                    "Heard About Us",
+                    "Black Effect",
+                    "LoveHappy"
+                ]
+            },
+
+            {
+                name: "Renaissance",
+                year: 2022,
+                cover: "images/albums/renaissance.jpg",
+            
+                theme: {
+                    background: "#0c0d12",
+                    text: "#e1e6ed",
+                    accent: "#7b9ec9"
+                },
+            
+                tracks: [
+                    "I'm That Girl",
+                    "Cozy",
+                    "Alien Superstar",
+                    "Cuff It",
+                    "Energy",
+                    "Break My Soul",
+                    "Church Girl",
+                    "Plastic Off the Sofa",
+                    "Virgo's Groove",
+                    "Move",
+                    "Heated",
+                    "Thique",
+                    "All Up in Your Mind",
+                    "America Has a ProblemPROBLEM",
+                    "Pure/Honey",
+                    "Summer Renaissance"
+                ]
+            },
+
+            {
+                name: "Cowboy Carter",
+                year: 2024,
+                cover: "images/albums/cc.jpg",
+            
+                theme: {
+                    background: "#1c2638",
+                    text: "#f4f1ea",
+                    accent: "#b22222"
+                },
+            
+                tracks: [
+                    "Ameriican Requiem",
+                    "Blackbiird",
+                    "16 Carriages",
+                    "Protector",
+                    "My Rose",
+                    "Smoke Hour Willie Nelson",
+                    "Texas Hold 'Em",
+                    "Bodyguard",
+                    "Dolly P",
+                    "Jolene",
+                    "Daughter",
+                    "Spaghettii",
+                    "Alliigator Tears",
+                    "Smoke Hour II",
+                    "Just for Fun",
+                    "II Most Wanted",
+                    "Levii's Jeans",
+                    "Flamenco",
+                    "The Linda Martell Show",
+                    "Ya Ya",
+                    "Oh Louisiana",
+                    "Desert Eagle",
+                    "Riiverdance",
+                    "II Hands II Heaven",
+                    "Tyrant",
+                    "Sweet Honey Buckiin'",
+                    "Amen"
+                ]
+            }
+
+        ]
     },
 
     
