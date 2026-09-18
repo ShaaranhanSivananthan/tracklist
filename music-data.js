@@ -1912,7 +1912,7 @@ const musicData = [
                     "Stan",
                     "Paul (Skit)",
                     "Who Knew",
-                    "Steve Berman",
+                    "Steve Berman (Skit)",
                     "The Way I Am",
                     "The Real Slim Shady",
                     "Remember Me?",
@@ -1931,7 +1931,7 @@ const musicData = [
             {
                 name: "The Eminem Show",
                 year: 2002,
-                cover: "images/albums/eminemshow.jpg",
+                cover: "images/albums/tes.jpg",
     
                 theme: {
                     background: "#B8A58B",
@@ -1959,7 +1959,7 @@ const musicData = [
                     "Say What You Say",
                     "'Till I Collapse",
                     "My Dad's Gone Crazy",
-                    "Curtains Close"
+                    "Curtains Close (Skit)"
                 ]
             },
     
