@@ -3781,7 +3781,7 @@ const musicData = [
                 cover: "images/albums/pp.jpg",
     
                 theme: {
-                    background: "#6B4B59",
+                    background: "#121212",
                     text: "#B42A83",
                     accent: "#D62E9B"
                 },
