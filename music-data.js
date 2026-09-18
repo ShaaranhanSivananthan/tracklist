@@ -2785,8 +2785,8 @@ const musicData = [
     
                 theme: {
                     background: "#b3afa5",
-                    text: "#D9B83C",
-                    accent: "#9C5C24"
+                    text: "#9C5C24",
+                    accent: "#D9B83C"
                 },
     
                 tracks: [
@@ -2843,8 +2843,8 @@ const musicData = [
     
                 theme: {
                     background: "#BBB9B9",
-                    text: "#BFBF3F",
-                    accent: "#0C0C04"
+                    text: "#0C0C04",
+                    accent: "#BFBF3F"
                 },
     
                 tracks: [
@@ -2902,8 +2902,8 @@ const musicData = [
     
                 theme: {
                     background: "#8FC58D",
-                    text: "#17F3EC",
-                    accent: "#148C92"
+                    text: "#148C92",
+                    accent: "#17F3EC"
                 },
     
                 tracks: [
