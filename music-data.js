@@ -4857,36 +4857,36 @@ const musicData = [
         name: "Tyler, the Creator",
         image: "images/artists/tyler.jpg",
     
-        // albums: [
-        //     {
-        //         name: "Bastard",
-        //         year: 2009,
-        //         cover: "images/albums/bastard.jpg",
+        albums: [
+            {
+                name: "Bastard",
+                year: 2009,
+                cover: "images/albums/bastard.jpg",
     
-        //         theme: {
-        //             background: "#111111",
-        //             text: "#F2F2F2",
-        //             accent: "#C62828"
-        //         },
+                theme: {
+                    background: "#111111",
+                    text: "#F2F2F2",
+                    accent: "#C62828"
+                },
     
-        //         tracks: [
-        //             "Bastard",
-        //             "Seven",
-        //             "Odd Toddlers",
-        //             "French!",
-        //             "Blow",
-        //             "Pigs Fly",
-        //             "Parade",
-        //             "Slow It Down",
-        //             "AssMilk",
-        //             "VCR / Wheels",
-        //             "Session",
-        //             "Sarah",
-        //             "Jack and the Beanstalk",
-        //             "Tina",
-        //             "Inglorious".
-        //         ]
-        //     }
+                tracks: [
+                    "Bastard",
+                    "Seven",
+                    "Odd Toddlers",
+                    "French!",
+                    "Blow",
+                    "Pigs Fly",
+                    "Parade",
+                    "Slow It Down",
+                    "AssMilk",
+                    "VCR / Wheels",
+                    "Session",
+                    "Sarah",
+                    "Jack and the Beanstalk",
+                    "Tina",
+                    "Inglorious".
+                ]
+            }
     
             // {
             //     name: "Goblin",
@@ -5119,7 +5119,7 @@ const musicData = [
             //         "Tell Me What It Is"
             //     ]
             // }
-        // ]
+        ]
     },
 
     // ============================================================
