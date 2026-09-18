@@ -2721,50 +2721,306 @@ const musicData = [
             }
         ]
     },
-
+    
     // ============================================================
     // Justin Bieber
     // ============================================================
-
+    
     {
         name: "Justin Bieber",
         image: "images/artists/justin.jpg",
-
-        // albums: [
-
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
-
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
-
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+    
+        albums: [
+            {
+                name: "My World",
+                year: 2009,
+                cover: "images/albums/myworld.jpg",
+    
+                theme: {
+                    background: "#D7D7D7",
+                    text: "#171717",
+                    accent: "#8C8C8C"
+                },
+    
+                tracks: [
+                    "One Time",
+                    "Favorite Girl",
+                    "Down to Earth",
+                    "Bigger",
+                    "One Less Lonely Girl",
+                    "First Dance",
+                    "Love Me"
+                ]
+            },
+    
+            {
+                name: "My World 2.0",
+                year: 2010,
+                cover: "images/albums/myworld2.jpg",
+    
+                theme: {
+                    background: "#A9B7C6",
+                    text: "#FFFFFF",
+                    accent: "#D7E0E8"
+                },
+    
+                tracks: [
+                    "Baby",
+                    "Somebody to Love",
+                    "Stuck in the Moment",
+                    "U Smile",
+                    "Runaway Love",
+                    "Never Let You Go",
+                    "Overboard",
+                    "Eenie Meenie",
+                    "Up",
+                    "That Should Be Me"
+                ]
+            },
+    
+            {
+                name: "Believe",
+                year: 2012,
+                cover: "images/albums/believe.jpg",
+    
+                theme: {
+                    background: "#B5B5B5",
+                    text: "#171717",
+                    accent: "#6A6A6A"
+                },
+    
+                tracks: [
+                    "All Around the World",
+                    "Boyfriend",
+                    "As Long as You Love Me",
+                    "Catching Feelings",
+                    "Take You",
+                    "Right Here",
+                    "Fall",
+                    "Die in Your Arms",
+                    "Thought of You",
+                    "Beauty and a Beat",
+                    "One Love",
+                    "Be Alright",
+                    "Believe"
+                ]
+            },
+    
+            {
+                name: "Journals",
+                year: 2013,
+                cover: "images/albums/journals.jpg",
+    
+                theme: {
+                    background: "#151515",
+                    text: "#FFFFFF",
+                    accent: "#B89B72"
+                },
+    
+                tracks: [
+                    "Heartbreaker",
+                    "All That Matters",
+                    "Hold Tight",
+                    "Recovery",
+                    "Bad Day",
+                    "All Bad",
+                    "PYD",
+                    "Roller Coaster",
+                    "Change Me",
+                    "Confident",
+                    "One Life",
+                    "Backpack",
+                    "What's Hatnin'",
+                    "Swap It Out",
+                    "Memphis"
+                ]
+            },
+    
+            {
+                name: "Purpose",
+                year: 2015,
+                cover: "images/albums/purpose.jpg",
+    
+                theme: {
+                    background: "#D9D4C8",
+                    text: "#171717",
+                    accent: "#A8A093"
+                },
+    
+                tracks: [
+                    "Mark My Words",
+                    "I'll Show You",
+                    "What Do You Mean?",
+                    "Sorry",
+                    "Love Yourself",
+                    "Company",
+                    "No Pressure",
+                    "No Sense",
+                    "The Feeling",
+                    "Life Is Worth Living",
+                    "Where Are Ü Now",
+                    "Children",
+                    "Purpose"
+                ]
+            },
+    
+            {
+                name: "Changes",
+                year: 2020,
+                cover: "images/albums/changes.jpg",
+    
+                theme: {
+                    background: "#E7E0D7",
+                    text: "#171717",
+                    accent: "#A88C78"
+                },
+    
+                tracks: [
+                    "All Around Me",
+                    "Habitual",
+                    "Come Around Me",
+                    "Intentions",
+                    "Yummy",
+                    "Available",
+                    "Forever",
+                    "Running Over",
+                    "Take It Out on Me",
+                    "Second Emotion",
+                    "Get Me",
+                    "E.T.A.",
+                    "Changes",
+                    "Confirmation",
+                    "That's What Love Is",
+                    "At Least for Now"
+                ]
+            },
+    
+            {
+                name: "Justice",
+                year: 2021,
+                cover: "images/albums/justice.jpg",
+    
+                theme: {
+                    background: "#E9E5DD",
+                    text: "#171717",
+                    accent: "#C9A24E"
+                },
+    
+                tracks: [
+                    "2 Much",
+                    "Deserve You",
+                    "As I Am",
+                    "Off My Face",
+                    "Holy",
+                    "Unstable",
+                    "MLK Interlude",
+                    "Die for You",
+                    "Hold On",
+                    "Somebody",
+                    "Ghost",
+                    "Peaches",
+                    "Love You Different",
+                    "Loved by You",
+                    "Anyone",
+                    "Lonely"
+                ]
+            },
+    
+            {
+                name: "Freedom",
+                year: 2021,
+                cover: "images/albums/freedom.jpg",
+    
+                theme: {
+                    background: "#D8C7A8",
+                    text: "#171717",
+                    accent: "#6E5940"
+                },
+    
+                tracks: [
+                    "Freedom",
+                    "All She Wrote",
+                    "We're in This Together",
+                    "Where You Go I Follow",
+                    "Where Do I Fit In",
+                    "Afraid to Say"
+                ]
+            },
+    
+            {
+                name: "Swag",
+                year: 2025,
+                cover: "images/albums/swag.jpg",
+    
+                theme: {
+                    background: "#E6DED1",
+                    text: "#171717",
+                    accent: "#9A8268"
+                },
+    
+                tracks: [
+                    "All I Can Take",
+                    "Daisies",
+                    "Yukon",
+                    "Go Baby",
+                    "Things You Do",
+                    "Butterflies",
+                    "Way It Is",
+                    "First Place",
+                    "Soulful",
+                    "Walking Away",
+                    "Glory Voice Memo",
+                    "Devotion",
+                    "Dadz Love",
+                    "Therapy Session",
+                    "Sweet Spot",
+                    "Standing on Business",
+                    "405",
+                    "Swag",
+                    "Zuma House",
+                    "Too Long",
+                    "Forgiveness"
+                ]
+            },
+    
+            {
+                name: "Swag 2",
+                year: 2025,
+                cover: "images/albums/swag2.jpg",
+    
+                theme: {
+                    background: "#C9D1D4",
+                    text: "#171717",
+                    accent: "#71838A"
+                },
+    
+                tracks: [
+                    "Speed Demon",
+                    "Better Man",
+                    "Love Song",
+                    "I Do",
+                    "I Think You're Special",
+                    "Mother in You",
+                    "Witchya",
+                    "Eye Candy",
+                    "Don't Wanna",
+                    "Bad Honey",
+                    "Need It",
+                    "Oh Man",
+                    "Poppin'My Shit",
+                    "All the Way",
+                    "Petting Zoo",
+                    "Moving Fast",
+                    "Safe Space",
+                    "Lyin'",
+                    "Dotted Line",
+                    "Open Up Your Heart",
+                    "When It's Over",
+                    "Everything Hallelujah",
+                    "Story of God"
+                ]
+            }
+        ]
     },
     
     // ============================================================
