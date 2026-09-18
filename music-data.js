@@ -4629,50 +4629,224 @@ const musicData = [
             }
         ]
     },
-                    
+                        
     // ============================================================
     // Travis Scott
     // ============================================================
-
+    
     {
         name: "Travis Scott",
         image: "images/artists/travis.jpg",
-
-        // albums: [
-
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
-
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
-
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+    
+        albums: [
+            {
+                name: "Owl Pharaoh",
+                year: 2013,
+                cover: "images/albums/op.jpg",
+    
+                theme: {
+                    background: "#211715",
+                    text: "#FFFFFF",
+                    accent: "#E52B27"
+                },
+    
+                tracks: [
+                    "Meadow Creek",
+                    "Bad Mood / Shit on You",
+                    "Upper Echelon",
+                    "Chaz Interlude",
+                    "Uptown",
+                    "Hell of a Night",
+                    "Blocka La Flame",
+                    "Naked",
+                    "Dance on the Moon",
+                    "MIA",
+                    "Drive",
+                    "Quintana",
+                    "16 Chapels",
+                    "Bandz"
+                ]
+            },
+    
+            {
+                name: "Days Before Rodeo",
+                year: 2014,
+                cover: "images/albums/dbr.jpg",
+    
+                theme: {
+                    background: "#4B7DB9",
+                    text: "#FFFFFF",
+                    accent: "#F02B2F"
+                },
+    
+                tracks: [
+                    "Days Before Rodeo: The Prayer",
+                    "Mamacita",
+                    "Quintana, Pt. 2",
+                    "Drugs You Should Try It",
+                    "Don't Play",
+                    "Skyfall",
+                    "Zombies",
+                    "Sloppy Toppy",
+                    "Basement Freestyle",
+                    "Backyard",
+                    "Grey",
+                    "Bacc"
+                ]
+            },
+    
+            {
+                name: "Rodeo",
+                year: 2015,
+                cover: "images/albums/rodeo.jpg",
+    
+                theme: {
+                    background: "#4D5545",
+                    text: "#F5F2E8",
+                    accent: "#8B6B45"
+                },
+    
+                tracks: [
+                    "Pornography",
+                    "Oh My Dis Side",
+                    "3500",
+                    "Wasted",
+                    "90210",
+                    "Pray 4 Love",
+                    "Nightcrawler",
+                    "Piss on Your Grave",
+                    "Antidote",
+                    "Impossible",
+                    "Maria I'm Drunk",
+                    "Flying High",
+                    "I Can Tell",
+                    "Apple Pie"
+                ]
+            },
+    
+            {
+                name: "Birds in the Trap Sing McKnight",
+                year: 2016,
+                cover: "images/albums/birds.jpg",
+    
+                theme: {
+                    background: "#17191B",
+                    text: "#F2F2F2",
+                    accent: "#344A63"
+                },
+    
+                tracks: [
+                    "The Ends",
+                    "Way Back",
+                    "Coordinate",
+                    "Through the Late Night",
+                    "Beibs in the Trap",
+                    "SDP Interlude",
+                    "Sweet Sweet",
+                    "Outside",
+                    "Goosebumps",
+                    "First Take",
+                    "Pick Up the Phone",
+                    "Lose",
+                    "Guidance",
+                    "Wonderful"
+                ]
+            },
+    
+            {
+                name: "Huncho Jack, Jack Huncho",
+                year: 2017,
+                cover: "images/albums/hjjh.jpg",
+    
+                theme: {
+                    background: "#F3F4F1",
+                    text: "#171717",
+                    accent: "#2365B1"
+                },
+    
+                tracks: [
+                    "Modern Slavery",
+                    "Black & Chinese",
+                    "Eye 2 Eye",
+                    "Motorcycle Patches",
+                    "Huncho Jack",
+                    "Saint",
+                    "Go",
+                    "Dubai Shit",
+                    "Saint Laurent Mask",
+                    "Moon Rock",
+                    "How U Feel",
+                    "Where U From",
+                    "Best Man"
+                ]
+            },
+    
+            {
+                name: "Astroworld",
+                year: 2018,
+                cover: "images/albums/astroworld.jpg",
+    
+                theme: {
+                    background: "#3D78B8",
+                    text: "#FFFFFF",
+                    accent: "#D69A24"
+                },
+    
+                tracks: [
+                    "Stargazing",
+                    "Carousel",
+                    "Sicko Mode",
+                    "R.I.P. Screw",
+                    "Stop Trying to Be God",
+                    "No Bystanders",
+                    "Skeletons",
+                    "Wake Up",
+                    "5% Tint",
+                    "Nc-17",
+                    "Astrothunder",
+                    "Yosemite",
+                    "Can't Say",
+                    "Who? What!",
+                    "Butterfly Effect",
+                    "Houstonfornication",
+                    "Coffee Bean"
+                ]
+            },
+    
+            {
+                name: "Utopia",
+                year: 2023,
+                cover: "images/albums/utopia.jpg",
+    
+                theme: {
+                    background: "#09090B",
+                    text: "#E7E2D8",
+                    accent: "#5A5048"
+                },
+    
+                tracks: [
+                    "Hyaena",
+                    "Thank God",
+                    "Modern Jam",
+                    "My Eyes",
+                    "God's Country",
+                    "Sirens",
+                    "Meltdown",
+                    "Fein",
+                    "Delresto (Echoes)",
+                    "I Know ?",
+                    "Topia Twins",
+                    "Circus Maximus",
+                    "Parasail",
+                    "Skitzo",
+                    "Lost Forever",
+                    "Looove",
+                    "K-Pop",
+                    "Telekinesis",
+                    "Til Further Notice"
+                ]
+            }
+        ]
     },
         
     // ============================================================
