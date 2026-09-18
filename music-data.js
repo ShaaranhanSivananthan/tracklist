@@ -4646,8 +4646,8 @@ const musicData = [
     
                 theme: {
                     background: "#211715",
-                    text: "#FFFFFF",
-                    accent: "#E52B27"
+                    text: "#E52B27",
+                    accent: "#FFFFFF"
                 },
     
                 tracks: [
@@ -4675,8 +4675,8 @@ const musicData = [
     
                 theme: {
                     background: "#4B7DB9",
-                    text: "#FFFFFF",
-                    accent: "#F02B2F"
+                    text: "#F02B2F",
+                    accent: "#FFFFFF"
                 },
     
                 tracks: [
@@ -4701,7 +4701,7 @@ const musicData = [
                 cover: "images/albums/rodeo.jpg",
     
                 theme: {
-                    background: "#4D5545",
+                    background: "#7F5E46",
                     text: "#F5F2E8",
                     accent: "#8B6B45"
                 },
@@ -4731,8 +4731,8 @@ const musicData = [
     
                 theme: {
                     background: "#17191B",
-                    text: "#F2F2F2",
-                    accent: "#344A63"
+                    text: "#516B90",
+                    accent: "#27324C"
                 },
     
                 tracks: [
@@ -4788,8 +4788,8 @@ const musicData = [
     
                 theme: {
                     background: "#3D78B8",
-                    text: "#FFFFFF",
-                    accent: "#D69A24"
+                    text: "#D69A24",
+                    accent: "#FFFFFF"
                 },
     
                 tracks: [
