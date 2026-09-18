@@ -4299,9 +4299,6 @@ const musicData = [
                     "Should've Said No",
                     "Mary's Song (Oh My My My)",
                     "Our Song",
-                    "I'm Only Me When I'm with You",
-                    "Invisible",
-                    "A Perfectly Good Heart"
                 ]
             },
     
@@ -4336,7 +4333,7 @@ const musicData = [
             {
                 name: "Speak Now",
                 year: 2010,
-                cover: "images/albums/speaknow.jpg",
+                cover: "images/albums/sn.jpg",
     
                 theme: {
                     background: "#833D80",
@@ -4422,7 +4419,7 @@ const musicData = [
             },
     
             {
-                name: "reputation",
+                name: "Reputation",
                 year: 2017,
                 cover: "images/albums/reputation.jpg",
     
@@ -4478,14 +4475,14 @@ const musicData = [
                     "False God",
                     "You Need to Calm Down",
                     "Afterglow",
-                    "ME!",
+                    "Me!",
                     "It's Nice to Have a Friend",
                     "Daylight"
                 ]
             },
 
             {
-                name: "folklore",
+                name: "Folklore",
                 year: 2020,
                 cover: "images/albums/folklore.jpg",
 
@@ -4496,27 +4493,27 @@ const musicData = [
                 },
 
                 tracks: [
-                    "the 1",
-                    "cardigan",
-                    "the last great american dynasty",
-                    "exile",
-                    "my tears ricochet",
-                    "mirrorball",
-                    "seven",
-                    "august",
-                    "this is me trying",
-                    "illicit affairs",
-                    "invisible string",
-                    "mad woman",
-                    "epiphany",
-                    "betty",
-                    "peace",
-                    "hoax"
+                    "The 1",
+                    "Cardigan",
+                    "The Last Great American Dynasty",
+                    "Exile",
+                    "My Tears Ricochet",
+                    "Mirrorball",
+                    "Seven",
+                    "August",
+                    "This Is Me Trying",
+                    "Illicit Affairs",
+                    "Invisible String",
+                    "Mad Woman",
+                    "Epiphany",
+                    "Betty",
+                    "Peace",
+                    "Hoax"
                 ]
             },
 
             {
-                name: "evermore",
+                name: "Evermore",
                 year: 2020,
                 cover: "images/albums/evermore.jpg",
 
@@ -4527,21 +4524,21 @@ const musicData = [
                 },
 
                 tracks: [
-                    "willow",
-                    "champagne problems",
-                    "gold rush",
-                    "'tis the damn season",
-                    "tolerate it",
-                    "no body, no crime",
-                    "happiness",
-                    "dorothea",
-                    "coney island",
-                    "ivy",
-                    "cowboy like me",
-                    "long story short",
-                    "marjorie",
-                    "closure",
-                    "evermore"
+                    "Willow",
+                    "Champagne Problems",
+                    "Gold Rush",
+                    "'Tis the Damn Season",
+                    "Tolerate It",
+                    "No Body, No Crime",
+                    "Happiness",
+                    "Dorothea",
+                    "Coney Island",
+                    "Ivy",
+                    "Cowboy Like Me",
+                    "Long Story Short",
+                    "Marjorie",
+                    "Closure",
+                    "Evermore"
                 ]
             },
 
@@ -4587,9 +4584,7 @@ const musicData = [
                 tracks: [
                     "Fortnight",
                     "The Tortured Poets Department",
-                    "My Boy Only Breaks His Favorite",
-
-                    "Toys",
+                    "My Boy Only Breaks His Favorite Toys",
                     "Down Bad",
                     "So Long, London",
                     "But Daddy I Love Him",
@@ -4598,7 +4593,7 @@ const musicData = [
                     "Guilty as Sin?",
                     "Who's Afraid of Little Old Me?",
                     "I Can Fix Him (No Really I Can)",
-                    "loml",
+                    "Loml",
                     "I Can Do It With a Broken Heart",
                     "The Smallest Man Who Ever Lived",
                     "The Alchemy",
@@ -4609,7 +4604,7 @@ const musicData = [
             {
                 name: "The Life of a Showgirl",
                 year: 2025,
-                cover: "images/albums/showgirl.jpg",
+                cover: "images/albums/tloas.jpg",
 
                 theme: {
                     background: "#D4AF37",
@@ -4618,6 +4613,17 @@ const musicData = [
                 },
 
                 tracks: [
+                    "The Fate of Ophelia",
+                    "Elizabeth Taylor",
+                    "Opalite",
+                    "Father Figure",
+                    "Eldest Daughter",
+                    "Ruin the Friendship",
+                    "Actually Romantic",
+                    "Wish List",
+                    "Wood",
+                    "Cancelled!",
+                    "Honey",
                     "The Life of a Showgirl"
                 ]
             }
