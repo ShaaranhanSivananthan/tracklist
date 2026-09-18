@@ -410,9 +410,9 @@ const musicData = [
                 cover: "images/albums/ppm.jpg",
     
                 theme: {
-                    background: "#a32626",
-                    text: "#f7f1e3",
-                    accent: "#d4a359"
+                    background: "#d4c4b4",
+                    text: "#a32626",
+                    accent: "#f7f1e3"
                 },
     
                 tracks: [
@@ -703,7 +703,7 @@ const musicData = [
                     "Revolution 9",
                     "Good Night"
                 ]
-            }
+            },
 
             {
                 name: "Yellow Submarine",
