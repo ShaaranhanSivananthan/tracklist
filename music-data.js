@@ -4850,48 +4850,276 @@ const musicData = [
     },
         
     // ============================================================
-    // Tyler, the Creator
+    // Tyler, The Creator
     // ============================================================
-
+    
     {
-        name: "Tyler, the Creator",
+        name: "Tyler, The Creator",
         image: "images/artists/tyler.jpg",
-
-        // albums: [
-
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
-
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
-
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+    
+        albums: [
+            {
+                name: "Bastard",
+                year: 2009,
+                cover: "images/albums/bastard.jpg",
+    
+                theme: {
+                    background: "#111111",
+                    text: "#F2F2F2",
+                    accent: "#C62828"
+                },
+    
+                tracks: [
+                    "Bastard",
+                    "Seven",
+                    "Odd Toddlers",
+                    "French!",
+                    "Blow",
+                    "Pigs Fly",
+                    "Parade",
+                    "Slow It Down",
+                    "AssMilk",
+                    "VCR / Wheels",
+                    "Session",
+                    "Sarah",
+                    "Jack and the Beanstalk",
+                    "Tina",
+                    "Inglorious".
+                ]
+            },
+    
+            {
+                name: "Goblin",
+                year: 2011,
+                cover: "images/albums/goblin.jpg",
+    
+                theme: {
+                    background: "#4A4A4A",
+                    text: "#E8E8E8",
+                    accent: "#A52A2A"
+                },
+    
+                tracks: [
+                    "Goblin",
+                    "Yonkers",
+                    "Radicals",
+                    "She",
+                    "Transylvania",
+                    "Nightmare",
+                    "Tron Cat",
+                    "Her",
+                    "Sandwitches",
+                    "Fish",
+                    "Analog",
+                    "Bitch Suck Dick",
+                    "Window",
+                    "Au79",
+                    "Golden"
+                ]
+            },
+    
+            {
+                name: "Wolf",
+                year: 2013,
+                cover: "images/albums/wolf.jpg",
+    
+                theme: {
+                    background: "#B8CFA5",
+                    text: "#3C3A32",
+                    accent: "#D88A9A"
+                },
+    
+                tracks: [
+                    "Wolf",
+                    "Jamba",
+                    "Cowboy",
+                    "Awkward",
+                    "Domo23",
+                    "Answer",
+                    "Slater",
+                    "48",
+                    "Colossus",
+                    "PartyIsntOver / Campfire / Bimmer",
+                    "IFHY",
+                    "Pigs",
+                    "Parking Lot",
+                    "Rusty",
+                    "Trashwang",
+                    "Treehome95",
+                    "Tamale",
+                    "Lone"
+                ]
+            },
+    
+            {
+                name: "Cherry Bomb",
+                year: 2015,
+                cover: "images/albums/cherrybomb.jpg",
+    
+                theme: {
+                    background: "#F4F1E8",
+                    text: "#111111",
+                    accent: "#E3262E"
+                },
+    
+                tracks: [
+                    "Deathcamp",
+                    "Buffalo",
+                    "Pilot",
+                    "Run",
+                    "Find Your Wings",
+                    "Cherry Bomb",
+                    "Blow My Load",
+                    "2Seater",
+                    "The Brown Stains of Darkeese Latifah, Pt. 6-12",
+                    "Fucking Young / Perfect",
+                    "Smuckers",
+                    "Keep Da O's",
+                    "Okaga, CA"
+                ]
+            },
+    
+            {
+                name: "Flower Boy",
+                year: 2017,
+                cover: "images/albums/flowerboy.jpg",
+    
+                theme: {
+                    background: "#F4C542",
+                    text: "#172B1B",
+                    accent: "#5E9B52"
+                },
+    
+                tracks: [
+                    "Foreword",
+                    "Where This Flower Blooms",
+                    "Sometimes...",
+                    "See You Again",
+                    "Who Dat Boy",
+                    "Pothole",
+                    "Garden Shed",
+                    "Boredom",
+                    "I Ain't Got Time!",
+                    "911 / Mr. Lonely",
+                    "Droppin' Seeds",
+                    "November",
+                    "Glitter",
+                    "Enjoy Right Now, Today"
+                ]
+            },
+    
+            {
+                name: "Igor",
+                year: 2019,
+                cover: "images/albums/igor.jpg",
+    
+                theme: {
+                    background: "#E7A1B5",
+                    text: "#111111",
+                    accent: "#FFFFFF"
+                },
+    
+                tracks: [
+                    "Igor's Theme",
+                    "Earfquake",
+                    "I Think",
+                    "Exactly What You Run from You End Up Chasing",
+                    "Running Out of Time",
+                    "New Magic Wand",
+                    "A Boy Is a Gun",
+                    "Puppet",
+                    "What's Good",
+                    "Gone, Gone / Thank You",
+                    "I Don't Love You Anymore",
+                    "Are We Still Friends?"
+                ]
+            },
+    
+            {
+                name: "Call Me If You Get Lost",
+                year: 2021,
+                cover: "images/albums/cmiygl.jpg",
+    
+                theme: {
+                    background: "#D7C9A5",
+                    text: "#151515",
+                    accent: "#3D73A8"
+                },
+    
+                tracks: [
+                    "Sir Baudelaire",
+                    "Corso",
+                    "Lemonhead",
+                    "WusYaName",
+                    "Lumberjack",
+                    "Hot Wind Blows",
+                    "Massa",
+                    "RunItUp",
+                    "Manifesto",
+                    "Sweet / I Thought You Wanted to Dance",
+                    "Momma Talk",
+                    "Rise!",
+                    "Blessed",
+                    "Juggernaut",
+                    "Wilshire",
+                    "Safari"
+                ]
+            },
+    
+            {
+                name: "Chromakopia",
+                year: 2024,
+                cover: "images/albums/chromakopia.jpg",
+    
+                theme: {
+                    background: "#183C2B",
+                    text: "#E8E5D5",
+                    accent: "#4FAF5B"
+                },
+    
+                tracks: [
+                    "St. Chroma",
+                    "Rah Tah Tah",
+                    "Noid",
+                    "Darling, I",
+                    "Hey Jane",
+                    "I Killed You",
+                    "Judge Judy",
+                    "Sticky",
+                    "Take Your Mask Off",
+                    "Tomorrow",
+                    "Thought I Was Dead",
+                    "Like Him",
+                    "Balloon",
+                    "I Hope You Find Your Way Home"
+                ]
+            },
+    
+            {
+                name: "Don't Tap the Glass",
+                year: 2025,
+                cover: "images/albums/dttg.jpg",
+    
+                theme: {
+                    background: "#C62B2F",
+                    text: "#F2F0E8",
+                    accent: "#151515"
+                },
+    
+                tracks: [
+                    "Big Poe",
+                    "Sugar on My Tongue",
+                    "Sucka Free",
+                    "Mommanem",
+                    "Stop Playing With Me",
+                    "Ring Ring Ring",
+                    "Don't Tap That Glass / Tweakin'",
+                    "Don't You Worry Baby",
+                    "I'll Take Care of You",
+                    "Tell Me What It Is"
+                ]
+            }
+        ]
     },
 
     // ============================================================
