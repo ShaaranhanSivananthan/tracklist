@@ -625,46 +625,141 @@ const musicData = [
     // ============================================================
     // Frank Ocean
     // ============================================================
-
+    
     {
         name: "Frank Ocean",
         image: "images/artists/frank.jpg",
-
-        // albums: [
-
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
-
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
-
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+    
+        albums: [
+            {
+                name: "Nostalgia, Ultra.",
+                year: 2011,
+                cover: "images/albums/nu.jpg",
+    
+                theme: {
+                    background: "#f05a28",
+                    text: "#ffffff",
+                    accent: "#2c3e35"
+                },
+    
+                tracks: [
+                    "Street Fighter",
+                    "Strawberry Swing",
+                    "Novacane",
+                    "We All Try",
+                    "Bitches Talkin'",
+                    "Songs for Women",
+                    "Lovecrimes",
+                    "Goldeneye",
+                    "There Will Be Tears",
+                    "Swim Good",
+                    "Dust",
+                    "American Wedding",
+                    "Soul Calibur",
+                    "Nature Feels"
+                ]
+            },
+    
+            {
+                name: "Channel Orange",
+                year: 2012,
+                cover: "images/albums/co.jpg",
+    
+                theme: {
+                    background: "#ff6600",
+                    text: "#ffffff",
+                    accent: "#1c1c1c"
+                },
+    
+                tracks: [
+                    "Start",
+                    "Thinkin Bout You",
+                    "Fertilizer",
+                    "Sierra Leone",
+                    "Sweet Life",
+                    "Not Just Money",
+                    "Super Rich Kids",
+                    "Pilot Jones",
+                    "Crack Rock",
+                    "Pyramids",
+                    "Lost",
+                    "White",
+                    "Monks",
+                    "Bad Religion",
+                    "Pink Matter",
+                    "Forrest Gump",
+                    "End"
+                ]
+            },
+    
+            {
+                name: "Endless",
+                year: 2016,
+                cover: "images/albums/endless.jpg",
+    
+                theme: {
+                    background: "#d4d4d4",
+                    text: "#1a1a1a",
+                    accent: "#8c8c8c"
+                },
+    
+                tracks: [
+                    "Device Control",
+                    "At Your Best (You Are Love)",
+                    "Alabama",
+                    "Mine",
+                    "U-N-I-T-Y",
+                    "Ambience 001: A Certain Way",
+                    "Comme Des Garçons",
+                    "Xenons",
+                    "Ambience 002: Honey Baby",
+                    "Wither",
+                    "Hublots",
+                    "In Here Somewhere",
+                    "Slide On Me",
+                    "Sideways",
+                    "Florida",
+                    "Impietas / Deathwish (ASR)",
+                    "Rushes",
+                    "Rushes To",
+                    "Higgs",
+                    "Mitsubishi Sony",
+                    "Device Control (reprise)"
+                ]
+            },
+    
+            {
+                name: "Blonde",
+                year: 2016,
+                cover: "images/albums/blonde.jpg",
+    
+                theme: {
+                    background: "#dfdeda",
+                    text: "#121212",
+                    accent: "#87a96b"
+                },
+    
+                tracks: [
+                    "Nikes",
+                    "Ivy",
+                    "Pink + White",
+                    "Be Yourself",
+                    "Solo",
+                    "Skyline To",
+                    "Self Control",
+                    "Good Guy",
+                    "Nights",
+                    "Solo (Reprise)",
+                    "Pretty Sweet",
+                    "Facebook Story",
+                    "Close to You",
+                    "White Ferrari",
+                    "Seigfried",
+                    "Godspeed",
+                    "Futura Free"
+                ]
+            }
+        ]
     },
 
     // ============================================================
