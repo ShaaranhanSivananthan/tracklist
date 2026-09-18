@@ -4860,9 +4860,9 @@ const musicData = [
         albums: [
             
             {
-                name: "Bast",
+                name: "Bastard",
                 year: 2009,
-                cover: "images/albums/bast.jpg",
+                cover: "images/albums/bastard.jpg",
     
                 theme: {
                     background: "#111111",
@@ -4885,7 +4885,7 @@ const musicData = [
                     "Sarah",
                     "Jack and the Beanstalk",
                     "Tina",
-                    "Inglorious".
+                    "Inglorious"
                 ]
             },
     
