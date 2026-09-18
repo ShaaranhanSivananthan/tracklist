@@ -4860,7 +4860,7 @@ const musicData = [
         albums: [
             
             {
-                name: "Bastard",
+                name: "Bast",
                 year: 2009,
                 cover: "images/albums/bast.jpg",
     
