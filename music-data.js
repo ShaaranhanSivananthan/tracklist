@@ -402,43 +402,212 @@ const musicData = [
     {
         name: "The Beatles",
         image: "images/artists/beatles.jpg",
-
-        // albums: [
-
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
-
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
-
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+    
+        albums: [
+            {
+                name: "Please Please Me",
+                year: 1963,
+                cover: "images/albums/ppm.jpg",
+    
+                theme: {
+                    background: "#a32626",
+                    text: "#f7f1e3",
+                    accent: "#d4a359"
+                },
+    
+                tracks: [
+                    "I Saw Her Standing There",
+                    "Misery",
+                    "Anna (Go to Him)",
+                    "Chains",
+                    "Boys",
+                    "Ask Me Why",
+                    "Please Please Me",
+                    "Love Me Do",
+                    "P.S. I Love You",
+                    "Baby It's You",
+                    "Do You Want to Know a Secret",
+                    "A Taste of Honey",
+                    "There's a Place",
+                    "Twist and Shout"
+                ]
+            },
+    
+            {
+                name: "With the Beatles",
+                year: 1963,
+                cover: "images/albums/wtb.jpg",
+    
+                theme: {
+                    background: "#121212",
+                    text: "#e0e0e0",
+                    accent: "#707070"
+                },
+    
+                tracks: [
+                    "It Won't Be Long",
+                    "All I've Got to Do",
+                    "All My Loving",
+                    "Don't Bother Me",
+                    "Little Child",
+                    "Till There Was You",
+                    "Please Mr. Postman",
+                    "Roll Over Beethoven",
+                    "Hold Me Tight",
+                    "You Really Got a Hold on Me",
+                    "I Wanna Be Your Man",
+                    "Devil in Her Heart",
+                    "Not a Second Time",
+                    "Money (That's What I Want)"
+                ]
+            },
+    
+            {
+                name: "A Hard Day's Night",
+                year: 1964,
+                cover: "images/albums/ahdn.jpg",
+    
+                theme: {
+                    background: "#1e3d59",
+                    text: "#f5f5f5",
+                    accent: "#17b978"
+                },
+    
+                tracks: [
+                    "A Hard Day's Night",
+                    "I Should Have Known Better",
+                    "If I Fell",
+                    "I'm Happy Just to Dance with You",
+                    "And I Love Her",
+                    "Tell Me Why",
+                    "Can't Buy Me Love",
+                    "Any Time at All",
+                    "I'll Cry Instead",
+                    "Things We Said Today",
+                    "When I Get Home",
+                    "You Can't Do That",
+                    "I'll Be Back"
+                ]
+            },
+    
+            {
+                name: "Beatles for Sale",
+                year: 1964,
+                cover: "images/albums/bfs.jpg",
+    
+                theme: {
+                    background: "#3e2723",
+                    text: "#d7ccc8",
+                    accent: "#8d6e63"
+                },
+    
+                tracks: [
+                    "No Reply",
+                    "I'm a Loser",
+                    "Baby's in Black",
+                    "Rock and Roll Music",
+                    "I'll Follow the Sun",
+                    "Mr. Moonlight",
+                    "Kansas City / Hey-Hey-Hey-Hey!",
+                    "Eight Days a Week",
+                    "Words of Love",
+                    "Honey Don't",
+                    "Every Little Thing",
+                    "I Don't Want to Spoil the Party",
+                    "What You're Doing",
+                    "Everybody's Trying to Be My Baby"
+                ]
+            },
+    
+            {
+                name: "Help!",
+                year: 1965,
+                cover: "images/albums/help.jpg",
+    
+                theme: {
+                    background: "#ffffff",
+                    text: "#000000",
+                    accent: "#004b87"
+                },
+    
+                tracks: [
+                    "Help!",
+                    "The Night Before",
+                    "You've Got to Hide Your Love Away",
+                    "I Need You",
+                    "Another Girl",
+                    "You're Going to Lose That Girl",
+                    "Ticket to Ride",
+                    "Act Naturally",
+                    "It's Only Love",
+                    "You Like Me Too Much",
+                    "Tell Me What You See",
+                    "I've Just Seen a Face",
+                    "Yesterday",
+                    "Dizzy Miss Lizzy"
+                ]
+            },
+    
+            {
+                name: "Rubber Soul",
+                year: 1965,
+                cover: "images/albums/rs.jpg",
+    
+                theme: {
+                    background: "#8b5a2b",
+                    text: "#fbe8a6",
+                    accent: "#d97724"
+                },
+    
+                tracks: [
+                    "Drive My Car",
+                    "Norwegian Wood (This Bird Has Flown)",
+                    "You Won't See Me",
+                    "Nowhere Man",
+                    "Think for Yourself",
+                    "The Word",
+                    "Michelle",
+                    "What Goes On",
+                    "Girl",
+                    "I'm Looking Through You",
+                    "In My Life",
+                    "Wait",
+                    "If I Needed Someone",
+                    "Run for Your Life"
+                ]
+            },
+    
+            {
+                name: "Revolver",
+                year: 1966,
+                cover: "images/albums/revolver.jpg",
+    
+                theme: {
+                    background: "#1c1c1c",
+                    text: "#ffffff",
+                    accent: "#8c8c8c"
+                },
+    
+                tracks: [
+                    "Taxman",
+                    "Eleanor Rigby",
+                    "I'm Only Sleeping",
+                    "Love You To",
+                    "Here, There and Everywhere",
+                    "Yellow Submarine",
+                    "She Said She Said",
+                    "Good Day Sunshine",
+                    "And Your Bird Can Sing",
+                    "For No One",
+                    "Doctor Robert",
+                    "I Want to Tell You",
+                    "Got to Get You into My Life",
+                    "Tomorrow Never Knows"
+                ]
+            }
+        ]
     },
+
 
     
     // ============================================================
