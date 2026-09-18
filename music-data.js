@@ -4270,48 +4270,360 @@ const musicData = [
     // ============================================================
     // Taylor Swift
     // ============================================================
-
+    
     {
         name: "Taylor Swift",
         image: "images/artists/taylor.jpg",
+    
+        albums: [
+            {
+                name: "Taylor Swift",
+                year: 2006,
+                cover: "images/albums/ts.jpg",
+    
+                theme: {
+                    background: "#718A72",
+                    text: "#F3E5C8",
+                    accent: "#A96D55"
+                },
+    
+                tracks: [
+                    "Tim McGraw",
+                    "Picture to Burn",
+                    "Teardrops on My Guitar",
+                    "A Place in This World",
+                    "Cold as You",
+                    "The Outside",
+                    "Tied Together with a Smile",
+                    "Stay Beautiful",
+                    "Should've Said No",
+                    "Mary's Song (Oh My My My)",
+                    "Our Song",
+                    "I'm Only Me When I'm with You",
+                    "Invisible",
+                    "A Perfectly Good Heart"
+                ]
+            },
+    
+            {
+                name: "Fearless",
+                year: 2008,
+                cover: "images/albums/fearless.jpg",
+    
+                theme: {
+                    background: "#C59A3D",
+                    text: "#FFF1C9",
+                    accent: "#7A4D2A"
+                },
+    
+                tracks: [
+                    "Fearless",
+                    "Fifteen",
+                    "Love Story",
+                    "Hey Stephen",
+                    "White Horse",
+                    "You Belong with Me",
+                    "Breathe",
+                    "Tell Me Why",
+                    "You're Not Sorry",
+                    "The Way I Loved You",
+                    "Forever & Always",
+                    "The Best Day",
+                    "Change"
+                ]
+            },
+    
+            {
+                name: "Speak Now",
+                year: 2010,
+                cover: "images/albums/speaknow.jpg",
+    
+                theme: {
+                    background: "#833D80",
+                    text: "#F7DCEB",
+                    accent: "#C45B91"
+                },
+    
+                tracks: [
+                    "Mine",
+                    "Sparks Fly",
+                    "Back to December",
+                    "Speak Now",
+                    "Dear John",
+                    "Mean",
+                    "The Story of Us",
+                    "Never Grow Up",
+                    "Enchanted",
+                    "Better than Revenge",
+                    "Innocent",
+                    "Haunted",
+                    "Last Kiss",
+                    "Long Live"
+                ]
+            },
+    
+            {
+                name: "Red",
+                year: 2012,
+                cover: "images/albums/red.jpg",
+    
+                theme: {
+                    background: "#8D2027",
+                    text: "#F5E8D2",
+                    accent: "#C6A24A"
+                },
+    
+                tracks: [
+                    "State of Grace",
+                    "Red",
+                    "Treacherous",
+                    "I Knew You Were Trouble.",
+                    "All Too Well",
+                    "22",
+                    "I Almost Do",
+                    "We Are Never Ever Getting Back Together",
+                    "Stay Stay Stay",
+                    "The Last Time",
+                    "Holy Ground",
+                    "Sad Beautiful Tragic",
+                    "The Lucky One",
+                    "Everything Has Changed",
+                    "Starlight",
+                    "Begin Again"
+                ]
+            },
+    
+            {
+                name: "1989",
+                year: 2014,
+                cover: "images/albums/1989.jpg",
+    
+                theme: {
+                    background: "#A9D9E5",
+                    text: "#FFFFFF",
+                    accent: "#D59A72"
+                },
+    
+                tracks: [
+                    "Welcome to New York",
+                    "Blank Space",
+                    "Style",
+                    "Out of the Woods",
+                    "All You Had to Do Was Stay",
+                    "Shake It Off",
+                    "I Wish You Would",
+                    "Bad Blood",
+                    "Wildest Dreams",
+                    "How You Get the Girl",
+                    "This Love",
+                    "I Know Places",
+                    "Clean"
+                ]
+            },
+    
+            {
+                name: "reputation",
+                year: 2017,
+                cover: "images/albums/reputation.jpg",
+    
+                theme: {
+                    background: "#171717",
+                    text: "#E6E6E6",
+                    accent: "#8A8A8A"
+                },
+    
+                tracks: [
+                    "...Ready for It?",
+                    "End Game",
+                    "I Did Something Bad",
+                    "Don't Blame Me",
+                    "Delicate",
+                    "Look What You Made Me Do",
+                    "So It Goes...",
+                    "Gorgeous",
+                    "Getaway Car",
+                    "King of My Heart",
+                    "Dancing with Our Hands Tied",
+                    "Dress",
+                    "This Is Why We Can't Have Nice Things",
+                    "Call It What You Want",
+                    "New Year's Day"
+                ]
+            },
+    
+            {
+                name: "Lover",
+                year: 2019,
+                cover: "images/albums/lover.jpg",
+    
+                theme: {
+                    background: "#F3B6D2",
+                    text: "#FFF8FC",
+                    accent: "#8B72B8"
+                },
+    
+                tracks: [
+                    "I Forgot That You Existed",
+                    "Cruel Summer",
+                    "Lover",
+                    "The Man",
+                    "The Archer",
+                    "I Think He Knows",
+                    "Miss Americana & the Heartbreak Prince",
+                    "Paper Rings",
+                    "Cornelia Street",
+                    "Death by a Thousand Cuts",
+                    "London Boy",
+                    "Soon You'll Get Better",
+                    "False God",
+                    "You Need to Calm Down",
+                    "Afterglow",
+                    "ME!",
+                    "It's Nice to Have a Friend",
+                    "Daylight"
+                ]
+            },
 
-        // albums: [
+            {
+                name: "folklore",
+                year: 2020,
+                cover: "images/albums/folklore.jpg",
 
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
+                theme: {
+                    background: "#B7B7B5",
+                    text: "#F5F5F2",
+                    accent: "#6E6E6A"
+                },
 
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
+                tracks: [
+                    "the 1",
+                    "cardigan",
+                    "the last great american dynasty",
+                    "exile",
+                    "my tears ricochet",
+                    "mirrorball",
+                    "seven",
+                    "august",
+                    "this is me trying",
+                    "illicit affairs",
+                    "invisible string",
+                    "mad woman",
+                    "epiphany",
+                    "betty",
+                    "peace",
+                    "hoax"
+                ]
+            },
 
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+            {
+                name: "evermore",
+                year: 2020,
+                cover: "images/albums/evermore.jpg",
+
+                theme: {
+                    background: "#6F655D",
+                    text: "#F2E8DD",
+                    accent: "#A88F7A"
+                },
+
+                tracks: [
+                    "willow",
+                    "champagne problems",
+                    "gold rush",
+                    "'tis the damn season",
+                    "tolerate it",
+                    "no body, no crime",
+                    "happiness",
+                    "dorothea",
+                    "coney island",
+                    "ivy",
+                    "cowboy like me",
+                    "long story short",
+                    "marjorie",
+                    "closure",
+                    "evermore"
+                ]
+            },
+
+            {
+                name: "Midnights",
+                year: 2022,
+                cover: "images/albums/midnights.jpg",
+
+                theme: {
+                    background: "#25223A",
+                    text: "#E8E5F2",
+                    accent: "#6F6794"
+                },
+
+                tracks: [
+                    "Lavender Haze",
+                    "Maroon",
+                    "Anti-Hero",
+                    "Snow on the Beach",
+                    "You're on Your Own, Kid",
+                    "Midnight Rain",
+                    "Question...?",
+                    "Vigilante Shit",
+                    "Bejeweled",
+                    "Labyrinth",
+                    "Karma",
+                    "Sweet Nothing",
+                    "Mastermind"
+                ]
+            },
+
+            {
+                name: "The Tortured Poets Department",
+                year: 2024,
+                cover: "images/albums/ttpd.jpg",
+
+                theme: {
+                    background: "#D8D4CE",
+                    text: "#242424",
+                    accent: "#8A8580"
+                },
+
+                tracks: [
+                    "Fortnight",
+                    "The Tortured Poets Department",
+                    "My Boy Only Breaks His Favorite",
+
+                    "Toys",
+                    "Down Bad",
+                    "So Long, London",
+                    "But Daddy I Love Him",
+                    "Fresh Out the Slammer",
+                    "Florida!!!",
+                    "Guilty as Sin?",
+                    "Who's Afraid of Little Old Me?",
+                    "I Can Fix Him (No Really I Can)",
+                    "loml",
+                    "I Can Do It With a Broken Heart",
+                    "The Smallest Man Who Ever Lived",
+                    "The Alchemy",
+                    "Clara Bow"
+                ]
+            },
+
+            {
+                name: "The Life of a Showgirl",
+                year: 2025,
+                cover: "images/albums/showgirl.jpg",
+
+                theme: {
+                    background: "#D4AF37",
+                    text: "#1A1A1A",
+                    accent: "#B8860B"
+                },
+
+                tracks: [
+                    "The Life of a Showgirl"
+                ]
+            }
+        ]
     },
-        
+                    
     // ============================================================
     // Travis Scott
     // ============================================================
