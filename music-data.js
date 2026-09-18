@@ -2384,9 +2384,9 @@ const musicData = [
                 cover: "images/albums/tcu.jpg",
     
                 theme: {
-                    background: "#292929",
-                    text: "#FFFFFF",
-                    accent: "#B79A6B"
+                    background: "#1E1B18",
+                    text: "#EBE6DD",
+                    accent: "#A62B2B"
                 },
     
                 tracks: [
@@ -2420,9 +2420,9 @@ const musicData = [
                 cover: "images/albums/twu.jpg",
     
                 theme: {
-                    background: "#5B5148",
-                    text: "#FFFFFF",
-                    accent: "#C9A66B"
+                    background: "#E6EFF2",
+                    text: "#22252A",
+                    accent: "#E0533C"
                 },
     
                 tracks: [
@@ -2457,9 +2457,9 @@ const musicData = [
                 cover: "images/albums/fnl.jpg",
     
                 theme: {
-                    background: "#171717",
+                    background: "#10141D",
                     text: "#FFFFFF",
-                    accent: "#D0A65A"
+                    accent: "#E5A93B"
                 },
     
                 tracks: [
@@ -2491,9 +2491,9 @@ const musicData = [
                 cover: "images/albums/tss.jpg",
     
                 theme: {
-                    background: "#222222",
-                    text: "#FFFFFF",
-                    accent: "#B99A62"
+                    background: "#1A1D20",
+                    text: "#E3DCD3",
+                    accent: "#B21F24"
                 },
     
                 tracks: [
@@ -2553,9 +2553,9 @@ const musicData = [
                 cover: "images/albums/2014fhd.jpg",
     
                 theme: {
-                    background: "#8B7355",
-                    text: "#FFFFFF",
-                    accent: "#D7B88A"
+                    background: "#4C5F6B",
+                    text: "#EAE5D9",
+                    accent: "#D67C48"
                 },
     
                 tracks: [
@@ -2581,9 +2581,9 @@ const musicData = [
                 cover: "images/albums/4yeo.jpg",
     
                 theme: {
-                    background: "#2A2A2A",
-                    text: "#FFFFFF",
-                    accent: "#A78B62"
+                    background: "#F2F1ED",
+                    text: "#0E0E10",
+                    accent: "#57595D"
                 },
     
                 tracks: [
@@ -2606,9 +2606,9 @@ const musicData = [
                 cover: "images/albums/kod.jpg",
     
                 theme: {
-                    background: "#111111",
-                    text: "#FFFFFF",
-                    accent: "#D3A84C"
+                    background: "#A60F1E",
+                    text: "#D4AF37",
+                    accent: "#2C5199"
                 },
     
                 tracks: [
@@ -2633,9 +2633,9 @@ const musicData = [
                 cover: "images/albums/tos.jpg",
     
                 theme: {
-                    background: "#252525",
-                    text: "#FF4500",
-                    accent: "#FFD700"
+                    background: "#0D0E12",
+                    text: "#F5F5F7",
+                    accent: "#FF4D00"
                 },
     
                 tracks: [
