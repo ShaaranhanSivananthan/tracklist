@@ -3882,46 +3882,160 @@ const musicData = [
     // ============================================================
     // Playboi Carti
     // ============================================================
-
+    
     {
         name: "Playboi Carti",
         image: "images/artists/playboi.jpg",
-
-        // albums: [
-
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
-
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
-
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+    
+        albums: [
+            {
+                name: "Playboi Carti",
+                year: 2017,
+                cover: "images/albums/pc.jpg",
+    
+                theme: {
+                    background: "#E7E0D8",
+                    text: "#171717",
+                    accent: "#C83E5A"
+                },
+    
+                tracks: [
+                    "Location",
+                    "Magnolia",
+                    "Lookin",
+                    "Wokeuplikethis",
+                    "Let It Go",
+                    "Half & Half",
+                    "New Choppa",
+                    "Other Shit",
+                    "No. 9",
+                    "Dothatshit!",
+                    "Lame Niggaz",
+                    "Yah Mean",
+                    "Flex",
+                    "Kelly K",
+                    "Had 2"
+                ]
+            },
+    
+            {
+                name: "Die Lit",
+                year: 2018,
+                cover: "images/albums/dielit.jpg",
+    
+                theme: {
+                    background: "#0A0A0A",
+                    text: "#F2F2F2",
+                    accent: "#777777"
+                },
+    
+                tracks: [
+                    "Long Time (Intro)",
+                    "R.I.P.",
+                    "Lean 4 Real",
+                    "Old Money",
+                    "Love Hurts",
+                    "Shoota",
+                    "Right Now",
+                    "Poke It Out",
+                    "Home (KOD)",
+                    "Fell in Luv",
+                    "Foreign",
+                    "Pull Up",
+                    "Mileage",
+                    "FlatBed Freestyle",
+                    "No Time",
+                    "Middle of the Summer",
+                    "Choppa Won't Miss",
+                    "R.I.P. Fredo (Notice Me)",
+                    "Top"
+                ]
+            },
+    
+            {
+                name: "Whole Lotta Red",
+                year: 2020,
+                cover: "images/albums/wlr.jpg",
+    
+                theme: {
+                    background: "#B51F26",
+                    text: "#F1E9D2",
+                    accent: "#171717"
+                },
+    
+                tracks: [
+                    "Rockstar Made",
+                    "Go2DaMoon",
+                    "Stop Breathing",
+                    "Beno!",
+                    "JumpOutTheHouse",
+                    "M3tamorphosis",
+                    "Slay3r",
+                    "No Sl33p",
+                    "New Tank",
+                    "Teen X",
+                    "Meh",
+                    "Vamp Anthem",
+                    "New N3on",
+                    "Control",
+                    "Punk Monk",
+                    "On That Time",
+                    "King Vamp",
+                    "Place",
+                    "Sky",
+                    "Over",
+                    "ILoveUIHateU",
+                    "Die4Guy",
+                    "Not Playing",
+                    "F33l Lik3 Dyin"
+                ]
+            },
+    
+            {
+                name: "Music",
+                year: 2025,
+                cover: "images/albums/music.jpg",
+    
+                theme: {
+                    background: "#FFFFFF",
+                    text: "#111111",
+                    accent: "#555555"
+                },
+    
+                tracks: [
+                    "Pop Out",
+                    "Crush",
+                    "K Pop",
+                    "Evil J0rdan",
+                    "Mojo Jojo",
+                    "Philly",
+                    "Radar",
+                    "Rather Lie",
+                    "Fine Shit",
+                    "Backd00r",
+                    "Toxic",
+                    "Munyun",
+                    "Crank",
+                    "Charge Dem Hoes a Fee",
+                    "Good Credit",
+                    "I Seeeeee You Baby Boi",
+                    "Wake Up F1lthy",
+                    "Jumpin",
+                    "Trim",
+                    "Cocaine Nose",
+                    "We Need All Da Vibes",
+                    "Olympian",
+                    "Opm Babi",
+                    "Twin Trim",
+                    "Like Weezy",
+                    "Dis 1 Got It",
+                    "Walk",
+                    "Hba",
+                    "Overly",
+                    "South Atlanta Baby"
+                ]
+            }
+        ]
     },
         
     // ============================================================
