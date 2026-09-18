@@ -470,7 +470,7 @@ const musicData = [
                 theme: {
                     background: "#1e3d59",
                     text: "#f5f5f5",
-                    accent: "#17b978"
+                    accent: "#E13A23"
                 },
     
                 tracks: [
