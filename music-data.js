@@ -2370,48 +2370,356 @@ const musicData = [
     },
 
     // ============================================================
-    // J Cole
+    // J. Cole
     // ============================================================
-
+    
     {
-        name: "J Cole",
+        name: "J. Cole",
         image: "images/artists/jcole.jpg",
-
-        // albums: [
-
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
-
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
-
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+    
+        albums: [
+            {
+                name: "The Come Up",
+                year: 2007,
+                cover: "images/albums/tcu.jpg",
+    
+                theme: {
+                    background: "#292929",
+                    text: "#FFFFFF",
+                    accent: "#B79A6B"
+                },
+    
+                tracks: [
+                    "Intro",
+                    "Simba",
+                    "I'm the Man",
+                    "School Daze",
+                    "Dollar and a Dream",
+                    "Throw It Up",
+                    "Quote Me",
+                    "College Boy",
+                    "Split You Up",
+                    "Plain",
+                    "The Come Up",
+                    "Mighty Crazy",
+                    "Dead Presidents",
+                    "Lil Ghetto Nigga",
+                    "Homecoming",
+                    "Carolina on My Mind",
+                    "Can't Cry",
+                    "Goin' Off",
+                    "Rags to Riches",
+                    "Get It",
+                    "I Do My Thing"
+                ]
+            },
+    
+            {
+                name: "The Warm Up",
+                year: 2009,
+                cover: "images/albums/twu.jpg",
+    
+                theme: {
+                    background: "#5B5148",
+                    text: "#FFFFFF",
+                    accent: "#C9A66B"
+                },
+    
+                tracks: [
+                    "Intro: The Warm Up",
+                    "Welcome",
+                    "Can I Live",
+                    "Grown Simba",
+                    "Just to Get By",
+                    "Lights Please",
+                    "Dead Presidents II",
+                    "I Get Up",
+                    "World Is Empty",
+                    "Dreams",
+                    "Royal Flush",
+                    "Dollar and a Dream II",
+                    "Water Break (Interlude)",
+                    "Heartache",
+                    "Get Away",
+                    "Knock Knock",
+                    "Ladies",
+                    "Til' Infinity",
+                    "The Badness",
+                    "Hold It Down",
+                    "Last Call",
+                    "Losing My Balance"
+                ]
+            },
+    
+            {
+                name: "Friday Night Lights",
+                year: 2010,
+                cover: "images/albums/fnl.jpg",
+    
+                theme: {
+                    background: "#171717",
+                    text: "#FFFFFF",
+                    accent: "#D0A65A"
+                },
+    
+                tracks: [
+                    "Friday Night Lights",
+                    "Too Deep for the Intro",
+                    "Before I'm Gone",
+                    "Back to the Topic",
+                    "You Got It",
+                    "Villematic",
+                    "Enchanted",
+                    "Blow Up",
+                    "Higher",
+                    "In the Morning",
+                    "2Face",
+                    "The Autograph",
+                    "Best Friend",
+                    "Cost Me a Lot",
+                    "Premeditated Murder",
+                    "Home for the Holidays",
+                    "Love Me Not",
+                    "See World",
+                    "Farewell"
+                ]
+            },
+    
+            {
+                name: "The Sideline Story",
+                year: 2011,
+                cover: "images/albums/tss.jpg",
+    
+                theme: {
+                    background: "#222222",
+                    text: "#FFFFFF",
+                    accent: "#B99A62"
+                },
+    
+                tracks: [
+                    "Intro",
+                    "Dollar and a Dream III",
+                    "Can't Get Enough",
+                    "Lights Please",
+                    "Interlude",
+                    "Sideline Story",
+                    "Mr. Nice Watch",
+                    "Cole World",
+                    "In the Morning",
+                    "Lost Ones",
+                    "Nobody's Perfect",
+                    "Never Told",
+                    "Rise and Shine",
+                    "God's Gift",
+                    "Breakdown",
+                    "Work Out"
+                ]
+            },
+    
+            {
+                name: "Born Sinner",
+                year: 2013,
+                cover: "images/albums/bs.jpg",
+    
+                theme: {
+                    background: "#111111",
+                    text: "#FFFFFF",
+                    accent: "#B91C1C"
+                },
+    
+                tracks: [
+                    "Villuminati",
+                    "Kerney Sermon (Skit)",
+                    "Land of the Snakes",
+                    "Power Trip",
+                    "Mo Money (Interlude)",
+                    "Trouble",
+                    "Runaway",
+                    "She Knows",
+                    "Rich Niggaz",
+                    "Where's Jermaine? (Skit)",
+                    "Forbidden Fruit",
+                    "Chaining Day",
+                    "Ain't That Some Shit (Interlude)",
+                    "Crooked Smile",
+                    "Let Nas Down",
+                    "Born Sinner"
+                ]
+            },
+    
+            {
+                name: "2014 Forest Hills Drive",
+                year: 2014,
+                cover: "images/albums/2014fhd.jpg",
+    
+                theme: {
+                    background: "#8B7355",
+                    text: "#FFFFFF",
+                    accent: "#D7B88A"
+                },
+    
+                tracks: [
+                    "Intro",
+                    "January 28th",
+                    "Wet Dreamz",
+                    "03' Adolescence",
+                    "A Tale of 2 Citiez",
+                    "Fire Squad",
+                    "St. Tropez",
+                    "G.O.M.D.",
+                    "No Role Modelz",
+                    "Hello",
+                    "Apparently",
+                    "Love Yourz",
+                    "Note to Self"
+                ]
+            },
+    
+            {
+                name: "4 Your Eyez Only",
+                year: 2016,
+                cover: "images/albums/4yeo.jpg",
+    
+                theme: {
+                    background: "#2A2A2A",
+                    text: "#FFFFFF",
+                    accent: "#A78B62"
+                },
+    
+                tracks: [
+                    "For Whom the Bell Tolls",
+                    "Immortal",
+                    "Deja Vu",
+                    "Ville Mentality",
+                    "She's Mine Pt. 1",
+                    "Change",
+                    "Neighbors",
+                    "Foldin Clothes",
+                    "She's Mine Pt. 2",
+                    "4 Your Eyez Only"
+                ]
+            },
+    
+            {
+                name: "KOD",
+                year: 2018,
+                cover: "images/albums/kod.jpg",
+    
+                theme: {
+                    background: "#111111",
+                    text: "#FFFFFF",
+                    accent: "#D3A84C"
+                },
+    
+                tracks: [
+                    "Intro",
+                    "KOD",
+                    "Photograph",
+                    "The Cut Off",
+                    "ATM",
+                    "Motiv8",
+                    "Kevin's Heart",
+                    "Brackets",
+                    "Once an Addict (Interlude)",
+                    "Friends",
+                    "Window Pain (Outro)",
+                    "1985 (Intro to The Fall Off)"
+                ]
+            },
+    
+            {
+                name: "The Off-Season",
+                year: 2021,
+                cover: "images/albums/tos.jpg",
+    
+                theme: {
+                    background: "#252525",
+                    text: "#FFFFFF",
+                    accent: "#B5B5B5"
+                },
+    
+                tracks: [
+                    "95 South",
+                    "Amari",
+                    "My Life",
+                    "Applying Pressure",
+                    "Punchin' the Clock",
+                    "100 Mil'",
+                    "Pride Is the Devil",
+                    "Let Go My Hand",
+                    "Interlude",
+                    "The Climb Back",
+                    "Close",
+                    "Hunger on Hillside"
+                ]
+            },
+    
+            {
+                name: "Might Delete Later",
+                year: 2024,
+                cover: "images/albums/mdl.jpg",
+    
+                theme: {
+                    background: "#F26A21",
+                    text: "#111111",
+                    accent: "#FFB347"
+                },
+    
+                tracks: [
+                    "Pricey",
+                    "Crocodile Tearz",
+                    "Ready '24",
+                    "Huntin' Wabbitz",
+                    "H.Y.B.",
+                    "Fever",
+                    "Stickz N Stonez",
+                    "Pi",
+                    "Stealth Mode",
+                    "3001",
+                    "Trae the Truth in Ibiza",
+                    "7 Minute Drill"
+                ]
+            },
+    
+            {
+                name: "The Fall-Off",
+                year: 2026,
+                cover: "images/albums/tfo.jpg",
+    
+                theme: {
+                    background: "#C5B49A",
+                    text: "#171717",
+                    accent: "#6B5845"
+                },
+    
+                tracks: [
+                    "29 Intro",
+                    "Two Six",
+                    "Safety",
+                    "Run a Train",
+                    "Poor Thang",
+                    "Legacy",
+                    "Bunce Road Blues",
+                    "Who TF Iz U",
+                    "Drum n Bass",
+                    "The Let Out",
+                    "Bombs in the Ville / Hit the Gas",
+                    "Lonely at the Top",
+                    "39 Intro",
+                    "The Fall-Off Is Inevitable",
+                    "The Villest",
+                    "Old Dog",
+                    "Life Sentence",
+                    "Only You",
+                    "Man Up Above",
+                    "I Love Her Again",
+                    "What If",
+                    "Quik Stop",
+                    "And the Whole World Is the Ville",
+                    "Ocean Way"
+                ]
+            }
+        ]
     },
 
     // ============================================================
