@@ -1067,51 +1067,672 @@ const musicData = [
 
         ]
     },
-
     
     // ============================================================
     // Drake
     // ============================================================
-
+    
     {
         name: "Drake",
         image: "images/artists/drake.jpg",
-
-        // albums: [
-
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
-
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
-
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+    
+        albums: [
+            {
+                name: "Room for Improvement",
+                year: 2006,
+                cover: "images/albums/room.jpg",
+    
+                theme: {
+                    background: "#171717",
+                    text: "#FFFFFF",
+                    accent: "#B8B8B8"
+                },
+    
+                tracks: [
+                    "Intro",
+                    "Pianist Hands",
+                    "Special",
+                    "Do What You Do",
+                    "Money (Remix)",
+                    "AM 2 PM",
+                    "City Is Mine",
+                    "Drake's Voice Mail Box #1",
+                    "Bad Meaning Good",
+                    "Thrill Is Gone",
+                    "Make Things Right",
+                    "Video Girl",
+                    "Drake's Voice Mail Box #2",
+                    "Come Winter",
+                    "Extra Special",
+                    "About the Game",
+                    "All This Love",
+                    "Drake's Voice Mail Box #3",
+                    "A Scorpio's Mind",
+                    "S.T.R.E.S.S.",
+                    "Try Harder",
+                    "Kick, Push (Remix)",
+                    "U.P.A. (Outro)"
+                ]
+            },
+    
+            {
+                name: "Comeback Season",
+                year: 2007,
+                cover: "images/albums/comeback.jpg",
+    
+                theme: {
+                    background: "#4A3026",
+                    text: "#FFFFFF",
+                    accent: "#C98A5A"
+                },
+    
+                tracks: [
+                    "Intro",
+                    "The Presentation",
+                    "Comeback Season",
+                    "Closer",
+                    "Replacement Girl",
+                    "City Is Mine",
+                    "Barry Bonds Freestyle",
+                    "Going In for Life",
+                    "Where to Now",
+                    "Share",
+                    "Give Ya",
+                    "Don't U Have a Man",
+                    "Bitch Is Crazy",
+                    "The Last Hope",
+                    "Must Hate Money",
+                    "Asthma Team",
+                    "Do What U Do (Remix)",
+                    "Easy to Please",
+                    "Faded",
+                    "Underdog",
+                    "Think Good Thoughts",
+                    "Teach U a Lesson (Remix)",
+                    "Missin' You (Remix)",
+                    "Man of the Year"
+                ]
+            },
+    
+            {
+                name: "So Far Gone",
+                year: 2009,
+                cover: "images/albums/sofar.jpg",
+    
+                theme: {
+                    background: "#171717",
+                    text: "#FFFFFF",
+                    accent: "#B52B2B"
+                },
+    
+                tracks: [
+                    "Lust for Life",
+                    "Houstatlantavegas",
+                    "Successful",
+                    "Let's Call It Off",
+                    "November 18th",
+                    "Ignant Shit",
+                    "A Night Off",
+                    "Say What's Real",
+                    "Little Bit",
+                    "Best I Ever Had",
+                    "Unstoppable",
+                    "Uptown",
+                    "Sooner Than Later",
+                    "Bria's Interlude",
+                    "The Calm",
+                    "Outro",
+                    "Brand New"
+                ]
+            },
+    
+            {
+                name: "Thank Me Later",
+                year: 2010,
+                cover: "images/albums/thankmelater.jpg",
+    
+                theme: {
+                    background: "#151515",
+                    text: "#FFFFFF",
+                    accent: "#8A8A8A"
+                },
+    
+                tracks: [
+                    "Fireworks",
+                    "Karaoke",
+                    "The Resistance",
+                    "Over",
+                    "Show Me a Good Time",
+                    "Up All Night",
+                    "Fancy",
+                    "Shut It Down",
+                    "Unforgettable",
+                    "Light Up",
+                    "Miss Me",
+                    "Cece's Interlude",
+                    "Find Your Love",
+                    "Thank Me Now"
+                ]
+            },
+    
+            {
+                name: "Take Care",
+                year: 2011,
+                cover: "images/albums/takecare.jpg",
+    
+                theme: {
+                    background: "#5B4435",
+                    text: "#FFFFFF",
+                    accent: "#C59A5A"
+                },
+    
+                tracks: [
+                    "Over My Dead Body",
+                    "Shot for Me",
+                    "Headlines",
+                    "Crew Love",
+                    "Take Care",
+                    "Marvins Room",
+                    "Buried Alive Interlude",
+                    "Under Ground Kings",
+                    "We'll Be Fine",
+                    "Make Me Proud",
+                    "Lord Knows",
+                    "Cameras / Good Ones Go Interlude",
+                    "Doing It Wrong",
+                    "The Real Her",
+                    "Look What You've Done",
+                    "HYFR (Hell Ya Fucking Right)",
+                    "Practice",
+                    "The Ride"
+                ]
+            },
+    
+            {
+                name: "Nothing Was the Same",
+                year: 2013,
+                cover: "images/albums/nwts.jpg",
+    
+                theme: {
+                    background: "#426C89",
+                    text: "#FFFFFF",
+                    accent: "#D49A52"
+                },
+    
+                tracks: [
+                    "Tuscan Leather",
+                    "Furthest Thing",
+                    "Started From the Bottom",
+                    "Wu-Tang Forever",
+                    "Own It",
+                    "Worst Behavior",
+                    "From Time",
+                    "Hold On, We're Going Home",
+                    "Connect",
+                    "The Language",
+                    "305 to My City",
+                    "Too Much",
+                    "Pound Cake / Paris Morton Music 2"
+                ]
+            },
+    
+            {
+                name: "If You're Reading This It's Too Late",
+                year: 2015,
+                cover: "images/albums/iyrtitl.jpg",
+    
+                theme: {
+                    background: "#111111",
+                    text: "#FFFFFF",
+                    accent: "#777777"
+                },
+    
+                tracks: [
+                    "Legend",
+                    "Energy",
+                    "10 Bands",
+                    "Know Yourself",
+                    "No Tellin'",
+                    "Madonna",
+                    "6 God",
+                    "Star67",
+                    "Preach",
+                    "Wednesday Night Interlude",
+                    "Used To",
+                    "6 Man",
+                    "Now & Forever",
+                    "Company",
+                    "You & the 6",
+                    "Jungle",
+                    "6PM in New York"
+                ]
+            },
+    
+            {
+                name: "What a Time to Be Alive",
+                year: 2015,
+                cover: "images/albums/wattba.jpg",
+    
+                theme: {
+                    background: "#151515",
+                    text: "#FFFFFF",
+                    accent: "#8C8C8C"
+                },
+    
+                tracks: [
+                    "Digital Dash",
+                    "Big Rings",
+                    "Live from the Gutter",
+                    "Diamonds Dancing",
+                    "Scholarships",
+                    "Plastic Bag",
+                    "I'm the Plug",
+                    "Change Locations",
+                    "Jumpman",
+                    "Jersey",
+                    "30 for 30 Freestyle"
+                ]
+            },
+    
+            {
+                name: "Views",
+                year: 2016,
+                cover: "images/albums/views.jpg",
+    
+                theme: {
+                    background: "#7B9AB0",
+                    text: "#FFFFFF",
+                    accent: "#D7E2E8"
+                },
+    
+                tracks: [
+                    "Keep the Family Close",
+                    "9",
+                    "U with Me?",
+                    "Feel No Ways",
+                    "Hype",
+                    "Weston Road Flows",
+                    "Redemption",
+                    "With You",
+                    "Faithful",
+                    "Still Here",
+                    "Controlla",
+                    "One Dance",
+                    "Grammys",
+                    "Child's Play",
+                    "Pop Style",
+                    "Too Good",
+                    "Summers Over Interlude",
+                    "Fire & Desire",
+                    "Views",
+                    "Hotline Bling"
+                ]
+            },
+    
+            {
+                name: "More Life",
+                year: 2017,
+                cover: "images/albums/morelife.jpg",
+    
+                theme: {
+                    background: "#C6A59D",
+                    text: "#FFFFFF",
+                    accent: "#4C3433"
+                },
+    
+                tracks: [
+                    "Free Smoke",
+                    "No Long Talk",
+                    "Passionfruit",
+                    "Jorja Interlude",
+                    "Get It Together",
+                    "Madiba Riddim",
+                    "Blem",
+                    "4422",
+                    "Gyalchester",
+                    "Skepta Interlude",
+                    "Portland",
+                    "Sacrifices",
+                    "Nothings Into Somethings",
+                    "Teenage Fever",
+                    "KMT",
+                    "Lose You",
+                    "Can't Have Everything",
+                    "Glow",
+                    "Since Way Back",
+                    "Fake Love",
+                    "Ice Melts",
+                    "Do Not Disturb"
+                ]
+            },
+    
+            {
+                name: "Scorpion",
+                year: 2018,
+                cover: "images/albums/scorpion.jpg",
+    
+                theme: {
+                    background: "#111111",
+                    text: "#FFFFFF",
+                    accent: "#D6B45A"
+                },
+    
+                tracks: [
+                    "Survival",
+                    "Nonstop",
+                    "Elevate",
+                    "Emotionless",
+                    "God's Plan",
+                    "I'm Upset",
+                    "8 Out of 10",
+                    "Mob Ties",
+                    "Can't Take a Joke",
+                    "Sandra's Rose",
+                    "Talk Up",
+                    "Is There More",
+                    "Peak",
+                    "Summer Games",
+                    "Jaded",
+                    "Nice for What",
+                    "Finesse",
+                    "Ratchet Happy Birthday",
+                    "That's How You Feel",
+                    "Blue Tint",
+                    "In My Feelings",
+                    "Don't Matter to Me",
+                    "After Dark",
+                    "Final Fantasy",
+                    "March 14"
+                ]
+            },
+    
+            {
+                name: "Dark Lane Demo Tapes",
+                year: 2020,
+                cover: "images/albums/darklane.jpg",
+    
+                theme: {
+                    background: "#171717",
+                    text: "#FFFFFF",
+                    accent: "#A34A3F"
+                },
+    
+                tracks: [
+                    "Deep Pockets",
+                    "When to Say When",
+                    "Chicago Freestyle",
+                    "Not You Too",
+                    "Toosie Slide",
+                    "Desires",
+                    "Time Flies",
+                    "Landed",
+                    "D4L",
+                    "Pain 1993",
+                    "Losses",
+                    "From Florida with Love",
+                    "Demons",
+                    "War"
+                ]
+            },
+    
+            {
+                name: "Certified Lover Boy",
+                year: 2021,
+                cover: "images/albums/clb.jpg",
+    
+                theme: {
+                    background: "#F4F4F4",
+                    text: "#111111",
+                    accent: "#D9B4B7"
+                },
+    
+                tracks: [
+                    "Champagne Poetry",
+                    "Papi's Home",
+                    "Girls Want Girls",
+                    "In the Bible",
+                    "Love All",
+                    "Fair Trade",
+                    "Way 2 Sexy",
+                    "TSU",
+                    "N 2 Deep",
+                    "Pipe Down",
+                    "Yebba's Heartbreak",
+                    "No Friends in the Industry",
+                    "Knife Talk",
+                    "7am on Bridle Path",
+                    "Race My Mind",
+                    "Fountains",
+                    "Get Along Better",
+                    "You Only Live Twice",
+                    "IMY2",
+                    "Fuckin' Fans",
+                    "The Remorse"
+                ]
+            },
+    
+            {
+                name: "Honestly, Nevermind",
+                year: 2022,
+                cover: "images/albums/honestly.jpg",
+    
+                theme: {
+                    background: "#F2EEE7",
+                    text: "#151515",
+                    accent: "#D7A53B"
+                },
+    
+                tracks: [
+                    "Intro",
+                    "Falling Back",
+                    "Texts Go Green",
+                    "Currents",
+                    "A Keeper",
+                    "Calling My Name",
+                    "Sticky",
+                    "Massive",
+                    "Flight's Booked",
+                    "Overdrive",
+                    "Down Hill",
+                    "Tie That Binds",
+                    "Liability",
+                    "Jimmy Cooks"
+                ]
+            },
+    
+            {
+                name: "Her Loss",
+                year: 2022,
+                cover: "images/albums/herloss.jpg",
+    
+                theme: {
+                    background: "#B9A0A4",
+                    text: "#FFFFFF",
+                    accent: "#2E3947"
+                },
+    
+                tracks: [
+                    "Rich Flex",
+                    "Major Distribution",
+                    "On BS",
+                    "BackOutsideBoyz",
+                    "Privileged Rappers",
+                    "Spin Bout U",
+                    "Hours in Silence",
+                    "Treacherous Twins",
+                    "Circo Loco",
+                    "Pussy & Millions",
+                    "Broke Boys",
+                    "Middle of the Ocean",
+                    "Jumbotron Shit Poppin",
+                    "More M's",
+                    "3AM on Glenwood",
+                    "I Guess It's Fuck Me"
+                ]
+            },
+    
+            {
+                name: "For All the Dogs",
+                year: 2023,
+                cover: "images/albums/fatd.jpg",
+    
+                theme: {
+                    background: "#E8E2D8",
+                    text: "#171717",
+                    accent: "#A33131"
+                },
+    
+                tracks: [
+                    "Virginia Beach",
+                    "Amen",
+                    "Calling for You",
+                    "Fear of Heights",
+                    "Daylight",
+                    "First Person Shooter",
+                    "IDGAF",
+                    "7969 Santa",
+                    "Slime You Out",
+                    "Bahamas Promises",
+                    "Tried Our Best",
+                    "Screw the World (Interlude)",
+                    "Drew a Picasso",
+                    "Members Only",
+                    "What Would Pluto Do",
+                    "All the Parties",
+                    "8am in Charlotte",
+                    "BBL Love (Interlude)",
+                    "Gently",
+                    "Rich Baby Daddy",
+                    "Another Late Night",
+                    "Away from Home",
+                    "Polar Opposites"
+                ]
+            },
+    
+            {
+                name: "$ome $exy $ongs 4 U",
+                year: 2025,
+                cover: "images/albums/ssss4u.jpg",
+    
+                theme: {
+                    background: "#241414",
+                    text: "#FFFFFF",
+                    accent: "#B43B42"
+                },
+    
+                tracks: [
+                    "CN Tower",
+                    "Moth Balls",
+                    "Something About You",
+                    "Crying in Chanel",
+                    "Spider-Man Superman",
+                    "Deeper",
+                    "Small Town Fame",
+                    "Pimmie's Dilemma",
+                    "Brian Steel",
+                    "Gimme a Hug",
+                    "Raining in Houston",
+                    "Lasers",
+                    "Meet Your Padre",
+                    "Nokia",
+                    "Die Trying",
+                    "Somebody Loves Me",
+                    "Celibacy",
+                    "OMW",
+                    "Glorious",
+                    "When He's Gone",
+                    "Greedy"
+                ]
+            },
+    
+            {
+                name: "Iceman",
+                year: 2026,
+                cover: "images/albums/iceman.jpg",
+    
+                theme: {
+                    background: "#A9D8E8",
+                    text: "#FFFFFF",
+                    accent: "#2E6F8F"
+                },
+    
+                tracks: [
+                    "Make Them Cry",
+                    "Dust",
+                    "Whisper My Name",
+                    "Janice STFU",
+                    "Ran to Atlanta",
+                    "Shabang",
+                    "Make Them Pay",
+                    "Burning Bridges",
+                    "National Treasures",
+                    "B's on the Table",
+                    "What Did I Miss?",
+                    "Plot Twist",
+                    "2 Hard 4 the Radio",
+                    "Make Them Remember",
+                    "Little Birdie",
+                    "Don't Worry",
+                    "Firm Friends",
+                    "Make Them Know"
+                ]
+            },
+    
+            {
+                name: "Maid of Honour",
+                year: 2026,
+                cover: "images/albums/maid.jpg",
+    
+                theme: {
+                    background: "#D8D2CB",
+                    text: "#171717",
+                    accent: "#7A8FA3"
+                },
+    
+                tracks: [
+                    "Hoe Phase",
+                    "Road Trips",
+                    "Outside Tweaking",
+                    "Cheetah Print",
+                    "Which One",
+                    "Amazing Shape",
+                    "BBW",
+                    "True Bestie",
+                    "Where's Your Stuff Interlude",
+                    "New Bestie",
+                    "Q&A",
+                    "Stuck",
+                    "Goose and the Juice",
+                    "Princess"
+                ]
+            },
+    
+            {
+                name: "Habibti",
+                year: 2026,
+                cover: "images/albums/habibti.jpg",
+    
+                theme: {
+                    background: "#B8A99A",
+                    text: "#FFFFFF",
+                    accent: "#5B514A"
+                },
+    
+                tracks: [
+                    "Rusty Intro",
+                    "WNBA",
+                    "Slap the City",
+                    "High Fives",
+                    "Hurrr Nor Thurrr",
+                    "I'm Spent",
+                    "Classic",
+                    "Gen 5",
+                    "White Bone",
+                    "Fortworth",
+                    "Prioritizing"
+                ]
+            }
+        ]
     },
 
     // ============================================================
