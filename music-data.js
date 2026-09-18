@@ -4865,9 +4865,9 @@ const musicData = [
                 cover: "images/albums/bastard.jpg",
     
                 theme: {
-                    background: "#111111",
-                    text: "#F2F2F2",
-                    accent: "#C62828"
+                    background: "#CC0000",
+                    text: "#FFFFFF",
+                    accent: "#006699"
                 },
     
                 tracks: [
@@ -4925,9 +4925,9 @@ const musicData = [
                 cover: "images/albums/wolf.jpg",
     
                 theme: {
-                    background: "#B8CFA5",
-                    text: "#3C3A32",
-                    accent: "#D88A9A"
+                    background: "#7db9e7",
+                    text: "#f4f4f4",
+                    accent: "#4e803c"
                 },
     
                 tracks: [
@@ -4987,8 +4987,8 @@ const musicData = [
     
                 theme: {
                     background: "#F4C542",
-                    text: "#172B1B",
-                    accent: "#5E9B52"
+                    text: "#134508",
+                    accent: "#f1f2e5"
                 },
     
                 tracks: [
@@ -5043,8 +5043,8 @@ const musicData = [
     
                 theme: {
                     background: "#D7C9A5",
-                    text: "#151515",
-                    accent: "#3D73A8"
+                    text: "#68c9d2",
+                    accent: "#f8c1bf"
                 },
     
                 tracks: [
