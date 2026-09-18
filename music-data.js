@@ -5033,92 +5033,92 @@ const musicData = [
                     "I Don't Love You Anymore",
                     "Are We Still Friends?"
                 ]
-            },
-    
-            {
-                name: "Call Me If You Get Lost",
-                year: 2021,
-                cover: "images/albums/cmiygl.jpg",
-    
-                theme: {
-                    background: "#D7C9A5",
-                    text: "#151515",
-                    accent: "#3D73A8"
-                },
-    
-                tracks: [
-                    "Sir Baudelaire",
-                    "Corso",
-                    "Lemonhead",
-                    "WusYaName",
-                    "Lumberjack",
-                    "Hot Wind Blows",
-                    "Massa",
-                    "RunItUp",
-                    "Manifesto",
-                    "Sweet / I Thought You Wanted to Dance",
-                    "Momma Talk",
-                    "Rise!",
-                    "Blessed",
-                    "Juggernaut",
-                    "Wilshire",
-                    "Safari"
-                ]
-            },
-    
-            {
-                name: "Chromakopia",
-                year: 2024,
-                cover: "images/albums/chromakopia.jpg",
-    
-                theme: {
-                    background: "#183C2B",
-                    text: "#E8E5D5",
-                    accent: "#4FAF5B"
-                },
-    
-                tracks: [
-                    "St. Chroma",
-                    "Rah Tah Tah",
-                    "Noid",
-                    "Darling, I",
-                    "Hey Jane",
-                    "I Killed You",
-                    "Judge Judy",
-                    "Sticky",
-                    "Take Your Mask Off",
-                    "Tomorrow",
-                    "Thought I Was Dead",
-                    "Like Him",
-                    "Balloon",
-                    "I Hope You Find Your Way Home"
-                ]
-            },
-    
-            {
-                name: "Don't Tap the Glass",
-                year: 2025,
-                cover: "images/albums/dttg.jpg",
-    
-                theme: {
-                    background: "#C62B2F",
-                    text: "#F2F0E8",
-                    accent: "#151515"
-                },
-    
-                tracks: [
-                    "Big Poe",
-                    "Sugar on My Tongue",
-                    "Sucka Free",
-                    "Mommanem",
-                    "Stop Playing With Me",
-                    "Ring Ring Ring",
-                    "Don't Tap That Glass / Tweakin'",
-                    "Don't You Worry Baby",
-                    "I'll Take Care of You",
-                    "Tell Me What It Is"
-                ]
             }
+    
+            // {
+            //     name: "Call Me If You Get Lost",
+            //     year: 2021,
+            //     cover: "images/albums/cmiygl.jpg",
+    
+            //     theme: {
+            //         background: "#D7C9A5",
+            //         text: "#151515",
+            //         accent: "#3D73A8"
+            //     },
+    
+            //     tracks: [
+            //         "Sir Baudelaire",
+            //         "Corso",
+            //         "Lemonhead",
+            //         "WusYaName",
+            //         "Lumberjack",
+            //         "Hot Wind Blows",
+            //         "Massa",
+            //         "RunItUp",
+            //         "Manifesto",
+            //         "Sweet / I Thought You Wanted to Dance",
+            //         "Momma Talk",
+            //         "Rise!",
+            //         "Blessed",
+            //         "Juggernaut",
+            //         "Wilshire",
+            //         "Safari"
+            //     ]
+            // },
+    
+            // {
+            //     name: "Chromakopia",
+            //     year: 2024,
+            //     cover: "images/albums/chromakopia.jpg",
+    
+            //     theme: {
+            //         background: "#183C2B",
+            //         text: "#E8E5D5",
+            //         accent: "#4FAF5B"
+            //     },
+    
+            //     tracks: [
+            //         "St. Chroma",
+            //         "Rah Tah Tah",
+            //         "Noid",
+            //         "Darling, I",
+            //         "Hey Jane",
+            //         "I Killed You",
+            //         "Judge Judy",
+            //         "Sticky",
+            //         "Take Your Mask Off",
+            //         "Tomorrow",
+            //         "Thought I Was Dead",
+            //         "Like Him",
+            //         "Balloon",
+            //         "I Hope You Find Your Way Home"
+            //     ]
+            // },
+    
+            // {
+            //     name: "Don't Tap the Glass",
+            //     year: 2025,
+            //     cover: "images/albums/dttg.jpg",
+    
+            //     theme: {
+            //         background: "#C62B2F",
+            //         text: "#F2F0E8",
+            //         accent: "#151515"
+            //     },
+    
+            //     tracks: [
+            //         "Big Poe",
+            //         "Sugar on My Tongue",
+            //         "Sucka Free",
+            //         "Mommanem",
+            //         "Stop Playing With Me",
+            //         "Ring Ring Ring",
+            //         "Don't Tap That Glass / Tweakin'",
+            //         "Don't You Worry Baby",
+            //         "I'll Take Care of You",
+            //         "Tell Me What It Is"
+            //     ]
+            // }
         ]
     },
 
