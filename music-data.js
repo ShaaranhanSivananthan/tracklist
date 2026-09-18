@@ -1148,9 +1148,9 @@ const musicData = [
                     "Faded",
                     "Underdog",
                     "Think Good Thoughts",
-                    "Teach U a Lesson (Remix)",
-                    "Missin' You (Remix)",
-                    "Man of the Year"
+                    "Teach U a Lesson (Freestyle)",
+                    "Missin' You (Freestyle)",
+                    "Man of the Year (Freestyle)"
                 ]
             },
     
@@ -1500,13 +1500,13 @@ const musicData = [
                     "Yebba's Heartbreak",
                     "No Friends in the Industry",
                     "Knife Talk",
-                    "7am on Bridle Path",
+                    "7AM on Bridle Path",
                     "Race My Mind",
                     "Fountains",
                     "Get Along Better",
                     "You Only Live Twice",
                     "IMY2",
-                    "Fuckin' Fans",
+                    "Fucking Fans",
                     "The Remorse"
                 ]
             },
@@ -1610,7 +1610,7 @@ const musicData = [
             },
     
             {
-                name: "$ome $exy $ongs 4 U",
+                name: "Some Sexy Songs 4 U",
                 year: 2025,
                 cover: "images/albums/sss4u.jpg",
     
@@ -1698,7 +1698,7 @@ const musicData = [
                     "Amazing Shape",
                     "BBW",
                     "True Bestie",
-                    "Where's Your Stuff Interlude",
+                    "Where's Your Stuff (Interlude)",
                     "New Bestie",
                     "Q&A",
                     "Stuck",
