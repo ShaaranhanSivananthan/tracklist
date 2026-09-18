@@ -539,42 +539,87 @@ const musicData = [
     {
         name: "Dua Lipa",
         image: "images/artists/dua.jpg",
-
-        // albums: [
-
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
-
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
-
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+    
+        albums: [
+            {
+                name: "Dua Lipa",
+                year: 2017,
+                cover: "images/albums/dl.jpg",
+    
+                theme: {
+                    background: "#1c2430",
+                    text: "#f0f4f8",
+                    accent: "#2ca8ca"
+                },
+    
+                tracks: [
+                    "Genesis",
+                    "Lost in Your Light",
+                    "Hotter than Hell",
+                    "Be the One",
+                    "IDGAF",
+                    "Blow Your Mind (Mwah)",
+                    "Garden",
+                    "No Goodbyes",
+                    "Thinking 'Bout You",
+                    "New Rules",
+                    "Begging",
+                    "Homesick"
+                ]
+            },
+    
+            {
+                name: "Future Nostalgia",
+                year: 2020,
+                cover: "images/albums/fn.jpg",
+    
+                theme: {
+                    background: "#82aed8",
+                    text: "#120e2e",
+                    accent: "#e05297"
+                },
+    
+                tracks: [
+                    "Future Nostalgia",
+                    "Don't Start Now",
+                    "Cool",
+                    "Physical",
+                    "Levitating",
+                    "Pretty Please",
+                    "Hallucinate",
+                    "Love Again",
+                    "Break My Heart",
+                    "Good in Bed",
+                    "Boys Will Be Boys"
+                ]
+            },
+    
+            {
+                name: "Radical Optimism",
+                year: 2024,
+                cover: "images/albums/ro.jpg",
+    
+                theme: {
+                    background: "#0d3b66",
+                    text: "#f4f1de",
+                    accent: "#e07a5f"
+                },
+    
+                tracks: [
+                    "End of an Era",
+                    "Houdini",
+                    "Training Season",
+                    "These Walls",
+                    "Whatcha Doing",
+                    "French Exit",
+                    "Illusion",
+                    "Falling Forever",
+                    "Anything for Love",
+                    "Maria",
+                    "Happy for You"
+                ]
+            }
+        ]
     },
 
     // ============================================================
