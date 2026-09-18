@@ -1080,7 +1080,7 @@ const musicData = [
             {
                 name: "Room for Improvement",
                 year: 2006,
-                cover: "images/albums/room.jpg",
+                cover: "images/albums/rfi.jpg",
     
                 theme: {
                     background: "#171717",
@@ -1118,7 +1118,7 @@ const musicData = [
             {
                 name: "Comeback Season",
                 year: 2007,
-                cover: "images/albums/comeback.jpg",
+                cover: "images/albums/cs.jpg",
     
                 theme: {
                     background: "#4A3026",
@@ -1157,7 +1157,7 @@ const musicData = [
             {
                 name: "So Far Gone",
                 year: 2009,
-                cover: "images/albums/sofar.jpg",
+                cover: "images/albums/sfg.jpg",
     
                 theme: {
                     background: "#171717",
@@ -1189,7 +1189,7 @@ const musicData = [
             {
                 name: "Thank Me Later",
                 year: 2010,
-                cover: "images/albums/thankmelater.jpg",
+                cover: "images/albums/tml.jpg",
     
                 theme: {
                     background: "#151515",
@@ -1218,7 +1218,7 @@ const musicData = [
             {
                 name: "Take Care",
                 year: 2011,
-                cover: "images/albums/takecare.jpg",
+                cover: "images/albums/tc.jpg",
     
                 theme: {
                     background: "#5B4435",
@@ -1372,7 +1372,7 @@ const musicData = [
             {
                 name: "More Life",
                 year: 2017,
-                cover: "images/albums/morelife.jpg",
+                cover: "images/albums/ml.jpg",
     
                 theme: {
                     background: "#C6A59D",
@@ -1449,7 +1449,7 @@ const musicData = [
             {
                 name: "Dark Lane Demo Tapes",
                 year: 2020,
-                cover: "images/albums/darklane.jpg",
+                cover: "images/albums/dldt.jpg",
     
                 theme: {
                     background: "#171717",
@@ -1514,7 +1514,7 @@ const musicData = [
             {
                 name: "Honestly, Nevermind",
                 year: 2022,
-                cover: "images/albums/honestly.jpg",
+                cover: "images/albums/hn.jpg",
     
                 theme: {
                     background: "#F2EEE7",
@@ -1543,7 +1543,7 @@ const musicData = [
             {
                 name: "Her Loss",
                 year: 2022,
-                cover: "images/albums/herloss.jpg",
+                cover: "images/albums/hl.jpg",
     
                 theme: {
                     background: "#B9A0A4",
@@ -1612,7 +1612,7 @@ const musicData = [
             {
                 name: "$ome $exy $ongs 4 U",
                 year: 2025,
-                cover: "images/albums/ssss4u.jpg",
+                cover: "images/albums/sss4u.jpg",
     
                 theme: {
                     background: "#241414",
@@ -1681,7 +1681,7 @@ const musicData = [
             {
                 name: "Maid of Honour",
                 year: 2026,
-                cover: "images/albums/maid.jpg",
+                cover: "images/albums/moh.jpg",
     
                 theme: {
                     background: "#D8D2CB",
