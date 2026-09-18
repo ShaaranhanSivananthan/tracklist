@@ -1824,50 +1824,409 @@ const musicData = [
             }
         ]
     },
-
+    
     // ============================================================
     // Eminem
     // ============================================================
-
+    
     {
         name: "Eminem",
         image: "images/artists/eminem.jpg",
-
-        // albums: [
-
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
-
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
-
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+    
+        albums: [
+            {
+                name: "Infinite",
+                year: 1996,
+                cover: "images/albums/infinite.jpg",
+    
+                theme: {
+                    background: "#4A5961",
+                    text: "#FFFFFF",
+                    accent: "#A9B7BD"
+                },
+    
+                tracks: [
+                    "Infinite",
+                    "W.E.G.O. (Interlude)",
+                    "It's O.K.",
+                    "Tonite",
+                    "313",
+                    "Maxine",
+                    "Open Mic",
+                    "Never 2 Far",
+                    "Searchin'",
+                    "Backstabber",
+                    "Jealousy Woes II"
+                ]
+            },
+    
+            {
+                name: "The Slim Shady LP",
+                year: 1999,
+                cover: "images/albums/sslp.jpg",
+    
+                theme: {
+                    background: "#A7B8B4",
+                    text: "#111111",
+                    accent: "#D7D8C8"
+                },
+    
+                tracks: [
+                    "Public Service Announcement",
+                    "My Name Is",
+                    "Guilty Conscience",
+                    "Brain Damage",
+                    "Paul (Skit)",
+                    "If I Had",
+                    "'97 Bonnie & Clyde",
+                    "Bitch (Skit)",
+                    "Role Model",
+                    "Lounge (Skit)",
+                    "My Fault",
+                    "Ken Kaniff (Skit)",
+                    "Cum On Everybody",
+                    "Rock Bottom",
+                    "Just Don't Give a Fuck",
+                    "Soap (Skit)",
+                    "As the World Turns",
+                    "I'm Shady",
+                    "Bad Meets Evil",
+                    "Still Don't Give a Fuck"
+                ]
+            },
+    
+            {
+                name: "The Marshall Mathers LP",
+                year: 2000,
+                cover: "images/albums/mmlp.jpg",
+    
+                theme: {
+                    background: "#6B5B4D",
+                    text: "#FFFFFF",
+                    accent: "#B6A58E"
+                },
+    
+                tracks: [
+                    "Public Service Announcement 2000",
+                    "Kill You",
+                    "Stan",
+                    "Paul (Skit)",
+                    "Who Knew",
+                    "Steve Berman",
+                    "The Way I Am",
+                    "The Real Slim Shady",
+                    "Remember Me?",
+                    "I'm Back",
+                    "Marshall Mathers",
+                    "Ken Kaniff (Skit)",
+                    "Drug Ballad",
+                    "Amityville",
+                    "Bitch Please II",
+                    "Kim",
+                    "Under the Influence",
+                    "Criminal"
+                ]
+            },
+    
+            {
+                name: "The Eminem Show",
+                year: 2002,
+                cover: "images/albums/eminemshow.jpg",
+    
+                theme: {
+                    background: "#B8A58B",
+                    text: "#171717",
+                    accent: "#6E6254"
+                },
+    
+                tracks: [
+                    "Curtains Up (Skit)",
+                    "White America",
+                    "Business",
+                    "Cleanin' Out My Closet",
+                    "Square Dance",
+                    "The Kiss (Skit)",
+                    "Soldier",
+                    "Say Goodbye Hollywood",
+                    "Drips",
+                    "Without Me",
+                    "Paul Rosenberg (Skit)",
+                    "Sing for the Moment",
+                    "Superman",
+                    "Hailie's Song",
+                    "Steve Berman (Skit)",
+                    "When the Music Stops",
+                    "Say What You Say",
+                    "'Till I Collapse",
+                    "My Dad's Gone Crazy",
+                    "Curtains Close"
+                ]
+            },
+    
+            {
+                name: "Encore",
+                year: 2004,
+                cover: "images/albums/encore.jpg",
+    
+                theme: {
+                    background: "#171717",
+                    text: "#FFFFFF",
+                    accent: "#D7C9A5"
+                },
+    
+                tracks: [
+                    "Curtains Up",
+                    "Evil Deeds",
+                    "Never Enough",
+                    "Yellow Brick Road",
+                    "Like Toy Soldiers",
+                    "Mosh",
+                    "Puke",
+                    "My 1st Single",
+                    "Paul (Skit)",
+                    "Rain Man",
+                    "Big Weenie",
+                    "Em Calls Paul (Skit)",
+                    "Just Lose It",
+                    "Ass Like That",
+                    "Spend Some Time",
+                    "Mockingbird",
+                    "Crazy in Love",
+                    "One Shot 2 Shot",
+                    "Final Thought (Skit)",
+                    "Encore / Curtains Down"
+                ]
+            },
+    
+            {
+                name: "Relapse",
+                year: 2009,
+                cover: "images/albums/relapse.jpg",
+    
+                theme: {
+                    background: "#D9D2C7",
+                    text: "#171717",
+                    accent: "#8E8173"
+                },
+    
+                tracks: [
+                    "Dr. West (Skit)",
+                    "3 a.m.",
+                    "My Mom",
+                    "Insane",
+                    "Bagpipes from Baghdad",
+                    "Hello",
+                    "Tonya (Skit)",
+                    "Same Song & Dance",
+                    "We Made You",
+                    "Medicine Ball",
+                    "Paul (Skit)",
+                    "Stay Wide Awake",
+                    "Old Time's Sake",
+                    "Must Be the Ganja",
+                    "Mr. Mathers (Skit)",
+                    "Deja Vu",
+                    "Beautiful",
+                    "Crack a Bottle",
+                    "Steve Berman (Skit)",
+                    "Underground"
+                ]
+            },
+    
+            {
+                name: "Recovery",
+                year: 2010,
+                cover: "images/albums/recovery.jpg",
+    
+                theme: {
+                    background: "#202020",
+                    text: "#FFFFFF",
+                    accent: "#E5E5E5"
+                },
+    
+                tracks: [
+                    "Cold Wind Blows",
+                    "Talkin' 2 Myself",
+                    "On Fire",
+                    "Won't Back Down",
+                    "W.T.P.",
+                    "Going Through Changes",
+                    "Not Afraid",
+                    "Seduction",
+                    "No Love",
+                    "Space Bound",
+                    "Cinderella Man",
+                    "25 to Life",
+                    "So Bad",
+                    "Almost Famous",
+                    "Love the Way You Lie",
+                    "You're Never Over",
+                    "Untitled"
+                ]
+            },
+    
+            {
+                name: "The Marshall Mathers LP 2",
+                year: 2013,
+                cover: "images/albums/mmlp2.jpg",
+    
+                theme: {
+                    background: "#6C7477",
+                    text: "#FFFFFF",
+                    accent: "#B7B0A1"
+                },
+    
+                tracks: [
+                    "Bad Guy",
+                    "Parking Lot (Skit)",
+                    "Rhyme or Reason",
+                    "So Much Better",
+                    "Survival",
+                    "Legacy",
+                    "Asshole",
+                    "Berzerk",
+                    "Rap God",
+                    "Brainless",
+                    "Stronger Than I Was",
+                    "The Monster",
+                    "So Far...",
+                    "Love Game",
+                    "Headlights",
+                    "Evil Twin"
+                ]
+            },
+    
+            {
+                name: "Revival",
+                year: 2017,
+                cover: "images/albums/revival.jpg",
+    
+                theme: {
+                    background: "#D7D8D2",
+                    text: "#1A1A1A",
+                    accent: "#B72E35"
+                },
+    
+                tracks: [
+                    "Walk on Water",
+                    "Believe",
+                    "Chloraseptic",
+                    "Untouchable",
+                    "River",
+                    "Remind Me (Intro)",
+                    "Remind Me",
+                    "Revival (Interlude)",
+                    "Like Home",
+                    "Bad Husband",
+                    "Tragic Endings",
+                    "Framed",
+                    "Nowhere Fast",
+                    "Heat",
+                    "Offended",
+                    "Need Me",
+                    "In Your Head",
+                    "Castle",
+                    "Arose"
+                ]
+            },
+    
+            {
+                name: "Kamikaze",
+                year: 2018,
+                cover: "images/albums/kamikaze.jpg",
+    
+                theme: {
+                    background: "#111111",
+                    text: "#FFFFFF",
+                    accent: "#D6D6D6"
+                },
+    
+                tracks: [
+                    "The Ringer",
+                    "Greatest",
+                    "Lucky You",
+                    "Paul (Skit)",
+                    "Normal",
+                    "Em Calls Paul (Skit)",
+                    "Stepping Stone",
+                    "Not Alike",
+                    "Kamikaze",
+                    "Fall",
+                    "Nice Guy",
+                    "Good Guy",
+                    "Venom"
+                ]
+            },
+    
+            {
+                name: "Music to Be Murdered By",
+                year: 2020,
+                cover: "images/albums/mtbmb.jpg",
+    
+                theme: {
+                    background: "#181818",
+                    text: "#FFFFFF",
+                    accent: "#B8A06A"
+                },
+    
+                tracks: [
+                    "Premonition (Intro)",
+                    "Unaccommodating",
+                    "You Gon' Learn",
+                    "Alfred (Interlude)",
+                    "Those Kinda Nights",
+                    "In Too Deep",
+                    "Godzilla",
+                    "Darkness",
+                    "Leaving Heaven",
+                    "Yah Yah",
+                    "Stepdad (Intro)",
+                    "Stepdad",
+                    "Marsh",
+                    "Never Love Again",
+                    "Little Engine",
+                    "Lock It Up",
+                    "Farewell",
+                    "No Regrets",
+                    "I Will",
+                    "Alfred (Outro)"
+                ]
+            },
+    
+            {
+                name: "The Death of Slim Shady (Coup de Grâce)",
+                year: 2024,
+                cover: "images/albums/tdoss.jpg",
+    
+                theme: {
+                    background: "#2B2B2B",
+                    text: "#FFFFFF",
+                    accent: "#B5B5B5"
+                },
+    
+                tracks: [
+                    "Renaissance",
+                    "Habits",
+                    "Trouble",
+                    "Brand New Dance",
+                    "Evil",
+                    "All You Got (Skit)",
+                    "Lucifer",
+                    "Antichrist",
+                    "Fuel",
+                    "Road Rage",
+                    "Houdini",
+                    "Breaking News (Skit)",
+                    "Guilty Conscience 2",
+                    "Head Honcho",
+                    "Temporary",
+                    "Bad One",
+                    "Tobey",
+                    "Guess Who's Back (Skit)",
+                    "Somebody Save Me"
+                ]
+            }
+        ]
     },
     
     // ============================================================
