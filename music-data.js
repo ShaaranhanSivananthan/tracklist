@@ -4396,9 +4396,9 @@ const musicData = [
                 cover: "images/albums/1989.jpg",
     
                 theme: {
-                    background: "#A9D9E5",
-                    text: "#FFFFFF",
-                    accent: "#D59A72"
+                    background: "#C8B89B",
+                    text: "#897284",
+                    accent: "#B4703D"
                 },
     
                 tracks: [
@@ -4455,8 +4455,8 @@ const musicData = [
     
                 theme: {
                     background: "#F3B6D2",
-                    text: "#FFF8FC",
-                    accent: "#8B72B8"
+                    text: "#98BEE6",
+                    accent: "#FBDECC"
                 },
     
                 tracks: [
@@ -4548,7 +4548,7 @@ const musicData = [
                 cover: "images/albums/midnights.jpg",
 
                 theme: {
-                    background: "#25223A",
+                    background: "#91AFBF",
                     text: "#E8E5F2",
                     accent: "#6F6794"
                 },
@@ -4607,9 +4607,9 @@ const musicData = [
                 cover: "images/albums/tloas.jpg",
 
                 theme: {
-                    background: "#D4AF37",
-                    text: "#1A1A1A",
-                    accent: "#B8860B"
+                    background: "#8dd3c6",
+                    text: "#e15921",
+                    accent: "#e98b5b"
                 },
 
                 tracks: [
