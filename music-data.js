@@ -3703,50 +3703,180 @@ const musicData = [
             }
         ]
     },
-        
+    
     // ============================================================
     // Nicki Minaj
     // ============================================================
-
+    
     {
         name: "Nicki Minaj",
         image: "images/artists/nicki.jpg",
-
-        // albums: [
-
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
-
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
-
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+    
+        albums: [
+            {
+                name: "Pink Friday",
+                year: 2010,
+                cover: "images/albums/pf.jpg",
+    
+                theme: {
+                    background: "#D8A8B9",
+                    text: "#FFFFFF",
+                    accent: "#B77D93"
+                },
+    
+                tracks: [
+                    "I'm the Best",
+                    "Roman's Revenge",
+                    "Did It On'em",
+                    "Right Thru Me",
+                    "Fly",
+                    "Save Me",
+                    "Moment 4 Life",
+                    "Check It Out",
+                    "Blazin",
+                    "Here I Am",
+                    "Dear Old Nicki",
+                    "Your Love",
+                    "Last Chance"
+                ]
+            },
+    
+            {
+                name: "Pink Friday: Roman Reloaded",
+                year: 2012,
+                cover: "images/albums/pfrr.jpg",
+    
+                theme: {
+                    background: "#F3E3E0",
+                    text: "#6B4B59",
+                    accent: "#E45B91"
+                },
+    
+                tracks: [
+                    "Roman Holiday",
+                    "Come on a Cone",
+                    "I Am Your Leader",
+                    "Beez in the Trap",
+                    "HOV Lane",
+                    "Roman Reloaded",
+                    "Champion",
+                    "Right by My Side",
+                    "Sex in the Lounge",
+                    "Starships",
+                    "Pound the Alarm",
+                    "Whip It",
+                    "Automatic",
+                    "Beautiful Sinner",
+                    "Marilyn Monroe",
+                    "Young Forever",
+                    "Fire Burns",
+                    "Gun Shot",
+                    "Stupid Hoe"
+                ]
+            },
+    
+            {
+                name: "The Pinkprint",
+                year: 2014,
+                cover: "images/albums/pp.jpg",
+    
+                theme: {
+                    background: "#FAFAF7",
+                    text: "#B42A83",
+                    accent: "#D62E9B"
+                },
+    
+                tracks: [
+                    "All Things Go",
+                    "I Lied",
+                    "The Crying Game",
+                    "Get on Your Knees",
+                    "Feeling Myself",
+                    "Only",
+                    "Want Some More",
+                    "Four Door Aventador",
+                    "Favorite",
+                    "Buy a Heart",
+                    "Trini Dem Girls",
+                    "Anaconda",
+                    "The Night Is Still Young",
+                    "Pills N Potions",
+                    "Bed of Lies",
+                    "Grand Piano"
+                ]
+            },
+    
+            {
+                name: "Queen",
+                year: 2018,
+                cover: "images/albums/queen.jpg",
+    
+                theme: {
+                    background: "#F04A18",
+                    text: "#F6D26A",
+                    accent: "#4D8077"
+                },
+    
+                tracks: [
+                    "Ganja Burns",
+                    "Majesty",
+                    "Barbie Dreams",
+                    "Rich Sex",
+                    "Hard White",
+                    "Bed",
+                    "Thought I Knew You",
+                    "Run & Hide",
+                    "Chun Swae",
+                    "Chun-Li",
+                    "LLC",
+                    "Good Form",
+                    "Nip Tuck",
+                    "2 Lit 2 Late Interlude",
+                    "Come See About Me",
+                    "Sir",
+                    "Miami",
+                    "Coco Chanel",
+                    "Inspirations Outro"
+                ]
+            },
+    
+            {
+                name: "Pink Friday 2",
+                year: 2023,
+                cover: "images/albums/pf2.jpg",
+    
+                theme: {
+                    background: "#E7A8C8",
+                    text: "#FFFFFF",
+                    accent: "#4D8CB5"
+                },
+    
+                tracks: [
+                    "Are You Gone Already",
+                    "Barbie Dangerous",
+                    "FTCU",
+                    "Beep Beep",
+                    "Fallin 4 U",
+                    "Let Me Calm Down",
+                    "RNB",
+                    "Pink Birthday",
+                    "Needle",
+                    "Cowgirl",
+                    "Everybody",
+                    "Big Difference",
+                    "Red Ruby Da Sleeze",
+                    "Forward From Trini",
+                    "Pink Friday Girls",
+                    "Super Freaky Girl",
+                    "Bahm Bahm",
+                    "My Life",
+                    "Nicki Hendrix",
+                    "Blessings",
+                    "Last Time I Saw You",
+                    "Just the Memories"
+                ]
+            }
+        ]
     },
 
     // ============================================================
