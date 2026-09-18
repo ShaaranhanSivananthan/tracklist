@@ -604,11 +604,195 @@ const musicData = [
                     "Got to Get You into My Life",
                     "Tomorrow Never Knows"
                 ]
+            },
+
+            {
+                name: "Sgt. Pepper's Lonely Hearts Club Band",
+                year: 1967,
+                cover: "images/albums/sgt.jpg",
+    
+                theme: {
+                    background: "#d32f2f",
+                    text: "#fff8e1",
+                    accent: "#fbc02d"
+                },
+    
+                tracks: [
+                    "Sgt. Pepper's Lonely Hearts Club Band",
+                    "With Help From My Friends",
+                    "Lucy in the Sky with Diamonds",
+                    "Getting Better",
+                    "Fixing a Hole",
+                    "She's Leaving Home",
+                    "Being for the Benefit of Mr. Kite!",
+                    "Within You Without You",
+                    "When I'm Sixty-Four",
+                    "Lovely Rita",
+                    "Good Morning Good Morning",
+                    "Sgt. Pepper's Lonely Hearts Club Band (Reprise)",
+                    "A Day in the Life"
+                ]
+            },
+    
+            {
+                name: "Magical Mystery Tour",
+                year: 1967,
+                cover: "images/albums/mmt.jpg",
+    
+                theme: {
+                    background: "#0288d1",
+                    text: "#ffffff",
+                    accent: "#e91e63"
+                },
+    
+                tracks: [
+                    "Magical Mystery Tour",
+                    "The Fool on the Hill",
+                    "Flying",
+                    "Blue Jay Way",
+                    "Your Mother Should Know",
+                    "I Am the Walrus",
+                    "Hello, Goodbye",
+                    "Strawberry Fields Forever",
+                    "Penny Lane",
+                    "Baby, You're a Rich Man",
+                    "All You Need Is Love"
+                ]
+            },
+    
+            {
+                name: "The Beatles (The White Album)",
+                year: 1968,
+                cover: "images/albums/wa.jpg",
+    
+                theme: {
+                    background: "#f5f5f5",
+                    text: "#111111",
+                    accent: "#cccccc"
+                },
+    
+                tracks: [
+                    "Back in the U.S.S.R.",
+                    "Dear Prudence",
+                    "Glass Onion",
+                    "Ob-La-Di, Ob-La-Da",
+                    "Wild Honey Pie",
+                    "The Continuing Story of Bungalow Bill",
+                    "While My Guitar Gently Weeps",
+                    "Happiness Is a Warm Gun",
+                    "Martha My Dear",
+                    "I'm So Tired",
+                    "Blackbird",
+                    "Piggies",
+                    "Rocky Raccoon",
+                    "Don't Pass Me By",
+                    "Why Don't We Do It in the Road?",
+                    "I Will",
+                    "Julia",
+                    "Birthday",
+                    "Yer Blues",
+                    "Mother Nature's Son",
+                    "Everybody's Got Something to Hide Except Me and My Monkey",
+                    "Sexy Sadie",
+                    "Helter Skelter",
+                    "Long, Long, Long",
+                    "Revolution 1",
+                    "Honey Pie",
+                    "Savoy Truffle",
+                    "Cry Baby Cry",
+                    "Revolution 9",
+                    "Good Night"
+                ]
+            }
+
+            {
+                name: "Yellow Submarine",
+                year: 1969,
+                cover: "images/albums/ys.jpg",
+            
+                theme: {
+                    background: "#ffd700",
+                    text: "#1a1a1a",
+                    accent: "#ff4500"
+                },
+            
+                tracks: [
+                    "Yellow Submarine",
+                    "Only a Northern Song",
+                    "All Together Now",
+                    "Hey Bulldog",
+                    "It's All Too Much",
+                    "All You Need Is Love",
+                    "Pepperland",
+                    "Sea of Time",
+                    "Sea of Holes",
+                    "Sea of Monsters",
+                    "March of the Meanies",
+                    "Pepperland Laid Waste",
+                    "Yellow Submarine in Pepperland"
+                ]
+            },
+
+            {
+                name: "Abbey Road",
+                year: 1969,
+                cover: "images/albums/ar.jpg",
+            
+                theme: {
+                    background: "#2b4c3f",
+                    text: "#f0ece1",
+                    accent: "#8c6d46"
+                },
+            
+                tracks: [
+                    "Come Together",
+                    "Something",
+                    "Maxwell's Silver Hammer",
+                    "Oh! Darling",
+                    "Octopus's Garden",
+                    "I Want You (She's So Heavy)",
+                    "Here Comes the Sun",
+                    "Because",
+                    "You Never Give Me Your Money",
+                    "Sun King",
+                    "Mean Mr. Mustard",
+                    "Polythene Pam",
+                    "She Came In Through the Bathroom Window",
+                    "Golden Slumbers",
+                    "Carry That Weight",
+                    "The End",
+                    "Her Majesty"
+                ]
+            },
+
+            {
+                name: "Let It Be",
+                year: 1970,
+                cover: "images/albums/lib.jpg",
+            
+                theme: {
+                    background: "#141414",
+                    text: "#ffffff",
+                    accent: "#cc0000"
+                },
+            
+                tracks: [
+                    "Two of Us",
+                    "Dig a Pony",
+                    "Across the Universe",
+                    "I Me Mine",
+                    "Dig It",
+                    "Let It Be",
+                    "Maggie Mae",
+                    "I've Got a Feeling",
+                    "One After 909",
+                    "The Long and Winding Road",
+                    "For You Blue",
+                    "Get Back"
+                ]
             }
         ]
     },
-
-
     
     // ============================================================
     // Beyonce
