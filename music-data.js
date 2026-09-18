@@ -840,9 +840,9 @@ const musicData = [
                 cover: "images/albums/bday.jpg",
             
                 theme: {
-                    background: "#312a24",
-                    text: "#f0e6d2",
-                    accent: "#d4af37"
+                    background: "#4D804E",
+                    text: "#9DEEE0",
+                    accent: "#DD81B0"
                 },
             
                 tracks: [
@@ -919,8 +919,8 @@ const musicData = [
             
                 theme: {
                     background: "#0a0a0a",
-                    text: "#e81a70",
-                    accent: "#ffffff"
+                    text: "#DBB1C7",
+                    accent: "#5F5057"
                 },
             
                 tracks: [
@@ -947,9 +947,9 @@ const musicData = [
                 cover: "images/albums/lemonade.jpg",
             
                 theme: {
-                    background: "#e6ad00",
-                    text: "#121212",
-                    accent: "#ffffff"
+                    background: "#648E84",
+                    text: "#121616",
+                    accent: "#25362E"
                 },
             
                 tracks: [
