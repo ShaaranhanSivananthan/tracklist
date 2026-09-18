@@ -1866,9 +1866,9 @@ const musicData = [
                 cover: "images/albums/sslp.jpg",
     
                 theme: {
-                    background: "#A7B8B4",
-                    text: "#111111",
-                    accent: "#D7D8C8"
+                    background: "#BFB8CD",
+                    text: "#C87437",
+                    accent: "#24546C"
                 },
     
                 tracks: [
@@ -1934,9 +1934,9 @@ const musicData = [
                 cover: "images/albums/tes.jpg",
     
                 theme: {
-                    background: "#B8A58B",
-                    text: "#171717",
-                    accent: "#6E6254"
+                    background: "#D5B8A8",
+                    text: "#9C2B24",
+                    accent: "#6C1C1C"
                 },
     
                 tracks: [
