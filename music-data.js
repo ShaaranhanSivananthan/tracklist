@@ -2737,9 +2737,9 @@ const musicData = [
                 cover: "images/albums/myworld.jpg",
     
                 theme: {
-                    background: "#D7D7D7",
-                    text: "#171717",
-                    accent: "#8C8C8C"
+                    background: "#B89576",
+                    text: "#C54631",
+                    accent: "#692012"
                 },
     
                 tracks: [
@@ -2759,9 +2759,9 @@ const musicData = [
                 cover: "images/albums/myworld2.jpg",
     
                 theme: {
-                    background: "#A9B7C6",
-                    text: "#FFFFFF",
-                    accent: "#D7E0E8"
+                    background: "#BCB4BC",
+                    text: "#5c2d83",
+                    accent: "#542A71"
                 },
     
                 tracks: [
@@ -2784,9 +2784,9 @@ const musicData = [
                 cover: "images/albums/believe.jpg",
     
                 theme: {
-                    background: "#B5B5B5",
-                    text: "#171717",
-                    accent: "#6A6A6A"
+                    background: "#b3afa5",
+                    text: "#D9B83C",
+                    accent: "#9C5C24"
                 },
     
                 tracks: [
@@ -2812,9 +2812,9 @@ const musicData = [
                 cover: "images/albums/journals.jpg",
     
                 theme: {
-                    background: "#151515",
-                    text: "#FFFFFF",
-                    accent: "#B89B72"
+                    background: "#FFFFFF",
+                    text: "#C037B0",
+                    accent: "#DCC0D9"
                 },
     
                 tracks: [
@@ -2842,9 +2842,9 @@ const musicData = [
                 cover: "images/albums/purpose.jpg",
     
                 theme: {
-                    background: "#D9D4C8",
-                    text: "#171717",
-                    accent: "#A8A093"
+                    background: "#BBB9B9",
+                    text: "#BFBF3F",
+                    accent: "#0C0C04"
                 },
     
                 tracks: [
@@ -2870,9 +2870,9 @@ const musicData = [
                 cover: "images/albums/changes.jpg",
     
                 theme: {
-                    background: "#E7E0D7",
-                    text: "#171717",
-                    accent: "#A88C78"
+                    background: "#8B200D",
+                    text: "#F49C8C",
+                    accent: "#EC4434"
                 },
     
                 tracks: [
@@ -2901,9 +2901,9 @@ const musicData = [
                 cover: "images/albums/justice.jpg",
     
                 theme: {
-                    background: "#E9E5DD",
-                    text: "#171717",
-                    accent: "#C9A24E"
+                    background: "#8FC58D",
+                    text: "#17F3EC",
+                    accent: "#148C92"
                 },
     
                 tracks: [
@@ -2932,9 +2932,9 @@ const musicData = [
                 cover: "images/albums/freedom.jpg",
     
                 theme: {
-                    background: "#D8C7A8",
-                    text: "#171717",
-                    accent: "#6E5940"
+                    background: "#BCBCBC",
+                    text: "#424242",
+                    accent: "#7F7F7F"
                 },
     
                 tracks: [
@@ -2953,9 +2953,9 @@ const musicData = [
                 cover: "images/albums/swag.jpg",
     
                 theme: {
-                    background: "#E6DED1",
-                    text: "#171717",
-                    accent: "#9A8268"
+                    background: "#0C0C04",
+                    text: "#BBB9B9",
+                    accent: "#787777"
                 },
     
                 tracks: [
@@ -2989,7 +2989,7 @@ const musicData = [
                 cover: "images/albums/swag2.jpg",
     
                 theme: {
-                    background: "#C9D1D4",
+                    background: "#F49C8C",
                     text: "#171717",
                     accent: "#71838A"
                 },
