@@ -4858,65 +4858,66 @@ const musicData = [
         image: "images/artists/tyler.jpg",
     
         albums: [
-            {
-                name: "Bastard",
-                year: 2009,
-                cover: "images/albums/bastard.jpg",
-    
-                theme: {
-                    background: "#111111",
-                    text: "#F2F2F2",
-                    accent: "#C62828"
-                },
-    
-                tracks: [
-                    "Bastard",
-                    "Seven",
-                    "Odd Toddlers",
-                    "French!",
-                    "Blow",
-                    "Pigs Fly",
-                    "Parade",
-                    "Slow It Down",
-                    "AssMilk",
-                    "VCR / Wheels",
-                    "Session",
-                    "Sarah",
-                    "Jack and the Beanstalk",
-                    "Tina",
-                    "Inglorious".
-                ]
-            }
-    
+            
             // {
-            //     name: "Goblin",
-            //     year: 2011,
-            //     cover: "images/albums/goblin.jpg",
+            //     name: "Bastard",
+            //     year: 2009,
+            //     cover: "images/albums/bastard.jpg",
     
             //     theme: {
-            //         background: "#4A4A4A",
-            //         text: "#E8E8E8",
-            //         accent: "#A52A2A"
+            //         background: "#111111",
+            //         text: "#F2F2F2",
+            //         accent: "#C62828"
             //     },
     
             //     tracks: [
-            //         "Goblin",
-            //         "Yonkers",
-            //         "Radicals",
-            //         "She",
-            //         "Transylvania",
-            //         "Nightmare",
-            //         "Tron Cat",
-            //         "Her",
-            //         "Sandwitches",
-            //         "Fish",
-            //         "Analog",
-            //         "Bitch Suck Dick",
-            //         "Window",
-            //         "Au79",
-            //         "Golden"
+            //         "Bastard",
+            //         "Seven",
+            //         "Odd Toddlers",
+            //         "French!",
+            //         "Blow",
+            //         "Pigs Fly",
+            //         "Parade",
+            //         "Slow It Down",
+            //         "AssMilk",
+            //         "VCR / Wheels",
+            //         "Session",
+            //         "Sarah",
+            //         "Jack and the Beanstalk",
+            //         "Tina",
+            //         "Inglorious".
             //     ]
-            // },
+            // }
+    
+            {
+                name: "Goblin",
+                year: 2011,
+                cover: "images/albums/goblin.jpg",
+    
+                theme: {
+                    background: "#4A4A4A",
+                    text: "#E8E8E8",
+                    accent: "#A52A2A"
+                },
+    
+                tracks: [
+                    "Goblin",
+                    "Yonkers",
+                    "Radicals",
+                    "She",
+                    "Transylvania",
+                    "Nightmare",
+                    "Tron Cat",
+                    "Her",
+                    "Sandwitches",
+                    "Fish",
+                    "Analog",
+                    "Bitch Suck Dick",
+                    "Window",
+                    "Au79",
+                    "Golden"
+                ]
+            }
     
             // {
             //     name: "Wolf",
