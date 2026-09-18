@@ -1867,8 +1867,8 @@ const musicData = [
     
                 theme: {
                     background: "#BFB8CD",
-                    text: "#C87437",
-                    accent: "#24546C"
+                    text: "#24546C",
+                    accent: "#C87437"
                 },
     
                 tracks: [
@@ -1969,9 +1969,9 @@ const musicData = [
                 cover: "images/albums/encore.jpg",
     
                 theme: {
-                    background: "#171717",
-                    text: "#FFFFFF",
-                    accent: "#D7C9A5"
+                    background: "#79A1B2",
+                    text: "#114774",
+                    accent: "#9C3052"
                 },
     
                 tracks: [
@@ -2004,9 +2004,9 @@ const musicData = [
                 cover: "images/albums/relapse.jpg",
     
                 theme: {
-                    background: "#D9D2C7",
-                    text: "#171717",
-                    accent: "#8E8173"
+                    background: "#5E1817",
+                    text: "#ECD791",
+                    accent: "#B56C24"
                 },
     
                 tracks: [
@@ -2039,9 +2039,9 @@ const musicData = [
                 cover: "images/albums/recovery.jpg",
     
                 theme: {
-                    background: "#202020",
-                    text: "#FFFFFF",
-                    accent: "#E5E5E5"
+                    background: "#ACBCCD",
+                    text: "#BF2B3A",
+                    accent: "#4C3424"
                 },
     
                 tracks: [
@@ -2136,9 +2136,9 @@ const musicData = [
                 cover: "images/albums/kamikaze.jpg",
     
                 theme: {
-                    background: "#111111",
-                    text: "#FFFFFF",
-                    accent: "#D6D6D6"
+                    background: "#DCD2BB",
+                    text: "#684E1B",
+                    accent: "#807B75"
                 },
     
                 tracks: [
@@ -2164,9 +2164,9 @@ const musicData = [
                 cover: "images/albums/mtbmb.jpg",
     
                 theme: {
-                    background: "#181818",
-                    text: "#FFFFFF",
-                    accent: "#B8A06A"
+                    background: "#8D0B1C",
+                    text: "#A29482",
+                    accent: "#F48492"
                 },
     
                 tracks: [
