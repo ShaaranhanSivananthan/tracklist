@@ -4041,46 +4041,230 @@ const musicData = [
     // ============================================================
     // Rihanna
     // ============================================================
-
+    
     {
         name: "Rihanna",
         image: "images/artists/rihanna.jpg",
 
-        // albums: [
-
-        //     {
-        //         name: "",
-        //         year: ,
-        //         cover: "images/albums/.jpg",
-
-        //         theme: {
-        //             background: "#1B1B1B",
-        //             text: "#E1E1E1",
-        //             accent: "#9B9B9B"
-        //         },
-
-        //         tracks: [
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             "",
-        //             ""
-        //         ]
-        //     }
-        // ]
+        albums: [
+            {
+                name: "Music of the Sun",
+                year: 2005,
+                cover: "images/albums/mots.jpg",
+        
+                theme: {
+                    background: "#B77A45",
+                    text: "#FFF0C2",
+                    accent: "#E7B84B"
+                },
+        
+                tracks: [
+                    "Pon de Replay",
+                    "Here I Go Again",
+                    "If It's Lovin' That You Want",
+                    "You Don't Love Me (No, No, No)",
+                    "That La, La, La",
+                    "Last Time",
+                    "Willing to Wait",
+                    "Music of the Sun",
+                    "Let Me",
+                    "Rush",
+                    "There's a Thug in My Life",
+                    "Now I Know"
+                ]
+            },
+        
+            {
+                name: "A Girl Like Me",
+                year: 2006,
+                cover: "images/albums/aglm.jpg",
+        
+                theme: {
+                    background: "#667D86",
+                    text: "#F1E6D4",
+                    accent: "#C98F88"
+                },
+        
+                tracks: [
+                    "SOS",
+                    "Kisses Don't Lie",
+                    "Unfaithful",
+                    "We Ride",
+                    "Dem Haters",
+                    "Final Goodbye",
+                    "Break It Off",
+                    "Crazy Little Thing Called Love",
+                    "Selfish Girl",
+                    "P.S. (I'm Still Not Over You)",
+                    "A Girl Like Me",
+                    "A Million Miles Away"
+                ]
+            },
+        
+            {
+                name: "Good Girl Gone Bad",
+                year: 2007,
+                cover: "images/albums/gggb.jpg",
+        
+                theme: {
+                    background: "#111315",
+                    text: "#E5E5E5",
+                    accent: "#3A9AA0"
+                },
+        
+                tracks: [
+                    "Umbrella",
+                    "Push Up on Me",
+                    "Don't Stop the Music",
+                    "Breakin' Dishes",
+                    "Shut Up and Drive",
+                    "Hate That I Love You",
+                    "Say It",
+                    "Sell Me Candy",
+                    "Lemme Get That",
+                    "Rehab",
+                    "Question Existing",
+                    "Good Girl Gone Bad"
+                ]
+            },
+        
+            {
+                name: "Rated R",
+                year: 2009,
+                cover: "images/albums/ratedr.jpg",
+        
+                theme: {
+                    background: "#171717",
+                    text: "#D8D8D8",
+                    accent: "#737373"
+                },
+        
+                tracks: [
+                    "Mad House",
+                    "Wait Your Turn",
+                    "Hard",
+                    "Stupid in Love",
+                    "Rockstar 101",
+                    "Russian Roulette",
+                    "Fire Bomb",
+                    "Rude Boy",
+                    "Photographs",
+                    "G4L",
+                    "Te Amo",
+                    "Cold Case Love",
+                    "The Last Song"
+                ]
+            },
+        
+            {
+                name: "Loud",
+                year: 2010,
+                cover: "images/albums/loud.jpg",
+        
+                theme: {
+                    background: "#E94E72",
+                    text: "#FFF7F5",
+                    accent: "#C92F52"
+                },
+        
+                tracks: [
+                    "S&M",
+                    "What's My Name?",
+                    "Cheers (Drink to That)",
+                    "Fading",
+                    "Only Girl (In the World)",
+                    "California King Bed",
+                    "Man Down",
+                    "Raining Men",
+                    "Complicated",
+                    "Skin",
+                    "Love the Way You Lie, Pt. 2"
+                ]
+            },
+        
+            {
+                name: "Talk That Talk",
+                year: 2011,
+                cover: "images/albums/ttt.jpg",
+        
+                theme: {
+                    background: "#111111",
+                    text: "#E9E9E9",
+                    accent: "#858585"
+                },
+        
+                tracks: [
+                    "You Da One",
+                    "Where Have You Been",
+                    "We Found Love",
+                    "Talk That Talk",
+                    "Cockiness (Love It)",
+                    "Birthday Cake",
+                    "We All Want Love",
+                    "Drunk on Love",
+                    "Roc Me Out",
+                    "Watch n' Learn",
+                    "Farewell"
+                ]
+            },
+        
+            {
+                name: "Unapologetic",
+                year: 2012,
+                cover: "images/albums/unapologetic.jpg",
+        
+                theme: {
+                    background: "#9A4F22",
+                    text: "#F5E9D0",
+                    accent: "#D49A48"
+                },
+        
+                tracks: [
+                    "Phresh Out the Runway",
+                    "Diamonds",
+                    "Numb",
+                    "Pour It Up",
+                    "Loveeeeeee Song",
+                    "Jump",
+                    "Right Now",
+                    "What Now",
+                    "Stay",
+                    "Nobody's Business",
+                    "Love Without Tragedy / Mother Mary",
+                    "Get It Over With",
+                    "No Love Allowed",
+                    "Lost in Paradise"
+                ]
+            },
+        
+            {
+                name: "Anti",
+                year: 2016,
+                cover: "images/albums/anti.jpg",
+        
+                theme: {
+                    background: "#D8C8A8",
+                    text: "#171717",
+                    accent: "#A83232"
+                },
+        
+                tracks: [
+                    "Consideration",
+                    "James Joint",
+                    "Kiss It Better",
+                    "Work",
+                    "Desperado",
+                    "Woo",
+                    "Needed Me",
+                    "Yeah, I Said It",
+                    "Same Ol' Mistakes",
+                    "Never Ending",
+                    "Love on the Brain",
+                    "Higher",
+                    "Close to You"
+                ]
+            }
+        ]
     },
         
     // ============================================================
