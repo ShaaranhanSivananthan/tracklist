@@ -4703,7 +4703,7 @@ const musicData = [
                 theme: {
                     background: "#7F5E46",
                     text: "#F5F2E8",
-                    accent: "#8B6B45"
+                    accent: "#808080"
                 },
     
                 tracks: [
