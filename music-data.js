@@ -3999,6 +3999,98 @@ const musicData = [
     },
 
     // ============================================================
+    // Olivia Rodrigo
+    // ============================================================
+    
+    {
+        name: "Olivia Rodrigo",
+        image: "images/artists/olivia.jpg",
+    
+        albums: [
+            {
+                name: "Sour",
+                year: 2021,
+                cover: "images/albums/sour.jpg",
+    
+                theme: {
+                    background: "#8B4AA8",
+                    text: "#F4EAF7",
+                    accent: "#C58AD8"
+                },
+    
+                tracks: [
+                    "Brutal",
+                    "Traitor",
+                    "Drivers License",
+                    "1 Step Forward, 3 Steps Back",
+                    "Deja Vu",
+                    "Good 4 U",
+                    "Enough for You",
+                    "Happier",
+                    "Jealousy, Jealousy",
+                    "Favorite Crime",
+                    "Hope Ur Ok"
+                ]
+            },
+    
+            {
+                name: "Guts",
+                year: 2023,
+                cover: "images/albums/guts.jpg",
+    
+                theme: {
+                    background: "#5B287A",
+                    text: "#F3E7F5",
+                    accent: "#A9A0D8"
+                },
+    
+                tracks: [
+                    "All-American Bitch",
+                    "Bad Idea Right?",
+                    "Vampire",
+                    "Lacy",
+                    "Ballad of a Homeschooled Girl",
+                    "Making the Bed",
+                    "Logical",
+                    "Get Him Back!",
+                    "Love Is Embarrassing",
+                    "The Grudge",
+                    "Pretty Isn't Pretty",
+                    "Teenage Dream"
+                ]
+            },
+    
+            {
+                name: "You Seem Pretty Sad for a Girl in Love",
+                year: 2026,
+                cover: "images/albums/yspfsagil.jpg",
+    
+                theme: {
+                    background: "#8197A5",
+                    text: "#F1E7E0",
+                    accent: "#C79A9A"
+                },
+    
+                tracks: [
+                    "Drop Dead",
+                    "Stupid Song",
+                    "Honeybee",
+                    "Maggots for Brains",
+                    "U + Me = <3",
+                    "My Way",
+                    "Purple",
+                    "The Cure",
+                    "Begged",
+                    "What's Wrong with Me",
+                    "Less",
+                    "Expectations",
+                    "Cigarette Smoke"
+                ]
+            }
+        ]
+    },
+
+    // ============================================================
     // Playboi Carti
     // ============================================================
     
