@@ -1067,6 +1067,125 @@ const musicData = [
 
         ]
     },
+
+    // ============================================================
+    // Billie Eilish
+    // ============================================================
+    
+    {
+        name: "Billie Eilish",
+        image: "images/artists/billie.jpg",
+    
+        albums: [
+            {
+                name: "Don't Smile at Me",
+                year: 2017,
+                cover: "images/albums/dmam.jpg",
+    
+                theme: {
+                    background: "#3A4650",
+                    text: "#F1F0EB",
+                    accent: "#8A9BA8"
+                },
+    
+                tracks: [
+                    "Copycat",
+                    "Idontwannabeyouanymore",
+                    "My Boy",
+                    "Watch",
+                    "Party Favor",
+                    "Bellyache",
+                    "Ocean Eyes",
+                    "Hostage"
+                ]
+            },
+    
+            {
+                name: "When We All Fall Asleep, Where Do We Go?",
+                year: 2019,
+                cover: "images/albums/wwafawdwg.jpg",
+    
+                theme: {
+                    background: "#DCE7E8",
+                    text: "#171B1C",
+                    accent: "#5A8E9D"
+                },
+    
+                tracks: [
+                    "!!!!!!!",
+                    "Bad Guy",
+                    "Xanny",
+                    "You Should See Me in a Crown",
+                    "All the Good Girls Go to Hell",
+                    "Wish You Were Gay",
+                    "When the Party's Over",
+                    "8",
+                    "My Strange Addiction",
+                    "Bury a Friend",
+                    "Ilomilo",
+                    "Listen Before I Go",
+                    "I Love You",
+                    "Goodbye"
+                ]
+            },
+    
+            {
+                name: "Happier Than Ever",
+                year: 2021,
+                cover: "images/albums/hte.jpg",
+    
+                theme: {
+                    background: "#D8C7A3",
+                    text: "#2C2923",
+                    accent: "#EEE9D9"
+                },
+    
+                tracks: [
+                    "Getting older",
+                    "I Didn't Change My Number",
+                    "Billie Bossa Nova",
+                    "My Future",
+                    "Oxytocin",
+                    "Goldwing",
+                    "Lost Cause",
+                    "Halley's Comet",
+                    "Not My Responsibility",
+                    "Overheated",
+                    "Everybody Dies",
+                    "Your Power",
+                    "NDA",
+                    "Therefore I Am",
+                    "Happier Than Ever",
+                    "Male Fantasy"
+                ]
+            },
+    
+            {
+                name: "Hit Me Hard and Soft",
+                year: 2024,
+                cover: "images/albums/hmhass.jpg",
+    
+                theme: {
+                    background: "#426D78",
+                    text: "#E7E4DC",
+                    accent: "#173C49"
+                },
+    
+                tracks: [
+                    "Skinny",
+                    "Lunch",
+                    "Chihiro",
+                    "Birds of a feather",
+                    "Wildflower",
+                    "The Greatest",
+                    "L'Amour de Ma Vie",
+                    "The Diner",
+                    "Bittersuite",
+                    "Blue"
+                ]
+            }
+        ]
+    },
     
     // ============================================================
     // Drake
