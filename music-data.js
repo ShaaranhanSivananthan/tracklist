@@ -1083,8 +1083,8 @@ const musicData = [
                 cover: "images/albums/dmam.jpg",
     
                 theme: {
-                    background: "#3A4650",
-                    text: "#F1F0EB",
+                    background: "#efd88b",
+                    text: "#b92a30",
                     accent: "#8A9BA8"
                 },
     
