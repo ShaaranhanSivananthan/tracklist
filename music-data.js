@@ -1460,7 +1460,7 @@ const musicData = [
                 cover: "images/albums/arirang.jpg",
     
                 theme: {
-                    background: "#D9C5A1",
+                    background: "#707070",
                     text: "#171717",
                     accent: "#8A3B2E"
                 },
