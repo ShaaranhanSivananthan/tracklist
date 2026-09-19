@@ -1221,7 +1221,7 @@ const musicData = [
                 cover: "images/albums/killthislove.jpg",
     
                 theme: {
-                    background: "#111111",
+                    background: "#F5A6C8",
                     text: "#F2F2F2",
                     accent: "#D71920"
                 },
@@ -1241,8 +1241,8 @@ const musicData = [
                 cover: "images/albums/thealbum.jpg",
     
                 theme: {
-                    background: "#F4A8C4",
-                    text: "#171717",
+                    background: "#111111",
+                    text: "#F5A6C8",
                     accent: "#E62A72"
                 },
     
@@ -1264,8 +1264,8 @@ const musicData = [
                 cover: "images/albums/bornpink.jpg",
     
                 theme: {
-                    background: "#F4B5CF",
-                    text: "#111111",
+                    background: "#F2F2F2",
+                    text: "#F5A6C8",
                     accent: "#E91E63"
                 },
     
@@ -1288,7 +1288,7 @@ const musicData = [
     
                 theme: {
                     background: "#111111",
-                    text: "#F3F3F3",
+                    text: "#F5A6C8",
                     accent: "#FF2A68"
                 },
     
