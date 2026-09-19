@@ -4593,6 +4593,198 @@ const musicData = [
             }
         ]
     },
+    
+    // ============================================================
+    // Sabrina Carpenter
+    // ============================================================
+    
+    {
+        name: "Sabrina Carpenter",
+        image: "images/artists/sabrina.jpg",
+    
+        albums: [
+            {
+                name: "Eyes Wide Open",
+                year: 2015,
+                cover: "images/albums/eyeswideopen.jpg",
+    
+                theme: {
+                    background: "#DCEAF0",
+                    text: "#5B7C87",
+                    accent: "#D88A4A"
+                },
+    
+                tracks: [
+                    "Eyes Wide Open",
+                    "Can't Blame A Girl For Trying",
+                    "The Middle Of Starting Over",
+                    "We'll Be The Stars",
+                    "Two Young Hearts",
+                    "Your Love's Like",
+                    "Too Young",
+                    "Seamless",
+                    "Right Now",
+                    "Darling I'm A Mess",
+                    "White Flag",
+                    "Best Thing I Got"
+                ]
+            },
+    
+            {
+                name: "Evolution",
+                year: 2016,
+                cover: "images/albums/evolution.jpg",
+    
+                theme: {
+                    background: "#A8532F",
+                    text: "#F5E4D3",
+                    accent: "#E9792F"
+                },
+    
+                tracks: [
+                    "On Purpose",
+                    "Feels Like Loneliness",
+                    "Thumbs",
+                    "No Words",
+                    "Run And Hide",
+                    "Mirage",
+                    "Don't Want It Back",
+                    "Shadows",
+                    "Space",
+                    "All We Have Is Love"
+                ]
+            },
+    
+            {
+                name: "Singular Act I",
+                year: 2018,
+                cover: "images/albums/singularact1.jpg",
+    
+                theme: {
+                    background: "#111615",
+                    text: "#F1EBDD",
+                    accent: "#9BAF9E"
+                },
+    
+                tracks: [
+                    "Almost Love",
+                    "Paris",
+                    "Hold Tight",
+                    "Sue Me",
+                    "Prfct",
+                    "Bad Time",
+                    "Mona Lisa",
+                    "Diamonds Are Forever"
+                ]
+            },
+    
+            {
+                name: "Singular Act II",
+                year: 2019,
+                cover: "images/albums/singularact2.jpg",
+    
+                theme: {
+                    background: "#3D3029",
+                    text: "#F2EDE3",
+                    accent: "#A77B5D"
+                },
+    
+                tracks: [
+                    "In My Bed",
+                    "Pushing 20",
+                    "I Can't Stop Me",
+                    "I'm Fakin",
+                    "Take Off All Your Cool",
+                    "Tell Em",
+                    "Exhale",
+                    "Take You Back",
+                    "Looking At Me"
+                ]
+            },
+    
+            {
+                name: "Emails I Can't Send",
+                year: 2022,
+                cover: "images/albums/emails.jpg",
+    
+                theme: {
+                    background: "#E7D0A9",
+                    text: "#111111",
+                    accent: "#287C88"
+                },
+    
+                tracks: [
+                    "Emails I Can't Send",
+                    "Vicious",
+                    "Read Your Mind",
+                    "Tornado Warnings",
+                    "Because I Liked A Boy",
+                    "Already Over",
+                    "How Many Things",
+                    "Bet U Wanna",
+                    "Nonsense",
+                    "Fast Times",
+                    "Skinny Dipping",
+                    "Bad For Business",
+                    "Decode"
+                ]
+            },
+    
+            {
+                name: "Short N' Sweet",
+                year: 2024,
+                cover: "images/albums/shortnsweet.jpg",
+    
+                theme: {
+                    background: "#2858A4",
+                    text: "#F4E8D2",
+                    accent: "#9D1E22"
+                },
+    
+                tracks: [
+                    "Taste",
+                    "Please Please Please",
+                    "Good Graces",
+                    "Sharpest Tool",
+                    "Coincidence",
+                    "Bed Chem",
+                    "Espresso",
+                    "Dumb & Poetic",
+                    "Slim Pickins",
+                    "Juno",
+                    "Lie To Girls",
+                    "Don't Smile"
+                ]
+            },
+    
+            {
+                name: "Man's Best Friend",
+                year: 2025,
+                cover: "images/albums/mansbestfriend.jpg",
+    
+                theme: {
+                    background: "#050505",
+                    text: "#F5F5F2",
+                    accent: "#D9B77A"
+                },
+    
+                tracks: [
+                    "Manchild",
+                    "Tears",
+                    "My Man On Willpower",
+                    "Sugar Talking",
+                    "We Almost Broke Up Again Last Night",
+                    "Nobody's Son",
+                    "Never Getting Laid",
+                    "When Did You Get Hot?",
+                    "Go Go Juice",
+                    "Don't Worry, I'll Make You Worry",
+                    "House Tour",
+                    "Goodbye"
+                ]
+            }
+        ]
+    },
         
     // ============================================================
     // Taylor Swift
