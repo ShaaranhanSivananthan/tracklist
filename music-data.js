@@ -396,6 +396,220 @@ const musicData = [
     },
 
     // ============================================================
+    // Bad Bunny
+    // ============================================================
+    
+    {
+        name: "Bad Bunny",
+        image: "images/artists/badbunny.jpg",
+    
+        albums: [
+            {
+                name: "X 100PRE",
+                year: 2018,
+                cover: "images/albums/x100pre.jpg",
+    
+                theme: {
+                    background: "#D9D5C8",
+                    text: "#161616",
+                    accent: "#D45B32"
+                },
+    
+                tracks: [
+                    "Ni Bien Ni Mal",
+                    "200 MPH",
+                    "¿Quién Tú Eres?",
+                    "Caro",
+                    "Tenemos Que Hablar",
+                    "Otra Noche en Miami",
+                    "Ser Bichote",
+                    "Si Estuviésemos Juntos",
+                    "Solo De Mí",
+                    "Cuando Perriabas",
+                    "La Romana",
+                    "Como Antes",
+                    "RLNDT",
+                    "Estamos Bien",
+                    "Mía",
+                ]
+            },
+    
+            {
+                name: "YHLQMDLG",
+                year: 2020,
+                cover: "images/albums/yhlqmdlg.jpg",
+    
+                theme: {
+                    background: "#F2D7C7",
+                    text: "#161616",
+                    accent: "#D85A3A"
+                },
+    
+                tracks: [
+                    "Si Veo A Tu Mamá",
+                    "La Difícil",
+                    "Pero Ya No",
+                    "La Santa",
+                    "Yo Perreo Sola",
+                    "Bichiyal",
+                    "Soliá",
+                    "La Zona",
+                    "Que Malo",
+                    "Vete",
+                    "Ignorantes",
+                    "A Tu Merced",
+                    "Una Vez",
+                    "Safaera",
+                    "25/8",
+                    "Está Cabrón Ser Yo",
+                    "Puesto Pa' Guerrial",
+                    "P FKN R",
+                    "Hablamos Mañana",
+                    "<3"
+                ]
+            },
+    
+            {
+                name: "El Último Tour Del Mundo",
+                year: 2020,
+                cover: "images/albums/elultimo.jpg",
+    
+                theme: {
+                    background: "#2A2925",
+                    text: "#E8E5D8",
+                    accent: "#C5A15B"
+                },
+    
+                tracks: [
+                    "El Mundo Es Mío",
+                    "Te Mudaste",
+                    "Hoy Cobré",
+                    "Maldita Pobreza",
+                    "La Noche De Anoche",
+                    "Te Deseo Lo Mejor",
+                    "Yo Visto Así",
+                    "Haciendo Que Me Amas",
+                    "Booker T",
+                    "La Droga",
+                    "Dákiti",
+                    "Trellas",
+                    "Sorry Papi",
+                    "120",
+                    "Antes Que Se Acabe",
+                    "Cantares De Navidad"
+                ]
+            },
+    
+            {
+                name: "Un Verano Sin Ti",
+                year: 2022,
+                cover: "images/albums/unverano.jpg",
+    
+                theme: {
+                    background: "#F1D8B2",
+                    text: "#171717",
+                    accent: "#E47B43"
+                },
+    
+                tracks: [
+                    "Moscow Mule",
+                    "Después De La Playa",
+                    "Me Porto Bonito",
+                    "Titi Me Preguntó",
+                    "Un Ratito",
+                    "Yo No Soy Celoso",
+                    "Tarot",
+                    "Neverita",
+                    "La Corriente",
+                    "Efecto",
+                    "Party",
+                    "Aguacero",
+                    "Enséñame A Bailar",
+                    "Ojitos Lindos",
+                    "Dos Mil 16",
+                    "El Apagón",
+                    "Otro Atardecer",
+                    "Un Coco",
+                    "Andrea",
+                    "Me Fui De Vacaciones",
+                    "Un Verano Sin Ti",
+                    "Agosto",
+                    "Callaita"
+                ]
+            },
+    
+            {
+                name: "Nadie Sabe Lo Que Va A Pasar Mañana",
+                year: 2023,
+                cover: "images/albums/nadiesabe.jpg",
+    
+                theme: {
+                    background: "#111111",
+                    text: "#E7E1D5",
+                    accent: "#8B2635"
+                },
+    
+                tracks: [
+                    "Nadie Sabe",
+                    "Monaco",
+                    "Fina",
+                    "Hibiki",
+                    "Mr. October",
+                    "Cybertruck",
+                    "Vou 787",
+                    "Seda",
+                    "Gracias Por Nada",
+                    "Teléfono Nuevo",
+                    "Baby Nueva",
+                    "Mercedes Carota",
+                    "Los Pits",
+                    "Vuelve Candy B",
+                    "Baticano",
+                    "No Me Quiero Casar",
+                    "Where She Goes",
+                    "Thunder Y Lightning",
+                    "Perro Negro",
+                    "Europa :( ",
+                    "Acho PR",
+                    "Un Preview"
+                ]
+            },
+    
+            {
+                name: "Debí Tirar Más Fotos",
+                year: 2025,
+                cover: "images/albums/debitirarmasfotos.jpg",
+    
+                theme: {
+                    background: "#D9B98C",
+                    text: "#211C17",
+                    accent: "#5C7667"
+                },
+    
+                tracks: [
+                    "Nuevayol",
+                    "Voy a Llevarte Pa' PR",
+                    "Baile Inolvidable",
+                    "Perfumito Nuevo",
+                    "Weltita",
+                    "Velda",
+                    "El Club",
+                    "Ketu Tecré",
+                    "Bokete",
+                    "Kloufrens",
+                    "Turista",
+                    "Café con Ron",
+                    "Pitorro De Coco",
+                    "Lo Que Le Pasó a Hawaii",
+                    "Eoo",
+                    "DTMF",
+                    "La Mudanza"
+                ]
+            }
+        ]
+    },
+
+    // ============================================================
     // The Beatles
     // ============================================================
 
