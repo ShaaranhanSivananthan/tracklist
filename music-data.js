@@ -4967,6 +4967,114 @@ const musicData = [
             }
         ]
     },
+
+    // ============================================================
+    // SZA
+    // ============================================================
+    
+    {
+        name: "SZA",
+        image: "images/artists/sza.jpg",
+    
+        albums: [
+            {
+                name: "Ctrl",
+                year: 2017,
+                cover: "images/albums/ctrl.jpg",
+    
+                theme: {
+                    background: "#B8B3A5",
+                    text: "#171717",
+                    accent: "#5D7C72"
+                },
+    
+                tracks: [
+                    "Supermodel",
+                    "Love Galore",
+                    "Doves In The Wind",
+                    "Drew Barrymore",
+                    "Prom",
+                    "The Weekend",
+                    "Go Gina",
+                    "Garden (Say It Like Dat)",
+                    "Broken Clocks",
+                    "Anything",
+                    "Wavy (Interlude)",
+                    "Normal Girl",
+                    "Pretty Little Birds",
+                    "20 Something"
+                ]
+            },
+    
+            {
+                name: "SOS",
+                year: 2022,
+                cover: "images/albums/sos.jpg",
+    
+                theme: {
+                    background: "#D8E4E5",
+                    text: "#16191A",
+                    accent: "#E5A7A2"
+                },
+    
+                tracks: [
+                    "SOS",
+                    "Kill Bill",
+                    "Seek & Destroy",
+                    "Low",
+                    "Love Language",
+                    "Blind",
+                    "Used",
+                    "Snooze",
+                    "Notice Me",
+                    "Gone Girl",
+                    "Smoking On My Ex Pack",
+                    "Ghost In The Machine",
+                    "F2F",
+                    "Nobody Gets Me",
+                    "Conceited",
+                    "Special",
+                    "Too Late",
+                    "Far",
+                    "Shirt",
+                    "Open Arms",
+                    "I Hate U",
+                    "Good Days",
+                    "Forgiveless"
+                ]
+            },
+    
+            {
+                name: "Lana",
+                year: 2024,
+                cover: "images/albums/lana.jpg",
+    
+                theme: {
+                    background: "#D5C8B5",
+                    text: "#171717",
+                    accent: "#6F756B"
+                },
+    
+                tracks: [
+                    "No More Hiding",
+                    "What Do I Do",
+                    "30 For 30",
+                    "Diamond Boy (DTM)",
+                    "BMF",
+                    "Scorsese Baby Daddy",
+                    "Love Me 4 Me",
+                    "Chill Baby",
+                    "My Turn",
+                    "Crybaby",
+                    "Kitchen",
+                    "Get Behind Me (Interlude)",
+                    "Drive",
+                    "Another Life",
+                    "Saturn",
+                ]
+            }
+        ]
+    },
         
     // ============================================================
     // Taylor Swift
