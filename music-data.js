@@ -1208,7 +1208,7 @@ const musicData = [
                 },
     
                 tracks: [
-                    "Ddu-Du Ddu-Du (뚜두뚜두)",
+                    "Ddu-Du Ddu-Du",
                     "Forever Young",
                     "Really",
                     "See U Later"
@@ -1230,7 +1230,7 @@ const musicData = [
                     "Kill This Love",
                     "Don't Know What To Do",
                     "Kick It",
-                    "Hope Not (아니길)",
+                    "Hope Not",
                     "Ddu-du Ddu-du (Remix)"
                 ]
             },
@@ -1293,11 +1293,193 @@ const musicData = [
                 },
     
                 tracks: [
-                    "Jump (뛰어)",
+                    "Jump",
                     "Go",
                     "Me And My",
                     "Champion",
                     "Fxxxboy"
+                ]
+            }
+        ]
+    },
+
+    // ============================================================
+    // BTS
+    // ============================================================
+    
+    {
+        name: "BTS",
+        image: "images/artists/bts.jpg",
+    
+        albums: [
+            {
+                name: "Dark & Wild",
+                year: 2014,
+                cover: "images/albums/darkandwild.jpg",
+    
+                theme: {
+                    background: "#17191C",
+                    text: "#F1F1F1",
+                    accent: "#A52A2A"
+                },
+    
+                tracks: [
+                    "Intro: What Am I To You",
+                    "Danger",
+                    "War Of Hormone",
+                    "Hip Hop Lover",
+                    "Let Me Know",
+                    "Rain",
+                    "BTS Cypher Pt.3: Killer",
+                    "Interlude: What Are You Doing Now",
+                    "Could You Turn Off Your Cell Phone",
+                    "Blanket Kick",
+                    "24/7=Heaven",
+                    "Look Here",
+                    "2nd Grade",
+                    "Outro: Do You Think It Makes Sense?"
+                ]
+            },
+    
+            {
+                name: "Wings",
+                year: 2016,
+                cover: "images/albums/wings.jpg",
+    
+                theme: {
+                    background: "#F4F4F2",
+                    text: "#111111",
+                    accent: "#707070"
+                },
+    
+                tracks: [
+                    "Intro: Boy Meets Evil",
+                    "Blood Sweat & Tears",
+                    "Begin",
+                    "Lie",
+                    "Stigma",
+                    "First Love",
+                    "Reflection",
+                    "MAMA",
+                    "Awake",
+                    "Lost",
+                    "BTS Cypher Pt. 4",
+                    "Am I Wrong",
+                    "21st Century Girl",
+                    "2! 3!",
+                    "Interlude: Wings"
+                ]
+            },
+    
+            {
+                name: "Love Yourself: Tear",
+                year: 2018,
+                cover: "images/albums/loveyourselftear.jpg",
+    
+                theme: {
+                    background: "#111216",
+                    text: "#E9E9E9",
+                    accent: "#B8A6C9"
+                },
+    
+                tracks: [
+                    "Intro: Singularity",
+                    "Fake Love",
+                    "The Truth Untold",
+                    "134340",
+                    "Paradise",
+                    "Love Maze",
+                    "Magic Shop",
+                    "Airplane Pt.2",
+                    "Anpanman",
+                    "So What",
+                    "Outro: Tear"
+                ]
+            },
+    
+            {
+                name: "Map Of The Soul: 7",
+                year: 2020,
+                cover: "images/albums/mapofthesoul7.jpg",
+    
+                theme: {
+                    background: "#F8F8F6",
+                    text: "#7A7A7A",
+                    accent: "#1688C5"
+                },
+    
+                tracks: [
+                    "Intro: Persona",
+                    "Boy With Luv",
+                    "Make It Right",
+                    "Jamais Vu",
+                    "Dionysus",
+                    "Interlude: Shadow",
+                    "Black Swan",
+                    "Filter",
+                    "My Time",
+                    "Louder Than Bombs",
+                    "On",
+                    "Ugh!",
+                    "00:00 (Zero O'Clock)",
+                    "Inner Child",
+                    "Friends",
+                    "Moon",
+                    "Respect",
+                    "We Are Bulletproof: The Eternal",
+                    "Outro: Ego"
+                ]
+            },
+    
+            {
+                name: "Be",
+                year: 2020,
+                cover: "images/albums/be.jpg",
+    
+                theme: {
+                    background: "#FAFAF8",
+                    text: "#111111",
+                    accent: "#6D6D6D"
+                },
+    
+                tracks: [
+                    "Life Goes On",
+                    "Fly To My Room",
+                    "Blue & Grey",
+                    "Skit",
+                    "Telepathy",
+                    "Dis-ease",
+                    "Stay",
+                    "Dynamite"
+                ]
+            },
+    
+            {
+                name: "Arirang",
+                year: 2026,
+                cover: "images/albums/arirang.jpg",
+    
+                theme: {
+                    background: "#D9C5A1",
+                    text: "#171717",
+                    accent: "#8A3B2E"
+                },
+    
+                tracks: [
+                    "Body To Body",
+                    "Hooligan",
+                    "Aliens",
+                    "FYA",
+                    "2.0",
+                    "No. 29",
+                    "Swim",
+                    "Merry Go Round",
+                    "Normal",
+                    "Like Animals",
+                    "They Don't Know 'Bout Us",
+                    "One More Night",
+                    "Please",
+                    "Into The Sun"
                 ]
             }
         ]
