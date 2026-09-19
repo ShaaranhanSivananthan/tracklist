@@ -1188,6 +1188,122 @@ const musicData = [
     },
     
     // ============================================================
+    // BLACKPINK
+    // ============================================================
+    
+    {
+        name: "BLACKPINK",
+        image: "images/artists/blackpink.jpg",
+    
+        albums: [
+            {
+                name: "Square Up",
+                year: 2018,
+                cover: "images/albums/squareup.jpg",
+    
+                theme: {
+                    background: "#F5A6C8",
+                    text: "#171717",
+                    accent: "#E91E63"
+                },
+    
+                tracks: [
+                    "Ddu-Du Ddu-Du (뚜두뚜두)",
+                    "Forever Young",
+                    "Really",
+                    "See U Later"
+                ]
+            },
+    
+            {
+                name: "Kill This Love",
+                year: 2019,
+                cover: "images/albums/killthislove.jpg",
+    
+                theme: {
+                    background: "#111111",
+                    text: "#F2F2F2",
+                    accent: "#D71920"
+                },
+    
+                tracks: [
+                    "Kill This Love",
+                    "Don't Know What To Do",
+                    "Kick It",
+                    "Hope Not (아니길)",
+                    "Ddu-du Ddu-du (Remix)"
+                ]
+            },
+    
+            {
+                name: "The Album",
+                year: 2020,
+                cover: "images/albums/thealbum.jpg",
+    
+                theme: {
+                    background: "#F4A8C4",
+                    text: "#171717",
+                    accent: "#E62A72"
+                },
+    
+                tracks: [
+                    "How You Like That",
+                    "Ice Cream",
+                    "Pretty Savage",
+                    "Bet You Wanna",
+                    "Lovesick Girls",
+                    "Crazy Over You",
+                    "Love To Hate Me",
+                    "You Never Know"
+                ]
+            },
+    
+            {
+                name: "Born Pink",
+                year: 2022,
+                cover: "images/albums/bornpink.jpg",
+    
+                theme: {
+                    background: "#F4B5CF",
+                    text: "#111111",
+                    accent: "#E91E63"
+                },
+    
+                tracks: [
+                    "Pink Venom",
+                    "Shut Down",
+                    "Typa Girl",
+                    "Yeah Yeah Yeah",
+                    "Hard To Love",
+                    "The Happiest Girl",
+                    "Tally",
+                    "Ready For Love"
+                ]
+            },
+    
+            {
+                name: "Deadline",
+                year: 2026,
+                cover: "images/albums/deadline.jpg",
+    
+                theme: {
+                    background: "#111111",
+                    text: "#F3F3F3",
+                    accent: "#FF2A68"
+                },
+    
+                tracks: [
+                    "Jump (뛰어)",
+                    "Go",
+                    "Me And My",
+                    "Champion",
+                    "Fxxxboy"
+                ]
+            }
+        ]
+    },
+    
+    // ============================================================
     // Drake
     // ============================================================
     
