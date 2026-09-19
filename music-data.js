@@ -3352,6 +3352,77 @@ const musicData = [
             }
         ]
     },
+
+    // ============================================================
+    // JENNIE
+    // ============================================================
+    
+    {
+        name: "Jennie",
+        image: "images/artists/jennie.jpg",
+    
+        albums: [
+            {
+                name: "Ruby",
+                year: 2025,
+                cover: "images/albums/ruby.jpg",
+    
+                theme: {
+                    background: "#0D0D0D",
+                    text: "#C91F2C",
+                    accent: "#F2F0EB"
+                },
+    
+                tracks: [
+                    "Intro: Jane",
+                    "Like JENNIE",
+                    "Start A War",
+                    "Handlebars",
+                    "With The IE (Way Up)",
+                    "ExtraL",
+                    "Mantra",
+                    "Love Hangover",
+                    "ZEN",
+                    "Damn Right",
+                    "F.T.S.",
+                    "Filter",
+                    "Seoul City",
+                    "Starlight",
+                    "Twin"
+                ]
+            }
+        ]
+    },
+
+    // ============================================================
+    // JISOO
+    // ============================================================
+    
+    {
+        name: "Jisoo",
+        image: "images/artists/jisoo.jpg",
+    
+        albums: [
+            {
+                name: "Amortage",
+                year: 2025,
+                cover: "images/albums/amortage.jpg",
+    
+                theme: {
+                    background: "#111315",
+                    text: "#E8E7E5",
+                    accent: "#514B68"
+                },
+    
+                tracks: [
+                    "Earthquake",
+                    "Your Love",
+                    "Tears",
+                    "Hugs & Kisses"
+                ]
+            }
+        ]
+    },
     
     // ============================================================
     // Justin Bieber
@@ -4334,6 +4405,44 @@ const musicData = [
             }
         ]
     },
+
+    // ============================================================
+    // LISA
+    // ============================================================
+    
+    {
+        name: "Lisa",
+        image: "images/artists/lisa.jpg",
+    
+        albums: [
+            {
+                name: "Alter Ego",
+                year: 2025,
+                cover: "images/albums/alterego.jpg",
+    
+                theme: {
+                    background: "#121318",
+                    text: "#F3E7A1",
+                    accent: "#C77A32"
+                },
+    
+                tracks: [
+                    "Rockstar",
+                    "Elastigirl",
+                    "Thunder",
+                    "New Woman",
+                    "Fxck Up the World",
+                    "Rapunzel",
+                    "Moonlit Floor (Kiss Me)",
+                    "When I'm With You",
+                    "Badgrrrl",
+                    "Lifestyle",
+                    "Chill",
+                    "Dream"
+                ]
+            }
+        ]
+    },
     
     // ============================================================
     // Nicki Minaj
@@ -4985,6 +5094,44 @@ const musicData = [
                     "Love on the Brain",
                     "Higher",
                     "Close to You"
+                ]
+            }
+        ]
+    },
+
+    // ============================================================
+    // ROSÉ
+    // ============================================================
+    
+    {
+        name: "Rosé",
+        image: "images/artists/rose.jpg",
+    
+        albums: [
+            {
+                name: "Rosie",
+                year: 2024,
+                cover: "images/albums/rosie.jpg",
+    
+                theme: {
+                    background: "#B99A83",
+                    text: "#D7192D",
+                    accent: "#F2E6DE"
+                },
+    
+                tracks: [
+                    "Number One Girl",
+                    "3am",
+                    "Two Years",
+                    "Toxic Till The End",
+                    "Drinks Or Coffee",
+                    "APT.",
+                    "Gameboy",
+                    "Stay A Little Longer",
+                    "Not The Same",
+                    "Call It the End",
+                    "Too Bad for Us",
+                    "Dance All Night"
                 ]
             }
         ]
