@@ -1201,7 +1201,7 @@ async function createResultsImage() {
             y + 38
         );
 
-        // Player's Chosen Track (Left)
+        // Player's Chosen Track (Left) — Green if correct, Red if incorrect
         context.font =
             '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
 
@@ -1213,24 +1213,22 @@ async function createResultsImage() {
             y + 38
         );
 
-        // Real Track Title (Right) - Shown when incorrect
+        // Real Correct Track Title (Right) — Shown in normal text color when incorrect
         if (!isCorrect) {
             context.textAlign = "right";
 
             context.font =
                 '600 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
 
-            context.fillStyle = "#C62828";
+            context.fillStyle = textColor;
 
             context.fillText(
-                `Correct: ${correctTrack}`,
+                correctTrack,
                 width - horizontalPadding,
                 y + 38
             );
         }
     });
-
-
 
     // --------------------------------------------------------
     // FOOTER
