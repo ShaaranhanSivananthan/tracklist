@@ -1174,13 +1174,11 @@ async function createResultsImage() {
             resultsHeaderHeight +
             (index * rowHeight);
 
-        const isCorrect =
-            track === correctOrder[index];
+        const correctTrack = correctOrder[index];
+        const isCorrect = track === correctTrack;
 
         // Divider
-
-        context.fillStyle =
-            "rgba(0, 0, 0, 0.10)";
+        context.fillStyle = "rgba(0, 0, 0, 0.10)";
 
         context.fillRect(
             resultsX,
@@ -1190,7 +1188,6 @@ async function createResultsImage() {
         );
 
         // Position Number
-
         context.fillStyle = textColor;
 
         context.font =
@@ -1204,19 +1201,35 @@ async function createResultsImage() {
             y + 38
         );
 
-        // Real Track Title (Green if placed correctly, Red if incorrect)
-
+        // Player's Chosen Track (Left)
         context.font =
             '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
 
         context.fillStyle = isCorrect ? "#218739" : "#C62828";
 
         context.fillText(
-            correctOrder[index],
+            track,
             resultsX + 50,
             y + 38
         );
+
+        // Real Track Title (Right) - Shown when incorrect
+        if (!isCorrect) {
+            context.textAlign = "right";
+
+            context.font =
+                '600 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+
+            context.fillStyle = "#C62828";
+
+            context.fillText(
+                `Correct: ${correctTrack}`,
+                width - horizontalPadding,
+                y + 38
+            );
+        }
     });
+
 
 
     // --------------------------------------------------------
