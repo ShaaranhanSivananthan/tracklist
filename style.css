@@ -575,22 +575,27 @@ button:disabled {
     margin: 24px auto 0;
 }
 
-
-.results-actions {
-    margin-top: 30px;
-}
-
 /* ============================================================
    RESULT IMAGE BUTTONS
    ============================================================ */
 
 .results-actions {
-    max-width: 720px;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    max-width: 900px;
+
+    margin: 30px auto 0;
 }
 
 
 .results-actions button {
-    min-height: 50px;
+    width: 100%;
+
+    min-height: 52px;
 }
 
 
@@ -794,6 +799,10 @@ button:disabled {
 
         width: 38px;
     }
+
+   .results-actions {
+    grid-template-columns: 1fr;
+   }
 }
 
 
