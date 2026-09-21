@@ -33,6 +33,10 @@ const playAgainButton = document.getElementById("play-again-button");
 const chooseAlbumButton = document.getElementById("choose-album-button");
 const chooseArtistButton = document.getElementById("choose-artist-button");
 
+const downloadResultButton = document.getElementById("download-result-button");
+const shareResultButton = document.getElementById("share-result-button");
+const copyResultButton = document.getElementById("copy-result-button");
+
 
 // ============================================================
 // GAME STATE
