@@ -10,12 +10,60 @@
 
     <meta
         name="description"
-        content="Test your music knowledge by putting album tracks in the correct order."
+        content="Order the Album is a music trivia game where you put an album's tracks in the correct order. Choose an artist, pick an album, and test your tracklist knowledge."
     >
 
     <meta name="theme-color" content="#111111">
 
-    <title>Order the Album</title>
+    <!-- Canonical URL -->
+    <link
+        rel="canonical"
+        href="https://orderthealbum.com/"
+    >
+
+    <!-- Open Graph / Social Sharing -->
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:title"
+        content="Order the Album — Music Trivia Game"
+    >
+
+    <meta
+        property="og:description"
+        content="Can you put an album's tracks in the correct order? Test your music knowledge with Order the Album."
+    >
+
+    <meta
+        property="og:url"
+        content="https://orderthealbum.com/"
+    >
+
+    <!--
+        Add your social preview image here later:
+        <meta property="og:image" content="https://orderthealbum.com/og-image.jpg">
+    -->
+
+    <!-- Twitter / X -->
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Order the Album — Music Trivia Game"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Can you put an album's tracks in the correct order?"
+    >
+
+    <title>Order the Album — Music Trivia Game</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -26,11 +74,22 @@
 
         <!-- ==================== ARTIST SCREEN ==================== -->
 
-        <section id="artist-screen" class="screen" aria-labelledby="artist-title">
+        <section
+            id="artist-screen"
+            class="screen"
+            aria-labelledby="artist-title"
+        >
 
             <header class="screen-header">
                 <h1 id="artist-title">Order the Album</h1>
-                <p>Choose an artist</p>
+
+                <p class="tagline">
+                    Put the tracks in the right order.
+                </p>
+
+                <p class="screen-instruction">
+                    Choose an artist
+                </p>
             </header>
 
             <div
@@ -107,7 +166,7 @@
                 role="status"
                 aria-live="polite"
             >
-                Drag the tracks into the correct order.
+                Put the tracks in the correct order.
             </div>
 
             <div
@@ -198,9 +257,6 @@
     </noscript>
 
 
-    <!--
-        MUSIC DATA MUST LOAD BEFORE SCRIPT.JS.
-    -->
     <script src="music-data.js" defer></script>
     <script src="script.js" defer></script>
 
