@@ -124,6 +124,23 @@ button:focus-visible,
     opacity: 0.75;
 }
 
+.screen-header .tagline {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    opacity: 1;
+}
+
+
+.screen-header .screen-instruction {
+    margin-top: 6px;
+
+    font-size: 15px;
+
+    opacity: 0.65;
+}
 
 /* ============================================================
    BUTTONS
