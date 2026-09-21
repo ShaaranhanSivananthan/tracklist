@@ -951,14 +951,14 @@ async function createResultsImage() {
 
     const resultsHeaderHeight = 90;
 
-    const footerHeight = 150;
+    const footerHeight = 70;
 
     const height =
         headerHeight +
         resultsHeaderHeight +
         (total * rowHeight) +
         footerHeight +
-        80;
+        20;
 
     const canvas =
         document.createElement("canvas");
@@ -1248,7 +1248,7 @@ async function createResultsImage() {
     context.fillText(
         "orderthealbum.com",
         width / 2,
-        height - 28
+        height - 60
     );
     
     context.globalAlpha = 1;
