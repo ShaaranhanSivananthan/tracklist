@@ -1248,7 +1248,7 @@ async function createResultsImage() {
     context.fillText(
         "orderthealbum.com",
         width / 2,
-        height - 60
+        height - 28
     );
     
     context.globalAlpha = 1;
