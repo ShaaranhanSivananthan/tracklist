@@ -1189,7 +1189,7 @@ async function createResultsImage() {
             1
         );
 
-        // Number
+        // Position Number
 
         context.fillStyle = textColor;
 
@@ -1204,45 +1204,20 @@ async function createResultsImage() {
             y + 38
         );
 
-        // Track name
+        // Real Track Title (Green if placed correctly, Red if incorrect)
 
         context.font =
             '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
 
+        context.fillStyle = isCorrect ? "#218739" : "#C62828";
+
         context.fillText(
-            track,
+            correctOrder[index],
             resultsX + 50,
             y + 38
         );
-
-        // Correct / incorrect
-
-        context.textAlign = "right";
-
-        context.font =
-            '700 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
-
-        if (isCorrect) {
-
-            context.fillStyle = "#218739";
-
-            context.fillText(
-                "✓ Correct",
-                width - horizontalPadding,
-                y + 38
-            );
-
-        } else {
-
-            context.fillStyle = "#C62828";
-
-            context.fillText(
-                `✕ Correct: ${correctOrder[index]}`,
-                width - horizontalPadding,
-                y + 38
-            );
-        }
     });
+
 
     // --------------------------------------------------------
     // FOOTER
