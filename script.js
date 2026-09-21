@@ -951,14 +951,14 @@ async function createResultsImage() {
 
     const resultsHeaderHeight = 90;
 
-    const footerHeight = 70;
+    const footerHeight = 110;
 
     const height =
         headerHeight +
         resultsHeaderHeight +
         (total * rowHeight) +
         footerHeight +
-        20;
+        45;
 
     const canvas =
         document.createElement("canvas");
