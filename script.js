@@ -1632,6 +1632,22 @@ chooseArtistButton.addEventListener(
     }
 );
 
+downloadResultButton.addEventListener(
+    "click",
+    downloadResultsImage
+);
+
+
+shareResultButton.addEventListener(
+    "click",
+    shareResultsImage
+);
+
+
+copyResultButton.addEventListener(
+    "click",
+    copyResultsImage
+);
 
 // ============================================================
 // INITIALIZE
