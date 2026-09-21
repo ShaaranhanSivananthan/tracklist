@@ -580,6 +580,23 @@ button:disabled {
     margin-top: 30px;
 }
 
+/* ============================================================
+   RESULT IMAGE BUTTONS
+   ============================================================ */
+
+.results-actions {
+    max-width: 720px;
+}
+
+
+.results-actions button {
+    min-height: 50px;
+}
+
+
+.results-actions button:disabled {
+    cursor: wait;
+}
 
 /* ============================================================
    RESULTS
