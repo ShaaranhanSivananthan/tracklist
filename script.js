@@ -753,6 +753,793 @@ function getResultsMessage(correct, total) {
     return "The correct tracklist is shown below for comparison.";
 }
 
+// ============================================================
+// SHAREABLE RESULTS IMAGE
+// ============================================================
+
+function wrapCanvasText(
+    context,
+    text,
+    maxWidth,
+    fontSize,
+    fontWeight = "400"
+) {
+
+    context.font =
+        `${fontWeight} ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif`;
+
+    const words = text.split(" ");
+    const lines = [];
+
+    let currentLine = "";
+
+    words.forEach(word => {
+
+        const testLine =
+            currentLine.length === 0
+                ? word
+                : `${currentLine} ${word}`;
+
+        const width =
+            context.measureText(testLine).width;
+
+        if (width > maxWidth && currentLine.length > 0) {
+
+            lines.push(currentLine);
+            currentLine = word;
+
+        } else {
+
+            currentLine = testLine;
+        }
+    });
+
+    if (currentLine) {
+        lines.push(currentLine);
+    }
+
+    return lines;
+}
+
+
+function roundedRect(
+    context,
+    x,
+    y,
+    width,
+    height,
+    radius
+) {
+
+    const r = Math.min(
+        radius,
+        width / 2,
+        height / 2
+    );
+
+    context.beginPath();
+
+    context.moveTo(x + r, y);
+    context.lineTo(x + width - r, y);
+
+    context.quadraticCurveTo(
+        x + width,
+        y,
+        x + width,
+        y + r
+    );
+
+    context.lineTo(
+        x + width,
+        y + height - r
+    );
+
+    context.quadraticCurveTo(
+        x + width,
+        y + height,
+        x + width - r,
+        y + height
+    );
+
+    context.lineTo(
+        x + r,
+        y + height
+    );
+
+    context.quadraticCurveTo(
+        x,
+        y + height,
+        x,
+        y + height - r
+    );
+
+    context.lineTo(
+        x,
+        y + r
+    );
+
+    context.quadraticCurveTo(
+        x,
+        y,
+        x + r,
+        y
+    );
+
+    context.closePath();
+}
+
+
+function drawRoundedImage(
+    context,
+    image,
+    x,
+    y,
+    width,
+    height,
+    radius
+) {
+
+    context.save();
+
+    roundedRect(
+        context,
+        x,
+        y,
+        width,
+        height,
+        radius
+    );
+
+    context.clip();
+
+    context.drawImage(
+        image,
+        x,
+        y,
+        width,
+        height
+    );
+
+    context.restore();
+}
+
+
+function loadCanvasImage(src) {
+
+    return new Promise((resolve, reject) => {
+
+        const image = new Image();
+
+        image.crossOrigin = "anonymous";
+
+        image.onload = () => {
+            resolve(image);
+        };
+
+        image.onerror = () => {
+            reject(new Error("Unable to load album artwork."));
+        };
+
+        image.src = src;
+    });
+}
+
+
+async function createResultsImage() {
+
+    const correctOrder = currentAlbum.tracks;
+    const playerOrder = getTracksFromDOM();
+
+    const correctCount =
+        playerOrder.filter(
+            (track, index) =>
+                track === correctOrder[index]
+        ).length;
+
+    const total = correctOrder.length;
+
+    const percentage =
+        Math.round((correctCount / total) * 100);
+
+    const width = 1080;
+
+    const horizontalPadding = 70;
+
+    const headerHeight = 330;
+
+    const rowHeight = 62;
+
+    const resultsHeaderHeight = 90;
+
+    const footerHeight = 150;
+
+    const height =
+        headerHeight +
+        resultsHeaderHeight +
+        (total * rowHeight) +
+        footerHeight +
+        80;
+
+    const canvas =
+        document.createElement("canvas");
+
+    canvas.width = width;
+    canvas.height = height;
+
+    const context = canvas.getContext("2d");
+
+    // --------------------------------------------------------
+    // BACKGROUND
+    // --------------------------------------------------------
+
+    const background =
+        currentAlbum.theme?.background ||
+        "#F4F4F4";
+
+    const textColor =
+        currentAlbum.theme?.text ||
+        "#171717";
+
+    const accentColor =
+        currentAlbum.theme?.accent ||
+        "#222222";
+
+    context.fillStyle = background;
+
+    context.fillRect(
+        0,
+        0,
+        width,
+        height
+    );
+
+    // --------------------------------------------------------
+    // HEADER
+    // --------------------------------------------------------
+
+    context.fillStyle = textColor;
+
+    context.textAlign = "center";
+
+    context.font =
+        '800 46px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+
+    context.fillText(
+        "ORDER THE ALBUM",
+        width / 2,
+        72
+    );
+
+    context.font =
+        '400 22px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+
+    context.globalAlpha = 0.7;
+
+    context.fillText(
+        "Put the tracks in the right order.",
+        width / 2,
+        108
+    );
+
+    context.globalAlpha = 1;
+
+    // --------------------------------------------------------
+    // ALBUM INFORMATION CARD
+    // --------------------------------------------------------
+
+    const cardX = horizontalPadding;
+    const cardY = 150;
+    const cardWidth = width - (horizontalPadding * 2);
+    const cardHeight = 250;
+
+    context.fillStyle =
+        "rgba(255, 255, 255, 0.55)";
+
+    roundedRect(
+        context,
+        cardX,
+        cardY,
+        cardWidth,
+        cardHeight,
+        24
+    );
+
+    context.fill();
+
+    // --------------------------------------------------------
+    // ALBUM COVER
+    // --------------------------------------------------------
+
+    const coverSize = 190;
+    const coverX = cardX + 30;
+    const coverY = cardY + 30;
+
+    try {
+
+        const cover =
+            await loadCanvasImage(currentAlbum.cover);
+
+        drawRoundedImage(
+            context,
+            cover,
+            coverX,
+            coverY,
+            coverSize,
+            coverSize,
+            18
+        );
+
+    } catch (error) {
+
+        context.fillStyle =
+            "rgba(0, 0, 0, 0.08)";
+
+        roundedRect(
+            context,
+            coverX,
+            coverY,
+            coverSize,
+            coverSize,
+            18
+        );
+
+        context.fill();
+    }
+
+    // --------------------------------------------------------
+    // ALBUM TITLE
+    // --------------------------------------------------------
+
+    const informationX =
+        coverX + coverSize + 38;
+
+    context.textAlign = "left";
+
+    context.fillStyle = textColor;
+
+    context.font =
+        '800 34px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+
+    const albumTitleLines =
+        wrapCanvasText(
+            context,
+            currentAlbum.name,
+            420,
+            34,
+            "800"
+        );
+
+    albumTitleLines
+        .slice(0, 2)
+        .forEach((line, index) => {
+
+            context.fillText(
+                line,
+                informationX,
+                cardY + 65 + (index * 42)
+            );
+        });
+
+    context.font =
+        '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+
+    context.globalAlpha = 0.7;
+
+    context.fillText(
+        currentArtist.name,
+        informationX,
+        cardY + 145
+    );
+
+    context.globalAlpha = 1;
+
+    // --------------------------------------------------------
+    // SCORE
+    // --------------------------------------------------------
+
+    context.font =
+        '900 46px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+
+    context.fillStyle = textColor;
+
+    context.fillText(
+        `${correctCount} / ${total}`,
+        informationX,
+        cardY + 205
+    );
+
+    context.fillStyle =
+        percentage === 100
+            ? "#218739"
+            : accentColor;
+
+    context.fillText(
+        `${percentage}%`,
+        informationX + 180,
+        cardY + 205
+    );
+
+    // --------------------------------------------------------
+    // RESULTS HEADER
+    // --------------------------------------------------------
+
+    const resultsX = horizontalPadding;
+    const resultsY =
+        headerHeight + 20;
+
+    context.fillStyle = textColor;
+
+    context.font =
+        '800 26px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+
+    context.fillText(
+        "YOUR ANSWERS",
+        resultsX,
+        resultsY
+    );
+
+    // --------------------------------------------------------
+    // TRACK RESULTS
+    // --------------------------------------------------------
+
+    playerOrder.forEach((track, index) => {
+
+        const y =
+            resultsY +
+            resultsHeaderHeight +
+            (index * rowHeight);
+
+        const isCorrect =
+            track === correctOrder[index];
+
+        // Divider
+
+        context.fillStyle =
+            "rgba(0, 0, 0, 0.10)";
+
+        context.fillRect(
+            resultsX,
+            y + rowHeight - 1,
+            width - (horizontalPadding * 2),
+            1
+        );
+
+        // Number
+
+        context.fillStyle = textColor;
+
+        context.font =
+            '700 19px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+
+        context.textAlign = "left";
+
+        context.fillText(
+            `${index + 1}.`,
+            resultsX,
+            y + 38
+        );
+
+        // Track name
+
+        context.font =
+            '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+
+        context.fillText(
+            track,
+            resultsX + 50,
+            y + 38
+        );
+
+        // Correct / incorrect
+
+        context.textAlign = "right";
+
+        context.font =
+            '700 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+
+        if (isCorrect) {
+
+            context.fillStyle = "#218739";
+
+            context.fillText(
+                "✓ Correct",
+                width - horizontalPadding,
+                y + 38
+            );
+
+        } else {
+
+            context.fillStyle = "#C62828";
+
+            context.fillText(
+                `✕ Correct: ${correctOrder[index]}`,
+                width - horizontalPadding,
+                y + 38
+            );
+        }
+    });
+
+    // --------------------------------------------------------
+    // FOOTER
+    // --------------------------------------------------------
+
+    context.textAlign = "center";
+
+    context.fillStyle = textColor;
+
+    context.globalAlpha = 0.65;
+
+    context.font =
+        '800 17px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+
+    context.fillText(
+        "ORDER THE ALBUM",
+        width / 2,
+        height - 90
+    );
+
+    context.font =
+        '400 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+
+    context.fillText(
+        "orderthealbum.com",
+        width / 2,
+        height - 60
+    );
+
+    context.globalAlpha = 1;
+
+    return canvas;
+}
+
+
+async function getResultsImageBlob() {
+
+    const canvas =
+        await createResultsImage();
+
+    return new Promise((resolve, reject) => {
+
+        canvas.toBlob(
+            blob => {
+
+                if (blob) {
+                    resolve(blob);
+                } else {
+                    reject(
+                        new Error(
+                            "Could not create result image."
+                        )
+                    );
+                }
+            },
+            "image/png"
+        );
+    });
+}
+
+
+// ============================================================
+// DOWNLOAD RESULT IMAGE
+// ============================================================
+
+async function downloadResultsImage() {
+
+    const originalText =
+        downloadResultButton.textContent;
+
+    try {
+
+        downloadResultButton.disabled = true;
+        downloadResultButton.textContent =
+            "Creating Image...";
+
+        const blob =
+            await getResultsImageBlob();
+
+        const url =
+            URL.createObjectURL(blob);
+
+        const link =
+            document.createElement("a");
+
+        link.href = url;
+
+        link.download =
+            `${currentArtist.name}-${currentAlbum.name}-result.png`
+                .replace(/[^a-z0-9]+/gi, "-")
+                .toLowerCase();
+
+        document.body.appendChild(link);
+
+        link.click();
+
+        link.remove();
+
+        URL.revokeObjectURL(url);
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Sorry, the result image could not be created."
+        );
+
+    } finally {
+
+        downloadResultButton.disabled = false;
+        downloadResultButton.textContent =
+            originalText;
+    }
+}
+
+
+// ============================================================
+// SHARE RESULT IMAGE
+// ============================================================
+
+async function shareResultsImage() {
+
+    const originalText =
+        shareResultButton.textContent;
+
+    try {
+
+        shareResultButton.disabled = true;
+        shareResultButton.textContent =
+            "Creating Image...";
+
+        const blob =
+            await getResultsImageBlob();
+
+        const file =
+            new File(
+                [blob],
+                "order-the-album-result.png",
+                {
+                    type: "image/png"
+                }
+            );
+
+        if (
+            navigator.share &&
+            navigator.canShare &&
+            navigator.canShare({ files: [file] })
+        ) {
+
+            await navigator.share({
+                title: "Order the Album",
+                text:
+                    `${currentAlbum.name} — ${correctCountForShare()} / ${currentAlbum.tracks.length} correct`,
+                files: [file]
+            });
+
+        } else {
+
+            // If image sharing isn't supported,
+            // download it instead.
+
+            const url =
+                URL.createObjectURL(blob);
+
+            const link =
+                document.createElement("a");
+
+            link.href = url;
+
+            link.download =
+                "order-the-album-result.png";
+
+            document.body.appendChild(link);
+
+            link.click();
+
+            link.remove();
+
+            URL.revokeObjectURL(url);
+
+            alert(
+                "Image sharing isn't supported on this browser, so the image was downloaded instead."
+            );
+        }
+
+    } catch (error) {
+
+        // User cancelling the share sheet is not an error
+        if (error.name !== "AbortError") {
+
+            console.error(error);
+
+            alert(
+                "Sorry, the result image could not be shared."
+            );
+        }
+
+    } finally {
+
+        shareResultButton.disabled = false;
+        shareResultButton.textContent =
+            originalText;
+    }
+}
+
+
+function correctCountForShare() {
+
+    const playerOrder =
+        getTracksFromDOM();
+
+    return playerOrder.filter(
+        (track, index) =>
+            track === currentAlbum.tracks[index]
+    ).length;
+}
+
+
+// ============================================================
+// COPY RESULT IMAGE
+// ============================================================
+
+async function copyResultsImage() {
+
+    const originalText =
+        copyResultButton.textContent;
+
+    try {
+
+        copyResultButton.disabled = true;
+        copyResultButton.textContent =
+            "Creating Image...";
+
+        const blob =
+            await getResultsImageBlob();
+
+        if (
+            !navigator.clipboard ||
+            typeof ClipboardItem === "undefined"
+        ) {
+
+            throw new Error(
+                "Image clipboard is not supported."
+            );
+        }
+
+        const item =
+            new ClipboardItem({
+                "image/png": blob
+            });
+
+        await navigator.clipboard.write([
+            item
+        ]);
+
+        copyResultButton.textContent =
+            "✓ Image Copied!";
+
+        setTimeout(() => {
+
+            copyResultButton.textContent =
+                originalText;
+
+        }, 1800);
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Copying images isn't supported by this browser. Try Download Image instead."
+        );
+
+        copyResultButton.textContent =
+            originalText;
+
+    } finally {
+
+        copyResultButton.disabled = false;
+    }
+}
 
 // ============================================================
 // BUTTON ACTIONS
