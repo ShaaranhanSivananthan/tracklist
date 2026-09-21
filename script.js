@@ -542,6 +542,10 @@ let draggedTrack = null;
 
 function startDragging(event) {
 
+    if (event.button !== undefined && event.button !== 0) {
+        return;
+    }
+
     event.preventDefault();
 
     const handle = event.currentTarget;
@@ -553,6 +557,8 @@ function startDragging(event) {
     }
 
     draggedTrack.classList.add("dragging");
+
+    handle.setPointerCapture?.(event.pointerId);
 
     document.addEventListener(
         "pointermove",
