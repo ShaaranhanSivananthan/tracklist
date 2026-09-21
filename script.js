@@ -949,7 +949,7 @@ async function createResultsImage() {
 
     const rowHeight = 62;
 
-    const resultsHeaderHeight = 90;
+    const resultsHeaderHeight = 20;
 
     const footerHeight = 150;
 
