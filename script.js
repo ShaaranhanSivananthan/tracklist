@@ -1159,24 +1159,9 @@ async function createResultsImage() {
         cardY + 205
     );
 
-    // --------------------------------------------------------
-    // RESULTS HEADER
-    // --------------------------------------------------------
-
     const resultsX = horizontalPadding;
-    const resultsY =
-        headerHeight + 20;
 
-    context.fillStyle = textColor;
-
-    context.font =
-        '800 26px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
-
-    context.fillText(
-        "YOUR ANSWERS",
-        resultsX,
-        resultsY
-    );
+    const resultsY = headerHeight + 20;
 
     // --------------------------------------------------------
     // TRACK RESULTS
@@ -1262,31 +1247,22 @@ async function createResultsImage() {
     // --------------------------------------------------------
     // FOOTER
     // --------------------------------------------------------
-
+    
     context.textAlign = "center";
-
+    
     context.fillStyle = textColor;
-
+    
     context.globalAlpha = 0.65;
-
-    context.font =
-        '800 17px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
-
-    context.fillText(
-        "ORDER THE ALBUM",
-        width / 2,
-        height - 90
-    );
-
+    
     context.font =
         '400 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
-
+    
     context.fillText(
         "orderthealbum.com",
         width / 2,
         height - 60
     );
-
+    
     context.globalAlpha = 1;
 
     return canvas;
