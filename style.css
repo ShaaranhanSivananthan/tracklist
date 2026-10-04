@@ -856,3 +856,164 @@ button:disabled {
         animation-iteration-count: 1 !important;
     }
 }
+
+/* ============================================================
+   Informational Homepage Content
+   ============================================================ */
+
+.site-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 80px auto 0;
+    text-align: left;
+}
+
+.content-section {
+    margin-bottom: 64px;
+}
+
+.content-section h2 {
+    margin: 0 0 18px;
+    font-size: 28px;
+    line-height: 1.2;
+    color: var(--text);
+}
+
+.content-section p {
+    margin: 0 0 16px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.content-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* How to Play */
+
+.how-to-play {
+    margin: 0;
+    padding-left: 24px;
+}
+
+.how-to-play li {
+    margin-bottom: 18px;
+    padding-left: 6px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.how-to-play li:last-child {
+    margin-bottom: 0;
+}
+
+.how-to-play strong {
+    font-weight: 700;
+}
+
+/* Album Collection */
+
+.album-collection {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.collection-artist {
+    padding: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.collection-artist-name {
+    margin: 0 0 6px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.collection-artist-count {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: var(--text);
+    opacity: 0.7;
+}
+
+.collection-albums {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.collection-albums li {
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.collection-albums li:last-child {
+    margin-bottom: 0;
+}
+
+/* FAQ */
+
+.faq-section details {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 18px 0;
+}
+
+.faq-section details:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.faq-section summary {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.faq-section details p {
+    margin: 14px 0 0;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Footer */
+
+.site-footer {
+    margin-top: 40px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.site-footer a {
+    color: var(--text);
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .site-content {
+        margin-top: 60px;
+    }
+
+    .content-section {
+        margin-bottom: 48px;
+    }
+
+    .content-section h2 {
+        font-size: 24px;
+    }
+
+    .album-collection {
+        grid-template-columns: 1fr;
+    }
+
+}
