@@ -252,6 +252,45 @@ function renderArtists() {
     });
 }
 
+function renderAlbumCollection() {
+    if (!albumCollection) return;
+
+    albumCollection.innerHTML = "";
+
+    musicData.forEach((artist) => {
+        const artistCard = document.createElement("div");
+        artistCard.className = "collection-artist";
+
+        const artistName = document.createElement("h3");
+        artistName.className = "collection-artist-name";
+        artistName.textContent = artist.name;
+
+        const artistCount = document.createElement("p");
+        artistCount.className = "collection-artist-count";
+
+        const albumCount = artist.albums.length;
+        artistCount.textContent =
+            `${albumCount} ${albumCount === 1 ? "album" : "albums"} available`;
+
+        const albumList = document.createElement("ul");
+        albumList.className = "collection-albums";
+
+        artist.albums.forEach((album) => {
+            const albumItem = document.createElement("li");
+
+            albumItem.textContent =
+                `${album.name} — ${album.year} · ${album.tracks.length} tracks`;
+
+            albumList.appendChild(albumItem);
+        });
+
+        artistCard.appendChild(artistName);
+        artistCard.appendChild(artistCount);
+        artistCard.appendChild(albumList);
+
+        albumCollection.appendChild(artistCard);
+    });
+}
 
 function selectArtist(artist) {
 
@@ -1618,4 +1657,5 @@ copyResultButton.addEventListener(
 
 applyTheme(defaultTheme);
 renderArtists();
+renderAlbumCollection();
 showScreen(artistScreen);
