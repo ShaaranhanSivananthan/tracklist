@@ -268,25 +268,38 @@ function renderAlbumCollection() {
         artistName.className = "collection-artist-name";
         artistName.textContent = artist.name;
 
-        const albumCount = document.createElement("span");
-        albumCount.className = "collection-artist-count";
+        const artistCount = document.createElement("span");
+        artistCount.className = "collection-artist-count";
 
         const count = artist.albums.length;
 
-        albumCount.textContent =
+        artistCount.textContent =
             `${count} ${count === 1 ? "album" : "albums"}`;
 
         artistSummary.appendChild(artistName);
-        artistSummary.appendChild(albumCount);
+        artistSummary.appendChild(artistCount);
 
         const albumList = document.createElement("ul");
         albumList.className = "collection-albums";
 
         artist.albums.forEach((album) => {
             const albumItem = document.createElement("li");
+            albumItem.className = "collection-album";
 
-            albumItem.textContent =
-                `${album.name} — ${album.year} · ${album.tracks.length} tracks`;
+            const albumName = document.createElement("span");
+            albumName.className = "collection-album-name";
+            albumName.textContent = `${album.year} — ${album.name}`;
+
+            const trackCount = document.createElement("span");
+            trackCount.className = "collection-track-count";
+
+            const tracks = album.tracks.length;
+
+            trackCount.textContent =
+                `${tracks} ${tracks === 1 ? "track" : "tracks"}`;
+
+            albumItem.appendChild(albumName);
+            albumItem.appendChild(trackCount);
 
             albumList.appendChild(albumItem);
         });
