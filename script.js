@@ -258,19 +258,26 @@ function renderAlbumCollection() {
     albumCollection.innerHTML = "";
 
     musicData.forEach((artist) => {
-        const artistCard = document.createElement("div");
-        artistCard.className = "collection-artist";
+        const artistDetails = document.createElement("details");
+        artistDetails.className = "collection-artist";
 
-        const artistName = document.createElement("h3");
+        const artistSummary = document.createElement("summary");
+        artistSummary.className = "collection-artist-summary";
+
+        const artistName = document.createElement("span");
         artistName.className = "collection-artist-name";
         artistName.textContent = artist.name;
 
-        const artistCount = document.createElement("p");
-        artistCount.className = "collection-artist-count";
+        const albumCount = document.createElement("span");
+        albumCount.className = "collection-artist-count";
 
-        const albumCount = artist.albums.length;
-        artistCount.textContent =
-            `${albumCount} ${albumCount === 1 ? "album" : "albums"} available`;
+        const count = artist.albums.length;
+
+        albumCount.textContent =
+            `${count} ${count === 1 ? "album" : "albums"}`;
+
+        artistSummary.appendChild(artistName);
+        artistSummary.appendChild(albumCount);
 
         const albumList = document.createElement("ul");
         albumList.className = "collection-albums";
@@ -284,11 +291,10 @@ function renderAlbumCollection() {
             albumList.appendChild(albumItem);
         });
 
-        artistCard.appendChild(artistName);
-        artistCard.appendChild(artistCount);
-        artistCard.appendChild(albumList);
+        artistDetails.appendChild(artistSummary);
+        artistDetails.appendChild(albumList);
 
-        albumCollection.appendChild(artistCard);
+        albumCollection.appendChild(artistDetails);
     });
 }
 
