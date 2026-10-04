@@ -9,6 +9,7 @@ const artistScreen = document.getElementById("artist-screen");
 const albumScreen = document.getElementById("album-screen");
 const gameScreen = document.getElementById("game-screen");
 const resultsScreen = document.getElementById("results-screen");
+const albumCollection = document.getElementById("album-collection");
 
 const artistList = document.getElementById("artist-list");
 const albumList = document.getElementById("album-list");
