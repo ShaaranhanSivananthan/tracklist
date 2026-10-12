@@ -1678,3 +1678,18 @@ applyTheme(defaultTheme);
 renderArtists();
 renderAlbumCollection();
 showScreen(artistScreen);
+
+const urlParams = new URLSearchParams(window.location.search);
+const wantedArtist = urlParams.get("artist");
+const wantedAlbum = urlParams.get("album");
+
+if (wantedArtist) {
+    const foundArtist = musicData.find(a => a.name === wantedArtist);
+    if (foundArtist) {
+        selectArtist(foundArtist);
+        const foundAlbum = foundArtist.albums.find(a => a.name === wantedAlbum);
+        if (foundAlbum) {
+            selectAlbum(foundAlbum);
+        }
+    }
+}
