@@ -569,7 +569,7 @@ const musicData = [
                     "Where She Goes",
                     "Thunder Y Lightning",
                     "Perro Negro",
-                    "Europa :( ",
+                    "Europa :(",
                     "Acho PR",
                     "Un Preview"
                 ]
@@ -833,7 +833,7 @@ const musicData = [
     
                 tracks: [
                     "Sgt. Pepper's Lonely Hearts Club Band",
-                    "With Help From My Friends",
+                    "With a Little Help from My Friends",
                     "Lucy in the Sky with Diamonds",
                     "Getting Better",
                     "Fixing a Hole",
@@ -1231,7 +1231,7 @@ const musicData = [
                     "Heated",
                     "Thique",
                     "All Up in Your Mind",
-                    "America Has a ProblemPROBLEM",
+                    "America Has a Problem",
                     "Pure/Honey",
                     "Summer Renaissance"
                 ]
