@@ -4440,6 +4440,27 @@ const musicData = [
                     "Chill",
                     "Dream"
                 ]
+            },
+
+            {
+                name: "Press Play",
+                year: 2026,
+                cover: "images/albums/press_play.jpg",
+    
+                theme: {
+                    background: "#121318",
+                    text: "#F3E7A1",
+                    accent: "#C77A32"
+                },
+    
+                tracks: [
+                    "Sawadika",
+                    "V12",
+                    "Cobra",
+                    "Tarantino",
+                    "Cut U Off",
+                    "Sweat"
+                ]
             }
         ]
     },
