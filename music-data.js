@@ -4448,9 +4448,9 @@ const musicData = [
                 cover: "images/albums/press_play.jpg",
     
                 theme: {
-                    background: "#121318",
-                    text: "#F3E7A1",
-                    accent: "#C77A32"
+                    background: "#91a4a5",
+                    text: "#050505",
+                    accent: "#842220"
                 },
     
                 tracks: [
