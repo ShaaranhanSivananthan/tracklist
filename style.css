@@ -860,7 +860,7 @@ button:disabled {
 /* Footer */
 
 .site-footer {
-    margin-top: 40px;
+    /* margin-top: 40px; */
     padding: 30px 20px;
     text-align: center;
 }
