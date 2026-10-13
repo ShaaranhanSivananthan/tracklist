@@ -2,138 +2,145 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Order the Album</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contact Order the Album with questions, feedback, bug reports, or artist and album suggestions."
+    >
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://orderthealbum.com/contact.html">
+
+    <title>Contact Us — Order the Album</title>
+
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-color: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent-color: #38bdf8;
-            --border-color: #334155;
+            --background: #f4f4f4;
+            --text: #171717;
+            --card: #ffffff;
+            --border: #dddddd;
+            --link: #333333;
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            background: var(--background);
+            color: var(--text);
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+            line-height: 1.7;
         }
-        .container {
-            max-width: 800px;
+
+        .contact-page {
+            width: min(900px, calc(100% - 40px));
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 0 80px;
         }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
-        }
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-color);
-            text-decoration: none;
-        }
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-        nav a:hover {
-            color: var(--accent-color);
-        }
+
         h1 {
-            font-size: 2.25rem;
-            margin-bottom: 10px;
+            margin: 0 0 12px;
+            font-size: 38px;
+            line-height: 1.2;
         }
+
         .subtitle {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 30px;
+            margin: 0 0 48px;
+            color: #666666;
+            font-size: 16px;
         }
-        .contact-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 20px;
-        }
+
         h2 {
-            font-size: 1.25rem;
-            margin-top: 0;
-            color: var(--accent-color);
+            margin: 42px 0 14px;
+            font-size: 24px;
+            line-height: 1.3;
         }
+
         p {
-            color: var(--text-muted);
-            margin-bottom: 16px;
+            margin: 0 0 16px;
         }
+
+        a {
+            color: var(--link);
+        }
+
         .email-link {
-            color: var(--accent-color);
-            text-decoration: none;
             font-weight: 600;
         }
-        .email-link:hover {
-            text-decoration: underline;
+
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            font-weight: 600;
         }
-        footer {
-            margin-top: 60px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.875rem;
-        }
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-            margin: 0 10px;
+
+        @media (max-width: 600px) {
+            .contact-page {
+                width: min(100% - 28px, 900px);
+                padding-top: 40px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 21px;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <a href="/" class="logo">Order the Album</a>
-            <nav>
-                <a href="/">Home</a>
-                <a href="/privacy.html">Privacy</a>
-                <a href="/about.html">About</a>
-            </nav>
-        </header>
+<main class="contact-page">
 
-        <main>
-            <h1>Contact Us</h1>
-            <div class="subtitle">Have questions, feedback, or artist/album suggestions? We'd love to hear from you.</div>
+    <h1>Contact Us</h1>
 
-            <div class="contact-card">
-                <h2>Get in Touch</h2>
-                <p>If you encounter any bugs, want to report an incorrect tracklist, or want to suggest new artists to add to the game, feel free to drop us an email.</p>
-                <p>Email: <a href="mailto:support@orderthealbum.com" class="email-link">support@orderthealbum.com</a> *(or update with your personal/domain email)*</p>
-                <p>We typically review messages and respond within 48 hours.</p>
-            </div>
-        </main>
+    <p class="subtitle">
+        Have questions, feedback, or artist/album suggestions?
+        We'd love to hear from you.
+    </p>
 
-        <footer>
-            <p>&copy; 2026 Order the Album. All rights reserved.</p>
-            <div>
-                <a href="/">Home</a>
-                <a href="/privacy.html">Privacy Policy</a>
-                <a href="/about.html">About Us</a>
-                <a href="/contact.html">Contact</a>
-            </div>
-        </footer>
-    </div>
+    <h2>Get in Touch</h2>
+
+    <p>
+        If you encounter any bugs, want to report an incorrect
+        tracklist, or want to suggest new artists to add to the
+        game, feel free to drop us an email.
+    </p>
+
+    <p>
+        Email:
+        <a
+            href="mailto:support@orderthealbum.com"
+            class="email-link"
+        >support@orderthealbum.com</a>
+    </p>
+
+    <p>
+        We typically review messages and respond within 48 hours.
+    </p>
+
+    <a class="back-link" href="/">
+        ← Back to Order the Album
+    </a>
+
+</main>
 </body>
 </html>
-
