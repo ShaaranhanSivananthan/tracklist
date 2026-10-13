@@ -84,9 +84,40 @@
     >
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Order the Album",
+      "url": "https://orderthealbum.com/",
+      "description": "Order the Album is a music trivia game where players test their knowledge by arranging album tracklists in correct sequential order.",
+      "applicationCategory": "GameApplication",
+      "genre": "Trivia",
+      "browserRequirements": "Requires JavaScript",
+      "author": {
+        "@type": "Organization",
+        "name": "ShaarooGames"
+      }
+    }
+    </script>
+
 </head>
 
 <body>
+
+    <header class="site-header">
+        <nav class="top-nav" aria-label="Main Navigation">
+            <a href="https://orderthealbum.com/" class="nav-logo">Order the Album</a>
+            <div class="nav-links">
+                <a href="#about-project">About</a>
+                <a href="#how-to-play">How to Play</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="mailto:support@orderthealbum.com">Contact</a>
+            </div>
+        </nav>
+    </header>
 
     <main class="game">
 
@@ -126,7 +157,7 @@
                     </p>
                 </div>
         
-                <div class="content-section">
+                <div class="content-section" id="how-to-play">
                     <h2>How to Play</h2>
         
                     <ol class="how-to-play">
@@ -249,7 +280,7 @@
                     </details>
                 </div>
         
-                <div class="content-section">
+                <div class="content-section"  id="about-project">
                     <h2>About the Project</h2>
         
                     <p>
@@ -446,17 +477,17 @@
 
     </main>
 
-
-    <footer class="site-footer" style="text-align:center; margin-top:40px; padding:24px 16px; font-size:14px; line-height:2; opacity:0.85;">
-        <p>Order the Album is an independent music trivia project about album tracklists and listening.</p>
+    <footer class="site-footer">
+        <p>Order the Album is an independent music trivia project dedicated to album sequencing and music history.</p>
     
         <nav aria-label="Footer navigation">
-            <a href="/privacy.html" style="color:inherit; margin:0 8px;">Privacy Policy</a>
+            <a href="/privacy.html">Privacy Policy</a> · 
+            <a href="mailto:support@orderthealbum.com">Contact Support</a>
         </nav>
     
-        <p>
-            <a href="https://www.instagram.com/ShaarooGames" rel="noopener" style="color:inherit;">Instagram</a> ·
-            <a href="https://x.com/ShaarooGames" rel="noopener" style="color:inherit;">X (Twitter)</a>
+        <p class="social-links">
+            <a href="https://www.instagram.com/ShaarooGames" target="_blank" rel="noopener">Instagram</a> ·
+            <a href="https://x.com/ShaarooGames" target="_blank" rel="noopener">X (Twitter)</a>
         </p>
         <p>&copy; 2026 Order the Album by ShaarooGames</p>
     </footer>
