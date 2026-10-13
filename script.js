@@ -9,7 +9,6 @@ const artistScreen = document.getElementById("artist-screen");
 const albumScreen = document.getElementById("album-screen");
 const gameScreen = document.getElementById("game-screen");
 const resultsScreen = document.getElementById("results-screen");
-const albumCollection = document.getElementById("album-collection");
 
 const artistList = document.getElementById("artist-list");
 const albumList = document.getElementById("album-list");
@@ -249,65 +248,6 @@ function renderArtists() {
         });
 
         artistList.appendChild(card);
-    });
-}
-
-function renderAlbumCollection() {
-    if (!albumCollection) return;
-
-    albumCollection.innerHTML = "";
-
-    musicData.forEach((artist) => {
-        const artistDetails = document.createElement("details");
-        artistDetails.className = "collection-artist";
-
-        const artistSummary = document.createElement("summary");
-        artistSummary.className = "collection-artist-summary";
-
-        const artistName = document.createElement("span");
-        artistName.className = "collection-artist-name";
-        artistName.textContent = artist.name;
-
-        const artistCount = document.createElement("span");
-        artistCount.className = "collection-artist-count";
-
-        const count = artist.albums.length;
-
-        artistCount.textContent =
-            `${count} ${count === 1 ? "album" : "albums"}`;
-
-        artistSummary.appendChild(artistName);
-        artistSummary.appendChild(artistCount);
-
-        const albumList = document.createElement("ul");
-        albumList.className = "collection-albums";
-
-        artist.albums.forEach((album) => {
-            const albumItem = document.createElement("li");
-            albumItem.className = "collection-album";
-
-            const albumName = document.createElement("span");
-            albumName.className = "collection-album-name";
-            albumName.textContent = `${album.year} — ${album.name}`;
-
-            const trackCount = document.createElement("span");
-            trackCount.className = "collection-track-count";
-
-            const tracks = album.tracks.length;
-
-            trackCount.textContent =
-                `${tracks} ${tracks === 1 ? "track" : "tracks"}`;
-
-            albumItem.appendChild(albumName);
-            albumItem.appendChild(trackCount);
-
-            albumList.appendChild(albumItem);
-        });
-
-        artistDetails.appendChild(artistSummary);
-        artistDetails.appendChild(albumList);
-
-        albumCollection.appendChild(artistDetails);
     });
 }
 
@@ -620,8 +560,6 @@ function startDragging(event) {
     }
 
     draggedTrack.classList.add("dragging");
-
-    handle.setPointerCapture?.(event.pointerId);
 
     document.addEventListener(
         "pointermove",
@@ -1676,5 +1614,4 @@ copyResultButton.addEventListener(
 
 applyTheme(defaultTheme);
 renderArtists();
-renderAlbumCollection();
 showScreen(artistScreen);
