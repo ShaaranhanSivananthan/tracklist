@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Order the Album</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --border-color: #334155;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        h1 {
+            font-size: 2.25rem;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        .contact-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 20px;
+        }
+        h2 {
+            font-size: 1.25rem;
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+        p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .email-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .email-link:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="logo">Order the Album</a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/privacy.html">Privacy</a>
+                <a href="/about.html">About</a>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Contact Us</h1>
+            <div class="subtitle">Have questions, feedback, or artist/album suggestions? We'd love to hear from you.</div>
+
+            <div class="contact-card">
+                <h2>Get in Touch</h2>
+                <p>If you encounter any bugs, want to report an incorrect tracklist, or want to suggest new artists to add to the game, feel free to drop us an email.</p>
+                <p>Email: <a href="mailto:support@orderthealbum.com" class="email-link">support@orderthealbum.com</a> *(or update with your personal/domain email)*</p>
+                <p>We typically review messages and respond within 48 hours.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Order the Album. All rights reserved.</p>
+            <div>
+                <a href="/">Home</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/about.html">About Us</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
 
