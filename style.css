@@ -857,6 +857,18 @@ button:disabled {
     }
 }
 
+/* Footer */
+
+.site-footer {
+    margin-top: 40px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.site-footer a {
+    color: var(--text-color);
+}
+
 /* Music Guides section */
 .footer-guides {
     margin: 28px auto;
