@@ -53,11 +53,6 @@
         content="Order the Album"
     >  
 
-    <!--
-        Add your social preview image here later:
-        <meta property="og:image" content="https://orderthealbum.com/og-image.jpg">
-    -->
-
     <!-- Twitter / X -->
     <meta
         name="twitter:card"
@@ -85,7 +80,7 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Schema.org JSON-LD -->
+    <!-- Schema.org JSON-LD (Invisible to UI, required for AdSense validation) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -107,14 +102,15 @@
 
 <body>
 
+    <!-- Minimal, Seamless Top Header -->
     <header class="site-header">
         <nav class="top-nav" aria-label="Main Navigation">
-            <a href="https://orderthealbum.com/" class="nav-logo">Order the Album</a>
+            <a href="https://orderthealbum.com/" class="nav-brand">Order the Album</a>
             <div class="nav-links">
-                <a href="#about-project">About</a>
-                <a href="#how-to-play">How to Play</a>
-                <a href="/privacy.html">Privacy Policy</a>
-                <a href="mailto:support@orderthealbum.com">Contact</a>
+                <a href="#about-project" class="nav-link">About</a>
+                <a href="#how-to-play" class="nav-link">How to Play</a>
+                <a href="/privacy.html" class="nav-link">Privacy</a>
+                <a href="mailto:support@orderthealbum.com" class="nav-link nav-contact">Contact</a>
             </div>
         </nav>
     </header>
@@ -141,7 +137,7 @@
         
             <section class="site-content" aria-label="About Order the Album">
         
-                <div class="content-section">
+                <div class="content-section" id="about-project">
                     <h2>What Is Order the Album?</h2>
         
                     <p>
@@ -280,7 +276,7 @@
                     </details>
                 </div>
         
-                <div class="content-section"  id="about-project">
+                <div class="content-section">
                     <h2>About the Project</h2>
         
                     <p>
@@ -477,19 +473,22 @@
 
     </main>
 
+    <!-- Styled Dark-Theme Minimalist Footer -->
     <footer class="site-footer">
-        <p>Order the Album is an independent music trivia project dedicated to album sequencing and music history.</p>
+        <p class="footer-tagline">Order the Album is an independent music trivia project dedicated to album sequencing and music history.</p>
     
-        <nav aria-label="Footer navigation">
-            <a href="/privacy.html">Privacy Policy</a> · 
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="/privacy.html">Privacy Policy</a>
+            <span class="footer-sep">·</span>
             <a href="mailto:support@orderthealbum.com">Contact Support</a>
         </nav>
     
         <p class="social-links">
-            <a href="https://www.instagram.com/ShaarooGames" target="_blank" rel="noopener">Instagram</a> ·
+            <a href="https://www.instagram.com/ShaarooGames" target="_blank" rel="noopener">Instagram</a>
+            <span class="footer-sep">·</span>
             <a href="https://x.com/ShaarooGames" target="_blank" rel="noopener">X (Twitter)</a>
         </p>
-        <p>&copy; 2026 Order the Album by ShaarooGames</p>
+        <p class="footer-copy">&copy; 2026 Order the Album by ShaarooGames</p>
     </footer>
 
     <noscript>
