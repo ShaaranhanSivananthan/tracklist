@@ -823,7 +823,6 @@ const musicData = [
             {
                 name: "Sgt. Pepper's Lonely Hearts Club Band",
                 year: 1967,
-                notes: "Sgt. Peppers represents jfklfkffjfjkfjkfsf",
                 cover: "images/albums/sgt.jpg",
     
                 theme: {
