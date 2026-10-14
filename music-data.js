@@ -291,7 +291,7 @@ const musicData = [
                     "LVL",
                     "Hell",
                     "Pain",
-                    "Fuckin' Problems",
+                    "F***in' Problems",
                     "Wild for the Night",
                     "1 Train",
                     "Fashion Killa",
@@ -1195,7 +1195,7 @@ const musicData = [
             
                 tracks: [
                     "Summer",
-                    "Apeshit",
+                    "Apes***",
                     "Boss",
                     "Nice",
                     "713",
@@ -1770,7 +1770,7 @@ const musicData = [
                     "Share",
                     "Give Ya",
                     "Don't U Have a Man",
-                    "Bitch Is Crazy",
+                    "B**** Is Crazy",
                     "The Last Hope",
                     "Must Hate Money",
                     "Asthma Team",
@@ -1802,7 +1802,7 @@ const musicData = [
                     "Successful",
                     "Let's Call It Off",
                     "November 18th",
-                    "Ignant Shit",
+                    "Ignant S***",
                     "A Night Off",
                     "Say What's Real",
                     "Little Bit",
@@ -1873,7 +1873,7 @@ const musicData = [
                     "Doing It Wrong",
                     "The Real Her",
                     "Look What You've Done",
-                    "HYFR (Hell Ya Fucking Right)",
+                    "HYFR (Hell Ya F***ing Right)",
                     "Practice",
                     "The Ride"
                 ]
@@ -2137,7 +2137,7 @@ const musicData = [
                     "Get Along Better",
                     "You Only Live Twice",
                     "IMY2",
-                    "Fucking Fans",
+                    "F***ing Fans",
                     "The Remorse"
                 ]
             },
@@ -2192,13 +2192,13 @@ const musicData = [
                     "Hours in Silence",
                     "Treacherous Twins",
                     "Circo Loco",
-                    "Pussy & Millions",
+                    "P**** & Millions",
                     "Broke Boys",
                     "Middle of the Ocean",
-                    "Jumbotron Shit Poppin",
+                    "Jumbotron S*** Poppin",
                     "More M's",
                     "3AM on Glenwood",
-                    "I Guess It's Fuck Me"
+                    "I Guess It's F*** Me"
                 ]
             },
     
@@ -2321,7 +2321,7 @@ const musicData = [
                 },
     
                 tracks: [
-                    "Hoe Phase",
+                    "H** Phase",
                     "Road Trips",
                     "Outside Tweaking",
                     "Cheetah Print",
@@ -2510,19 +2510,19 @@ const musicData = [
                     "Paul (Skit)",
                     "If I Had",
                     "'97 Bonnie & Clyde",
-                    "Bitch (Skit)",
+                    "B**** (Skit)",
                     "Role Model",
                     "Lounge (Skit)",
                     "My Fault",
                     "Ken Kaniff (Skit)",
-                    "Cum On Everybody",
+                    "C** On Everybody",
                     "Rock Bottom",
-                    "Just Don't Give a Fuck",
+                    "Just Don't Give a F***",
                     "Soap (Skit)",
                     "As the World Turns",
                     "I'm Shady",
                     "Bad Meets Evil",
-                    "Still Don't Give a Fuck"
+                    "Still Don't Give a F***"
                 ]
             },
     
@@ -2552,7 +2552,7 @@ const musicData = [
                     "Ken Kaniff (Skit)",
                     "Drug Ballad",
                     "Amityville",
-                    "Bitch Please II",
+                    "B**** Please II",
                     "Kim",
                     "Under the Influence",
                     "Criminal"
@@ -2619,7 +2619,7 @@ const musicData = [
                     "Big Weenie",
                     "Em Calls Paul (Skit)",
                     "Just Lose It",
-                    "Ass Like That",
+                    "A** Like That",
                     "Spend Some Time",
                     "Mockingbird",
                     "Crazy in Love",
@@ -2714,7 +2714,7 @@ const musicData = [
                     "So Much Better",
                     "Survival",
                     "Legacy",
-                    "Asshole",
+                    "A**hole",
                     "Berzerk",
                     "Rap God",
                     "Brainless",
@@ -2885,7 +2885,7 @@ const musicData = [
                     "Strawberry Swing",
                     "Novacane",
                     "We All Try",
-                    "Bitches Talkin'",
+                    "B****es Talkin'",
                     "Songs for Women",
                     "Lovecrimes",
                     "Goldeneye",
@@ -3034,7 +3034,7 @@ const musicData = [
                     "The Come Up",
                     "Mighty Crazy",
                     "Dead Presidents",
-                    "Lil Ghetto Nigga",
+                    "Lil Ghetto N****",
                     "Homecoming",
                     "Carolina on My Mind",
                     "Can't Cry",
@@ -3167,11 +3167,11 @@ const musicData = [
                     "Trouble",
                     "Runaway",
                     "She Knows",
-                    "Rich Niggaz",
+                    "Rich N****z",
                     "Where's Jermaine? (Skit)",
                     "Forbidden Fruit",
                     "Chaining Day",
-                    "Ain't That Some Shit (Interlude)",
+                    "Ain't That Some S*** (Interlude)",
                     "Crooked Smile",
                     "Let Nas Down",
                     "Born Sinner"
@@ -3709,7 +3709,7 @@ const musicData = [
                     "Bad Honey",
                     "Need It",
                     "Oh Man",
-                    "Poppin'My Shit",
+                    "Poppin'My S***",
                     "All the Way",
                     "Petting Zoo",
                     "Moving Fast",
@@ -3907,7 +3907,7 @@ const musicData = [
                     "Otis",
                     "Gotta Have It",
                     "New Day",
-                    "That's My Bitch",
+                    "That's My B****",
                     "Welcome to the Jungle",
                     "Who Gon Stop Me",
                     "Murder to Excellence",
@@ -4239,7 +4239,7 @@ const musicData = [
                 },
 
                 tracks: [
-                    "Fuck Your Ethnicity",
+                    "F*** Your Ethnicity",
                     "Hol' Up",
                     "A.D.H.D",
                     "No Make-Up (Her Vice)",
@@ -4270,7 +4270,7 @@ const musicData = [
 
                 tracks: [
                     "Sherane a.k.a Master Splinter's Daughter",
-                    "Bitch, Don't Kill My Vibe",
+                    "B****, Don't Kill My Vibe",
                     "Backseat Freestyle",
                     "The Art of Peer Pressure",
                     "Money Trees",
@@ -4532,7 +4532,7 @@ const musicData = [
                     "Young Forever",
                     "Fire Burns",
                     "Gun Shot",
-                    "Stupid Hoe"
+                    "Stupid H**"
                 ]
             },
     
@@ -4687,7 +4687,7 @@ const musicData = [
                 },
     
                 tracks: [
-                    "All-American Bitch",
+                    "All-American B****",
                     "Bad Idea Right?",
                     "Vampire",
                     "Lacy",
@@ -4760,10 +4760,10 @@ const musicData = [
                     "Let It Go",
                     "Half & Half",
                     "New Choppa",
-                    "Other Shit",
+                    "Other S***",
                     "No. 9",
-                    "Dothatshit!",
-                    "Lame Niggaz",
+                    "Dothats***!",
+                    "Lame N****z",
                     "Yah Mean",
                     "Flex",
                     "Kelly K",
@@ -4864,12 +4864,12 @@ const musicData = [
                     "Philly",
                     "Radar",
                     "Rather Lie",
-                    "Fine Shit",
+                    "Fine S***",
                     "Backd00r",
                     "Toxic",
                     "Munyun",
                     "Crank",
-                    "Charge Dem Hoes a Fee",
+                    "Charge Dem H**s a Fee",
                     "Good Credit",
                     "I Seeeeee You Baby Boi",
                     "Wake Up F1lthy",
@@ -5752,7 +5752,7 @@ const musicData = [
                     "You're on Your Own, Kid",
                     "Midnight Rain",
                     "Question...?",
-                    "Vigilante Shit",
+                    "Vigilante S***",
                     "Bejeweled",
                     "Labyrinth",
                     "Karma",
@@ -5843,7 +5843,7 @@ const musicData = [
     
                 tracks: [
                     "Meadow Creek",
-                    "Bad Mood / Shit on You",
+                    "Bad Mood / S*** on You",
                     "Upper Echelon",
                     "Chaz Interlude",
                     "Uptown",
@@ -5963,7 +5963,7 @@ const musicData = [
                     "Huncho Jack",
                     "Saint",
                     "Go",
-                    "Dubai Shit",
+                    "Dubai S***",
                     "Saint Laurent Mask",
                     "Moon Rock",
                     "How U Feel",
@@ -6070,7 +6070,7 @@ const musicData = [
                     "Pigs Fly",
                     "Parade",
                     "Slow It Down",
-                    "AssMilk",
+                    "A**Milk",
                     "VCR / Wheels",
                     "Session",
                     "Sarah",
@@ -6103,7 +6103,7 @@ const musicData = [
                     "Sandwitches",
                     "Fish",
                     "Analog",
-                    "Bitch Suck Dick",
+                    "B**** Suck D***",
                     "Window",
                     "Au79",
                     "Golden"
@@ -6164,7 +6164,7 @@ const musicData = [
                     "Blow My Load",
                     "2Seater",
                     "The Brown Stains of Darkeese Latifah, Pt. 6-12",
-                    "Fucking Young / Perfect",
+                    "F***ing Young / Perfect",
                     "Smuckers",
                     "Keep Da O's",
                     "Okaga, CA"
@@ -6578,7 +6578,7 @@ const musicData = [
                 tracks: [
                     "Wake Me Up",
                     "Cry For Me",
-                    "I Can't Fucking Sing",
+                    "I Can't F***ing Sing",
                     "São Paulo",
                     "Until We're Skin & Bones",
                     "Baptized In Fear",
