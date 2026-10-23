@@ -1612,6 +1612,26 @@ copyResultButton.addEventListener(
 // INITIALIZE
 // ============================================================
 
+function slugify(text) {
+    return String(text).normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase().replace(/\$/g, "s").replace(/&/g, " and ")
+        .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+
+function loadFromUrl() {
+    const p = new URLSearchParams(window.location.search);
+    const artist = musicData.find(a => slugify(a.name) === p.get("artist"));
+    if (!artist) return false;
+    const album = artist.albums.find(al => {
+        const s = slugify(al.name);
+        return s === p.get("album") || `${s}-${al.year}` === p.get("album");
+    });
+    if (!album) { selectArtist(artist); return true; }
+    currentArtist = artist;
+    selectAlbum(album);
+    return true;
+}
+
 applyTheme(defaultTheme);
 renderArtists();
-showScreen(artistScreen);
+if (!loadFromUrl()) showScreen(artistScreen);
