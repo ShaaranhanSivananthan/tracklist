@@ -1,0 +1,47 @@
+name: Build artist and album pages
+
+# Runs when you change music-data.js (or build.js), or when you press
+# "Run workflow" on the Actions tab.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "music-data.js"
+      - "build.js"
+  workflow_dispatch:
+
+# Lets the workflow save the generated pages back to your repo.
+permissions:
+  contents: write
+
+# If you push twice quickly, only the newest run matters.
+concurrency:
+  group: build-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate pages
+        run: node build.js
+
+      - name: Save generated pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to save."
+          else
+            git commit -m "Update generated artist and album pages"
+            git push
+          fi
