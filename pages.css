@@ -321,3 +321,46 @@
     color: inherit;
     text-decoration: underline;
 }
+
+
+/* ---------- Guides (articles) ---------- */
+
+.seo-page .article p,
+.seo-page .article li {
+    max-width: 68ch;
+}
+
+.seo-page .article ul,
+.seo-page .article ol {
+    margin: 0 0 16px;
+    padding-left: 1.4em;
+}
+
+.seo-page .article li {
+    margin-bottom: 6px;
+}
+
+.seo-page .article-cta {
+    margin-top: 32px;
+}
+
+.seo-page .guide-list {
+    margin: 22px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.seo-page .guide-card {
+    padding: 16px 0;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.seo-page .guide-card h2 {
+    margin: 0 0 6px;
+    font-size: 1.15rem;
+}
+
+.seo-page .guide-card p {
+    margin: 0;
+    color: #444444;
+}

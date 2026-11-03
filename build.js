@@ -9,8 +9,14 @@
  *   /artists/index.html           list of every artist
  *   /artists/<artist>.html        one page per artist
  *   /albums/<artist>-<album>.html one page per album (full tracklist)
+ *   /articles/<guide>.html        guides written in content/articles/*.md
+ *   /articles/index.html          list of all guides
  *   /sitemap.xml                  rebuilt to include everything
  *   /index.html                   (optional) gets a crawlable list of artists
+ *
+ * Your own writing goes in two places:
+ *   content/articles/*.md           one Markdown file per guide
+ *   content/album-descriptions.json short write-ups for individual albums
  *
  * How to run (from the folder that contains music-data.js):
  *
@@ -33,7 +39,15 @@ const vm = require("vm");
 
 const SITE_URL = "https://orderthealbum.com";
 const SITE_NAME = "Order the Album";
-const OWNER_NAME = "ShaarooGames";
+// Your name as you want it shown in the page footer and on guide bylines.
+// Leave it as "" to show no name at all.
+const OWNER_NAME = "";
+
+// true  = album pages (and artist pages) that have no written description
+//         yet are hidden from Google (noindex) and left out of the sitemap.
+//         They switch on automatically once you write a description.
+// false = every generated page is open to Google.
+const NOINDEX_UNDESCRIBED = true;
 
 // Your AdSense publisher ID (same one as in index.html).
 const ADSENSE_CLIENT = "ca-pub-2525057832208317";
@@ -56,22 +70,11 @@ const STATIC_PAGES = [
     { url: "/", lastmod: "2026-10-12" },
     { url: "/about.html", lastmod: "2026-10-13" },
     { url: "/contact.html", lastmod: "2026-10-13" },
-    { url: "/privacy.html", lastmod: "2026-10-13" },
-    { url: "/articles/album-sequencing.html", lastmod: "2026-10-13" },
-    { url: "/articles/how-to-remember-tracklists.html", lastmod: "2026-10-13" },
-    { url: "/articles/albums-vs-playlists.html", lastmod: "2026-10-13" },
-    { url: "/articles/music-trivia-and-listening-memory.html", lastmod: "2026-10-13" },
-    { url: "/articles/exploring-music-across-genres.html", lastmod: "2026-10-13" }
+    { url: "/privacy.html", lastmod: "2026-10-13" }
 ];
 
-// Guides shown in the footer of generated pages.
-const GUIDES = [
-    { url: "/articles/album-sequencing.html", title: "Why Album Sequencing Matters" },
-    { url: "/articles/how-to-remember-tracklists.html", title: "How to Remember an Album Tracklist" },
-    { url: "/articles/albums-vs-playlists.html", title: "Albums and Playlists" },
-    { url: "/articles/music-trivia-and-listening-memory.html", title: "Music Trivia and Listening Memory" },
-    { url: "/articles/exploring-music-across-genres.html", title: "Exploring Music Across Genres" }
-];
+// Guides shown in the footer of generated pages (filled from content/articles).
+let GUIDES = [];
 
 // Markers that tell the script where to put the artist list in index.html.
 const HOME_START = "<!-- ARTISTS-LINKS-START -->";
@@ -134,6 +137,184 @@ function write(relativePath, content) {
 
 
 // ============================================================
+// YOUR WRITING: guides (Markdown) and album descriptions (JSON)
+// ============================================================
+
+const usedDescriptionKeys = new Set();
+
+function inlineMarkdown(text) {
+    let out = esc(text);
+
+    out = out.replace(/\[([^\]]+)\]\((\/[^)\s]*|https?:\/\/[^)\s]+)\)/g, '<a href="$2">$1</a>');
+    out = out.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    out = out.replace(/(^|[^*\w])\*([^*\s][^*]*?)\*(?!\*)/g, "$1<em>$2</em>");
+
+    return out;
+}
+
+function markdownToHtml(markdown) {
+    const lines = markdown.replace(/\r\n/g, "\n").split("\n");
+    const html = [];
+    let paragraph = [];
+    let list = null;
+
+    const flushParagraph = () => {
+        if (paragraph.length) {
+            html.push(`<p>${inlineMarkdown(paragraph.join(" "))}</p>`);
+            paragraph = [];
+        }
+    };
+
+    const flushList = () => {
+        if (list) {
+            const items = list.items.map(item => `<li>${inlineMarkdown(item)}</li>`).join("\n");
+            html.push(`<${list.type}>\n${items}\n</${list.type}>`);
+            list = null;
+        }
+    };
+
+    lines.forEach(line => {
+        const text = line.trim();
+        let match;
+
+        if (text === "") {
+            flushParagraph();
+            flushList();
+            return;
+        }
+
+        if ((match = text.match(/^(#{2,3})\s+(.*)$/))) {
+            flushParagraph();
+            flushList();
+            const level = match[1].length;
+            html.push(`<h${level}>${inlineMarkdown(match[2])}</h${level}>`);
+            return;
+        }
+
+        if ((match = text.match(/^[-*]\s+(.*)$/))) {
+            flushParagraph();
+            if (!list || list.type !== "ul") {
+                flushList();
+                list = { type: "ul", items: [] };
+            }
+            list.items.push(match[1]);
+            return;
+        }
+
+        if ((match = text.match(/^\d+\.\s+(.*)$/))) {
+            flushParagraph();
+            if (!list || list.type !== "ol") {
+                flushList();
+                list = { type: "ol", items: [] };
+            }
+            list.items.push(match[1]);
+            return;
+        }
+
+        flushList();
+        paragraph.push(text);
+    });
+
+    flushParagraph();
+    flushList();
+
+    return html.join("\n");
+}
+
+function parseFrontMatter(text) {
+    const match = text.replace(/\r\n/g, "\n").match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+
+    if (!match) {
+        return { meta: {}, body: text };
+    }
+
+    const meta = {};
+
+    match[1].split("\n").forEach(line => {
+        const index = line.indexOf(":");
+
+        if (index > 0) {
+            meta[line.slice(0, index).trim()] = line.slice(index + 1).trim();
+        }
+    });
+
+    return { meta, body: match[2] };
+}
+
+function loadArticles() {
+    const dir = path.join(ROOT, "content", "articles");
+
+    if (!fs.existsSync(dir)) {
+        return [];
+    }
+
+    return fs.readdirSync(dir)
+        .filter(file => file.endsWith(".md"))
+        .map(file => {
+            const raw = fs.readFileSync(path.join(dir, file), "utf8");
+            const { meta, body } = parseFrontMatter(raw);
+            const words = body.split(/\s+/).filter(Boolean).length;
+
+            if (!meta.title || !meta.description) {
+                console.warn(`${file}: add "title:" and "description:" lines at the top.`);
+            }
+
+            if (words < 900) {
+                console.warn(`${file}: only ${words} words. Aim for 1,000 or more.`);
+            }
+
+            return {
+                slug: file.replace(/\.md$/, ""),
+                title: meta.title || file,
+                description: meta.description || "",
+                order: Number(meta.order) || 99,
+                date: meta.date || today(),
+                updated: meta.updated || meta.date || today(),
+                html: markdownToHtml(body),
+                words
+            };
+        })
+        .sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
+}
+
+function loadDescriptions() {
+    const file = path.join(ROOT, "content", "album-descriptions.json");
+
+    if (!fs.existsSync(file)) {
+        return {};
+    }
+
+    let list;
+
+    try {
+        list = JSON.parse(fs.readFileSync(file, "utf8"));
+    } catch (error) {
+        console.error("content/album-descriptions.json is not valid JSON:", error.message);
+        process.exit(1);
+    }
+
+    const map = {};
+
+    list.forEach(item => {
+        if (item && item.artist && item.album && item.text) {
+            map[`${slugify(item.artist)}/${slugify(item.album)}`] = item.text;
+        }
+    });
+
+    return map;
+}
+
+function formatDate(isoDate) {
+    return new Date(`${isoDate}T00:00:00Z`).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "UTC"
+    });
+}
+
+
+// ============================================================
 // LOAD AND CHECK THE DATA
 // ============================================================
 
@@ -166,7 +347,7 @@ function loadMusicData() {
     return data;
 }
 
-function prepareArtists(rawData) {
+function prepareArtists(rawData, descriptions) {
     const usedArtistSlugs = new Set();
     const artists = [];
 
@@ -203,11 +384,19 @@ function prepareArtists(rawData) {
 
             usedAlbumSlugs.add(albumSlug);
 
+            const descriptionKey = `${artistSlug}/${slugify(rawAlbum.name)}`;
+            const description = rawAlbum.description || descriptions[descriptionKey] || "";
+
+            if (descriptions[descriptionKey]) {
+                usedDescriptionKeys.add(descriptionKey);
+            }
+
             albums.push({
                 name: rawAlbum.name,
                 year: rawAlbum.year,
                 cover: rawAlbum.cover,
-                description: rawAlbum.description || "",
+                description,
+                indexable: !NOINDEX_UNDESCRIBED || Boolean(description),
                 tracks: rawAlbum.tracks,
                 slug: albumSlug,
                 pageUrl: `/albums/${artistSlug}-${albumSlug}.html`
@@ -222,6 +411,7 @@ function prepareArtists(rawData) {
             name: raw.name,
             image: raw.image,
             bio: raw.bio || "",
+            indexable: !NOINDEX_UNDESCRIBED || Boolean(raw.bio) || albums.some(album => album.indexable),
             slug: artistSlug,
             pageUrl: `/artists/${artistSlug}.html`,
             albums
@@ -268,7 +458,9 @@ function albumParagraphs(artist, album, index) {
     const count = tracks.length;
 
     if (album.description) {
-        paragraphs.push(album.description);
+        album.description
+            .split(/\n\s*\n/)
+            .forEach(text => paragraphs.push(text.trim()));
     }
 
     // Opening and closing tracks
@@ -384,7 +576,7 @@ function artistParagraphs(artist) {
 // PAGE LAYOUT
 // ============================================================
 
-function layout({ title, description, urlPath, body, structuredData = [], image }) {
+function layout({ title, description, urlPath, body, structuredData = [], image, noindex = false }) {
     const canonical = SITE_URL + urlPath;
     const fullTitle = `${title} | ${SITE_NAME}`;
     const metaDescription = truncate(description, 158);
@@ -413,7 +605,7 @@ function layout({ title, description, urlPath, body, structuredData = [], image 
     <meta name="google-adsense-account" content="${ADSENSE_CLIENT}">
     <title>${esc(fullTitle)}</title>
     <meta name="description" content="${esc(metaDescription)}">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="${noindex ? "noindex, follow" : "index, follow"}">
     <link rel="canonical" href="${esc(canonical)}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="${esc(SITE_NAME)}">
@@ -435,6 +627,7 @@ function layout({ title, description, urlPath, body, structuredData = [], image 
         <nav aria-label="Main">
             <a href="/">Play</a>
             <a href="/artists/">Artists</a>
+            <a href="/articles/">Guides</a>
             <a href="/about.html">About</a>
             <a href="/contact.html">Contact</a>
         </nav>
@@ -452,11 +645,11 @@ ${body}
             <a href="/contact.html">Contact Us</a>
             <a href="/privacy.html">Privacy Policy</a>
         </nav>
-        <nav aria-label="Music guides" class="footer-guides">
-            <strong>Music Guides</strong>
+        ${guideLinks ? `<nav aria-label="Music guides" class="footer-guides">
+            <strong><a href="/articles/">Music Guides</a></strong>
             ${guideLinks}
-        </nav>
-        <p>&copy; ${new Date().getFullYear()} ${esc(SITE_NAME)} by ${esc(OWNER_NAME)}</p>
+        </nav>` : ""}
+        <p>&copy; ${new Date().getFullYear()} ${esc(SITE_NAME)}${OWNER_NAME ? ` by ${esc(OWNER_NAME)}` : ""}</p>
     </footer>
 </body>
 </html>
@@ -623,6 +816,7 @@ function buildAlbumPage(artist, album, index) {
         "url": SITE_URL + album.pageUrl,
         "datePublished": String(album.year),
         "numTracks": count,
+        ...(album.description ? { "description": album.description.split(/\n\s*\n/)[0] } : {}),
         "byArtist": { "@type": "MusicGroup", "name": artist.name },
         "track": tracks.map((track, position) => ({
             "@type": "MusicRecording",
@@ -643,7 +837,8 @@ function buildAlbumPage(artist, album, index) {
         urlPath: album.pageUrl,
         body,
         structuredData: [crumbs.data, musicAlbum],
-        image: SHOW_ALBUM_COVERS && album.cover ? `/${album.cover}` : undefined
+        image: SHOW_ALBUM_COVERS && album.cover ? `/${album.cover}` : undefined,
+        noindex: !album.indexable
     });
 }
 
@@ -700,7 +895,8 @@ function buildArtistPage(artist) {
         urlPath: artist.pageUrl,
         body,
         structuredData: [crumbs.data],
-        image: SHOW_ALBUM_COVERS && artist.image ? `/${artist.image}` : undefined
+        image: SHOW_ALBUM_COVERS && artist.image ? `/${artist.image}` : undefined,
+        noindex: !artist.indexable
     });
 }
 
@@ -749,6 +945,87 @@ function buildArtistsIndex(artists) {
             `Browse ${plural(artists.length, "artist")} and ${plural(totalAlbums, "album")} with full tracklists. ` +
             `Pick one and try to put the tracks in the right order.`,
         urlPath: "/artists/",
+        body,
+        structuredData: [crumbs.data]
+    });
+}
+
+
+// ============================================================
+// GUIDE (ARTICLE) PAGES
+// ============================================================
+
+function buildArticlePage(article) {
+    const urlPath = `/articles/${article.slug}.html`;
+
+    const crumbs = breadcrumbs([
+        { name: "Home", url: "/" },
+        { name: "Guides", url: "/articles/" },
+        { name: article.title, url: urlPath }
+    ]);
+
+    const byline = OWNER_NAME ? ` by ${esc(OWNER_NAME)}` : "";
+
+    const body = `        ${crumbs.html}
+
+        <article class="article">
+            <h1>${esc(article.title)}</h1>
+            <p class="subtitle">Published <time datetime="${article.date}">${formatDate(article.date)}</time>${byline}</p>
+${article.html}
+            <p class="article-cta"><a class="button" href="/">Play Order the Album</a></p>
+            <p><a href="/artists/">Browse every artist and tracklist</a> or <a href="/articles/">read more guides</a>.</p>
+        </article>`;
+
+    const articleData = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": article.title,
+        "description": article.description,
+        "datePublished": article.date,
+        "dateModified": article.updated,
+        "mainEntityOfPage": SITE_URL + urlPath,
+        "author": OWNER_NAME
+            ? { "@type": "Person", "name": OWNER_NAME }
+            : { "@type": "Organization", "name": SITE_NAME },
+        "publisher": { "@type": "Organization", "name": SITE_NAME }
+    };
+
+    return layout({
+        title: article.title,
+        description: article.description,
+        urlPath,
+        body,
+        structuredData: [crumbs.data, articleData]
+    });
+}
+
+function buildArticlesIndex(articles) {
+    const crumbs = breadcrumbs([
+        { name: "Home", url: "/" },
+        { name: "Guides", url: "/articles/" }
+    ]);
+
+    const items = articles
+        .map(article => `<li class="guide-card">
+                    <h2><a href="/articles/${article.slug}.html">${esc(article.title)}</a></h2>
+                    <p>${esc(article.description)}</p>
+                </li>`)
+        .join("\n                ");
+
+    const body = `        ${crumbs.html}
+
+        <article>
+            <h1>Music Guides</h1>
+            <p>Guides on how albums are put together, how to remember them, and what to listen for. Each one uses real albums from the game as examples.</p>
+            <ul class="guide-list">
+                ${items}
+            </ul>
+        </article>`;
+
+    return layout({
+        title: "Music Guides",
+        description: "Guides on album sequencing, tracklists, memory and music trivia, with examples from The Beatles, Beyonce, Kanye West and more.",
+        urlPath: "/articles/",
         body,
         structuredData: [crumbs.data]
     });
@@ -809,18 +1086,31 @@ function updateHomepage(artists) {
 // SITEMAP
 // ============================================================
 
-function buildSitemap(artists) {
+function buildSitemap(artists, articles) {
     const date = today();
 
     const entries = [...STATIC_PAGES];
 
     entries.push({ url: "/artists/", lastmod: date });
 
+    if (articles.length > 0) {
+        entries.push({ url: "/articles/", lastmod: date });
+    }
+
+    articles.forEach(article => {
+        entries.push({ url: `/articles/${article.slug}.html`, lastmod: article.updated });
+    });
+
+    // Pages marked noindex are left out of the sitemap on purpose.
     artists.forEach(artist => {
-        entries.push({ url: artist.pageUrl, lastmod: date });
+        if (artist.indexable) {
+            entries.push({ url: artist.pageUrl, lastmod: date });
+        }
 
         artist.albums.forEach(album => {
-            entries.push({ url: album.pageUrl, lastmod: date });
+            if (album.indexable) {
+                entries.push({ url: album.pageUrl, lastmod: date });
+            }
         });
     });
 
@@ -844,7 +1134,15 @@ ${urls}
 // ============================================================
 
 function main() {
-    const artists = prepareArtists(loadMusicData());
+    const articles = loadArticles();
+    GUIDES = articles.map(article => ({ url: `/articles/${article.slug}.html`, title: article.title }));
+
+    const descriptions = loadDescriptions();
+    const artists = prepareArtists(loadMusicData(), descriptions);
+
+    Object.keys(descriptions)
+        .filter(key => !usedDescriptionKeys.has(key))
+        .forEach(key => console.warn(`No album found for description "${key}". Check the artist and album names.`));
 
     // Remove old generated pages (only .html files in /artists and /albums
     // at the top level of the site). Your /images folder is never touched.
@@ -861,6 +1159,7 @@ function main() {
     });
 
     let albumCount = 0;
+    let albumsIndexed = 0;
 
     artists.forEach(artist => {
         write(`artists/${artist.slug}.html`, buildArtistPage(artist));
@@ -868,18 +1167,35 @@ function main() {
         artist.albums.forEach((album, index) => {
             write(`albums/${artist.slug}-${album.slug}.html`, buildAlbumPage(artist, album, index));
             albumCount++;
+
+            if (album.indexable) {
+                albumsIndexed++;
+            }
         });
     });
 
     write("artists/index.html", buildArtistsIndex(artists));
-    write("sitemap.xml", buildSitemap(artists));
+
+    articles.forEach(article => {
+        write(`articles/${article.slug}.html`, buildArticlePage(article));
+    });
+
+    if (articles.length > 0) {
+        write("articles/index.html", buildArticlesIndex(articles));
+    }
+
+    const sitemap = buildSitemap(artists, articles);
+    write("sitemap.xml", sitemap);
 
     updateHomepage(artists);
 
+    const listed = (sitemap.match(/<loc>/g) || []).length;
+
     console.log("Done.");
     console.log(`  ${artists.length} artist pages`);
-    console.log(`  ${albumCount} album pages`);
-    console.log(`  sitemap.xml now lists ${STATIC_PAGES.length + 1 + artists.length + albumCount} pages`);
+    console.log(`  ${albumCount} album pages (${albumsIndexed} open to Google, ${albumCount - albumsIndexed} hidden until they have a description)`);
+    console.log(`  ${articles.length} guides`);
+    console.log(`  sitemap.xml lists ${listed} pages`);
 }
 
 main();
