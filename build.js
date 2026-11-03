@@ -41,7 +41,7 @@ const SITE_URL = "https://orderthealbum.com";
 const SITE_NAME = "Order the Album";
 // Your name as you want it shown in the page footer and on guide bylines.
 // Leave it as "" to show no name at all.
-const OWNER_NAME = "";
+const OWNER_NAME = "Shaaroo Games";
 
 // true  = album pages (and artist pages) that have no written description
 //         yet are hidden from Google (noindex) and left out of the sitemap.
